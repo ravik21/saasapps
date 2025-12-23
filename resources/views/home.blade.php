@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-landing-layout>
     <div class="position-relative">
         <div class="section-1 mb-md-6">
             <div class="container">
@@ -17,7 +17,7 @@
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                         <p class="border-start border-width-4 border-color ps-4 mw-xs mt-5">"Distinctively envisioneer excellent relationships with pandemic strategic theme areas. Continually incubate pandemic functionalities with intermandated deliverables."</p>
                         <div class="d-flex align-items-center mt-5">
-                            <img src="/images/guest/avatar.svg" alt="User" width="54">
+                            <img src="/images/landing/avatar.svg" alt="User" width="54">
                             <div class="ms-3">
                                 <h5 class="mb-0 lh-1 fw-medium">John Doe</h5>
                                 <a href="#" class="text-dark op-06 text-smaller lh-1"><u>SemiColonWeb.com</u></a>
@@ -25,8 +25,8 @@
                         </div>
                     </div>
                     <div class="col-lg-7">
-                        <img src="/images/guest/browser.jpg" alt="Image" class="shadow-lg rounded-6" width="720">
-                        <img src="/images/guest/hero-iphone.png" alt="Image" width="150" class="position-absolute mt-5 d-block d-lg-none" style="right: 0; bottom: 0;">
+                        <img src="/images/landing/browser.jpg" alt="Image" class="shadow-lg rounded-6" width="720">
+                        <img src="/images/landing/hero-iphone.png" alt="Image" width="150" class="position-absolute mt-5 d-block d-lg-none" style="right: 0; bottom: 0;">
                     </div>
                 </div>
             </div>
@@ -48,10 +48,10 @@
                         </h1>
                         <p class="mb-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                         <div class="row align-items-center flex-row mt-4 gx-5 op-07">
-                            <div class="col"><img src="/images/guest/sponcors/amazon.svg" alt="Clients"></div>
-                            <div class="col"><img src="/images/guest/sponcors/netflix.svg" alt="Clients"></div>
-                            <div class="col"><img src="/images/guest/sponcors/google.svg" alt="Clients"></div>
-                            <div class="col"><img src="/images/guest/sponcors/linkedin.svg" alt="Clients"></div>
+                            <div class="col"><img src="/images/landing/sponcors/amazon.svg" alt="Clients"></div>
+                            <div class="col"><img src="/images/landing/sponcors/netflix.svg" alt="Clients"></div>
+                            <div class="col"><img src="/images/landing/sponcors/google.svg" alt="Clients"></div>
+                            <div class="col"><img src="/images/landing/sponcors/linkedin.svg" alt="Clients"></div>
                         </div>
                     </div>
                 </div>
@@ -63,9 +63,9 @@
                     <div class="row justify-content-end">
                         <div class="col-md-7">
                             <div class="position-relative">
-                                <img src="/images/guest/browser.jpg" alt="Image" class="position-relative op-0">
-                                <img src="/images/guest/hero-iphone-2.png" alt="Image" width="220" class="position-absolute mb-5" style="right: 0; bottom: -50px; opacity: 0;" data-200-start="transform: translate(0px, 0px); opacity: 0;" data-top-bottom="transform: translate(-260px, -60px); opacity: 1;">
-                                <img src="/images/guest/hero-iphone.png" alt="Image" width="220" class="position-absolute mb-5" style="right: 0; bottom: -60px;" data-0="transform: translate(0px, 0px) scale(1); bottom: -60px;" data-top-bottom="transform: translate(-60px, 60px) scale(1.3); bottom: 63px;">
+                                <img src="/images/landing/browser.jpg" alt="Image" class="position-relative op-0">
+                                <img src="/images/landing/hero-iphone-2.png" alt="Image" width="220" class="position-absolute mb-5" style="right: 0; bottom: -50px; opacity: 0;" data-200-start="transform: translate(0px, 0px); opacity: 0;" data-top-bottom="transform: translate(-260px, -60px); opacity: 1;">
+                                <img src="/images/landing/hero-iphone.png" alt="Image" width="220" class="position-absolute mb-5" style="right: 0; bottom: -60px;" data-0="transform: translate(0px, 0px) scale(1); bottom: -60px;" data-top-bottom="transform: translate(-60px, 60px) scale(1.3); bottom: 63px;">
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
             <div class="row gutter-custom justify-content-center" style="--custom-gutter: 80px;">
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/guest/services/3.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/3.jpg" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
                             <h2 class="text-transform-none fw-semibold h5 mb-3">Powerful PlugIns</h2>
                             <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
@@ -102,7 +102,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/guest/services/2.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/2.jpg" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
                             <h2 class="text-transform-none fw-semibold h5 mb-3">eCommerce Integrated</h2>
                             <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
@@ -112,7 +112,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/guest/services/1.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/1.jpg" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
                             <h2 class="text-transform-none fw-semibold h5 mb-3">Social Media Integrated</h2>
                             <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/guest/services/4.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/4.jpg" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
                             <h2 class="text-transform-none fw-semibold h5 mb-3">Pre-made Niche Demos</h2>
                             <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
@@ -132,7 +132,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/guest/services/4.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/4.jpg" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
                             <h2 class="text-transform-none fw-semibold h5 mb-3">Pre-made Niche Demos</h2>
                             <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
@@ -142,7 +142,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/guest/services/4.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/4.jpg" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
                             <h2 class="text-transform-none fw-semibold h5 mb-3">Pre-made Niche Demos</h2>
                             <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
@@ -157,12 +157,12 @@
         <div class="row g-0">
             <div class="col-md-6 position-sticky m-0 vh-40 min-vh-md-100 top-0 z-1 overflow-hidden">
                 <!-- Sticky Image Target -->
-                <div id="list-example" class="w-100 h-100" style="background: url('/images/guest/sticky-section/video-poster.jpg') no-repeat center center / cover;">
+                <div id="list-example" class="w-100 h-100" style="background: url('/images/landing/sticky-section/video-poster.jpg') no-repeat center center / cover;">
                     <!-- List Item 1 -->
                     <div class="list-group-item active" id="list-item-1-target">
                         <div class="video-wrap no-placeholder">
-                            <video id="slide-video" poster="/images/guest/sticky-section/video-poster.jpg" preload="auto" loop autoplay muted playsinline>
-                                <source src='/images/guest/sticky-section/video.mp4' type='video/mp4'>
+                            <video id="slide-video" poster="/images/landing/sticky-section/video-poster.jpg" preload="auto" loop autoplay muted playsinline>
+                                <source src='/images/landing/sticky-section/video.mp4' type='video/mp4'>
                             </video>
                         </div>
                     </div>
@@ -171,19 +171,19 @@
                         <div class="fslider position-absolute h-100 w-100 top-0 start-0" data-loop="true" data-pause="5000" data-animation="fade">
                             <div class="flexslider h-100">
                                 <div class="slider-wrap">
-                                    <div class="slide" style="background: url('/images/guest/sticky-section/2-1.jpg') center right; background-size: cover; height: 100% !important;"></div>
-                                    <div class="slide" style="background: url('/images/guest/sticky-section/2-2.jpg') center right; background-size: cover; height: 100% !important;"></div>
+                                    <div class="slide" style="background: url('/images/landing/sticky-section/2-1.jpg') center right; background-size: cover; height: 100% !important;"></div>
+                                    <div class="slide" style="background: url('/images/landing/sticky-section/2-2.jpg') center right; background-size: cover; height: 100% !important;"></div>
                                 </div>
                             </div>
                         </div>
                         <a href="https://vimeo.com/87766904" data-lightbox="iframe" class="bi-play-fill icon-stacked transform-ts bg-white h-bg-light rounded-circle text-dark h1 text-center ps-1 shadow z-9 m-0"></a>
                     </div>
                     <!-- List Item 3 -->
-                    <div class="list-group-item" id="list-item-3-target" style="background-image: url('/images/guest/sticky-section/3.jpg');">
-                        <a href="/images/guest/sticky-section/3.jpg" data-lightbox="image" class="bi-image icon-stacked transform-ts bg-white h-bg-light rounded-circle text-dark h1 text-center shadow m-0"></a>
+                    <div class="list-group-item" id="list-item-3-target" style="background-image: url('/images/landing/sticky-section/3.jpg');">
+                        <a href="/images/landing/sticky-section/3.jpg" data-lightbox="image" class="bi-image icon-stacked transform-ts bg-white h-bg-light rounded-circle text-dark h1 text-center shadow m-0"></a>
                     </div>
                     <!-- List Item 4 -->
-                    <div class="list-group-item" id="list-item-4-target" style="background-image: url('/images/guest/sticky-section/1.jpg');">
+                    <div class="list-group-item" id="list-item-4-target" style="background-image: url('/images/landing/sticky-section/1.jpg');">
                         <a href="https://1.envato.market/c/1309643/480739/4415?u=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F9228123" target="_blank" class="bi-link icon-stacked transform-ts bg-white h-bg-light rounded-circle text-dark h1 text-center shadow m-0"></a>
                     </div>
                 </div>
@@ -289,7 +289,7 @@
         </div>
     </div>
     <div class="section bg-color bg-opacity-10 py-0 mt-lg-4 mt-0">
-        <div class="position-absolute top-0 end-0 w-100 h-100" style="background: url('/images/guest/section-bg.svg') no-repeat right 70%; background-size: 100%;"></div>
+        <div class="position-absolute top-0 end-0 w-100 h-100" style="background: url('/images/landing/section-bg.svg') no-repeat right 70%; background-size: 100%;"></div>
         <div class="container">
             <div class="row align-items-end justify-content-center justify-content-lg-between">
                 <div class="col-lg-5 py-lg-6 py-4">
@@ -300,27 +300,27 @@
                         <div class="d-flex flex-column me-2">
                             <a href="#" class="button button-xlarge rounded-pill button-dark d-flex align-items-center justify-content-center py-3 bg-dark h-op-09 m-0 mb-3">
                                 <!-- <i class="fa-brands fa-app-store-ios fs-1 me-4" style="color:#48aef7"></i> -->
-                                <img src="/images/guest/appstore.svg" alt="Store Logo" width="45" height="45">
+                                <img src="/images/landing/appstore.svg" alt="Store Logo" width="45" height="45">
                                 <div class="d-flex flex-column ms-3">
                                     <small class="fw-normal text-smaller lh-1 mb-2 op-06">Get it on the</small>
                                     <span class="h5 mb-0 fw-semibold text-white lh-1">Apple Store</span>
                                 </div>
                             </a>
                             <a href="#" class="button button-xlarge rounded-pill button-dark d-flex align-items-center justify-content-center py-3 bg-dark h-op-09 m-0">
-                                <img src="/images/guest/playstore.svg" alt="Store Logo" width="45" height="45">
+                                <img src="/images/landing/playstore.svg" alt="Store Logo" width="45" height="45">
                                 <div class="d-flex flex-column ms-3">
                                     <small class="fw-normal text-smaller lh-1 mb-2 op-06">Get it on the</small>
                                     <span class="h5 mb-0 fw-semibold text-white lh-1">Google Store</span>
                                 </div>
                             </a>
                         </div>
-                        <img src="/images/guest/qr.svg" alt="Image" height="170" class="bg-white border p-2 ms-4">
+                        <img src="/images/landing/qr.svg" alt="Image" height="170" class="bg-white border p-2 ms-4">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-8 mt-6 mt-sm-0">
                     <div class="d-flex align-items-end">
-                        <img src="/images/guest/phone-2-half.png" class="fast" alt="Image" style="width: 300px;">
-                        <img src="/images/guest/phone-1-half.png" class="fast" alt="Image" style="width: 370px; transform: translateX(-100px);">
+                        <img src="/images/landing/phone-2-half.png" class="fast" alt="Image" style="width: 300px;">
+                        <img src="/images/landing/phone-1-half.png" class="fast" alt="Image" style="width: 370px; transform: translateX(-100px);">
                     </div>
                 </div>
             </div>
@@ -372,4 +372,4 @@
             <a href="#" class="button button-xlarge px-5 rounded-pill text-white bg-color h-op-09 mb-5">Contact Us <i class="bi-arrow-right me-0 ms-1"></i></a>
         </div>
     </div>
-</x-guest-layout>
+</x-landing-layout>
