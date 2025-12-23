@@ -55,7 +55,7 @@
                             <li><a href="#">Careers</a></li>
                             <li><a href="#">Privacy &amp; Policy</a></li>
                             <li><a href="#">Licence</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                         </ul>
 
                     </div>

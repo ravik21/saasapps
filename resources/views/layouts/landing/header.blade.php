@@ -6,14 +6,14 @@
                 <!-- Logo
                 ============================================= -->
                 <div id="logo" class="me-lg-5">
-                    <a href="#" ><img src="/images/logo.svg" alt="Canvas Logo" class="py-3"></a>
+                    <a href="/" ><img src="/images/logo.svg" alt="Canvas Logo" class="py-3"></a>
                 </div><!-- #logo end -->
 
                 <div class="header-misc">
 
                     <!-- Top Search
                     ============================================= -->
-                    <a href="#" class="button bg-white rounded-pill text-dark h-shadow-sm box-shadow">Contact Us <i class="bi-arrow-right me-0 ms-1"></i></a>
+                    <a href="{{ route('contact-us') }}" class="button bg-white rounded-pill text-dark h-shadow-sm box-shadow">Contact Us <i class="bi-arrow-right me-0 ms-1"></i></a>
 
                 </div>
 
