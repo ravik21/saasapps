@@ -23,11 +23,12 @@
                             register</span>
                         </div>
                         <div class="mt-3 w-100">
+                            <x-auth-session-status class="mb-4" :status="session('status')" />
                             <form class="form-horizontal" id="validateForm" method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <fieldset>
                                     <!-- full name-->
-                                    <div class="mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="fullName" class="form-label">{{ __('Name') }}</label>
                                         <div class="input-group ">
                                             <span class="input-group-text bg-transparent">
@@ -50,7 +51,7 @@
                                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                     </div>
                                     <!--=== email ===-->
-                                    <div class="mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="email" class="form-label">{{ __('Email') }}</label>
                                         <div class="input-group">
                                             <span class="input-group-text bg-transparent">
@@ -72,7 +73,7 @@
                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                     </div>
                                     <!-- Password input-->
-                                    <div class="mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="password" class="form-label">{{__('Password')}}</label>
                                         <div class="input-group">
                                             <span class="input-group-text bg-transparent">
@@ -97,7 +98,7 @@
                                         </div>
                                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="password_confirmation" class="form-label">{{__('Confirm Password')}}</label>
                                         <div class="input-group">
                                             <span class="input-group-text bg-transparent">
