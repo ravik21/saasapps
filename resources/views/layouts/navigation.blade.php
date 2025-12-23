@@ -1,6 +1,11 @@
 <header class="px-xl-5 px-lg-4 px-3 sticky-top  top-0 top-0" data-bs-theme="none">
     <div
         class="d-flex flex-wrap justify-content-start justify-content-sm-between align-items-center py-sm-2 w-100">
+            @isset($header)
+                <div>
+                    {{ $header }}
+                </div>
+            @endisset
         <ul class="header-menu flex-grow-1 justify-content-between justify-content-sm-end">
             <li class="nav-item dropdown px-md-1 d-none d-md-inline-flex">
                 <a class="dropdown-toggle gray-6" href="#" role="button" data-bs-toggle="dropdown"
