@@ -6,7 +6,7 @@
                 <!-- Logo
                 ============================================= -->
                 <div id="logo" class="me-lg-5">
-                    <a href="/" ><img src="/images/logo.svg" alt="Canvas Logo" class="py-3"></a>
+                    <a href="/" ><img src="/images/logo.svg" alt="SaasApps Logo" class="py-3"></a>
                 </div><!-- #logo end -->
 
                 <div class="header-misc">
@@ -28,9 +28,9 @@
                 <nav class="primary-menu me-lg-auto">
 
                     <ul class="menu-container">
-                        <li class="menu-item"><a class="menu-link" href="index.html"><div>About Us</div></a></li>
-                        <li class="menu-item"><a class="menu-link" href="index.html"><div>Blog</div></a></li>
-                        <li class="menu-item"><a class="menu-link" href="index.html"><div>Help &amp; Supports</div></a></li>
+                        <li class="menu-item"><a class="menu-link {{ Route::is('about-us') ? 'active' : '' }}" href="{{ route('about-us') }}"><div>About Us</div></a></li>
+                        <li class="menu-item"><a class="menu-link {{ Route::is('blog') ? 'active' : '' }}" href="{{ route('blog') }}"><div>Blog</div></a></li>
+                        <li class="menu-item"><a class="menu-link {{ Route::is('help-supports') ? 'active' : '' }}" href="{{ route('help-supports') }}"><div>Help &amp; Supports</div></a></li>
                     </ul>
 
                 </nav><!-- #primary-menu end -->

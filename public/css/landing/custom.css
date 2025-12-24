@@ -5,3 +5,11 @@
 	Overwriting Default Theme Styles for Better Handling Updates
 -----------------------------------------------------------------*/
 
+.mt-200 {
+	margin-top: 200px;
+}
+
+.menu-link.active {
+	color: #8A9A5B;
+	font-weight: 600;
+}
