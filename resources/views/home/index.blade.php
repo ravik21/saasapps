@@ -62,60 +62,60 @@
             <div class="row gutter-custom justify-content-center" style="--custom-gutter: 80px;">
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/landing/services/3.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/1.png" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
-                            <h2 class="text-transform-none fw-semibold h5 mb-3">Powerful PlugIns</h2>
-                            <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
+                            <h2 class="text-transform-none fw-semibold h5 mb-3">Custom Software Development</h2>
+                            <p class="mb-4">Custom software solutions tailored to your business needs.</p>
                             <a href="#" class="button button-small button-light button-border border-color h-bg-color rounded-pill text-dark m-0">Learn More <i class="bi-arrow-right me-0 ms-1"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/landing/services/2.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/2.png" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
-                            <h2 class="text-transform-none fw-semibold h5 mb-3">eCommerce Integrated</h2>
-                            <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
+                            <h2 class="text-transform-none fw-semibold h5 mb-3">Mobile App Development (iOS & Android)</h2>
+                            <p class="mb-4">Developing seamless mobile applications for both iOS and Android platforms.</p>
                             <a href="#" class="button button-small button-light button-border border-color h-bg-color rounded-pill text-dark m-0">Learn More <i class="bi-arrow-right me-0 ms-1"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/landing/services/1.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/3.png" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
-                            <h2 class="text-transform-none fw-semibold h5 mb-3">Social Media Integrated</h2>
-                            <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
+                            <h2 class="text-transform-none fw-semibold h5 mb-3">AI & Machine Learning Solutions</h2>
+                            <p class="mb-4">Leveraging artificial intelligence and machine learning to drive innovation and efficiency.</p>
                             <a href="#" class="button button-small button-light button-border border-color h-bg-color rounded-pill text-dark m-0">Learn More <i class="bi-arrow-right me-0 ms-1"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/landing/services/4.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/4.png" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
-                            <h2 class="text-transform-none fw-semibold h5 mb-3">Pre-made Niche Demos</h2>
-                            <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
+                            <h2 class="text-transform-none fw-semibold h5 mb-3">Website & E-Commerce Development</h2>
+                            <p class="mb-4">Building robust websites and e-commerce platforms to enhance your online presence.</p>
                             <a href="#" class="button button-small button-light button-border border-color h-bg-color rounded-pill text-dark m-0">Learn More <i class="bi-arrow-right me-0 ms-1"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/landing/services/4.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/5.png" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
-                            <h2 class="text-transform-none fw-semibold h5 mb-3">Pre-made Niche Demos</h2>
-                            <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
+                            <h2 class="text-transform-none fw-semibold h5 mb-3">SaaS & Platform Development</h2>
+                            <p class="mb-4">Developing scalable SaaS solutions and platforms to meet your business requirements.</p>
                             <a href="#" class="button button-small button-light button-border border-color h-bg-color rounded-pill text-dark m-0">Learn More <i class="bi-arrow-right me-0 ms-1"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="card border-0">
-                        <img src="/images/landing/services/4.jpg" alt="card img" class="rounded-5 mb-3">
+                        <img src="/images/landing/services/6.png" alt="card img" class="rounded-5 mb-3">
                         <div class="card-body">
-                            <h2 class="text-transform-none fw-semibold h5 mb-3">Pre-made Niche Demos</h2>
-                            <p class="mb-4">Powerful Layout with Responsive functionality that can be adapted.</p>
+                            <h2 class="text-transform-none fw-semibold h5 mb-3">Cloud & DevOps Services</h2>
+                            <p class="mb-4">Providing cloud infrastructure and DevOps solutions to optimize your operations.</p>
                             <a href="#" class="button button-small button-light button-border border-color h-bg-color rounded-pill text-dark m-0">Learn More <i class="bi-arrow-right me-0 ms-1"></i></a>
                         </div>
                     </div>
