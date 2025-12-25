@@ -9,7 +9,12 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="/css/app/style.min.css">
+
+        <!-- Cropper.js -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
+
         <link rel="stylesheet" href="/css/custom.css">
+
         <!-- Scripts -->
         @vite(['resources/js/app.js'])
     </head>
@@ -23,10 +28,16 @@
                 </div>
             </div>
         </main>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/active-class.js"></script>
+
+        <!-- Template page js -->
+        <script src="/js/main.js" defer></script>
+
+        <!-- Cropper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+
+        @stack('scripts')
     </body>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/active-class.js"></script>
-    <!-- Template page js -->
-    <script src="/js/main.js" defer></script>
 </html>

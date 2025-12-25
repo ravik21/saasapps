@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\User;
 
@@ -37,6 +38,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'avatar' => 'nullable|string',
         ]);
 
         $user = User::create([
@@ -44,6 +46,19 @@ class UserController extends Controller
                     'email' => $request->email,
                     'password' => bcrypt($request->password),
                 ]);
+
+        if ($request->avatar) {
+            $image = $request->avatar;
+            $image = str_replace('data:image/png;base64,', '', $image);
+            $image = base64_decode($image);
+
+            $fileName = 'avatars/'.uniqid().'.png';
+            Storage::disk('public')->put($fileName, $image);
+
+            $user->avatar = '/storage/'.$fileName;
+
+            $user->save();
+        }
 
         $user->syncRoles($request->role ? [$request->role] : []);
 
@@ -80,6 +95,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
             'password' => 'nullable|string|min:8|confirmed',
+            'avatar' => 'nullable|string',
         ]);
 
         $user->name = $request->name;
@@ -89,9 +105,20 @@ class UserController extends Controller
             $user->password = bcrypt($request->password);
         }
 
-        $user->syncRoles($request->role ? [$request->role] : []);
+        if ($request->avatar) {
+            $image = $request->avatar;
+            $image = str_replace('data:image/png;base64,', '', $image);
+            $image = base64_decode($image);
+
+            $fileName = 'avatars/'.uniqid().'.png';
+            Storage::disk('public')->put($fileName, $image);
+
+            $user->avatar = '/storage/'.$fileName;
+        }
 
         $user->save();
+
+        $user->syncRoles($request->role ? [$request->role] : []);
 
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }

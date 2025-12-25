@@ -106,7 +106,7 @@
         <div class="row g-0 align-items-center mt-2">
             <div class="col text-truncate ">
                 <div class="d-flex align-items-center profile">
-                    <img src="/images/landing/avatar.svg" alt="Avatar" class="rounded-circle avatar">
+                    <img src="{{ Auth::user()->avatar ?? '/images/landing/avatar.svg' }}" alt="Avatar" class="rounded-circle avatar">
                     <div class="ms-3 profile-text">
                         <a href="#" title="" class="small">{{ Auth::user()->name }}</a>
                         <p class="mb-0 small">{{ Auth::user()->email }}</p>
