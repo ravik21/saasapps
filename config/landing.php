@@ -13,31 +13,49 @@ return [
     */
 
     'services' => [
-        'Web Development',
-        'API Development',
-        'App Development',
-        'AI Integration',
-        'Cloud Solutions',
-        'Data Analytics',
+        'Custom Software Development',
+        'Mobile App Development (iOS & Android)',
+        'AI & Machine Learning Solutions',
+        'Website & E-Commerce Development',
+        'SaaS & Platform Development',
+        'Cloud & DevOps Services',
     ],
 
-    'features' => [
-        [
-            'icon' => 'fa-solid fa-cloud',
-            'title' => 'Cloud Integration',
-            'description' => 'Seamlessly integrate with cloud services.',
+    'technologies' => [
+        'Frontend Technologies' => [
+            ['name' => 'React', 'icon' => 'devicon-react-original colored'],
+            ['name' => 'Vue.js', 'icon' => 'devicon-vuejs-plain colored'],
+            ['name' => 'Svelte', 'icon' => 'devicon-svelte-plain colored'],
+            ['name' => 'Livewire', 'icon' => 'devicon-livewire-plain colored'],
+            ['name' => 'Inertia.js', 'icon' => 'devicon-inertiajs-plain colored'],
         ],
-        [
-            'icon' => 'fa-solid fa-shield-alt',
-            'title' => 'Secure',
-            'description' => 'Top-notch security for your data.',
+
+        'Backend Technologies' => [
+            ['name' => 'PHP', 'icon' => 'devicon-php-plain colored'],
+            ['name' => 'Node.js', 'icon' => 'devicon-nodejs-plain colored'],
+            ['name' => 'Laravel', 'icon' => 'devicon-laravel-original colored'],
+            ['name' => 'Python', 'icon' => 'devicon-python-plain colored'],
         ],
-        [
-            'icon' => 'fa-solid fa-cogs',
-            'title' => 'Customizable',
-            'description' => 'Tailor the platform to your needs.',
+
+        'AI & ML Tools' => [
+            ['name' => 'OpenAI GPT', 'icon' => 'devicon-python-plain colored'],
+        ],
+
+        'Databases & Cloud' => [
+            ['name' => 'MySQL', 'icon' => 'devicon-mysql-plain colored'],
+            ['name' => 'PostgreSQL', 'icon' => 'devicon-postgresql-plain colored'],
+            ['name' => 'Redis', 'icon' => 'devicon-redis-plain colored'],
+            ['name' => 'Cloud SQL', 'icon' => 'devicon-googlecloud-plain colored'],
+        ],
+
+        'DevOps & CI/CD' => [
+            ['name' => 'Docker', 'icon' => 'devicon-docker-plain colored'],
+            ['name' => 'AWS', 'icon' => 'devicon-amazonwebservices-plain colored'],
+            ['name' => 'Google Cloud', 'icon' => 'devicon-googlecloud-plain colored'],
+            ['name' => 'CI/CD', 'icon' => 'devicon-git-plain colored'],
         ],
     ],
+
 
     'testimonials' => [
         [

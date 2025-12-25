@@ -123,7 +123,48 @@
             </div>
         </div>
     </div>
-    <div class="section section-showcase-sticky sticky-top p-0 mb-0 overflow-visible">
+    <div class="section my-0 bg-light">
+        <div class="container py-lg-5">
+            <div class="text-center mb-lg-6">
+                <h2 class="mb-1 display-6 fw-bold">
+                    Our 
+                    <span class="circle-draw">
+                        <span>Technology</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="510" height="119" viewBox="0 0 510 119">
+                            <path d="M98.269,102.723c191.518,50.4,433.149-14.254,403.627-69.23C469.212-.827,218,3,94,25.5S-30.549,100.9,109.5,115c138.587,5.83,313.427-3.644,362.5-34.5,30.5-19.177,82.988-57.915-47-74.937" transform="translate(-0.645 -3.32)" fill="none" stroke="var(--cnvs-themecolor)" stroke-linecap="round" stroke-width="4">
+                        </svg>
+                    </span>
+                    Stack
+                </h2>
+                <h4 class="fw-normal">Modern, scalable & production-ready technologies</h4>
+            </div>
+            <div class="clear"></div>
+            <div class="overflow-hidden">
+                <div class="row g-4">
+                    @foreach(config('landing.technologies') as $category => $items)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h2 class="text-transform-none fw-semibold h5 mb-3">
+                                        {{ $category }}
+                                    </h2>
+                                    <ul class="list-unstyled">
+                                        @foreach($items as $tech)
+                                            <li class="d-flex align-items-center mb-3">
+                                                <i class="{{ $tech['icon'] }} fs-3 me-3"></i>
+                                                <span class="fw-medium">{{ $tech['name'] }}</span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-showcase-sticky sticky-top p-0 mb-0 mt-0 overflow-visible">
         <div class="row g-0">
             <div class="col-md-6 position-sticky m-0 vh-40 min-vh-md-100 top-0 z-1 overflow-hidden">
                 <!-- Sticky Image Target -->

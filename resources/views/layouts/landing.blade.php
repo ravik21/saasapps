@@ -26,6 +26,9 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/landing/custom.css">
 
+        <!-- Devicons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
         <!-- Scripts -->
         @vite(['resources/js/app.js'])
     </head>
