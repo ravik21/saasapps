@@ -4,7 +4,7 @@
             <div class="row col-mb-50">
                 <div class="col-md-4">
                     <div class="widget">
-                        <img src="/images/logo.svg" alt="Image" class="footer-logo" height="60">
+                        <img src="/images/logo.png" alt="Image" class="footer-logo" height="60">
                         <p>We believe in Simple, Creative, Premium Quality  &amp; Flexible Design Standards with.</p>
                     </div>
                 </div>

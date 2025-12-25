@@ -6,7 +6,7 @@
                 <!-- Logo
                 ============================================= -->
                 <div id="logo" class="me-lg-5">
-                    <a href="/" ><img src="/images/logo.svg" alt="SaasApps Logo" class="py-3"></a>
+                    <a href="/" ><img src="/images/logo.png" alt="SaasApps Logo" class="py-3"></a>
                 </div><!-- #logo end -->
 
                 <div class="header-misc">

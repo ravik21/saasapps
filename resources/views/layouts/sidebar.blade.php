@@ -7,7 +7,7 @@
         <div class="d-flex align-items-center mb-2 logo-info">
             <div class="d-flex align-items-center   ">
                 <a href="{{ route('dashboard') }}" title="logo" class="brand-icon ">
-                    <img id="LogoLg" src="/images/logo.svg" alt="SaaSApps" class="h-44">
+                    <img id="LogoLg" src="/images/logo.png" alt="SaaSApps" class="h-44">
                     <img id="LogoSm" src="/images/logo-sm.png" alt="SaaSApps" class="h-44 d-none">
                 </a>
             </div>
