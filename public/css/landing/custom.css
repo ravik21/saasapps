@@ -15,7 +15,7 @@
 }
 
 .integration-section .icon svg{
-	width: 64px;
+	max-width: 40%;
 	height: 64px;
 	margin-bottom: 16px;
 }
