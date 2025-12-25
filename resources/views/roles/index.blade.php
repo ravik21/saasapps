@@ -22,7 +22,6 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Guard</th>
                                 <th scope="col">Created At</th>
@@ -32,7 +31,6 @@
                         <tbody>
                             @foreach ($roles as $role)
                                 <tr>
-                                    <td>{{ $role->id }}</td>
                                     <td>{{ $role->name }}</td>
                                     <td>{{ $role->guard_name }}</td>
                                     <td>{{ $role->created_at->format('Y-m-d') }}</td>

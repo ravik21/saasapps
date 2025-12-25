@@ -22,7 +22,6 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Guard</th>
                                 <th scope="col">Created At</th>
@@ -32,7 +31,6 @@
                         <tbody>
                             @foreach ($permissions as $permission)
                                 <tr>
-                                    <td>{{ $permission->id }}</td>
                                     <td>{{ $permission->name }}</td>
                                     <td>{{ $permission->guard_name }}</td>
                                     <td>{{ $permission->created_at->format('Y-m-d') }}</td>

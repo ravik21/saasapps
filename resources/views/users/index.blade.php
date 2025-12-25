@@ -22,7 +22,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">ID</th>
+                                <th scope="col">Avatar</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Role</th>
@@ -33,7 +33,7 @@
                         <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
+                                    <td><img src="{{ $user->avatar ?? '/images/landing/avatar.svg' }}" alt="Avatar" class="rounded-circle avatar"></td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>
