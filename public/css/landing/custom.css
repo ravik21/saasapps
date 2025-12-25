@@ -13,3 +13,9 @@
 	color: #8A9A5B;
 	font-weight: 600;
 }
+
+.integration-section .icon svg{
+	width: 64px;
+	height: 64px;
+	margin-bottom: 16px;
+}

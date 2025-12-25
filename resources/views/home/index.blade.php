@@ -240,6 +240,45 @@
             </div>
         </div>
     </div>
+    <div class="section my-0 bg-light integration-section">
+        <div class="container py-lg-5">
+            <div class="text-center mb-lg-6">
+                <h2 class="mb-1 display-6 fw-bold">
+                    <span class="circle-draw">
+                        <span>Intigrations</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="510" height="119" viewBox="0 0 510 119">
+                            <path d="M98.269,102.723c191.518,50.4,433.149-14.254,403.627-69.23C469.212-.827,218,3,94,25.5S-30.549,100.9,109.5,115c138.587,5.83,313.427-3.644,362.5-34.5,30.5-19.177,82.988-57.915-47-74.937" transform="translate(-0.645 -3.32)" fill="none" stroke="var(--cnvs-themecolor)" stroke-linecap="round" stroke-width="4">
+                        </svg>
+                    </span>
+                </h2>
+                <h4 class="fw-normal"></h4>
+            </div>
+            <div class="clear"></div>
+            <div class="overflow-hidden">
+                <div class="row g-4">
+                    @foreach (config('landing.integrations') as $integration)
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="card h-100 shadow-sm border-0 integration-card text-center">
+                                <div class="card-body">
+                                    <div class="icon">
+                                        {!! $integration['svg'] !!}
+                                    </div>
+
+                                    <h6 class="fw-semibold">
+                                        {{ $integration['name'] }}
+                                    </h6>
+
+                                    <span class="badge bg-light text-dark">
+                                        {{ $integration['category'] }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="section my-0 bg-transparent">
         <div class="container py-lg-5">
             <div class="row justify-content-center gy-5" style="--bs-gutter-x: 60px">
@@ -299,7 +338,7 @@
             </div>
         </div>
     </div>
-    <div class="section bg-color bg-opacity-10 py-0 mt-lg-4 mt-0">
+    <div class="section bg-color bg-opacity-10 py-0 mt-0">
         <div class="position-absolute top-0 end-0 w-100 h-100" style="background: url('/images/landing/section-bg.svg') no-repeat right 70%; background-size: 100%;"></div>
         <div class="container">
             <div class="row align-items-end justify-content-center justify-content-lg-between">
