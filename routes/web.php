@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('roles', App\Http\Controllers\RoleController::class);
         Route::resource('permissions', App\Http\Controllers\PermissionController::class);
     });
+
+    Route::resource('projects', App\Http\Controllers\ProjectController::class);
 });
 
 require __DIR__.'/auth.php';

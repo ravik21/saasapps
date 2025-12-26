@@ -26,7 +26,8 @@ class UserAndPermissionSeeder extends Seeder
         $permissions = [
             'manage users',
             'manage roles',
-            'manage permissions'
+            'manage permissions',
+            'manage projects',
         ];
 
         foreach ($permissions as $permission) {

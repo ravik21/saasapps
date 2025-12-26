@@ -7,13 +7,18 @@
                 ============================================= -->
                 <div id="logo" class="me-lg-5">
                     <a href="/" ><img src="/images/logo.png" alt="SaasApps Logo" class="py-3"></a>
-                </div><!-- #logo end -->
+                </div>
+                <!-- #logo end -->
 
                 <div class="header-misc">
 
                     <!-- Top Search
                     ============================================= -->
                     <a href="{{ route('contact-us') }}" class="button bg-white rounded-pill text-dark h-shadow-sm box-shadow">Contact Us <i class="bi-arrow-right me-0 ms-1"></i></a>
+                    @if(Auth::check())
+                        <a href="{{ route('dashboard') }}" class="button bg-white rounded-pill text-dark h-shadow-sm box-shadow ms-3">Dashboard <i class="bi-arrow-right me-0 ms-1"></i></a>
+                    @endif
+                    <!-- #top-search end -->
 
                 </div>
 
@@ -26,15 +31,13 @@
                 <!-- Primary Navigation
                 ============================================= -->
                 <nav class="primary-menu me-lg-auto">
-
                     <ul class="menu-container">
                         <li class="menu-item"><a class="menu-link {{ Route::is('about-us') ? 'active' : '' }}" href="{{ route('about-us') }}"><div>About Us</div></a></li>
                         <li class="menu-item"><a class="menu-link {{ Route::is('blog') ? 'active' : '' }}" href="{{ route('blog') }}"><div>Blog</div></a></li>
                         <li class="menu-item"><a class="menu-link {{ Route::is('help-supports') ? 'active' : '' }}" href="{{ route('help-supports') }}"><div>Help &amp; Supports</div></a></li>
                     </ul>
-
-                </nav><!-- #primary-menu end -->
-
+                </nav>
+                <!-- #primary-menu end -->
             </div>
         </div>
     </div>
