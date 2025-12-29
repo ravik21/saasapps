@@ -30,4 +30,14 @@ class HomeController extends Controller
     {
         return view('home.help-supports');
     }
+
+    public function features()
+    {
+        return view('home.features');
+    }
+
+    public function cases()
+    {
+        return view('home.cases');
+    }
 }

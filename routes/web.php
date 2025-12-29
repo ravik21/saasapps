@@ -8,6 +8,8 @@ Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contactU
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'aboutUs'])->name('about-us');
 Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
 Route::get('/help-supports', [App\Http\Controllers\HomeController::class, 'helpSupports'])->name('help-supports');
+Route::get('/features', [App\Http\Controllers\HomeController::class, 'features'])->name('features');
+Route::get('/cases', [App\Http\Controllers\HomeController::class, 'cases'])->name('cases');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
