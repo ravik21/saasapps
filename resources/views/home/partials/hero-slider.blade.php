@@ -3,8 +3,8 @@
         style="--speed: 3.75; --count: {{ count(config('landing.technologies')) }};">
         @foreach (config('landing.technologies') as $i => $technology)
             <li style="--index: {{ $i }};" class="marquee-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
-                    {!! $technology !!}
+                <a href="{{ $technology['url'] }}" target="_blank" area-label="{{ $technology['name'] }}" rel="noopener noreferrer">
+                    {!! $technology['icon'] !!}
                 </a>
             </li>
         @endforeach

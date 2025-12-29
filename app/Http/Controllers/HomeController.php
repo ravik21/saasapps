@@ -31,9 +31,9 @@ class HomeController extends Controller
         return view('home.help-supports');
     }
 
-    public function features()
+    public function services()
     {
-        return view('home.features');
+        return view('home.services');
     }
 
     public function cases()

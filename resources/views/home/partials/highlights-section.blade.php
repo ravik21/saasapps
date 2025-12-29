@@ -10,7 +10,7 @@
                         stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
                 </svg></span>
         </h2>
-        <a class="block text-button-lg hover:underline" href="/features">
+        <a class="block text-button-lg hover:underline" href="javaScript:void(0);">
             See all features →
         </a>
     </header>
