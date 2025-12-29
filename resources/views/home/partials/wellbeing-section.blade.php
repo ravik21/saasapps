@@ -1,6 +1,6 @@
 <section id=wellbeing
-    class="relative grid grid-cols-12 grid-rows-auto gap-x-6 gap-y-8 md:gap-y-18 py-16 md:py-28 border-t border-gray-300"
-    x-data="features(2)">
+    class="relative grid grid-cols-12 grid-rows-auto gap-x-6 gap-y-8 md:gap-y-18 py-16 md:py-28 border-t border-gray-300 feature-nav"
+    data-total-items="2">
     <h2 class="col-span-12 flex items-center text-heading-mobile-sm md:text-heading-md font-sans-heading">
         <svg class="mr-4 size-12 flex-shrink-0 rounded-12 p-2 bg-gray-900 text-gray-100" viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -21,22 +21,22 @@
         <ul class="sticky top-24 pb-24">
             <li>
                 <a href="features.html#satisfaction"
-                    class="block transition ease-out duration-150 relative w-full text-left py-3 text-heading-2xs font-sans-heading border-b"
-                    :class="{'border-gray-900 before:transition-colors before:ease-out before:duration-150 before:absolute before:h-4 before:w-px before:-bottom-[3px] before:right-[64px] before:bg-gray-900 before:rotate-[45deg] after:transition-colors after:ease-out after:duration-150 after:absolute after:h-4 after:w-px after:-bottom-[14px] after:right-[32px] after:bg-gray-900 after:-rotate-[45deg]': activeIndex == 0, 'text-gray-700 border-gray-100 hover:text-gray-800': activeIndex != 0 }">
+                    class="nav-link block transition ease-out duration-150 relative w-full text-left py-3 text-heading-2xs font-sans-heading border-b border-gray-900 before:transition-colors before:ease-out before:duration-150 before:absolute before:h-4 before:w-px before:-bottom-[3px] before:right-[64px] before:bg-gray-900 before:rotate-[45deg] after:transition-colors after:ease-out after:duration-150 after:absolute after:h-4 after:w-px after:-bottom-[14px] after:right-[32px] after:bg-gray-900 after:-rotate-[45deg]"
+                    data-target="satisfaction">
                     Satisfaction Surveys
                 </a>
             </li>
             <li>
                 <a href="features.html#development"
-                    class="block transition ease-out duration-150 relative w-full text-left py-3 text-heading-2xs font-sans-heading border-b"
-                    :class="{'border-gray-900 before:transition-colors before:ease-out before:duration-150 before:absolute before:h-4 before:w-px before:-bottom-[3px] before:right-[64px] before:bg-gray-900 before:rotate-[45deg] after:transition-colors after:ease-out after:duration-150 after:absolute after:h-4 after:w-px after:-bottom-[14px] after:right-[32px] after:bg-gray-900 after:-rotate-[45deg]': activeIndex == 1, 'text-gray-700 border-gray-100 hover:text-gray-800': activeIndex != 1 }">
+                    class="nav-link block transition ease-out duration-150 relative w-full text-left py-3 text-heading-2xs font-sans-heading border-b text-gray-700 border-gray-100 hover:text-gray-800"
+                    data-target="development">
                     Development Surveys
                 </a>
             </li>
         </ul>
     </nav>
     <ul class="col-span-12 lg:col-span-8 lg:col-start-5 space-y-20 md:space-y-32">
-        <li id="satisfaction" x-ref="item0" data-index="0">
+        <li id="satisfaction" class="content-section" data-index="0">
             <h3 class="mb-4 text-heading-xs md:text-heading-sm font-sans-heading">
                 Satisfaction Surveys. <span class="text-gray-700">Know your employees.</span>
             </h3>
@@ -520,7 +520,7 @@
             </ul>
         </li>
 
-        <li id="development" x-ref="item1" data-index="1">
+        <li id="development" class="content-section" data-index="1">
             <h3 class="mb-4 text-heading-xs md:text-heading-sm font-sans-heading">
                 Development Surveys. <span class="text-gray-700">Made simple.</span>
             </h3>
@@ -930,4 +930,74 @@
             </ul>
         </li>
     </ul>
-</section>
+</section></section>
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('#wellbeing.feature-nav');
+    if (!section) return;
+    
+    const navLinks = section.querySelectorAll('.nav-link');
+    const contentSections = section.querySelectorAll('.content-section');
+    
+    // Active classes for navigation links
+    const activeClasses = ['border-gray-900', 'before:bg-gray-900', 'after:bg-gray-900'];
+    const inactiveClasses = ['text-gray-700', 'border-gray-100'];
+    
+    function updateActiveNav(index) {
+        navLinks.forEach((link, i) => {
+            if (i === index) {
+                // Add active state
+                link.classList.add(...activeClasses);
+                link.classList.remove(...inactiveClasses);
+            } else {
+                // Add inactive state
+                link.classList.remove(...activeClasses);
+                link.classList.add(...inactiveClasses);
+            }
+        });
+    }
+    
+    // Intersection Observer for scroll-spy
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const index = parseInt(entry.target.dataset.index);
+                updateActiveNav(index);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all content sections
+    contentSections.forEach(section => {
+        observer.observe(section);
+    });
+    
+    // Handle navigation clicks
+    navLinks.forEach((link, index) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.dataset.target;
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Update active state immediately on click
+                updateActiveNav(index);
+            }
+        });
+    });
+});
+</script>
+@endpush

@@ -1,9 +1,8 @@
-@include('layouts.landing.cookies')
 <footer
     class="flex flex-col md:flex-row justify-between -mx-8 md:mx-0 px-8 md:px-0 py-12 md:pt-16 pb-20 border-t border-gray-300">
     <aside class="order-2 md:order-1 pt-8 md:pt-0 border-t-hairline md:border-none border-gray-400">
         <a href="/" aria-label="Home">
-            <img src="{{ asset('images/landing/logo.svg') }}" alt="SaaSApps Logo" class="w-28 md:w-64" />
+            <img src="{{ asset('images/logo.svg') }}" alt="SaaSApps Logo" class="w-28 md:w-64" />
         </a>
         <svg class="w-20 mt-8 md:mt-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 40">
             <defs>

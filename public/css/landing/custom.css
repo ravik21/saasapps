@@ -19,3 +19,8 @@
 	height: 64px;
 	margin-bottom: 16px;
 }
+
+.project-highlight {
+	background: #FFF;
+	width: 320px;
+}

@@ -10,6 +10,7 @@
 
     <!-- Core Style -->
     <link rel="stylesheet" href="/css/landing/app.css">
+    <link rel="stylesheet" href="/css/landing/custom.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -25,8 +26,6 @@
     {{ $slot }}
     @include('layouts.landing.footer')
 
-    <!-- JavaScripts -->
-    <script src="/js/landing/scripts.js"></script>
+    @stack('scripts')
 </body>
-
 </html>

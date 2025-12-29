@@ -1,4 +1,4 @@
-<section class="relative pt-20 pb-40 md:py-30" x-data="cta()">
+<section class="relative pt-20 pb-40 md:py-30" data-cta-modal>
     <h2
         class="relative max-w-100 mx-auto mb-4 md:mb-6 text-heading-mobile-sm md:text-heading-sm font-sans-heading text-center">
         Get your app in a <span class="relative">few<svg
@@ -12,7 +12,7 @@
     <p class="max-w-100 mx-auto mb-6 text-body-sm md:text-body-md text-gray-800 text-center">
         We love demonstrating our platform. Please don&#039;t hesitate to contact us if you&#039;re interested.
     </p>
-    <button x-data="ctaTrigger()" @click="open()"
+    <button data-cta-trigger
         class="relative w-full md:w-auto mx-auto flex items-center justify-center h-11 px-5 rounded-8 text-button-md text-brand-over-500 bg-brand-500 shadow-cta ring-hairline ring-gray-900/20">
         Book a demo
     </button>
@@ -71,18 +71,11 @@
             </svg>
         </span>
     </aside>
-    <aside x-show="isOpen" x-cloak x-transition:enter="transition ease-in duration-300"
-        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-        x-transition:leave="transition ease-out duration-150" x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-900/10 z-50" aria-hidden="true">
+    <aside data-modal-overlay class="fixed inset-0 bg-gray-900/10 z-50 opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true">
     </aside>
-    <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-200"
-        x-transition:enter-start="opacity-0 translate-y-6" x-transition:enter-end="opacity-100 translate-y-0"
-        x-transition:leave="transition ease-out duration-300" x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0 blur-sm scale-[0.97]"
-        class="fixed inset-0 flex items-center justify-center z-50">
-        <div @click.outside="close()"
-            class="max-w-198 min-h-90 md:min-h-110 mx-4 -mt-24 md:grid md:grid-cols-2 bg-gray-100 ring-hairline ring-gray-900/10 shadow-100 rounded-24 overflow-hidden">
+    <div data-modal-container class="fixed inset-0 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-all duration-200">
+        <div data-modal-content
+            class="max-w-198 min-h-90 md:min-h-110 mx-4 -mt-24 md:grid md:grid-cols-2 bg-gray-100 ring-hairline ring-gray-900/10 shadow-100 rounded-24 overflow-hidden translate-y-6 transition-transform duration-200">
             <aside class="hidden md:flex items-center bg-brand-100 border-r border-gray-400">
                 <svg class="w-full" viewBox="0 0 396 480" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1_6)">
@@ -176,8 +169,8 @@
                     </defs>
                 </svg>
             </aside>
-            <div x-show="!hasSubmitted" class="relative flex flex-col p-6 md:p-7 lg:p-10">
-                <button @click="close()"
+            <div data-form-container class="relative flex flex-col p-6 md:p-7 lg:p-10">
+                <button data-close-modal
                     class="absolute right-6 top-6 md:right-5 md:top-5 lg:right-8 lg:top-8 flex items-center justify-center">
                     <svg class="size-8 text-gray-600 hover:text-gray-800" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -191,7 +184,7 @@
                 <p class="text-body-sm text-gray-800">
                     Fill in your information, and we will contact you within a couple of hours.
                 </p>
-                <form class="relative mt-6 flex-1 flex flex-col" autocomplete="off" @submit.prevent="submitForm">
+                <form data-cta-form class="relative mt-6 flex-1 flex flex-col" autocomplete="off">
                     <div id="my_name_gN53WJcSVc3WmrIb_wrap" style="display: none" aria-hidden="true">
                         <input id="my_name_gN53WJcSVc3WmrIb" name="my_name_gN53WJcSVc3WmrIb" type="text" value=""
                             autocomplete="nope" tabindex="-1">
@@ -201,25 +194,24 @@
                     </div>
                     <input
                         class="block w-full px-4 py-2.5 border border-gray-400 rounded-8 placeholder-gray-700 text-body-sm"
-                        type="text" id="name" name="name" placeholder="Name *" x-model="formData.name" required
+                        type="text" id="name" name="name" placeholder="Name *" required
                         autocomplete="off" />
                     <input
                         class="block w-full mt-4 px-4 py-2.5 border border-gray-400 rounded-8 placeholder-gray-700 text-body-sm"
-                        type="email" id="email" name="email" placeholder="E-mail *" x-model="formData.email" required
+                        type="email" id="email" name="email" placeholder="E-mail *" required
                         autocomplete="email" />
                     <input
                         class="block w-full mt-4 px-4 py-2.5 border border-gray-400 rounded-8 placeholder-gray-700 text-body-sm"
-                        type="text" id="phone" name="phone" placeholder="Phone" x-model="formData.phone"
+                        type="text" id="phone" name="phone" placeholder="Phone"
                         autocomplete="off" />
                     <textarea
                         class="block w-full min-h-20 mt-4 mb-8 px-4 py-2.5 border border-gray-400 rounded-8 placeholder-gray-700 text-body-sm"
                         id="referral" name="referral" placeholder="How did you hear about us? *"
-                        x-model="formData.referral" required></textarea>
-                    <input
-                        class="block w-full min-h-11 md:mt-auto rounded-8 text-button-md bg-brand-500 shadow-cta ring-hairline ring-gray-900/20 cursor-pointer"
-                        :class="{ 'text-brand-over-500': !isSubmitting, 'text-brand-over-500/20': isSubmitting }"
+                        required></textarea>
+                    <input data-submit-button
+                        class="block w-full min-h-11 md:mt-auto rounded-8 text-button-md text-brand-over-500 bg-brand-500 shadow-cta ring-hairline ring-gray-900/20 cursor-pointer"
                         type="submit" value="Submit" />
-                    <div x-show="isSubmitting" class="absolute bottom-0 w-full flex justify-center mb-2.5">
+                    <div data-loading-spinner class="absolute bottom-0 w-full flex justify-center mb-2.5 opacity-0 pointer-events-none transition-opacity duration-150">
                         <svg class="size-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                             viewBox="0 0 24 24">
                             <path fill="currentColor"
@@ -239,8 +231,8 @@
                         policy</a> for more details.
                 </p>
             </div>
-            <div x-show="hasSubmitted" class="relative p-6 md:p-7 lg:p-10">
-                <button @click="close()"
+            <div data-success-container class="relative p-6 md:p-7 lg:p-10 opacity-0 pointer-events-none absolute inset-0 transition-opacity duration-200">
+                <button data-close-modal
                     class="absolute right-6 top-6 md:right-5 md:top-5 lg:right-8 lg:top-8 flex items-center justify-center">
                     <svg class="size-8 text-gray-600 hover:text-gray-800" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -257,4 +249,147 @@
             </div>
         </div>
     </div>
-</section>
+</section></section>
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.querySelector('[data-cta-modal]');
+    const trigger = document.querySelector('[data-cta-trigger]');
+    const overlay = document.querySelector('[data-modal-overlay]');
+    const container = document.querySelector('[data-modal-container]');
+    const content = document.querySelector('[data-modal-content]');
+    const closeButtons = document.querySelectorAll('[data-close-modal]');
+    const form = document.querySelector('[data-cta-form]');
+    const formContainer = document.querySelector('[data-form-container]');
+    const successContainer = document.querySelector('[data-success-container]');
+    const submitButton = document.querySelector('[data-submit-button]');
+    const loadingSpinner = document.querySelector('[data-loading-spinner]');
+    
+    let isOpen = false;
+    let isSubmitting = false;
+
+    function openModal() {
+        isOpen = true;
+        document.body.style.overflow = 'hidden';
+        
+        // Show modal elements
+        overlay.classList.remove('pointer-events-none');
+        container.classList.remove('pointer-events-none');
+        
+        // Trigger reflow
+        overlay.offsetHeight;
+        container.offsetHeight;
+        
+        // Animate in
+        overlay.classList.remove('opacity-0');
+        container.classList.remove('opacity-0');
+        content.classList.remove('translate-y-6');
+    }
+
+    function closeModal() {
+        isOpen = false;
+        
+        // Animate out
+        overlay.classList.add('opacity-0');
+        container.classList.add('opacity-0');
+        content.classList.add('translate-y-6');
+        
+        setTimeout(() => {
+            overlay.classList.add('pointer-events-none');
+            container.classList.add('pointer-events-none');
+            document.body.style.overflow = '';
+            
+            // Reset form state if needed
+            if (formContainer && successContainer) {
+                formContainer.classList.remove('opacity-0', 'pointer-events-none');
+                successContainer.classList.add('opacity-0', 'pointer-events-none');
+                form.reset();
+            }
+        }, 300);
+    }
+
+    function showSuccess() {
+        formContainer.classList.add('opacity-0', 'pointer-events-none');
+        
+        setTimeout(() => {
+            successContainer.classList.remove('opacity-0', 'pointer-events-none');
+        }, 200);
+    }
+
+    function setSubmitting(submitting) {
+        isSubmitting = submitting;
+        
+        if (submitting) {
+            submitButton.disabled = true;
+            submitButton.classList.remove('text-brand-over-500');
+            submitButton.classList.add('text-brand-over-500/20');
+            loadingSpinner.classList.remove('opacity-0', 'pointer-events-none');
+        } else {
+            submitButton.disabled = false;
+            submitButton.classList.add('text-brand-over-500');
+            submitButton.classList.remove('text-brand-over-500/20');
+            loadingSpinner.classList.add('opacity-0', 'pointer-events-none');
+        }
+    }
+
+    // Event listeners
+    trigger.addEventListener('click', openModal);
+    
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', closeModal);
+    });
+    
+    // Close on overlay click
+    overlay.addEventListener('click', closeModal);
+    
+    // Close on outside click
+    container.addEventListener('click', (e) => {
+        if (e.target === container) {
+            closeModal();
+        }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isOpen) {
+            closeModal();
+        }
+    });
+
+    // Handle form submission
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        if (isSubmitting) return;
+        
+        setSubmitting(true);
+        
+        const formData = new FormData(form);
+        
+        try {
+            const response = await fetch(form.action || window.location.href, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showSuccess();
+            } else {
+                console.error('Form submission failed');
+                alert('Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            alert('Something went wrong. Please try again.');
+        } finally {
+            setSubmitting(false);
+        }
+    });
+});
+</script>
+@endpush

@@ -10,18 +10,11 @@
         </p>
     </header>
     <aside class="relative flex flex-col items-center mt-8 md:mt-16">
-        <svg class="hidden md:block absolute left-1/2 top-8 -translate-x-1/2" width="294" height="40"
-            viewBox="0 0 294 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M293 39C276.5 10 240.724 7.49861 221 7.14432M221 7.14432L228.08 1M221 7.14432L228.08 14.6329"
-                stroke="#313335" stroke-width="1.6" stroke-linecap="round" />
-            <path d="M1 39C17.5 10 53.2755 7.49861 73 7.14432M73 7.14432L65.9201 1M73 7.14432L65.9201 14.6329"
-                stroke="#313335" stroke-width="1.6" stroke-linecap="round" />
-        </svg>
-        <svg class="relative size-20 rounded-24 p-3.5 text-gray-100 border border-gray-800 " fill="currentColor"
-            stroke-width="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.9 58.1">
-            <path
-                d="M40 18.8c-1.9-1.9-4.4-2.9-7.1-2.9-.6 0-1.1.1-1.4.1v-6c0-2.5-.9-4.9-2.7-6.8l-.6-.6C26.4 1 24 0 21.5 0s-4.9 1-6.8 2.7l-.7.6c-1.1 1.2-1.9 2.7-2.3 4.2-.6-.1-1.1-.2-1.7-.2-2.7 0-5.2 1-7.1 2.9C1.1 12 .1 14.4 0 16.9v.8c.1 2.5 1.1 4.9 2.9 6.7l1.9 1.8-.2.1c-.6.4-1.2.9-1.7 1.4C1.1 29.5.1 31.8 0 34.4v.8c.1 2.5 1.1 4.9 2.9 6.7l1.7 1.7L19 58V47.2L8.3 36.5c-.9-.9-.9-2.4 0-3.3.4-.4 1-.7 1.7-.7.6 0 1.2.2 1.7.7l7.4 7.4V29.7L8.3 19c-.9-.9-.9-2.4 0-3.3.4-.4 1-.7 1.7-.7.6 0 1.2.3 1.7.7l7.4 7.4V10c0-1.3 1.1-2.3 2.3-2.3 1.3 0 2.3 1.1 2.3 2.3v21.6l7.4-7.4c.4-.4 1-.7 1.6-.7.6 0 1.2.2 1.7.7.9.9.9 2.4 0 3.3L23.8 38.3v10.9L40 33c1.8-1.8 2.8-4.1 2.9-6.7v-.8c-.1-2.6-1.2-5-2.9-6.7z" />
-        </svg>
+        <div class="relative size-20 rounded-24 p-3.5 text-gray-100 border border-gray-800">
+            <img src="/images/logo-sm.png"
+                alt="Integrations Illustration"
+                class="w-full h-full object-contain" />
+        </div>
         <ul
             class="relative flex flex-wrap md:flex-nowrap justify-center gap-3 pt-8 md:pt-16 md:before:absolute md:before:left-1/2 md:before:top-0 md:before:h-10  md:before:rounded-bl-8 md:before:border-l md:before:border-b md:before:border-gray-800 md:before:w-1/3 md:after:absolute md:after:right-1/2 md:after:-mr-px md:after:top-0 md:after:h-10 md:after:border-r md:after:rounded-br-8 md:after:border-b md:after:border-gray-800 md:after:w-1/3">
             <li
@@ -105,9 +98,9 @@
         </ul>
     </aside>
     <footer class="mt-8 md:mt-20 -mx-8 md:mx-0">
-        <ul x-data="marquee()"
-            class="marquee relative flex items-center gap-0 overflow-hidden before:absolute before:inset-y-0 before:right-[90%] before:left-0 before:bg-gradient-to-l before:from-transparent before:to-gray-900 before:z-10 before:pointer-events-none after:absolute after:inset-y-0 after:left-[90%] after:right-0 after:bg-gradient-to-r after:from-transparent after:to-gray-900 after:z-10 after:pointer-events-none"
-            :class="{ 'active': isActive }" style="--speed: 4.25; --count: 17;">
+        <ul data-marquee
+            class="marquee active relative flex items-center gap-0 overflow-hidden before:absolute before:inset-y-0 before:right-[90%] before:left-0 before:bg-gradient-to-l before:from-transparent before:to-gray-900 before:z-10 before:pointer-events-none after:absolute after:inset-y-0 after:left-[90%] after:right-0 after:bg-gradient-to-r after:from-transparent after:to-gray-900 after:z-10 after:pointer-events-none"
+            style="--speed: 4.25; --count: 17;">
             <li style="--index: 0;" class="marquee-item">
                 <a href="https://flexybox.com" aria-label="Flexybox">
                     <svg class="text-gray-700 size-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 892 139"

@@ -21,21 +21,16 @@
             class="relative col-span-1 aspect-[3/2] flex items-center justify-center overflow-hidden before:rounded-16 md:before:rounded-b-none md:before:rounded-t-24">
             <div class="absolute inset-0">
                 <picture>
-                    <source media="(min-width: 1024px)"
-                        srcset="/assets/imgs/posterframe_madklubben_frontpage_lg@1x.jpg 1x, /assets/imgs/posterframe_madklubben_frontpage_lg@2x.jpg 2x, /assets/imgs/posterframe_madklubben_frontpage_lg@3x.jpg 3x">
-                    <source media="(min-width: 768px)"
-                        srcset="/assets/imgs/posterframe_madklubben_frontpage_md@1x.jpg 1x, /assets/imgs/posterframe_madklubben_frontpage_md@2x.jpg 2x, /assets/imgs/posterframe_madklubben_frontpage_md@3x.jpg 3x">
-                    <img src="assets/imgs/posterframe_madklubben_frontpage_sm.jpg.html"
-                        srcset="assets/imgs/posterframe_madklubben_frontpage_sm@1x.jpg 1x, assets/imgs/posterframe_madklubben_frontpage_sm@2x.jpg 2x, assets/imgs/posterframe_madklubben_frontpage_sm@3x.jpg 3x"
+                    <img src="/images/landing/posterframe_madklubben_frontpage_sm.jpg"
                         class="object-cover w-full h-full rounded-16 md:rounded-b-none md:rounded-t-24 select-none"
                         loading="lazy" draggable="false" alt="">
                 </picture>
             </div>
             <button
-                x-data="videoTrigger({ src: 'https://player.vimeo.com/progressive_redirect/playback/1001630289/rendition/1080p/file.mp4?loc=external&amp;log_user=0&amp;signature=0d19a5f4d95b3f9ffb6938632c2b44297af58f9aaef9eeed92a1a2e72b3aed58', brand: 'madklubben' })"
-                @click="open()" aria-label="Play video"
-                class="bg-gray-100 hover:bg-gray-200 transition px-6 py-4 rounded-12 absolute" brand="madklubben"
-                src="https://player.vimeo.com/progressive_redirect/playback/1001630289/rendition/1080p/file.mp4?loc=external&log_user=0&signature=0d19a5f4d95b3f9ffb6938632c2b44297af58f9aaef9eeed92a1a2e72b3aed58">
+                class="video-trigger bg-gray-100 hover:bg-gray-200 transition px-6 py-4 rounded-12 absolute"
+                data-src="https://player.vimeo.com/progressive_redirect/playback/1001630289/rendition/1080p/file.mp4?loc=external&log_user=0&signature=0d19a5f4d95b3f9ffb6938632c2b44297af58f9aaef9eeed92a1a2e72b3aed58"
+                data-brand="madklubben"
+                aria-label="Play video">
                 <svg class="size-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M19.75 10.7015C20.75 11.2788 20.75 12.7222 19.75 13.2995L7.75 20.2277C6.75 20.8051 5.5 20.0834 5.5 18.9287L5.5 5.07229C5.5 3.91758 6.75 3.1959 7.75 3.77325L19.75 10.7015Z"
@@ -107,12 +102,12 @@
         </blockquote>
     </div>
 
-    <div class="flex flex-col" x-data="slider(3)">
+    <div class="flex flex-col testimonial-slider" data-total-items="3">
         <ul
             class="flex -mx-8 md:mx-0 px-8 pt-20 pb-8 md:py-0 md:px-0 overflow-x-scroll md:overflow-x-visible snap-x snap-mandatory md:grid md:grid-cols-3 gap-8 lg:gap-16 scrollbar-none">
-            <li x-ref="item0" data-index="0" class="snap-center w-full flex-shrink-0 col-span-1
+            <li class="slider-item snap-center w-full flex-shrink-0 col-span-1
                       md:-rotate-2
-          ">
+          " data-index="0">
                 <blockquote
                     class="relative p-6 rounded-24 bg-gray-100 shadow-card-bumped before:absolute before:inset-0 before:border-hairline before:border-gray-400 before:bg-gray-200 before:-rotate-4 before:rounded-24 before:-z-10">
                     <svg class="size-6" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,9 +145,9 @@
                     </footer>
                 </blockquote>
             </li>
-            <li x-ref="item1" data-index="1" class="snap-center w-full flex-shrink-0 col-span-1
+            <li class="slider-item snap-center w-full flex-shrink-0 col-span-1
                       md:rotate-3
-          ">
+          " data-index="1">
                 <blockquote
                     class="relative p-6 rounded-24 bg-gray-100 shadow-card-bumped before:absolute before:inset-0 before:border-hairline before:border-gray-400 before:bg-gray-200 before:-rotate-4 before:rounded-24 before:-z-10">
                     <svg class="size-6" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -188,9 +183,9 @@
                     </footer>
                 </blockquote>
             </li>
-            <li x-ref="item2" data-index="2" class="snap-center w-full flex-shrink-0 col-span-1
+            <li class="slider-item snap-center w-full flex-shrink-0 col-span-1
                       md:-rotate-1
-          ">
+          " data-index="2">
                 <blockquote
                     class="relative p-6 rounded-24 bg-gray-100 shadow-card-bumped before:absolute before:inset-0 before:border-hairline before:border-gray-400 before:bg-gray-200 before:-rotate-4 before:rounded-24 before:-z-10">
                     <svg class="size-6" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -231,13 +226,126 @@
         </ul>
         <aside
             class="md:hidden inline-flex space-x-2 mx-auto ring-hairline ring-gray-900/10 shadow-100 px-2.5 py-2 rounded-full">
-            <span class="block size-2 bg-gray-500 rounded-full bg-gray-900 transition"
-                :class="{ 'bg-gray-900': activeIndex == 0 }">
+            <span class="slider-dot block size-2 bg-gray-900 rounded-full transition" data-index="0">
             </span>
-            <span class="block size-2 bg-gray-500 rounded-full transition" :class="{ 'bg-gray-900': activeIndex == 1 }">
+            <span class="slider-dot block size-2 bg-gray-500 rounded-full transition" data-index="1">
             </span>
-            <span class="block size-2 bg-gray-500 rounded-full transition" :class="{ 'bg-gray-900': activeIndex == 2 }">
+            <span class="slider-dot block size-2 bg-gray-500 rounded-full transition" data-index="2">
             </span>
         </aside>
     </div>
-</section>
+</section></section>
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Video trigger functionality
+        const videoTriggers = document.querySelectorAll('.video-trigger');
+        
+        videoTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const videoSrc = this.dataset.src;
+                const brand = this.dataset.brand;
+                
+                // Create modal overlay
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-gray-900/90';
+                modal.style.backdropFilter = 'blur(4px)';
+                
+                modal.innerHTML = `
+                    <div class="relative w-full max-w-5xl mx-4">
+                        <button class="absolute -top-12 right-0 text-gray-100 hover:text-gray-300 transition" aria-label="Close">
+                            <svg class="size-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                        <video class="w-full rounded-lg" controls autoplay>
+                            <source src="${videoSrc}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                document.body.style.overflow = 'hidden';
+                
+                // Close on button click
+                const closeBtn = modal.querySelector('button');
+                closeBtn.addEventListener('click', function() {
+                    modal.remove();
+                    document.body.style.overflow = '';
+                });
+                
+                // Close on background click
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.remove();
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close on Escape key
+                const handleEscape = function(e) {
+                    if (e.key === 'Escape') {
+                        modal.remove();
+                        document.body.style.overflow = '';
+                        document.removeEventListener('keydown', handleEscape);
+                    }
+                };
+                document.addEventListener('keydown', handleEscape);
+            });
+        });
+        
+        // Testimonial slider functionality
+        const sliders = document.querySelectorAll('.testimonial-slider');
+        
+        sliders.forEach(slider => {
+            const ul = slider.querySelector('ul');
+            const items = slider.querySelectorAll('.slider-item');
+            const dots = slider.querySelectorAll('.slider-dot');
+            
+            if (items.length === 0 || dots.length === 0) return;
+            
+            let currentIndex = 0;
+            
+            function updateSlider(index) {
+                currentIndex = index;
+                
+                // Update dots
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.remove('bg-gray-500');
+                        dot.classList.add('bg-gray-900');
+                    } else {
+                        dot.classList.remove('bg-gray-900');
+                        dot.classList.add('bg-gray-500');
+                    }
+                });
+            }
+            
+            // Click handlers for dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    items[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    updateSlider(index);
+                });
+            });
+            
+            // Scroll sync for mobile swipe
+            let scrollTimeout;
+            ul.addEventListener('scroll', function() {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(function() {
+                    const scrollLeft = ul.scrollLeft;
+                    const itemWidth = items[0].offsetWidth;
+                    const index = Math.round(scrollLeft / itemWidth);
+                    updateSlider(index);
+                }, 100);
+            });
+            
+            // Initialize first dot as active
+            updateSlider(0);
+        });
+    });
+</script>
+@endpush
