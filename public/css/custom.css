@@ -1,3 +1,20 @@
 .h-44 {
     height: 44px;
 }
+
+.panel-heading.note-toolbar {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.note-btn.dropdown-toggle::after {
+   display: none;
+}
+
+.note-editable {
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 200px;
+    padding: 10px;
+    background-color: #FFFFFF;
+}

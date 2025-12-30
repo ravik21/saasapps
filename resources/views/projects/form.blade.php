@@ -29,13 +29,13 @@
 
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ isset($user) ? $user->name : old('name') }}" required>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ isset($project) ? $project->name : old('name') }}" required>
                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         </div>
 
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
-                            <input type="text" class="form-control" id="description" name="description" value="{{ isset($project) ? $project->description : old('description') }}" required>
+                            <textarea id="summernote" name="description">{{ isset($project) ? $project->description : old('description') }}</textarea>
                             <x-input-error :messages="$errors->get('description')" class="mt-2" />
                         </div>
 
@@ -58,14 +58,46 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Project Image</label>
-                            <input type="file" class="form-control" id="imageInput" accept="image/*">
-                            <input type="hidden" name="image" id="image">
-                            <x-input-error :messages="$errors->get('image')" class="mt-2" />
+                            <label class="form-label">Logo</label>
+                            <input type="file" class="form-control" id="logoInput" accept="image/*">
+                            <input type="hidden" name="logo" id="logo">
+                            <x-input-error :messages="$errors->get('logo')" class="mt-2" />
 
                             <div class="mt-3">
-                                <img id="imagePreview" src="{{ isset($project) ? $project->image : '' }}" class="rounded border" style="height:120px; width:auto; object-fit:cover;">
+                                <img id="logoPreview" src="{{ isset($project) ? $project->logo : '' }}" class="rounded border" style="height:120px; width:auto; object-fit:cover;">
                             </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Images</label>
+                            <input type="file" class="form-control" id="imagesInput" accept="image/*" multiple>
+                            <input type="hidden" name="images" id="images">
+                            <x-input-error :messages="$errors->get('images')" class="mt-2" />
+
+                            <div class="mt-3" id="imagesPreview">
+                                @if(isset($project) && $project->images)
+                                    @foreach($project->images as $image)
+                                        <img src="{{ $image }}" class="rounded border me-2 mb-2" style="height:120px; width:auto; object-fit:cover;">
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="start_date" class="form-label">Start Date</label>
+                            <input type="date" class="form-control" id="start_date" name="start_date" value="{{ isset($project) ? $project->start_date : old('start_date') }}">
+                            <x-input-error :messages="$errors->get('start_date')" class="mt-2" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="end_date" class="form-label">End Date</label>
+                            <input type="date" class="form-control" id="end_date" name="end_date" value="{{ isset($project) ? $project->end_date : old('end_date') }}">
+                            <x-input-error :messages="$errors->get('end_date')" class="mt-2" />
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="is_ongoing" name="is_ongoing" {{ isset($project) && $project->is_ongoing ? 'checked' : (old('is_ongoing') ? 'checked' : '') }}>
+                            <label class="form-check-label" for="is_ongoing">Is Ongoing</label>
                         </div>
 
                         <button type="submit" class="btn btn-primary">{{ isset($project) ? 'Update' : 'Create' }} Project</button>
@@ -79,19 +111,19 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Crop Image</h5>
+                    <h5 class="modal-title">Crop logo</h5>
                     <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
                 <div class="modal-body text-center">
-                    <img id="cropperImage" class="img-fluid">
+                    <img id="cropperlogo" class="img-fluid">
                 </div>
 
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">
                         Cancel
                     </button>
-                    <button class="btn btn-primary" id="cropImageBtn">
+                    <button class="btn btn-primary" id="croplogoBtn">
                         Crop & Save
                     </button>
                 </div>
@@ -102,23 +134,23 @@
     @push('scripts')
         <script>
             let cropper;
-            const imageInput = document.getElementById('imageInput');
-            const cropperImage = document.getElementById('cropperImage');
-            const imagePreview = document.getElementById('imagePreview');
-            const imageHidden = document.getElementById('image');
+            const logoInput = document.getElementById('logoInput');
+            const cropperlogo = document.getElementById('cropperlogo');
+            const logoPreview = document.getElementById('logoPreview');
+            const logoHidden = document.getElementById('logo');
             const modal = new bootstrap.Modal(document.getElementById('cropperModal'));
 
-            imageInput.addEventListener('change', function (e) {
+            logoInput.addEventListener('change', function (e) {
                 const file = e.target.files[0];
                 if (!file) return;
 
                 const reader = new FileReader();
                 reader.onload = function (event) {
-                    cropperImage.src = event.target.result;
+                    cropperlogo.src = event.target.result;
                     modal.show();
 
                     setTimeout(() => {
-                        cropper = new Cropper(cropperImage, {
+                        cropper = new Cropper(cropperlogo, {
                             aspectRatio: 16 / 9,
                             viewMode: 1,
                             dragMode: 'move',
@@ -130,19 +162,53 @@
                 reader.readAsDataURL(file);
             });
 
-            document.getElementById('cropImageBtn').addEventListener('click', function () {
+            document.getElementById('croplogoBtn').addEventListener('click', function () {
                 const canvas = cropper.getCroppedCanvas({
                     width: 300,
                     height: 300,
                 });
 
-                const base64 = canvas.toDataURL('image/png');
+                const base64 = canvas.toDataURL('logo/png');
 
-                imagePreview.src = base64;
-                imageHidden.value = base64;
+                logoPreview.src = base64;
+                logoHidden.value = base64;
 
                 cropper.destroy();
                 modal.hide();
+            });
+
+            const imagesInput = document.getElementById('imagesInput');
+            const imagesPreview = document.getElementById('imagesPreview');
+            const imagesHidden = document.getElementById('images');
+
+            imagesInput.addEventListener('change', function (e) {
+                const files = e.target.files;
+                if (!files.length) return;
+
+                imagesPreview.innerHTML = '';
+                const imageUrls = [];
+
+                Array.from(files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        const img = document.createElement('img');
+                        img.src = event.target.result;
+                        img.className = 'rounded border me-2 mb-2';
+                        img.style.height = '120px';
+                        img.style.width = 'auto';
+                        img.style.objectFit = 'cover';
+                        imagesPreview.appendChild(img);
+                        imageUrls.push(event.target.result);
+                        imagesHidden.value = imageUrls.join('||');
+                    };
+                    reader.readAsDataURL(file);
+                });
+            });
+
+            $(document).ready(function() {
+                $('#summernote').summernote({
+                    height: 200
+                });
             });
         </script>
     @endpush

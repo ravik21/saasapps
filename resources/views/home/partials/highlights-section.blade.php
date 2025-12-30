@@ -19,7 +19,7 @@
         <li class="relative col-span-1 md:col-span-2 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450">
             <img src="/images/landing/projects/thrivecoach.png"
                 alt="Thrive Coach"
-                class="absolute inset-0 w-full h-full object-cover z-0"
+                class="absolute inset-0 w-full h-full object-contain z-0"
             />
             <div class="absolute inset-0 bg-black/20 z-10"></div>
             <div class="relative z-20 bg-white p-6 md:p-8 project-highlight">
@@ -34,7 +34,7 @@
         <li class="relative col-span-1 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450 md:-ml-hairline -mt-hairline md:mt-0 bg-gray-100">
             <img src="/images/landing/projects/qurater.png"
                 alt="Qurater"
-                class="absolute inset-0 w-full h-full object-cover z-0"
+                class="absolute inset-0 w-full h-full object-contain z-0"
             />
             <div class="absolute inset-0 bg-black/20 z-10"></div>
             <div class="relative z-20 bg-white p-6 md:p-8 project-highlight">
@@ -49,7 +49,7 @@
         <li class="relative col-span-1 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450 md:-ml-hairline -mt-hairline md:mt-0 bg-gray-100">
             <img src="/images/landing/projects/trustpatrick.png"
                 alt="Trust Patrick"
-                class="absolute inset-0 w-full h-full object-cover z-0"
+                class="absolute inset-0 w-full h-full object-contain z-0"
             />
             <div class="absolute inset-0 bg-black/20 z-10"></div>
             <div class="relative z-20 bg-white p-6 md:p-8 project-highlight">
@@ -64,7 +64,7 @@
         <li class="relative col-span-1 md:col-span-2 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450">
             <img src="/images/landing/projects/prescribery.png"
                 alt="Prescribery"
-                class="absolute inset-0 w-full h-full object-cover z-0"
+                class="absolute inset-0 w-full h-full object-contain z-0"
             />
             <div class="absolute inset-0 bg-black/20 z-10"></div>
             <div class="relative z-20 bg-white p-6 md:p-8 project-highlight">

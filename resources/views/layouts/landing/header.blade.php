@@ -24,30 +24,30 @@
                         </a>
                     </li>
                     <li class="flex-shrink-0">
-                        <a href="why-monotree.html" class="relative px-2 py-3 hover:underline cursor-pointer">
+                        <a href="{{ route('why-us') }}" class="relative px-2 py-3 hover:underline cursor-pointer">
                             Why us?
                         </a>
                     </li>
                     <li class="flex-shrink-0">
-                        <a href="/cases" class="relative px-2 py-3 hover:underline cursor-pointer">
+                        <a href="{{ route('cases') }}" class="relative px-2 py-3 hover:underline cursor-pointer">
                             Cases
                         </a>
                     </li>
                     <li class="flex-shrink-0">
-                        <a href="about-us.html" class="relative px-2 py-3 hover:underline cursor-pointer">
+                        <a href="{{ route('about-us') }}" class="relative px-2 py-3 hover:underline cursor-pointer">
                             About us
                         </a>
                     </li>
                     <li class="flex-shrink-0">
-                        <a href="blog.html" class="relative px-2 py-3 hover:underline cursor-pointer">
-                            Blog
+                        <a href="{{ route('portfolio') }}" class="relative px-2 py-3 hover:underline cursor-pointer">
+                            Portfolio
                         </a>
                     </li>
                 </ul>
             </nav>
-            <button class="flex-shrink-0 block ml-auto lg:ml-0 h-9 lg:h-11 px-4 lg:px-5 rounded-8 text-ui-14 lg:text-button-md bg-brand-500 text-brand-over-500 ring-gray-900/20 shadow-cta ring-hairline z-10">
+            <a href="{{ route('contact-us') }}" class="flex-shrink-0 block ml-auto lg:ml-0 h-9 lg:h-11 px-4 lg:px-5 rounded-8 text-ui-14 lg:text-button-md bg-brand-500 text-brand-over-500 ring-gray-900/20 shadow-cta ring-hairline z-10 text-center flex items-center">
                 Contact Us
-            </button>
+            </a>
             <!-- Mobile Menu Toggle Button -->
             <button id="mobile-menu-toggle" class="md:hidden py-2 pl-2 ml-2 cursor-pointer" aria-label="Toggle menu">
                 <span id="menu-open-icon" class="block">

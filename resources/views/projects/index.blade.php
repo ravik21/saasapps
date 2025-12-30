@@ -23,7 +23,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
-                                <th scope="col">Description</th>
+                                <th scope="col">Logo</th>
                                 <th scope="col">Client</th>
                                 <th scope="col">Link</th>
                                 <th scope="col">Technology</th>
@@ -35,7 +35,7 @@
                             @foreach ($projects as $project)
                                 <tr>
                                     <td>{{ $project->name }}</td>
-                                    <td>{{ $project->description }}</td>
+                                    <td><img src="{{ $project->logo }}" alt="{{ $project->name }}" style="height: 50px; width: auto;"></td>
                                     <td>{{ $project->client }}</td>
                                     <td>{{ $project->link }}</td>
                                     <td>{{ $project->technology }}</td>

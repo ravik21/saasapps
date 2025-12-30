@@ -13,6 +13,9 @@
         <!-- Cropper.js -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
 
+        <!-- Summernote CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-lite.min.css" rel="stylesheet">
+
         <link rel="stylesheet" href="/css/custom.css">
 
         <!-- Scripts -->
@@ -37,6 +40,9 @@
 
         <!-- Cropper.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+
+        <!-- Summernote JS -->
+        <script src="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-lite.min.js"></script>
 
         @stack('scripts')
     </body>

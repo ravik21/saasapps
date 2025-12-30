@@ -11,7 +11,18 @@ class Project extends Model
         'description',
         'client',
         'link',
-        'image',
+        'images',
         'technology',
+        'logo',
+        'start_date',
+        'end_date',
+        'is_ongoing',
+    ];
+
+    protected $casts = [
+        'is_ongoing' => 'boolean',
+        'start_date' => 'date',
+        'end_date' => 'date',
+        'images' => 'array',
     ];
 }

@@ -21,14 +21,14 @@ class HomeController extends Controller
         return view('home.about-us');
     }
 
-    public function blog()
+    public function whyUs()
     {
-        return view('home.blog');
+        return view('home.why-us');
     }
 
-    public function helpSupports()
+    public function portfolio()
     {
-        return view('home.help-supports');
+        return view('home.portfolio');
     }
 
     public function services()

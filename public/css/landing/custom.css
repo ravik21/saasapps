@@ -36,3 +36,7 @@
 ul.integrations li svg {
 	height: 60px;
 }
+
+.object-contain {
+	object-fit: contain;
+}
