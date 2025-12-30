@@ -17,6 +17,7 @@ return new class extends Migration
             $table->date('end_date')->nullable()->after('start_date');
             $table->boolean('is_ongoing')->default(false)->after('end_date');
             $table->text('image')->nullable()->change();
+            $table->string('technology', 1024)->nullable()->change();
             $table->renameColumn('image', 'images');
         });
     }
@@ -28,7 +29,6 @@ return new class extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
             $table->dropColumn(['logo', 'start_date', 'end_date', 'is_ongoing']);
-            $table->text('image')->nullable()->change();
             $table->renameColumn('images', 'image');
         });
     }

@@ -21,8 +21,7 @@ class Project extends Model
 
     protected $casts = [
         'is_ongoing' => 'boolean',
-        'start_date' => 'date',
-        'end_date' => 'date',
         'images' => 'array',
+        'technology' => 'array',
     ];
 }

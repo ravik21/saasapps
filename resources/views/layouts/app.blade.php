@@ -16,6 +16,9 @@
         <!-- Summernote CSS -->
         <link href="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-lite.min.css" rel="stylesheet">
 
+        <!-- Tagify CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.35.4/tagify.min.css" integrity="sha512-BIjLsaXLHhpnoOzfTzEfOEVUDEqi/5RP9RbUYGfPkZUo+raxRUOiJb7AybUxV075aWNNGglvr5Lbjeo6Ww0HCw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <link rel="stylesheet" href="/css/custom.css">
 
         <!-- Scripts -->
@@ -43,6 +46,9 @@
 
         <!-- Summernote JS -->
         <script src="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-lite.min.js"></script>
+
+        <!-- Tagify JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.35.4/tagify.min.js" integrity="sha512-sKkyJJpMbq+xZRQwXCksuVx5g4JuYQK7c3+65dF3CAx3Gcn67+BPC2PyJkJEugtRRAeDBLPfcsULXbEZ5iqYjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         @stack('scripts')
     </body>

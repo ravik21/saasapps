@@ -27,6 +27,7 @@
                                 <th scope="col">Client</th>
                                 <th scope="col">Link</th>
                                 <th scope="col">Technology</th>
+                                <th scope="col">Duration</th>
                                 <th scope="col">Created At</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -38,7 +39,22 @@
                                     <td><img src="{{ $project->logo }}" alt="{{ $project->name }}" style="height: 50px; width: auto;"></td>
                                     <td>{{ $project->client }}</td>
                                     <td>{{ $project->link }}</td>
-                                    <td>{{ $project->technology }}</td>
+                                    <td>
+                                        @if($project->technology)
+                                            @foreach($project->technology as $tech)
+                                                <span class="badge bg-secondary me-1">{{ trim($tech['value']) }}</span>
+                                            @endforeach
+                                        @else
+                                            N/A
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if($project->is_ongoing)
+                                           {{ $project->start_date }} to Ongoing
+                                        @else
+                                            {{ $project->start_date }} to {{ $project->end_date }}
+                                        @endif
+                                    </td>
                                     <td>{{ $project->created_at->format('Y-m-d') }}</td>
                                     <td>
                                         <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-sm btn-secondary">Edit</a>

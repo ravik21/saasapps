@@ -45,7 +45,9 @@ class ProjectController extends Controller
             'is_ongoing' => 'nullable|boolean',
         ]);
 
-        $data = $request->except('logo');
+        $data = $request->except('logo', 'images');
+        $data['is_ongoing'] = $request->has('is_ongoing') ? true : false;
+        $data['technology'] = $request->technology ? json_decode($request->technology, true) : [];
 
         $project = Project::create($data);
 
@@ -115,7 +117,9 @@ class ProjectController extends Controller
             'is_ongoing' => 'nullable|boolean',
         ]);
 
-        $data = $request->except('logo');
+        $data = $request->except('logo', 'images');
+        $data['is_ongoing'] = $request->has('is_ongoing') ? true : false;
+        $data['technology'] = $request->technology ? json_decode($request->technology, true) : [];
 
         if ($request->has('logo') && $request->logo) {
             Storage::disk('public')->deleteDirectory('projects/'.$project->id.'/logo/');

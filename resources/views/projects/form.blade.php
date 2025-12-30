@@ -53,7 +53,7 @@
 
                         <div class="mb-3">
                             <label for="technology" class="form-label">Technology</label>
-                            <input type="text" class="form-control" id="technology" name="technology" value="{{ isset($project) ? $project->technology : old('technology') }}" required>
+                            <input type="text" class="form-control" id="technology" name="technology" value="{{ isset($project) ? json_encode($project->technology) : old('technology') }}" required>
                             <x-input-error :messages="$errors->get('technology')" class="mt-2" />
                         </div>
 
@@ -96,7 +96,7 @@
                         </div>
 
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="is_ongoing" name="is_ongoing" {{ isset($project) && $project->is_ongoing ? 'checked' : (old('is_ongoing') ? 'checked' : '') }}>
+                            <input type="checkbox" class="form-check-input" value="1" id="is_ongoing" name="is_ongoing" {{ isset($project) && $project->is_ongoing ? 'checked' : (old('is_ongoing') ? 'checked' : '') }}>
                             <label class="form-check-label" for="is_ongoing">Is Ongoing</label>
                         </div>
 
@@ -209,6 +209,8 @@
                 $('#summernote').summernote({
                     height: 200
                 });
+
+                new Tagify(document.querySelector('#technology'));
             });
         </script>
     @endpush
