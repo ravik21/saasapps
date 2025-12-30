@@ -40,3 +40,7 @@ ul.integrations li svg {
 .object-contain {
 	object-fit: contain;
 }
+
+.projects-image img {
+	height: 400px;
+}

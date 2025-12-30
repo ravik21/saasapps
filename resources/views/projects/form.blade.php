@@ -116,7 +116,7 @@
                 </div>
 
                 <div class="modal-body text-center">
-                    <img id="cropperlogo" class="img-fluid">
+                    <img id="cropperlogo" class="img-fluid mx-auto">
                 </div>
 
                 <div class="modal-footer">
@@ -151,7 +151,7 @@
 
                     setTimeout(() => {
                         cropper = new Cropper(cropperlogo, {
-                            aspectRatio: 16 / 9,
+                            aspectRatio: 1 / 1,
                             viewMode: 1,
                             dragMode: 'move',
                             background: false,

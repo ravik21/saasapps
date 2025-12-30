@@ -5,5 +5,6 @@
         @include('home.partials.customers-section')
         @include('home.partials.integrations')
         @include('home.partials.customize-section')
+        @include('home.partials.get-app-section')
     </main>
 </x-landing-layout>
