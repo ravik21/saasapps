@@ -99,59 +99,73 @@
                 </div>
 
                 @if($project->images && is_array($project->images) && count($project->images) > 0)
-                    <!-- Images Carousel -->
-                    <div class="relative" data-carousel="project-{{ $index }}">
-                        <!-- Carousel Container -->
-                        <div class="overflow-hidden rounded-16">
-                            <div class="flex transition-transform duration-500 ease-out" data-carousel-inner>
-                                @foreach(collect($project->images)->chunk(2) as $chunkIndex => $imageChunk)
-                                <div class="min-w-full flex-shrink-0 px-2">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        @foreach($imageChunk as $imgIndex => $image)
-                                        <div class="group relative rounded-16 overflow-hidden bg-white shadow-lg">
-                                            <div class="aspect-video overflow-hidden bg-gray-200 projects-image">
-                                                <img src="{{ $image }}" 
-                                                     alt="{{ $project->name }} - Image {{ $chunkIndex * 2 + $imgIndex + 1 }}" 
-                                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-                                            </div>
-                                            <!-- Image Overlay -->
-                                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                <div class="absolute bottom-0 left-0 right-0 p-4">
-                                                    <p class="text-white text-sm font-medium">{{ $project->name }}</p>
-                                                    <button onclick="openImageModal('{{ $image }}')" class="mt-2 inline-flex items-center text-xs text-white/90 hover:text-white">
-                                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
-                                                        </svg>
-                                                        View Full Size
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                    </div>
+                    <!-- Images Grid Layout: 1 Left + 2 Center (stacked) + 1 Right -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                        <!-- Left Image -->
+                        @if(isset($project->images[0]))
+                        <div class="group relative rounded-24 overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+                            <div class="aspect-[3/4] overflow-hidden bg-gray-100 h-full">
+                                <img src="{{ $project->images[0] }}" 
+                                     alt="{{ $project->name }} - Image 1" 
+                                     class="w-full h-full min-h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            </div>
+                            <!-- Image Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-4">
+                                    <button onclick="openImageModal('{{ $project->images[0] }}')" class="w-full inline-flex items-center justify-center text-sm text-white bg-white/20 backdrop-blur-sm rounded-lg py-2.5 hover:bg-white/30 transition-colors">
+                                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                                        </svg>
+                                        View
+                                    </button>
                                 </div>
-                                @endforeach
                             </div>
                         </div>
+                        @endif
 
-                        @if(count($project->images) > 2)
-                        <!-- Navigation Buttons -->
-                        <button data-carousel-prev class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 z-10">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                            </svg>
-                        </button>
-                        <button data-carousel-next class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 z-10">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
-
-                        <!-- Dots Indicator -->
-                        <div class="flex justify-center mt-4 space-x-2" data-carousel-indicators>
-                            @foreach(collect($project->images)->chunk(2) as $chunkIndex => $imageChunk)
-                            <button class="w-2 h-2 rounded-full transition-all duration-300 {{ $chunkIndex === 0 ? 'bg-blue-600 w-8' : 'bg-gray-300 hover:bg-gray-400' }}" data-carousel-dot="{{ $chunkIndex }}"></button>
+                        <!-- Center 2 Images (Stacked Vertically) -->
+                        <div class="flex flex-col gap-4 md:gap-6">
+                            @foreach(collect($project->images)->slice(1, 2) as $imgIndex => $image)
+                            <div class="group relative rounded-24 overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+                                <div class="aspect-video overflow-hidden bg-gray-100 h-full">
+                                    <img src="{{ $image }}" 
+                                         alt="{{ $project->name }} - Image {{ $imgIndex + 2 }}" 
+                                         class="w-full h-full min-h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                                </div>
+                                <!-- Image Overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-0 left-0 right-0 p-3">
+                                        <button onclick="openImageModal('{{ $image }}')" class="w-full inline-flex items-center justify-center text-sm text-white bg-white/20 backdrop-blur-sm rounded-lg py-2 hover:bg-white/30 transition-colors">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                            </svg>
+                                            View
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                             @endforeach
+                        </div>
+
+                        <!-- Right Image -->
+                        @if(isset($project->images[3]))
+                        <div class="group relative rounded-24 overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+                            <div class="aspect-[3/4] overflow-hidden bg-gray-100 h-full">
+                                <img src="{{ $project->images[3] }}" 
+                                     alt="{{ $project->name }} - Image 4" 
+                                     class="w-full h-full min-h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                            </div>
+                            <!-- Image Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-4">
+                                    <button onclick="openImageModal('{{ $project->images[3] }}')" class="w-full inline-flex items-center justify-center text-sm text-white bg-white/20 backdrop-blur-sm rounded-lg py-2.5 hover:bg-white/30 transition-colors">
+                                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                                        </svg>
+                                        View
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         @endif
                     </div>
@@ -269,7 +283,7 @@
                     const projectId = nextItem.getAttribute('data-project-id');
                     switchToProject(projectId, currentIndex);
                 }
-            }, 3000); // Rotate every 3 seconds
+            }, 10000);
         }
         
         // Initialize first project as active
@@ -287,83 +301,6 @@
         container.addEventListener('mouseleave', () => {
             isPaused = false;
         });
-
-        // Carousel functionality - initialize all carousels properly
-        const carouselStates = new Map();
-
-        function initializeCarousels() {
-            // Initialize carousels for all projects
-            const allCarousels = container.querySelectorAll('[data-carousel]');
-            
-            allCarousels.forEach((carousel) => {
-                const carouselId = carousel.getAttribute('data-carousel');
-                
-                // Skip if already initialized
-                if (carouselStates.has(carouselId)) {
-                    return;
-                }
-
-                const inner = carousel.querySelector('[data-carousel-inner]');
-                const prevBtn = carousel.querySelector('[data-carousel-prev]');
-                const nextBtn = carousel.querySelector('[data-carousel-next]');
-                const dots = carousel.querySelectorAll('[data-carousel-dot]');
-                const totalSlides = dots.length;
-                
-                // Store state for this carousel
-                const state = {
-                    index: 0,
-                    inner: inner,
-                    dots: dots,
-                    totalSlides: totalSlides
-                };
-                
-                carouselStates.set(carouselId, state);
-
-                function updateCarousel() {
-                    if (inner) {
-                        inner.style.transform = `translateX(-${state.index * 100}%)`;
-                        
-                        // Update dots
-                        dots.forEach((dot, i) => {
-                            if (i === state.index) {
-                                dot.classList.remove('bg-gray-300', 'w-2');
-                                dot.classList.add('bg-blue-600', 'w-8');
-                            } else {
-                                dot.classList.remove('bg-blue-600', 'w-8');
-                                dot.classList.add('bg-gray-300', 'w-2');
-                            }
-                        });
-                    }
-                }
-
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', () => {
-                        state.index = (state.index - 1 + totalSlides) % totalSlides;
-                        updateCarousel();
-                    });
-                }
-
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', () => {
-                        state.index = (state.index + 1) % totalSlides;
-                        updateCarousel();
-                    });
-                }
-
-                dots.forEach((dot, i) => {
-                    dot.addEventListener('click', () => {
-                        state.index = i;
-                        updateCarousel();
-                    });
-                });
-                
-                // Initialize first slide
-                updateCarousel();
-            });
-        }
-
-        // Initialize all carousels on load
-        initializeCarousels();
     });
 </script>
 @endpush

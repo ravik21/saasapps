@@ -131,6 +131,31 @@
         </div>
     </div>
 
+    <!-- Bulk Images Cropper Modal -->
+    <div class="modal fade" id="imagesCropperModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Crop Images (<span id="currentImageIndex">1</span>/<span id="totalImages">1</span>)</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <img id="cropperImage" class="img-fluid mx-auto">
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancel All
+                    </button>
+                    <button class="btn btn-primary" id="cropImageBtn">
+                        Crop & Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @push('scripts')
         <script>
             let cropper;
@@ -180,30 +205,98 @@
             const imagesInput = document.getElementById('imagesInput');
             const imagesPreview = document.getElementById('imagesPreview');
             const imagesHidden = document.getElementById('images');
+            const cropperImage = document.getElementById('cropperImage');
+            const imagesModal = new bootstrap.Modal(document.getElementById('imagesCropperModal'));
+            
+            let imageCropper;
+            let filesToCrop = [];
+            let croppedImages = [];
+            let currentCropIndex = 0;
 
             imagesInput.addEventListener('change', function (e) {
                 const files = e.target.files;
                 if (!files.length) return;
 
-                imagesPreview.innerHTML = '';
-                const imageUrls = [];
+                filesToCrop = Array.from(files);
+                croppedImages = [];
+                currentCropIndex = 0;
 
-                Array.from(files).forEach(file => {
-                    const reader = new FileReader();
-                    reader.onload = function (event) {
-                        const img = document.createElement('img');
-                        img.src = event.target.result;
-                        img.className = 'rounded border me-2 mb-2';
-                        img.style.height = '120px';
-                        img.style.width = 'auto';
-                        img.style.objectFit = 'cover';
-                        imagesPreview.appendChild(img);
-                        imageUrls.push(event.target.result);
-                        imagesHidden.value = imageUrls.join('||');
-                    };
-                    reader.readAsDataURL(file);
-                });
+                imagesPreview.innerHTML = '';
+                
+                // Start cropping first image
+                cropNextImage();
             });
+
+            function cropNextImage() {
+                if (currentCropIndex >= filesToCrop.length) {
+                    // All images cropped, display them
+                    displayCroppedImages();
+                    return;
+                }
+
+                const file = filesToCrop[currentCropIndex];
+                const reader = new FileReader();
+                
+                reader.onload = function (event) {
+                    cropperImage.src = event.target.result;
+                    document.getElementById('currentImageIndex').textContent = currentCropIndex + 1;
+                    document.getElementById('totalImages').textContent = filesToCrop.length;
+                    
+                    imagesModal.show();
+
+                    setTimeout(() => {
+                        if (imageCropper) {
+                            imageCropper.destroy();
+                        }
+                        
+                        imageCropper = new Cropper(cropperImage, {
+                            aspectRatio: 16 / 9,
+                            viewMode: 1,
+                            dragMode: 'move',
+                            background: false,
+                            cropBoxResizable: true,
+                        });
+                    }, 200);
+                };
+                
+                reader.readAsDataURL(file);
+            }
+
+            document.getElementById('cropImageBtn').addEventListener('click', function () {
+                const canvas = imageCropper.getCroppedCanvas({
+                    width: 1600,
+                    height: 900,
+                });
+
+                const base64 = canvas.toDataURL('image/png');
+                croppedImages.push(base64);
+
+                imageCropper.destroy();
+                currentCropIndex++;
+                
+                if (currentCropIndex >= filesToCrop.length) {
+                    imagesModal.hide();
+                    displayCroppedImages();
+                } else {
+                    cropNextImage();
+                }
+            });
+
+            function displayCroppedImages() {
+                imagesPreview.innerHTML = '';
+                
+                croppedImages.forEach(imageUrl => {
+                    const img = document.createElement('img');
+                    img.src = imageUrl;
+                    img.className = 'rounded border me-2 mb-2';
+                    img.style.height = '120px';
+                    img.style.width = 'auto';
+                    img.style.objectFit = 'cover';
+                    imagesPreview.appendChild(img);
+                });
+                
+                imagesHidden.value = croppedImages.join('||');
+            }
 
             $(document).ready(function() {
                 $('#summernote').summernote({
