@@ -11,11 +11,11 @@
                 </svg></span>
         </h2>
         <a class="block text-button-lg hover:underline" href="javaScript:void(0);">
-            See all features →
+            See all projects →
         </a>
     </header>
 
-    <ul class="grid grid-cols-1 -mx-4 md:mx-0 md:grid-cols-[42.5%_15%_42.5%] rounded-24 bg-gray-450">
+    <ul class="grid grid-cols-1 -mx-4 md:mx-0 md:grid-cols-[42.5%_15%_42.5%] rounded-24 gap-4 md:gap-6 lg:gap-8">
         <li class="relative col-span-1 md:col-span-2 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450">
             <img src="/images/landing/projects/thrivecoach.png"
                 alt="Thrive Coach"
@@ -76,36 +76,5 @@
                 </p>
             </div>
         </li>
-        <li class="relative col-span-1 md:col-span-2 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450">
-            <img src="/images/landing/projects/frilansfinans.png"
-                alt="Frilans Finans"
-                class="absolute inset-0 w-full h-full object-cover z-0"
-            />
-            <div class="absolute inset-0 bg-black/20 z-10"></div>
-            <div class="relative z-20 bg-white p-6 md:p-8 project-highlight">
-                <h3 class="mb-3 text-heading-2xs md:text-heading-xs lg:text-heading-ssm font-sans-heading w-62">
-                    Frilans Finans
-                </h3>
-                <p class="text-caption-lg w-62">
-                    Frilans Finans is Sweden’s largest umbrella company. Our mission is to enable people to conduct business in an easy, fun and safe way.
-                </p>
-            </div>
-        </li>
-        <li class="relative col-span-1 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450 md:-ml-hairline -mt-hairline md:mt-0 bg-gray-100">
-            <img src="/images/landing/projects/smile.png"
-                alt="Smile"
-                class="absolute inset-0 w-full h-full object-cover z-0"
-            />
-            <div class="absolute inset-0 bg-black/20 z-10"></div>
-            <div class="relative z-20 bg-white p-6 md:p-8 project-highlight">
-                <h3 class="mb-3 text-heading-2xs md:text-heading-xs lg:text-heading-ssm font-sans-heading w-62">
-                    Smile
-                </h3>
-                <p class="text-caption-lg w-62">
-                    Get peace of mind with reduced & capped dental fees on all treatments with no waiting - from $79 a year!
-                </p>
-            </div>
-        </li>
     </ul>
-
 </section>

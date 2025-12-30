@@ -1,7 +1,7 @@
 <section class="relative pt-20 pb-12 md:py-28 border-t border-gray-300">
     <header class="mb-8 lg:mb-16">
         <h2 class="inline-block relative mb-6 md:mb-8 text-ui-32-normal md:text-heading-lg font-sans-heading">
-            What do our <br class="hidden md:block" />customers <span class="relative pl-2">say?<svg
+            What do our <br class="hidden md:block" />clients <span class="relative pl-2">say?<svg
                     class="absolute text-gray-900 w-[80px] md:w-[114px] -right-[2px] -bottom-[8px] md:-bottom-[10px]"
                     aria-hidden="true" role="presentation" viewBox="0 0 114 60" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
