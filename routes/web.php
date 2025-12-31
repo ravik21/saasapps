@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::resource('projects', App\Http\Controllers\ProjectController::class);
+    Route::resource('client-reviews', App\Http\Controllers\ClientReviewController::class);
 });
 
 require __DIR__.'/auth.php';

@@ -27,24 +27,28 @@
         @endphp
 
         <div
-            class="relative col-span-1 aspect-[3/2] flex items-center justify-center overflow-hidden before:rounded-16 md:before:rounded-b-none md:before:rounded-t-24">
-            <div class="absolute inset-0 bg-gray-300">
-                @if($featuredCase->video_link)
-                    <button
-                        class="video-trigger absolute inset-0 bg-gray-900/20 hover:bg-gray-900/30 transition flex items-center justify-center"
-                        data-src="{{ $featuredCase->video_link }}"
-                        data-duration="{{ $featuredCase->duration ?? '' }}"
-                        aria-label="Play video">
-                        <div class="bg-gray-100 hover:bg-gray-200 transition px-6 py-4 rounded-12">
-                            <svg class="size-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M19.75 10.7015C20.75 11.2788 20.75 12.7222 19.75 13.2995L7.75 20.2277C6.75 20.8051 5.5 20.0834 5.5 18.9287L5.5 5.07229C5.5 3.91758 6.75 3.1959 7.75 3.77325L19.75 10.7015Z"
-                                    fill="black" />
-                            </svg>
-                        </div>
-                    </button>
-                @endif
-            </div>
+            class="relative col-span-1 aspect-[3/2] flex items-center justify-center overflow-hidden rounded-16 md:rounded-b-none md:rounded-t-24">
+            @if($featuredCase->video_link)
+                <video class="absolute inset-0 w-full h-full object-cover" muted>
+                    <source src="{{ $featuredCase->video_link }}" type="video/mp4">
+                </video>
+                <button
+                    class="video-trigger absolute inset-0 bg-gray-900/40 hover:bg-gray-900/50 transition flex items-center justify-center cursor-pointer"
+                    data-src="{{ $featuredCase->video_link }}"
+                    aria-label="Play video">
+                    <div class="bg-white hover:bg-gray-100 transition px-8 py-6 rounded-full shadow-lg">
+                        <svg class="size-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19.75 10.7015C20.75 11.2788 20.75 12.7222 19.75 13.2995L7.75 20.2277C6.75 20.8051 5.5 20.0834 5.5 18.9287L5.5 5.07229C5.5 3.91758 6.75 3.1959 7.75 3.77325L19.75 10.7015Z"
+                                fill="black" />
+                        </svg>
+                    </div>
+                </button>
+            @else
+                <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
+                    <span class="text-gray-500">No video available</span>
+                </div>
+            @endif
         </div>
         <blockquote
             class="col-span-1 md:mb-4 md:px-4 lg:px-12 mt-6 md:mt-0 md:self-stretch md:flex md:flex-col md:justify-center">
@@ -152,20 +156,22 @@
                 
                 // Create modal overlay
                 const modal = document.createElement('div');
-                modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-gray-900/90';
-                modal.style.backdropFilter = 'blur(4px)';
+                modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4';
+                modal.style.backdropFilter = 'blur(8px)';
                 
                 modal.innerHTML = `
-                    <div class="relative w-full max-w-5xl mx-4">
-                        <button class="absolute -top-12 right-0 text-gray-100 hover:text-gray-300 transition" aria-label="Close">
-                            <svg class="size-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="relative w-full max-w-3xl mx-auto">
+                        <button class="absolute -top-12 right-0 text-white hover:text-gray-300 transition" aria-label="Close">
+                            <svg class="size-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                         </button>
-                        <video class="w-full rounded-lg" controls autoplay>
-                            <source src="${videoSrc}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div class="bg-black rounded-lg overflow-hidden shadow-2xl">
+                            <video class="w-full" controls autoplay>
+                                <source src="${videoSrc}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
                 `;
                 

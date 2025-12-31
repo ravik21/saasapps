@@ -14,7 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(config('global.pagination_count'));
+        $projects = Project::paginate(config('app.pagination_per_page'));
 
         return view('projects.index', compact('projects'));
     }

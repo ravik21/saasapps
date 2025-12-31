@@ -117,6 +117,19 @@
                     </a>
                 </li>
             @endcan
+
+            @can('manage client reviews')
+                <li>
+                    <a href="{{ route('client-reviews.index') }}" aria-label="Client Reviews" data-bs-placement="right" class="{{ request()->routeIs('client-reviews.*') ? 'active' : '' }}"
+                        data-bs-title="Client Reviews" data-bs-toggle="tooltip">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="svg-stroke">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M3 20l1.5 -1.5a4 4 0 0 1 5.5 -5.5l2 -2a4 4 0 0 0 5.5 -5.5l1.5 -1.5a2.121 2.121 0 0 1 3 3l-1.5 1.5a4 4 0 0 1 -5.5 5.5l-2 2a4 4 0 0 0 -5.5 5.5l-1.5 1.5a2.121 2.121 0 0 1 -3 -3z"></path>
+                        </svg>
+                        <span class="mx-3">Client Reviews</span>
+                    </a>
+                </li>
+            @endcan
         </ul>
     </div>
     <div>

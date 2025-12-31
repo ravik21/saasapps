@@ -28,6 +28,7 @@ class UserAndPermissionSeeder extends Seeder
             'manage roles',
             'manage permissions',
             'manage projects',
+            'manage client reviews',
         ];
 
         foreach ($permissions as $permission) {

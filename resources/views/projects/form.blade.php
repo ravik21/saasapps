@@ -28,7 +28,7 @@
                         @endif
 
                         <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
+                            <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ isset($project) ? $project->name : old('name') }}" required>
                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         </div>
@@ -40,19 +40,19 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="client" class="form-label">Client</label>
+                            <label for="client" class="form-label">Client <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="client" name="client" value="{{ isset($project) ? $project->client : old('client') }}" required>
                             <x-input-error :messages="$errors->get('client')" class="mt-2" />
                         </div>
 
                         <div class="mb-3">
-                            <label for="link" class="form-label">Link</label>
+                            <label for="link" class="form-label">Link <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="link" name="link" value="{{ isset($project) ? $project->link : old('link') }}" required>
                             <x-input-error :messages="$errors->get('link')" class="mt-2" />
                         </div>
 
                         <div class="mb-3">
-                            <label for="technology" class="form-label">Technology</label>
+                            <label for="technology" class="form-label">Technology <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="technology" name="technology" value="{{ isset($project) ? json_encode($project->technology) : old('technology') }}" required>
                             <x-input-error :messages="$errors->get('technology')" class="mt-2" />
                         </div>
@@ -100,7 +100,10 @@
                             <label class="form-check-label" for="is_ongoing">Is Ongoing</label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">{{ isset($project) ? 'Update' : 'Create' }} Project</button>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">{{ isset($project) ? 'Update' : 'Create' }} Project</button>
+                            <a href="{{ route('projects.index') }}" class="btn btn-secondary">Cancel</a>
+                        </div>
                     </form>
                 </div>
             </div>
