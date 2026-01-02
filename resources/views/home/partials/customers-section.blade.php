@@ -1,5 +1,5 @@
 @php
-    $cases = \App\Models\ClientReview::all();
+    $cases = \App\Models\ClientReview::take(4)->inRandomOrder()->get();
 @endphp
 
 <section class="relative pt-20 pb-12 md:py-28 border-t border-gray-300">
@@ -44,6 +44,32 @@
                         </svg>
                     </div>
                 </button>
+                <dl class="hidden lg:inline-grid absolute bottom-7 left-7 grid-cols-2 md:grid-cols-4 gap-x-4 grid-rows-[1fr_auto] lg:pr-24">
+                    <dt class="col-start-1 row-start-1 mb-1.5 md:mb-2.5 text-ui-13-normal text-gray-100/50">
+                    Country
+                    </dt>
+                    <dd class="col-start-1 row-start-2 text-ui-14 leading-[17px] text-gray-100">
+                    Denmark
+                    </dd>
+                    <dt class="col-start-2 row-start-1 mb-1.5 md:mb-2.5 text-ui-13-normal text-gray-100/50">
+                    Industry
+                    </dt>
+                    <dd class="col-start-2 row-start-2 text-ui-14 leading-[17px] text-gray-100">
+                    Food
+                    </dd>
+                    <dt class="col-start-1 md:col-start-3 row-start-3 md:row-start-1 mt-4 md:mt-0 mb-1.5 md:mb-2.5 text-ui-13-normal text-gray-100/50">
+                    Employees
+                    </dt>
+                    <dd class="col-start-1 md:col-start-3 row-start-4 md:row-start-2 text-ui-14 leading-[17px] text-gray-100">
+                    1500+
+                    </dd>
+                    <dt class="col-start-2 md:col-start-4 row-start-3 md:row-start-1 mt-4 md:mt-0 mb-1.5 md:mb-2.5 text-ui-13-normal text-gray-100/50">
+                    Departments
+                    </dt>
+                    <dd class="col-start-2 md:col-start-4 row-start-4 md:row-start-2 text-ui-14 leading-[17px] text-gray-100">
+                    46
+                    </dd>
+                </dl>
             @else
                 <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
                     <span class="text-gray-500">No video available</span>
