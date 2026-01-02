@@ -17,14 +17,23 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Cropper.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
+
+
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
+
+    @stack('styles')
 </head>
 
 <body class="relative min-h-screen max-w-308 pt-16 md:pt-18 xl:pt-23 px-8 md:px-4 mx-auto flex flex-col">
     @include('layouts.landing.header')
     {{ $slot }}
     @include('layouts.landing.footer')
+
+    <!-- Cropper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
 
     @stack('scripts')
 </body>

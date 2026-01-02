@@ -23,6 +23,8 @@
 
         <!-- Scripts -->
         @vite(['resources/js/app.js'])
+
+        @stack('styles')
     </head>
     <body data-theme="theme-Greylight" class="svgstroke-a">
         <main class="container-fluid px-0">

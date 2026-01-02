@@ -38,11 +38,12 @@ class ClientReviewController extends Controller
             'review' => 'required|string',
             'rating' => 'required|integer|min:1|max:5',
             'client_avatar' => 'nullable|string',
-            'video_link' => 'nullable|file|mimes:mp4,mov,avi,wmv|max:51200', // 50MB max
+            'video_link' => 'nullable',
             'duration' => 'nullable|string|max:100',
         ]);
 
         $data = $request->except(['video_link', 'client_avatar']);
+
         // Handle avatar upload
         if ($request->client_avatar) {
             $image = $request->client_avatar;
@@ -54,10 +55,24 @@ class ClientReviewController extends Controller
 
             $data['client_avatar'] = '/storage/'.$fileName;
         }
-        // Handle video upload
-        if ($request->hasFile('video_link')) {
+
+        // Handle video upload (both file and base64)
+        if ($request->video_link) {
+            // Check if it's base64 encoded
+            if (strpos($request->video_link, 'data:video') === 0) {
+                // Extract mime type and base64 data
+                preg_match('/data:video\/([a-zA-Z0-9]+);base64,(.*)/', $request->video_link, $matches);
+                $extension = $matches[1] ?? 'webm';
+                $videoData = base64_decode($matches[2]);
+
+                $fileName = 'client-reviews/videos/'.uniqid().'.'.$extension;
+                Storage::disk('public')->put($fileName, $videoData);
+
+                $data['video_link'] = '/storage/'.$fileName;
+            }
+        } elseif ($request->hasFile('video_link')) {
             $videoPath = $request->file('video_link')->store('client-reviews/videos', 'public');
-            $data['video_link'] = asset('storage/' . $videoPath);
+            $data['video_link'] = '/storage/' . $videoPath;
         }
 
         ClientReview::create($data);
@@ -131,7 +146,11 @@ class ClientReviewController extends Controller
 
         $clientReview->update($data);
 
-        return redirect()->route('client-reviews.index')->with('success', 'Client review updated successfully.');
+        if (!$request->has('public_review')) {
+            return redirect()->route('client-reviews.index')->with('success', 'Client review updated successfully.');
+        } else {
+            return redirect()->route('review.thankyou')->with('success', 'Client review updated successfully.');
+        }
     }
 
     /**

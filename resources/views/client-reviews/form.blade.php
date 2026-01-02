@@ -81,7 +81,7 @@
                             <input type="file" class="form-control @error('video_link') is-invalid @enderror" id="video_link" name="video_link" accept="video/*">
                             @if(isset($clientReview) && $clientReview->video_link)
                                 <small class="form-text text-muted d-block mt-1">
-                                    Current video: <a href="{{ Storage::url($clientReview->video_link) }}" target="_blank">View Video</a>
+                                    Current video: <a href="{{ $clientReview->video_link }}" target="_blank">View Video</a>
                                 </small>
                             @endif
                             <small class="form-text text-muted d-block mt-1">Accepted formats: MP4, MOV, AVI, WMV (Max: 50MB)</small>

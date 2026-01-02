@@ -11,6 +11,12 @@ Route::get('/portfolio', [App\Http\Controllers\HomeController::class, 'portfolio
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services'])->name('services');
 Route::get('/cases', [App\Http\Controllers\HomeController::class, 'cases'])->name('cases');
 
+Route::group(['prefix' => 'review', 'as' => 'review.'], function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'review'])->name('index');
+    Route::post('/store', [App\Http\Controllers\ClientReviewController::class, 'store'])->name('store');
+    Route::get('/thankyou', [App\Http\Controllers\HomeController::class, 'reviewThankYou'])->name('thankyou');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

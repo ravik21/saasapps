@@ -40,4 +40,14 @@ class HomeController extends Controller
     {
         return view('home.cases');
     }
+
+    public function review()
+    {
+        return view('home.review');
+    }
+
+    public function reviewThankYou()
+    {
+        return view('home.review-thankyou');
+    }
 }
