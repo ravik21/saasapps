@@ -9,6 +9,7 @@ class ClientReview extends Model
     protected $fillable = [
         'client_name',
         'company_name',
+        'client_avatar',
         'job_title',
         'review',
         'rating',

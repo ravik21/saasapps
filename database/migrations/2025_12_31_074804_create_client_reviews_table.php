@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('client_name')->nullable();
             $table->string('company_name')->nullable();
+            $table->string('client_avatar')->nullable();
             $table->string('job_title')->nullable();
             $table->text('review')->nullable();
             $table->integer('rating')->nullable();
