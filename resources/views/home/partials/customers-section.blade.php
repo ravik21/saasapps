@@ -181,80 +181,75 @@
     @endif
 </section></section>
 
+<div id="videoPlaybackModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+    <div class="absolute inset-0 bg-black/80" id="modalBackdrop"></div>
+    <div class="relative max-w-248 w-full aspect-[16/9] mx-4 -mt-24 bg-gray-800 ring-4 ring-gray-800 shadow-300 rounded-12 md:rounded-24">
+        <button type="button" id="closeVideoModal" class="absolute bottom-full -right-1 pb-7 px-1 pt-1 -mb-6 bg-gray-800 rounded-t-8">
+            <svg class="size-8 text-gray-100 hover:text-gray-500 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+        <video id="modalVideoPlayer" class="relative rounded-12 md:rounded-24" controls></video>
+    </div>
+</div>
+
+@push('styles')
+<style>
+    #modalBackdrop {
+        background-color: rgb(6 8 16 / 0.1);
+    }
+</style>
+@endpush
+
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Video trigger functionality
+        const modal = document.getElementById('videoPlaybackModal');
+        const videoPlayer = document.getElementById('modalVideoPlayer');
+        const closeBtn = document.getElementById('closeVideoModal');
+        const backdrop = document.getElementById('modalBackdrop');
         const videoTriggers = document.querySelectorAll('.video-trigger');
-        
+
+        function openModal(videoSrc) {
+            videoPlayer.src = videoSrc;
+            modal.classList.remove('hidden');
+            videoPlayer.play();
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            videoPlayer.pause();
+            videoPlayer.src = '';
+        }
+
         videoTriggers.forEach(trigger => {
             trigger.addEventListener('click', function() {
-                const videoSrc = this.dataset.src;
-                const brand = this.dataset.brand;
-                
-                // Create modal overlay
-                const modal = document.createElement('div');
-                modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4';
-                modal.style.backdropFilter = 'blur(8px)';
-                
-                modal.innerHTML = `
-                    <div class="relative w-full max-w-3xl mx-auto">
-                        <button class="absolute -top-12 right-0 text-white hover:text-gray-300 transition" aria-label="Close">
-                            <svg class="size-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                            </svg>
-                        </button>
-                        <div class="bg-black rounded-lg overflow-hidden shadow-2xl">
-                            <video class="w-full" controls autoplay>
-                                <source src="${videoSrc}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                document.body.style.overflow = 'hidden';
-                
-                // Close on button click
-                const closeBtn = modal.querySelector('button');
-                closeBtn.addEventListener('click', function() {
-                    modal.remove();
-                    document.body.style.overflow = '';
-                });
-                
-                // Close on background click
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        modal.remove();
-                        document.body.style.overflow = '';
-                    }
-                });
-                
-                // Close on Escape key
-                const handleEscape = function(e) {
-                    if (e.key === 'Escape') {
-                        modal.remove();
-                        document.body.style.overflow = '';
-                        document.removeEventListener('keydown', handleEscape);
-                    }
-                };
-                document.addEventListener('keydown', handleEscape);
+                openModal(this.dataset.src);
             });
         });
-        
+
+        closeBtn.addEventListener('click', closeModal);
+        backdrop.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
         // Testimonial slider functionality
         const sliders = document.querySelectorAll('.testimonial-slider');
-        
+
         sliders.forEach(slider => {
             const ul = slider.querySelector('ul');
             const items = slider.querySelectorAll('.slider-item');
             const dots = slider.querySelectorAll('.slider-dot');
-            
+
             if (items.length === 0 || dots.length === 0) return;
-            
+
             let currentIndex = 0;
-            
+
             function updateSlider(index) {
                 currentIndex = index;
                 
@@ -269,7 +264,7 @@
                     }
                 });
             }
-            
+
             // Click handlers for dots
             dots.forEach((dot, index) => {
                 dot.addEventListener('click', function() {
@@ -277,7 +272,7 @@
                     updateSlider(index);
                 });
             });
-            
+
             // Scroll sync for mobile swipe
             let scrollTimeout;
             ul.addEventListener('scroll', function() {
@@ -289,7 +284,7 @@
                     updateSlider(index);
                 }, 100);
             });
-            
+
             // Initialize first dot as active
             updateSlider(0);
         });
