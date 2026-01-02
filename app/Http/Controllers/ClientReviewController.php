@@ -37,12 +37,23 @@ class ClientReviewController extends Controller
             'job_title' => 'required|string|max:255',
             'review' => 'required|string',
             'rating' => 'required|integer|min:1|max:5',
+            'client_avatar' => 'nullable|string',
             'video_link' => 'nullable|file|mimes:mp4,mov,avi,wmv|max:51200', // 50MB max
             'duration' => 'nullable|string|max:100',
         ]);
 
-        $data = $request->except('video_link');
+        $data = $request->except(['video_link', 'client_avatar']);
+        // Handle avatar upload
+        if ($request->client_avatar) {
+            $image = $request->client_avatar;
+            $image = str_replace('data:image/png;base64,', '', $image);
+            $image = base64_decode($image);
 
+            $fileName = 'client-reviews/avatars/'.uniqid().'.png';
+            Storage::disk('public')->put($fileName, $image);
+
+            $data['client_avatar'] = '/storage/'.$fileName;
+        }
         // Handle video upload
         if ($request->hasFile('video_link')) {
             $videoPath = $request->file('video_link')->store('client-reviews/videos', 'public');
@@ -81,12 +92,31 @@ class ClientReviewController extends Controller
             'job_title' => 'required|string|max:255',
             'review' => 'required|string',
             'rating' => 'required|integer|min:1|max:5',
+            'client_avatar' => 'nullable|string',
             'video_link' => 'nullable|file|mimes:mp4,mov,avi,wmv|max:51200', // 50MB max
             'duration' => 'nullable|string|max:100',
         ]);
 
-        $data = $request->except('video_link');
+        $data = $request->except(['video_link', 'client_avatar']);
+        // Handle avatar upload
+        if ($request->client_avatar) {
+            // Delete old avatar if exists
+            if ($clientReview->client_avatar) {
+                $oldAvatarPath = str_replace('/storage/', '', $clientReview->client_avatar);
+                if (Storage::disk('public')->exists($oldAvatarPath)) {
+                    Storage::disk('public')->delete($oldAvatarPath);
+                }
+            }
 
+            $image = $request->client_avatar;
+            $image = str_replace('data:image/png;base64,', '', $image);
+            $image = base64_decode($image);
+
+            $fileName = 'client-reviews/avatars/'.uniqid().'.png';
+            Storage::disk('public')->put($fileName, $image);
+
+            $data['client_avatar'] = '/storage/'.$fileName;
+        }
         // Handle video upload
         if ($request->hasFile('video_link')) {
             // Delete old video if exists

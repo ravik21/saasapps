@@ -16,4 +16,9 @@ class ClientReview extends Model
         'video_link',
         'duration',
     ];
+
+    public function getClientAvatarAttribute($value)
+    {
+        return $value ?: '/images/avatar.png';
+    }
 }

@@ -89,15 +89,22 @@
             <p class="mt-2 md:mt-4 text-body-md lg:text-subtitle-md">
                 {{ $featuredCase->review }}
             </p>
-            <footer class="grid grid-cols-[1fr_auto] grid-rows-2 mt-8 items-center">
-                <p class="row-start-1 text-caption-md md:text-body-md font-medium">
-                    {{ $featuredCase->client_name }}
-                </p>
-                <p class="row-start-2 text-caption-md text-gray-700">
-                    {{ $featuredCase->company_name }}
-                </p>
+            <footer class="flex items-center gap-4 mt-8">
+                @if($featuredCase->client_avatar)
+                <div class="flex-shrink-0">
+                    <img src="{{ $featuredCase->client_avatar }}" alt="{{ $featuredCase->client_name }}" class="w-12 h-12 md:w-16 md:h-16 rounded object-cover border-2 border-white shadow-md">
+                </div>
+                @endif
+                <div class="flex-1 min-w-0">
+                    <p class="text-caption-md md:text-body-md font-medium">
+                        {{ $featuredCase->client_name }}
+                    </p>
+                    <p class="text-caption-md text-gray-700">
+                        {{ $featuredCase->company_name }}
+                    </p>
+                </div>
                 @if($featuredCase->rating)
-                <div class="col-start-2 row-start-1 row-span-2 flex items-center gap-1">
+                <div class="flex items-center gap-1 ml-auto">
                     @for($i = 1; $i <= 5; $i++)
                         <svg class="size-5 {{ $i <= $featuredCase->rating ? 'text-yellow-500' : 'text-gray-300' }}" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
@@ -134,8 +141,13 @@
                         {{ $case->review }}
                     </p>
                     <footer class="mt-6">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
+                        <div class="flex items-start gap-3">
+                            @if($case->client_avatar)
+                            <div class="flex-shrink-0">
+                                <img src="{{ $case->client_avatar }}" alt="{{ $case->client_name }}" class="w-10 h-10 rounded object-cover border-2 border-white shadow-sm">
+                            </div>
+                            @endif
+                            <div class="flex-1 min-w-0">
                                 <p class="text-caption-lg font-medium">
                                     {{ $case->client_name }}
                                 </p>
