@@ -76,5 +76,5 @@
     <aside class="col-span-1 mx-auto md:mx-0">
         <img src="{{ asset('images/landing/hero-illustration.png') }}" alt="Hero Illustration" class="w-full h-auto max-w-md md:max-w-none">
     </aside>
-    @include('home.partials.hero-slider')
+    @include('home.partials.home.hero-slider')
 </section>

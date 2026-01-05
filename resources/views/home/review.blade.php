@@ -253,7 +253,7 @@
             </div>
         </section>
 
-        @include('home.partials.get-app-section')
+        @include('home.partials.get-app')
     </main>
 
     <!-- Avatar Capture Modal -->

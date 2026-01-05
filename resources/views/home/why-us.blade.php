@@ -1,6 +1,6 @@
 <x-landing-layout>
     <div class="position-relative">
-        @include('home.partials.hero-section')
+        @include('home.partials.home.hero')
     </div>
     <!-- About Us Section -->
     <section class="py-5 py-lg-6 bg-light mt-200">

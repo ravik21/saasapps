@@ -1,11 +1,11 @@
 <x-landing-layout>
     <main class="flex-1">
-        @include('home.partials.hero-section')
-        @include('home.partials.highlights-section')
-        @include('home.partials.customers-section')
-        @include('home.partials.targeting-section')
-        @include('home.partials.integrations')
-        @include('home.partials.customize-section')
-        @include('home.partials.get-app-section')
+        @include('home.partials.home.hero')
+        @include('home.partials.home.highlights')
+        @include('home.partials.home.customers')
+        @include('home.partials.home.targeting')
+        @include('home.partials.home.integrations')
+        @include('home.partials.home.customize')
+        @include('home.partials.get-app')
     </main>
 </x-landing-layout>
