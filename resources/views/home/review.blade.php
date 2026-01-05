@@ -83,7 +83,7 @@
                         <input type="hidden" name="public_review" value="1">
 
                         <!-- Avatar Section -->
-                        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border border-gray-200">
+                        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border border-gray-200 mb-4">
                             <div class="flex items-center gap-2 mb-6">
                                 <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                                     <i class="fas fa-user-circle text-white"></i>
