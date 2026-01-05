@@ -36,10 +36,10 @@
 </defs>
 </svg>
           <h3 class="px-6 pt-4 pb-3 text-heading-mobile-2xs md:text-heading-2xs font-sans-heading">
-            No handovers
+            Requirement-driven development
           </h3>
           <p class="text-caption-lg text-gray-800 px-6 pb-5">
-            At Monotree, your initial contact will remain your main point of contact through sales, onboarding, and support, ensuring continuity and personalized assistance throughout.
+            We start every project with thorough requirement analysis and technical specifications. Clear documentation ensures alignment, reduces miscommunication, and provides a solid foundation for development.
           </p>
         </div>
       </li>
@@ -94,10 +94,10 @@
 </defs>
 </svg>
           <h3 class="px-6 pt-4 pb-3 text-heading-mobile-2xs md:text-heading-2xs font-sans-heading">
-            Dedicated servers
+            Quality assurance & testing
           </h3>
           <p class="text-caption-lg text-gray-800 px-6 pb-5">
-            With Monotree, you'll have a private, dedicated server, ensuring no resources are shared with other customers, so your performance won't be impacted by others.
+            Rigorous testing at every stage ensures your software works flawlessly. From unit tests to integration testing, we verify functionality, performance, and security before deployment.
           </p>
         </div>
       </li>
@@ -134,10 +134,10 @@
 </defs>
 </svg>
           <h3 class="px-6 pt-4 pb-3 text-heading-mobile-2xs md:text-heading-2xs font-sans-heading">
-            In house development
+            Full project lifecycle support
           </h3>
           <p class="text-caption-lg text-gray-800 px-6 pb-5">
-            We build everything in-house, incorporating customer feedback into our best features. If something goes wrong, we fix it immediately—no more waiting days for support.
+            From initial planning to deployment and maintenance, we support every phase of your project. Our comprehensive approach includes ongoing updates, monitoring, and optimization.
           </p>
         </div>
       </li>
