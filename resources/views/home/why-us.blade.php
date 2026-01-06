@@ -45,7 +45,7 @@
                     </defs>
                     <rect width="540" height="400" fill="url(#dotGrid)" />
 
-                    <!-- Development Workflow Line Diagram -->
+                    <!-- Development Workflow Line Diagram (balanced padding) -->
                     <!-- Code Repository (outline) -->
                     <g transform="translate(60 50)" stroke="#111" stroke-width="2">
                         <rect width="120" height="90" rx="8" fill="none" />
@@ -107,7 +107,7 @@
             class="md:grid grid-cols-12 grid-rows-2 grid-rows-[auto_1fr] pb-14 mb-14 md:pb-24 md:mb-24 border-b-hairline border-gray-400"
         >
             <aside
-                class="relative col-span-6 lg:col-span-5 row-span-2 h-100 flex items-center justify-center mb-8 md:mb-0"
+                class="relative col-span-6 lg:col-span-5 row-span-2 h-100 flex items-center justify-center mb-6 md:mb-0"
             >
                 <svg
                     class="w-full max-w-[400px] mx-auto"
@@ -312,7 +312,7 @@
             class="md:grid grid-cols-12 grid-rows-2 grid-rows-[auto_1fr] pb-14 mb-14 md:pb-24 md:mb-24 border-b-hairline border-gray-400"
         >
             <aside
-                class="relative col-span-6 lg:col-span-5 row-span-2 h-100 flex items-center justify-center mb-8 md:mb-0"
+                class="relative col-span-6 lg:col-span-5 row-span-2 h-100 flex items-center justify-center mb-6 md:mb-0"
             >
                 <svg
                     class="w-full max-w-[400px] mx-auto"
@@ -548,7 +548,7 @@
             class="md:grid grid-cols-12 grid-rows-2 grid-rows-[auto_1fr] pb-14 mb-14 md:pb-24 md:mb-24 border-b-hairline border-gray-400"
         >
             <aside
-                class="relative col-span-6 lg:col-span-5 row-span-2 h-100 flex items-center justify-center mb-8 md:mb-0"
+                class="relative col-span-6 lg:col-span-5 row-span-2 h-100 flex items-center justify-center mb-6 md:mb-0"
             >
                 <svg
                     class="w-full max-w-[400px] mx-auto"
@@ -716,7 +716,7 @@
         </section>
         <section class="md:grid grid-cols-12 grid-rows-2 mb-14 md:mb-24 grid-rows-[auto_1fr]">
             <aside
-                class="relative col-span-6 lg:col-span-5 row-span-2 h-100 flex items-center justify-center mb-8 md:mb-0"
+                class="relative col-span-6 lg:col-span-5 row-span-2 h-100 flex items-center justify-center mb-6 md:mb-0"
             >
                 <svg
                     class="w-full max-w-[400px] mx-auto"
