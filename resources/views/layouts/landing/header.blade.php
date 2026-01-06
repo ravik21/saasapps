@@ -38,11 +38,6 @@
                             About us
                         </a>
                     </li>
-                    <li class="flex-shrink-0">
-                        <a href="{{ route('portfolio') }}" class="relative px-2 py-3 hover:underline cursor-pointer">
-                            Portfolio
-                        </a>
-                    </li>
                 </ul>
             </nav>
             <a href="{{ route('contact-us') }}" class="flex-shrink-0 block ml-auto lg:ml-0 h-9 lg:h-11 px-4 lg:px-5 rounded-8 text-ui-14 lg:text-button-md bg-brand-500 text-brand-over-500 ring-gray-900/20 shadow-cta ring-hairline z-10 text-center flex items-center">
