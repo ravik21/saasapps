@@ -31,76 +31,7 @@
                 </p>
             </header>
             <aside class="col-span-1 mt-8 md:mt-0">
-                <svg
-                    class="w-full max-w-[540px] mx-auto"
-                    viewBox="0 0 540 400"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <!-- Background grid -->
-                    <defs>
-                        <pattern id="dotGrid" width="36" height="36" patternUnits="userSpaceOnUse">
-                            <circle cx="18" cy="18" r="1" fill="#E5E7EB" opacity="0.2" />
-                        </pattern>
-                    </defs>
-                    <rect width="540" height="400" fill="url(#dotGrid)" />
-
-                    <!-- Development Workflow Line Diagram (balanced padding) -->
-                    <!-- Code Repository (outline) -->
-                    <g transform="translate(60 50)" stroke="#111" stroke-width="2">
-                        <rect width="120" height="90" rx="8" fill="none" />
-                        <rect y="0" width="120" height="20" rx="8" fill="none" />
-                        <circle cx="15" cy="10" r="4" fill="none" />
-                        <circle cx="27" cy="10" r="4" fill="none" />
-                        <circle cx="39" cy="10" r="4" fill="none" />
-                        <line x1="15" y1="40" x2="85" y2="40" />
-                        <line x1="15" y1="54" x2="105" y2="54" />
-                        <line x1="15" y1="66" x2="95" y2="66" />
-                    </g>
-
-                    <!-- Testing & QA (outline) -->
-                    <g transform="translate(360 50)" stroke="#111" stroke-width="2">
-                        <circle cx="60" cy="45" r="45" fill="none" />
-                        <path d="M 40 45 L 52 57 L 80 29" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-                        <circle cx="60" cy="45" r="30" fill="none" stroke-dasharray="4 4" />
-                    </g>
-
-                    <!-- Central Pipeline (outline) -->
-                    <g transform="translate(220 170)" stroke="#111" stroke-width="2">
-                        <rect width="100" height="60" rx="8" fill="none" />
-                        <rect x="8" y="8" width="84" height="44" rx="4" fill="none" />
-                        <circle cx="25" cy="22" r="5" fill="none" />
-                        <circle cx="50" cy="22" r="5" fill="none" />
-                        <circle cx="75" cy="22" r="5" fill="none" />
-                        <line x1="15" y1="38" x2="85" y2="38" />
-                        <line x1="15" y1="48" x2="75" y2="48" />
-                    </g>
-
-                    <!-- Deployment (outline) -->
-                    <g transform="translate(80 260)" stroke="#111" stroke-width="2">
-                        <rect width="100" height="80" rx="8" fill="none" />
-                        <path d="M 20 25 L 50 10 L 80 25 L 80 50 L 50 65 L 20 50 Z" fill="none" />
-                        <line x1="50" y1="10" x2="50" y2="65" />
-                        <line x1="20" y1="50" x2="80" y2="50" />
-                    </g>
-
-                    <!-- Monitoring Dashboard (outline) -->
-                    <g transform="translate(360 260)" stroke="#111" stroke-width="2">
-                        <rect width="100" height="80" rx="8" fill="none" />
-                        <rect x="10" y="15" width="35" height="25" rx="3" fill="none" />
-                        <rect x="55" y="15" width="35" height="25" rx="3" fill="none" />
-                        <rect x="10" y="45" width="35" height="25" rx="3" fill="none" />
-                        <rect x="55" y="45" width="35" height="25" rx="3" fill="none" />
-                    </g>
-
-                    <!-- Connection Lines -->
-                    <g stroke="#111" stroke-width="1.5" stroke-dasharray="6 3">
-                        <line x1="180" y1="95" x2="220" y2="190" />
-                        <line x1="360" y1="95" x2="320" y2="190" />
-                        <line x1="270" y1="230" x2="180" y2="290" />
-                        <line x1="270" y1="230" x2="360" y2="290" />
-                    </g>
-                </svg>
+                <img src="{{ asset('images/landing/why-us/hero.png') }}" alt="Expertise Illustration" class="w-full max-w-[540px] mx-auto" />
             </aside>
         </section>
         <section
@@ -550,75 +481,7 @@
             <aside
                 class="relative col-span-6 lg:col-span-5 row-span-2 h-100 flex items-center justify-center mb-6 md:mb-0"
             >
-                <svg
-                    class="w-full max-w-[400px] mx-auto"
-                    viewBox="0 0 400 400"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <!-- Background grid -->
-                    <defs>
-                        <pattern id="expertiseGrid" width="30" height="30" patternUnits="userSpaceOnUse">
-                            <circle cx="15" cy="15" r="0.8" fill="#E5E7EB" opacity="0.2" />
-                        </pattern>
-                    </defs>
-                    <rect width="400" height="400" fill="url(#expertiseGrid)" />
-
-                    <!-- Technology Stack Line Diagram -->
-                    <!-- Frontend (outline) -->
-                    <g transform="translate(60 80)" stroke="#111" stroke-width="2">
-                        <rect width="100" height="60" rx="8" fill="none" />
-                        
-                        <line x1="15" y1="38" x2="40" y2="38" />
-                        <line x1="45" y1="38" x2="80" y2="38" />
-                        <line x1="15" y1="48" x2="55" y2="48" />
-                    </g>
-
-                    <!-- Backend (outline) -->
-                    <g transform="translate(240 80)" stroke="#111" stroke-width="2">
-                        <rect width="100" height="60" rx="8" fill="none" />
-                        
-                        <line x1="15" y1="38" x2="45" y2="38" />
-                        <line x1="50" y1="38" x2="80" y2="38" />
-                        <line x1="15" y1="48" x2="65" y2="48" />
-                    </g>
-
-                    <!-- Database (outline) -->
-                    <g transform="translate(60 200)" stroke="#111" stroke-width="2">
-                        <rect width="100" height="60" rx="8" fill="none" />
-                        
-                        <ellipse cx="50" cy="40" rx="30" ry="8" fill="none" />
-                        <ellipse cx="50" cy="47" rx="30" ry="8" fill="none" />
-                    </g>
-
-                    <!-- DevOps/Cloud (outline) -->
-                    <g transform="translate(240 200)" stroke="#111" stroke-width="2">
-                        <rect width="100" height="60" rx="8" fill="none" />
-                        
-                        <path d="M 30 35 Q 50 30 70 35 L 70 50 Q 50 55 30 50 Z" fill="none" />
-                        <circle cx="40" cy="43" r="3" fill="none" />
-                        <circle cx="50" cy="40" r="3" fill="none" />
-                        <circle cx="60" cy="43" r="3" fill="none" />
-                    </g>
-
-                    <!-- Central Integration Hub (outline) -->
-                    <g transform="translate(150 160)" stroke="#111" stroke-width="2">
-                        <circle cx="50" cy="50" r="35" fill="none" />
-                        <circle cx="50" cy="50" r="20" fill="none" />
-                        <circle cx="50" cy="50" r="8" fill="#111" />
-                        <!-- Connection lines -->
-                        <line x1="50" y1="15" x2="50" y2="30" stroke-width="1.5" stroke-dasharray="6 3" />
-                        <line x1="50" y1="70" x2="50" y2="85" stroke-width="1.5" stroke-dasharray="6 3" />
-                        <line x1="15" y1="50" x2="30" y2="50" stroke-width="1.5" stroke-dasharray="6 3" />
-                        <line x1="70" y1="50" x2="85" y2="50" stroke-width="1.5" stroke-dasharray="6 3" />
-                    </g>
-
-                    <!-- Experience Badge (outline) -->
-                    <g transform="translate(140 300)" stroke="#111" stroke-width="2">
-                        <circle cx="60" cy="30" r="28" fill="none" />
-                        
-                    </g>
-                </svg>
+                <img src="{{ asset('images/landing/why-us/hero.png') }}" alt="Expertise Illustration" class="w-full max-w-[400px] mx-auto" />
             </aside>
             <h2
                 class="col-span-5 col-start-7 mb-8 md:mb-12 text-heading-mobile-md md:text-heading-sm lg:text-heading-md font-sans-heading text-center md:text-left"
