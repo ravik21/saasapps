@@ -57,3 +57,22 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## Project Assets
+
+- Logo: `public/images/logo.svg`
+- Embedded tech icons (white):
+	- `public/images/icons/php.svg`
+	- `public/images/icons/mysql.svg`
+	- `public/images/icons/laravel.svg`
+	- `public/images/icons/vuejs.svg`
+	- `public/images/icons/nodejs.svg`
+
+### Updating Icons in Logo
+- Icons are inlined as `<path>` elements for reliable rendering when the logo is used via `<img>`.
+- To change icon size/position, adjust the `matrix(scale, 0, 0, scale, translateX, translateY)` transform on each `<g>` wrapping the icon path in `public/images/logo.svg`.
+- To replace an icon shape, copy the `<path d="..."/>` from your desired icon SVG and paste it inside the corresponding `<g>` block.
+
+### High-DPI Rendering
+- The logo SVG sets explicit `width` and `height` with a `viewBox` to render crisply on higher-resolution displays.

@@ -6,8 +6,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contactUs'])->name('contact-us');
 Route::get('/about-us', [App\Http\Controllers\HomeController::class, 'aboutUs'])->name('about-us');
-Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
-Route::get('/help-supports', [App\Http\Controllers\HomeController::class, 'helpSupports'])->name('help-supports');
+Route::get('/why-us', [App\Http\Controllers\HomeController::class, 'whyUs'])->name('why-us');
+Route::get('/portfolio', [App\Http\Controllers\HomeController::class, 'portfolio'])->name('portfolio');
+Route::get('/services', [App\Http\Controllers\HomeController::class, 'services'])->name('services');
+Route::get('/cases', [App\Http\Controllers\HomeController::class, 'cases'])->name('cases');
+
+Route::group(['prefix' => 'review', 'as' => 'review.'], function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'review'])->name('index');
+    Route::post('/store', [App\Http\Controllers\ClientReviewController::class, 'store'])->name('store');
+    Route::get('/thankyou', [App\Http\Controllers\HomeController::class, 'reviewThankYou'])->name('thankyou');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,6 +34,7 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::resource('projects', App\Http\Controllers\ProjectController::class);
+    Route::resource('client-reviews', App\Http\Controllers\ClientReviewController::class);
 });
 
 require __DIR__.'/auth.php';

@@ -28,7 +28,7 @@
                         @endif
 
                         <div class="mb-3">
-                            <label class="form-label">Role Name</label>
+                            <label class="form-label">Role Name <span class="text-danger">*</span></label>
                             <input type="text" name="name" class="form-control" value="{{ old('name', $role->name ?? '') }}" required>
                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         </div>
@@ -54,7 +54,10 @@
                             <x-input-error :messages="$errors->get('permissions')" class="mt-2" />
                         </div>
 
-                        <button type="submit" class="btn btn-primary">{{ isset($role) ? 'Update' : 'Create' }} Role</button>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">{{ isset($role) ? 'Update' : 'Create' }} Role</button>
+                            <a href="{{ route('roles.index') }}" class="btn btn-secondary">Cancel</a>
+                        </div>
                     </form>
                 </div>
             </div>

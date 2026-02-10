@@ -28,12 +28,15 @@
                         @endif
 
                         <div class="mb-3">
-                            <label class="form-label">Permission Name</label>
+                            <label class="form-label">Permission Name <span class="text-danger">*</span></label>
                             <input type="text" name="name" class="form-control" value="{{ old('name', $permission->name ?? '') }}" required>
                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         </div>
 
-                        <button type="submit" class="btn btn-primary">{{ isset($permission) ? 'Update' : 'Create' }} Permission</button>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">{{ isset($permission) ? 'Update' : 'Create' }} Permission</button>
+                            <a href="{{ route('permissions.index') }}" class="btn btn-secondary">Cancel</a>
+                        </div>
                     </form>
                 </div>
             </div>
