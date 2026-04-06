@@ -1,12 +1,12 @@
 @php
-    $admins = \App\Models\User::role('Admin')->take(3)->get();
+    $admins = \App\Models\User::role('Admin')->take(2)->get();
     $services = config('landing.services', []);
     $servicesList = collect($services)
         ->pluck('name')
         ->reject(function ($service) {
             return str_contains(strtolower($service), 'mobile') || str_contains(strtolower($service), 'ai');
         })
-        ->take(3)
+        ->take(2)
         ->implode(', ');
 @endphp
 
