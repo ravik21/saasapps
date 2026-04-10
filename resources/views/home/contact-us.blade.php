@@ -3,62 +3,67 @@
         <!-- Hero Banner Section -->
         <section class="review-hero-section">
             <div class="review-hero-container">
-                <div class="review-hero-content">
-                    <!-- Badge -->
-                    <div class="review-hero-badge-wrapper">
-                        <span class="review-hero-badge">
-                            <i class="fas fa-envelope review-hero-star-icon"></i>
-                            Get In Touch
-                        </span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    <div class="review-hero-content">
+                        <!-- Badge -->
+                        <div class="review-hero-badge-wrapper">
+                            <span class="review-hero-badge">
+                                <i class="fas fa-envelope review-hero-star-icon"></i>
+                                Get In Touch
+                            </span>
+                        </div>
+
+                        <!-- Main Heading -->
+                        <h1 class="relative mt-10 md:mt-0 text-heading-mobile-hero md:text-heading-lg lg:text-heading-hero font-sans-heading text-center md:text-left mb-6 md:mb-8">
+                            Let's Start a
+                            <span class="review-hero-heading-highlight">
+                                Conversation
+                                <svg class="review-hero-underline" aria-hidden="true" viewBox="0 0 188 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M187 2.43158C175.315 1.87289 163.847 1.48993 152.597 1.26169M187 7.00005C169.462 5.47673 141.769 3.9541 117.308 7.00005C130.359 4.14738 137.762 2.62071 152.597 1.26169M152.597 1.26169C140.718 1.02069 128.656 0.981649 116.5 1.11023M94.5 1.51622C63.2898 2.32629 31.806 4.09227 1.5 6.24457" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                            Together
+                        </h1>
+
+                        <!-- Subtitle -->
+                        <p class="review-hero-subtitle">
+                            Tell us what you want to build, improve, or scale and we will help shape the right product, technology, and delivery plan.
+                        </p>
+
+                        <!-- Trust indicators -->
+                        <div class="review-hero-trust-wrapper">
+                            <div class="review-hero-trust-card">
+                                <div class="review-hero-trust-icon">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div class="review-hero-trust-text">
+                                    <span class="review-hero-trust-title">24/7 Support</span>
+                                    <span class="review-hero-trust-desc">Always available</span>
+                                </div>
+                            </div>
+                            <div class="review-hero-trust-card">
+                                <div class="review-hero-trust-icon">
+                                    <i class="fas fa-reply"></i>
+                                </div>
+                                <div class="review-hero-trust-text">
+                                    <span class="review-hero-trust-title">Quick Response</span>
+                                    <span class="review-hero-trust-desc">Within 24 hours</span>
+                                </div>
+                            </div>
+                            <div class="review-hero-trust-card">
+                                <div class="review-hero-trust-icon">
+                                    <i class="fas fa-shield"></i>
+                                </div>
+                                <div class="review-hero-trust-text">
+                                    <span class="review-hero-trust-title">100% Secure</span>
+                                    <span class="review-hero-trust-desc">Your data is safe</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <!-- Main Heading -->
-                    <h1 class="relative mt-10 md:mt-0 text-heading-mobile-hero md:text-heading-lg lg:text-heading-hero font-sans-heading text-center md:text-left mb-6 md:mb-8">
-                        Let's Start a 
-                        <span class="review-hero-heading-highlight">
-                            Conversation
-                            <svg class="review-hero-underline" aria-hidden="true" viewBox="0 0 188 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M187 2.43158C175.315 1.87289 163.847 1.48993 152.597 1.26169M187 7.00005C169.462 5.47673 141.769 3.9541 117.308 7.00005C130.359 4.14738 137.762 2.62071 152.597 1.26169M152.597 1.26169C140.718 1.02069 128.656 0.981649 116.5 1.11023M94.5 1.51622C63.2898 2.32629 31.806 4.09227 1.5 6.24457" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                            </svg>
-                        </span>
-                        Together
-                    </h1>
-
-                    <!-- Subtitle -->
-                    <p class="review-hero-subtitle">
-                        We're here to <span class="review-hero-highlight-text">listen</span> and help turn your ideas into <span class="review-hero-highlight-text">reality</span>
-                    </p>
-
-                    <!-- Trust indicators -->
-                    <div class="review-hero-trust-wrapper">
-                        <div class="review-hero-trust-card">
-                            <div class="review-hero-trust-icon">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <div class="review-hero-trust-text">
-                                <span class="review-hero-trust-title">24/7 Support</span>
-                                <span class="review-hero-trust-desc">Always available</span>
-                            </div>
-                        </div>
-                        <div class="review-hero-trust-card">
-                            <div class="review-hero-trust-icon">
-                                <i class="fas fa-reply"></i>
-                            </div>
-                            <div class="review-hero-trust-text">
-                                <span class="review-hero-trust-title">Quick Response</span>
-                                <span class="review-hero-trust-desc">Within 24 hours</span>
-                            </div>
-                        </div>
-                        <div class="review-hero-trust-card">
-                            <div class="review-hero-trust-icon">
-                                <i class="fas fa-shield"></i>
-                            </div>
-                            <div class="review-hero-trust-text">
-                                <span class="review-hero-trust-title">100% Secure</span>
-                                <span class="review-hero-trust-desc">Your data is safe</span>
-                            </div>
-                        </div>
-                    </div>
+                    <aside class="hidden md:block">
+                        <img src="{{ asset('images/landing/contact-consultation.svg') }}" alt="Consultation and project planning dashboard visual for software discovery and support" class="w-full max-w-[460px] mx-auto" loading="lazy" decoding="async">
+                    </aside>
                 </div>
             </div>
         </section>
@@ -77,9 +82,25 @@
                         </div>
                         <p class="text-center text-gray-600 mt-3">Fill out the form below and we'll get back to you soon</p>
                     </div>
-                    <form id="template-contactform" name="template-contactform" action="include/form.php" method="post" class="p-6 md:p-12 space-y-8" novalidate="novalidate">
+                    <form id="template-contactform" name="template-contactform" action="{{ route('contact-us.store') }}" method="post" class="p-6 md:p-12 space-y-8">
+                        @csrf
                         <div class="form-widget">
-                            <div class="form-result"></div>
+                            @if (session('success'))
+                                <div class="mb-6 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-700 fade-in">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
+                            @if ($errors->any())
+                                <div class="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-700 fade-in">
+                                    <ul class="mb-0 list-disc pl-5">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <!-- Personal Info -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 <div class="form-group">
@@ -90,9 +111,10 @@
                                     <input 
                                         type="text" 
                                         id="template-contactform-name" 
-                                        name="template-contactform-name" 
+                                        name="name" 
                                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none required"
                                         placeholder="John Doe"
+                                        value="{{ old('name') }}"
                                     >
                                 </div>
                                 <div class="form-group">
@@ -103,9 +125,10 @@
                                     <input 
                                         type="email" 
                                         id="template-contactform-email" 
-                                        name="template-contactform-email" 
+                                        name="email" 
                                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none required email"
                                         placeholder="john@example.com"
+                                        value="{{ old('email') }}"
                                     >
                                 </div>
                             </div>
@@ -118,9 +141,10 @@
                                     <input 
                                         type="text" 
                                         id="template-contactform-phone" 
-                                        name="template-contactform-phone" 
+                                        name="phone" 
                                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none"
                                         placeholder="+1 (555) 000-0000"
+                                        value="{{ old('phone') }}"
                                     >
                                 </div>
                                 <div class="form-group">
@@ -130,12 +154,12 @@
                                     </label>
                                     <select 
                                         id="template-contactform-service" 
-                                        name="template-contactform-service" 
+                                        name="service" 
                                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none bg-white"
                                     >
                                         <option value="">-- Select One --</option>
                                         @foreach (config('landing.services') as $service)
-                                            <option value="{{ $service['name'] }}">{{ $service['name'] }}</option>
+                                            <option value="{{ $service['name'] }}" @selected(old('service') === $service['name'])>{{ $service['name'] }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -151,6 +175,7 @@
                                     name="subject" 
                                     class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none required"
                                     placeholder="How can we help you?"
+                                    value="{{ old('subject') }}"
                                 >
                             </div>
                             <div class="form-group mb-6">
@@ -160,17 +185,17 @@
                                 </label>
                                 <textarea 
                                     id="template-contactform-message" 
-                                    name="template-contactform-message" 
+                                    name="message" 
                                     rows="6" 
                                     class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none required resize-none"
                                     placeholder="Tell us about your project..."
-                                ></textarea>
+                                >{{ old('message') }}</textarea>
                             </div>
                             <div class="hidden form-group">
                                 <input 
                                     type="text" 
                                     id="template-contactform-botcheck" 
-                                    name="template-contactform-botcheck" 
+                                    name="botcheck" 
                                     class="w-full"
                                 >
                             </div>
@@ -186,7 +211,6 @@
                                     Send Message
                                 </button>
                             </div>
-                            <input type="hidden" name="prefix" value="template-contactform-">
                         </div>
                     </form>
                 </div>

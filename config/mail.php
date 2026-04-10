@@ -115,4 +115,9 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'support' => [
+        'address' => env('MAIL_SUPPORT_ADDRESS', 'support@saasappsindia.com'),
+        'name' => env('MAIL_SUPPORT_NAME', env('APP_NAME', 'SaaSApps').' Support'),
+    ],
+
 ];

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
 
 use Spatie\Permission\Models\Role;
@@ -23,6 +24,7 @@ class UserAndPermissionSeeder extends Seeder
             'manage permissions',
             'manage projects',
             'manage client reviews',
+            'manage contact submissions',
         ];
 
         foreach ($permissions as $permission) {
@@ -32,8 +34,6 @@ class UserAndPermissionSeeder extends Seeder
         $admin = Role::firstOrCreate(['name' => 'Admin']);
         Role::firstOrCreate(['name' => 'Developer']);
         $admin->syncPermissions($permissions);
-
-        User::truncate();
 
         foreach ($this->teams() as $team) {
             $user = User::updateOrCreate(
@@ -57,7 +57,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Rajender Thakur',
                 'email' => 'rajender.thakur@saasappsindia.com',
                 'designation' => 'Founder & CEO',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Admin',
                 'avatar' => null,
             ],
@@ -65,7 +65,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Satyam Singh',
                 'email' => 'satyam.singh@saasappsindia.com',
                 'designation' => 'Co-Founder & CTO',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Admin',
                 'avatar' => null,
             ],
@@ -73,7 +73,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Mandeep Kumar',
                 'email' => 'mandeep.kumar@saasappsindia.com',
                 'designation' => 'Sr. Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/mandeep-kumar.png',
             ],
@@ -81,7 +81,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Suraj Rawat',
                 'email' => 'suraj.rawat@saasappsindia.com',
                 'designation' => 'Sr. Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/suraj-rawat.jpg',
             ],
@@ -89,7 +89,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Nitesh',
                 'email' => 'nitesh@saasappsindia.com',
                 'designation' => 'Sr. Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/nitesh.png',
             ],
@@ -97,7 +97,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Aman Yadav',
                 'email' => 'aman.yadav@saasappsindia.com',
                 'designation' => 'Sr. Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/aman-yadav.jpg',
             ],
@@ -106,14 +106,14 @@ class UserAndPermissionSeeder extends Seeder
                 'email' => 'sachin.thakur@saasappsindia.com',
                 'designation' => 'Developer',
                 'avatar' => '/images/teams/sachin-thakur.jpeg',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
             ],
             [
                 'name' => 'Anshul Saini',
                 'email' => 'anshul.saini@saasappsindia.com',
                 'designation' => 'Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/anshul-saini.jpg',
             ],
@@ -121,7 +121,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Tarun Thakur',
                 'email' => 'tarun.thakur@saasappsindia.com',
                 'designation' => 'Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/tarun-thakur.jpg',
             ],
@@ -129,7 +129,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Sanjeev Kumar',
                 'email' => 'sanjeev.kumar@saasappsindia.com',
                 'designation' => 'Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/sanjeev-kumar.jpeg',
             ],
@@ -137,7 +137,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Akash Rana',
                 'email' => 'akash.rana@saasappsindia.com',
                 'designation' => 'Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/akash-rana.png',
             ],
@@ -145,7 +145,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Aditya',
                 'email' => 'aditya@saasappsindia.com',
                 'designation' => 'Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/aditya.png',
             ],
@@ -153,7 +153,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Atul Yadav',
                 'email' => 'atul.yadav@saasappsindia.com',
                 'designation' => 'Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/atul-yadav.jpeg',
             ],
@@ -161,7 +161,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Sandeep',
                 'email' => 'sandeep@saasappsindia.com',
                 'designation' => 'Jr. Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/sandeep.jpg',
             ],
@@ -169,7 +169,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Mujammil Malik',
                 'email' => 'mujammil.malik@saasappsindia.com',
                 'designation' => 'Jr. Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/mujammil-malik.jpg',
             ],
@@ -177,7 +177,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Nitish Attri',
                 'email' => 'nitish.attri@saasappsindia.com',
                 'designation' => 'Jr. Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/nitish-attri.jpg',
             ],
@@ -185,7 +185,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Daman',
                 'email' => 'daman@saasappsindia.com',
                 'designation' => 'Jr. Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/daman.jpg',
             ],
@@ -193,7 +193,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Sagar Kashyap',
                 'email' => 'sagar.kashyap@saasappsindia.com',
                 'designation' => 'Jr. Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/sagar-kashyap.jpeg',
             ],
@@ -201,7 +201,7 @@ class UserAndPermissionSeeder extends Seeder
                 'name' => 'Chandan',
                 'email' => 'chandan@saasappsindia.com',
                 'designation' => 'Jr. Developer',
-                'password' => bcrypt('12345678'),
+                'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/chandan.jpg',
             ]

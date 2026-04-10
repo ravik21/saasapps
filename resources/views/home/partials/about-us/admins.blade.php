@@ -23,14 +23,13 @@
                 </svg></span> generation of business solutions
         </h2>
         <p class="text-body-md lg:text-body-lg mt-4 lg:mt-10 text-gray-600">
-            Founded in 2014 and based in India, we are a 100% founder-owned company committed to delivering excellence in
-            software development. We specialize in {{ $servicesList }}, helping businesses transform their operations
-            through cutting-edge technology.
+            Founded in 2014 and based in India, we are a founder-led software company focused on long-term partnerships,
+            thoughtful execution, and dependable delivery. Our team specializes in {{ $servicesList }}, helping companies
+            modernize operations and launch products that are practical, scalable, and built to last.
         </p>
         <p class="text-body-md lg:text-body-lg mt-3 text-gray-600">
-            Our development-first approach focuses on engineering reliable systems that streamline operations, improve
-            efficiency, and support long-term growth. Every line of code we write is optimized for maintainability,
-            security, and performance.
+            We lead with engineering discipline, clear communication, and real ownership of outcomes. That means cleaner
+            architecture, stronger product thinking, and software that stays maintainable as your business evolves.
         </p>
     </header>
     <ul class="col-span-1 flex justify-center mt-12 md:mt-0">

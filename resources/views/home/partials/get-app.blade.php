@@ -1,16 +1,16 @@
 <section class="relative pt-20 pb-40 md:py-30" data-cta-modal>
     <h2
         class="relative max-w-100 mx-auto mb-4 md:mb-6 text-heading-mobile-sm md:text-heading-sm font-sans-heading text-center">
-        Get your app in a <span class="relative">few<svg
+        Start your next product with a <span class="relative">team<svg
                 class="absolute text-gray-900 w-[38px] md:w-[50px] left-0 -bottom-[6px]" aria-hidden="true"
                 role="presentation" viewBox="0 0 50 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M1 2.94452C14.5 0.48118 31 0.481247 49 2.25307M10.6944 6C19.3488 4.11245 30 4.16042 38.4059 5.21069"
                     stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-            </svg></span> days.</br>Let's get in touch!
+            </svg></span> that ships.</br>Let's build something meaningful.
     </h2>
     <p class="max-w-100 mx-auto mb-6 text-body-sm md:text-body-md text-gray-800 text-center">
-        We work closely with teams to design, build, and scale reliable digital products. Get in touch to discuss your project and see how we can bring it to life.
+        We work closely with founders and teams to plan, design, build, and support reliable digital products. Share your idea, roadmap, or existing platform and we will help move it forward.
     </p>
     <div class="flex justify-center">
         <a href="{{ route('contact-us') }}"
