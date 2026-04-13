@@ -2,17 +2,17 @@
     <header class="col-span-1 row-start-2 md:row-start-1 md:mr-12">
         <h1
             class="relative mt-10 md:mt-0 text-heading-mobile-hero md:text-heading-lg md:text-heading-hero font-sans-heading text-center md:text-left">
-            Build, Scale, and <span class="relative">Innovate <svg
+            Build, launch, and <span class="relative">scale <svg
                     class="absolute text-gray-900 w-[110px] md:w-[130px] lg:w-[188px] left-[11px] md:left-[14px] lg:left-[0px]"
                     aria-hidden="true" role="presentation" viewBox="0 0 188 8" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M187 2.43158C175.315 1.87289 163.847 1.48993 152.597 1.26169M187 7.00005C169.462 5.47673 141.769 3.9541 117.308 7.00005C130.359 4.14738 137.762 2.62071 152.597 1.26169M152.597 1.26169C140.718 1.02069 128.656 0.981649 116.5 1.11023M94.5 1.51622C63.2898 2.32629 31.806 4.09227 1.5 6.24457"
                         stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                </svg></span> with Confidence
+                </svg></span> software that lasts
         </h1>
         <p class="text-ui-17-normal leading-[150%] lg:text-subtitle-md mt-6 text-center md:text-left">
-            We build custom software, AI-driven solutions, scalable SaaS platforms, high-performance websites, and cloud-ready infrastructure that help businesses move faster, scale smarter, and lead the future.
+            We partner with startups, agencies, and established businesses to build Laravel, PHP, Node.js, Vue.js, React, mobile, and SaaS products with strong architecture, clean UX, and dependable delivery.
         </p>
         <figure class="mt-5 md:mt-10 flex flex-col md:flex-row items-center justify-center md:justify-start">
             <svg class="w-28 md:w-38 h-8 text-gray-900" width="152" height="32" viewBox="0 0 152 32" fill="none"
@@ -74,7 +74,7 @@
         </dl>
     </header>
     <aside class="col-span-1 mx-auto md:mx-0">
-        <img src="{{ asset('images/landing/hero-illustration.png') }}" alt="Hero Illustration" class="w-full h-auto max-w-md md:max-w-none">
+        <img src="{{ asset('images/landing/hero-tech-stack.svg') }}" alt="Product engineering dashboard showing backend APIs, frontend interfaces, SaaS analytics, and mobile app delivery" class="w-full h-auto max-w-md md:max-w-none">
     </aside>
     @include('home.partials.home.hero-slider')
 </section>

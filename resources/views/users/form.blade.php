@@ -1,15 +1,21 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="fw-semibold fs-4 text-dark">
-            {{ __('Users') }}
+            {{ __('Teams') }}
         </h2>
     </x-slot>
+
+    @cannot('manage users')
+        <div class="alert alert-danger m-4" role="alert">
+            <strong>Access Denied!</strong> Only administrators can create or edit team members.
+        </div>
+    @else
     <div class="py-12 w-100">
         <div class="py-2 page-header mb-4">
             <ol class="breadcrumb mb-0 bg-transparent">
                 <li class="breadcrumb-item"><a class="text-muted" href="{{ route('dashboard') }}" title="home">Home</a></li>
-                <li class="breadcrumb-item" aria-current="page" title="User"><a href="{{ route('users.index') }}"> Users</a></li>
-                <li class="breadcrumb-item active" aria-current="page" title="User">{{ isset($user) ? 'Edit User' : 'Create User' }}</li>
+                <li class="breadcrumb-item" aria-current="page" title="Teams"><a href="{{ route('users.index') }}">Teams</a></li>
+                <li class="breadcrumb-item active" aria-current="page" title="Teams">{{ isset($user) ? 'Edit Team Member' : 'Create Team Member' }}</li>
                 
             </ol>
             <ul class="list-unstyled action d-flex align-items-center mb-0">
@@ -40,14 +46,10 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="role" class="form-label">Role <span class="text-danger">*</span></label>
-                            <select class="form-select" id="role" name="role" required>
-                                <option value="">Select Role</option>
-                                @foreach ($roles as $role)
-                                    <option value="{{ $role->name }}" {{ (isset($user) && $user->hasRole($role->name)) ? 'selected' : '' }}>{{ $role->name }}</option>
-                                @endforeach
-                            </select>
-                            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+                            <label for="designation" class="form-label">Designation</label>
+                            <input type="text" class="form-control" id="designation" name="designation" value="{{ isset($user) ? $user->designation : old('designation') }}" placeholder="Senior Developer">
+                            <x-input-error :messages="$errors->get('designation')" class="mt-2" />
+                            <div class="form-text">Every member created here is added to the Developer team automatically.</div>
                         </div>
 
                         <div class="mb-3">
@@ -74,7 +76,7 @@
                         </div>
 
                         <div class="d-flex gap-2">
-                            <button type="submit" class="btn btn-primary">{{ isset($user) ? 'Update' : 'Create' }} User</button>
+                            <button type="submit" class="btn btn-primary">{{ isset($user) ? 'Update' : 'Create' }} Team Member</button>
                             <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancel</a>
                         </div>
                     </form>
@@ -154,5 +156,6 @@
             });
         </script>
     @endpush
+    @endcannot
 
 </x-app-layout>
