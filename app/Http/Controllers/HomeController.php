@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\ClientReview;
+use App\Models\Project;
 
 class HomeController extends Controller
 {
@@ -30,7 +31,13 @@ class HomeController extends Controller
 
     public function portfolio()
     {
-        return view('home.portfolio');
+        $projects = Project::latest()->take(9)->get();
+        $featuredReviews = ClientReview::orderBy('rating', 'desc')
+            ->orderBy('created_at', 'desc')
+            ->take(3)
+            ->get();
+
+        return view('home.portfolio', compact('projects', 'featuredReviews'));
     }
 
     public function services()
@@ -48,7 +55,7 @@ class HomeController extends Controller
         $remaining  = $allCases->skip(4);
 
         // Chunk other cases into equal groups for balanced columns
-        $chunkSize = ceil($remaining->count() / 2);
+        $chunkSize = max(1, (int) ceil($remaining->count() / 2));
         $otherCases = $remaining->chunk($chunkSize);
 
         return view('home.cases', compact('topCases', 'otherCases'));

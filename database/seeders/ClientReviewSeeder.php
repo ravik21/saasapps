@@ -58,6 +58,7 @@ class ClientReviewSeeder extends Seeder
         ];
 
         foreach ($reviews as $review) {
+            $review['review'] = trim($review['review']);
             \App\Models\ClientReview::updateOrCreate(
                 ['client_name' => $review['client_name'], 'company_name' => $review['company_name']],
                 $review

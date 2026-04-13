@@ -40,21 +40,23 @@
                     <span class="mx-3">Dashboard</span>
                 </a>
             </li>
-            <li>
-                <a href="{{ route('users.index') }}" aria-label="Users" data-bs-placement="right" class="{{ request()->routeIs('users.*') ? 'active' : '' }}"
-                    data-bs-title="Users" data-bs-toggle="tooltip">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="svg-stroke">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
-                        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
-                    </svg>
-                    <span class="mx-3">Users</span>
-                </a>
-            </li>
+            @can('manage users')
+                <li>
+                    <a href="{{ route('users.index') }}" aria-label="Teams" data-bs-placement="right" class="{{ request()->routeIs('users.*') ? 'active' : '' }}"
+                        data-bs-title="Teams" data-bs-toggle="tooltip">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="svg-stroke">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
+                        </svg>
+                        <span class="mx-3">Teams</span>
+                    </a>
+                </li>
+            @endcan
 
-            @can('manage roles')
+            @role('Admin')
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center {{ $roleMenuActive ? '' : 'collapsed' }}"
                         data-bs-toggle="collapse"
@@ -98,7 +100,7 @@
                         </ul>
                     </div>
                 </li>
-            @endcan
+            @endrole
 
             @can('manage projects')
                 <li>
@@ -127,6 +129,20 @@
                             <path d="M3 20l1.5 -1.5a4 4 0 0 1 5.5 -5.5l2 -2a4 4 0 0 0 5.5 -5.5l1.5 -1.5a2.121 2.121 0 0 1 3 3l-1.5 1.5a4 4 0 0 1 -5.5 5.5l-2 2a4 4 0 0 0 -5.5 5.5l-1.5 1.5a2.121 2.121 0 0 1 -3 -3z"></path>
                         </svg>
                         <span class="mx-3">Client Reviews</span>
+                    </a>
+                </li>
+            @endcan
+
+            @can('manage contact submissions')
+                <li>
+                    <a href="{{ route('contact-submissions.index') }}" aria-label="Contact Submissions" data-bs-placement="right" class="{{ request()->routeIs('contact-submissions.*') ? 'active' : '' }}"
+                        data-bs-title="Contact Submissions" data-bs-toggle="tooltip">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="svg-stroke">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                            <path d="M3 7l9 6l9 -6"></path>
+                        </svg>
+                        <span class="mx-3">Contact Submissions</span>
                     </a>
                 </li>
             @endcan

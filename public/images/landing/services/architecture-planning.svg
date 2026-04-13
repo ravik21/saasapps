@@ -1,0 +1,32 @@
+<svg width="760" height="520" viewBox="0 0 760 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="planBg" x1="60" y1="60" x2="700" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#EEF6FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="760" height="520" rx="32" fill="url(#planBg)"/>
+  <rect x="58" y="52" width="644" height="416" rx="26" fill="#FFFFFF" stroke="#D8E4F4" stroke-width="2"/>
+  <rect x="90" y="88" width="256" height="344" rx="20" fill="#0F172A"/>
+  <rect x="116" y="118" width="104" height="12" rx="6" fill="#E2E8F0"/>
+  <rect x="116" y="144" width="170" height="10" rx="5" fill="#475569"/>
+  <rect x="116" y="186" width="204" height="64" rx="18" fill="#111C34"/>
+  <rect x="136" y="210" width="116" height="10" rx="5" fill="#E2E8F0"/>
+  <rect x="116" y="278" width="142" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="116" y="304" width="190" height="10" rx="5" fill="#334155"/>
+  <rect x="116" y="350" width="162" height="54" rx="16" fill="#111C34"/>
+  <rect x="136" y="372" width="92" height="10" rx="5" fill="#E2E8F0"/>
+  <rect x="376" y="88" width="294" height="160" rx="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="404" y="116" width="128" height="14" rx="7" fill="#0F172A"/>
+  <rect x="404" y="144" width="222" height="10" rx="5" fill="#CBD5E1"/>
+  <rect x="404" y="166" width="176" height="10" rx="5" fill="#E2E8F0"/>
+  <rect x="404" y="194" width="124" height="34" rx="17" fill="#E2FEE6"/>
+  <rect x="552" y="194" width="74" height="34" rx="17" fill="#DCFCE7"/>
+  <rect x="376" y="272" width="294" height="160" rx="22" fill="#EFF6FF"/>
+  <rect x="404" y="302" width="138" height="14" rx="7" fill="#0F172A"/>
+  <rect x="404" y="332" width="202" height="10" rx="5" fill="#94A3B8"/>
+  <rect x="404" y="354" width="162" height="10" rx="5" fill="#CCF7C7"/>
+  <circle cx="606" cy="350" r="34" fill="#4DC86E"/>
+  <path d="M592 350H620" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M606 336V364" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+</svg>

@@ -2,19 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-use App\Models\User;
-
 class UserController extends Controller
 {
+    protected function developersQuery()
+    {
+        return User::whereHas('roles', function ($query) {
+            $query->where('name', 'Developer');
+        });
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $users = User::paginate(config('app.pagination_per_page'));
+        $users = $this->developersQuery()
+            ->latest()
+            ->paginate(config('app.pagination_per_page'));
 
         return view('users.index', compact('users'));
     }
@@ -24,9 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = \Spatie\Permission\Models\Role::all();
-
-        return view('users.form', compact('roles'));
+        return view('users.form');
     }
 
     /**
@@ -39,12 +45,14 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'avatar' => 'nullable|string',
+            'designation' => 'nullable|string|max:255',
         ]);
 
         $user = User::create([
                     'name' => $request->name,
                     'email' => $request->email,
                     'password' => bcrypt($request->password),
+                    'designation' => $request->designation,
                 ]);
 
         if ($request->avatar) {
@@ -60,9 +68,9 @@ class UserController extends Controller
             $user->save();
         }
 
-        $user->syncRoles($request->role ? [$request->role] : []);
+        $user->syncRoles(['Developer']);
 
-        return redirect()->route('users.index')->with('success', 'User created successfully.');
+        return redirect()->route('users.index')->with('success', 'Team member created successfully.');
     }
 
     /**
@@ -78,10 +86,11 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $user = User::findOrFail($id);
-        $roles = \Spatie\Permission\Models\Role::all();
+        abort_unless(auth()->user()->hasRole('Admin'), 403);
 
-        return view('users.form', compact('user', 'roles'));
+        $user = $this->developersQuery()->findOrFail($id);
+
+        return view('users.form', compact('user'));
     }
 
     /**
@@ -89,17 +98,21 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $user = User::findOrFail($id);
+        abort_unless(auth()->user()->hasRole('Admin'), 403);
+
+        $user = $this->developersQuery()->findOrFail($id);
 
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
             'password' => 'nullable|string|min:8|confirmed',
             'avatar' => 'nullable|string',
+            'designation' => 'nullable|string|max:255',
         ]);
 
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->designation = $request->designation;
 
         if ($request->filled('password')) {
             $user->password = bcrypt($request->password);
@@ -118,9 +131,9 @@ class UserController extends Controller
 
         $user->save();
 
-        $user->syncRoles($request->role ? [$request->role] : []);
+        $user->syncRoles(['Developer']);
 
-        return redirect()->route('users.index')->with('success', 'User updated successfully.');
+        return redirect()->route('users.index')->with('success', 'Team member updated successfully.');
     }
 
     /**
@@ -128,9 +141,11 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        $user = User::findOrFail($id);
+        abort_unless(auth()->user()->hasRole('Admin'), 403);
+
+        $user = $this->developersQuery()->findOrFail($id);
         $user->delete();
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully.');
+        return redirect()->route('users.index')->with('success', 'Team member deleted successfully.');
     }
 }
