@@ -56,9 +56,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="tel:+919876543210" title="For all inquiries, please call us at +91 98765 43210"
+                    <a href="tel:+918288915916" title="For all inquiries, please call us at +91 82889 15916"
                         class="block py-1 text-body-md select-text cursor-text hover:underline">
-                        +91 98765 43210
+                        +91 82889 15916
                     </a>
                 </li>
                 <li class="mt-4">
