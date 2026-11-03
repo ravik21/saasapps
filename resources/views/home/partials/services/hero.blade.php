@@ -16,7 +16,7 @@
             From custom enterprise platforms to intelligent AI systems, we build scalable software solutions that drive business growth. Our development expertise spans web, mobile, cloud infrastructure, and emerging technologies.
         </p>
     </header>
-    <footer class="hidden md:block relative h-50 -mx-4 mt-24 overflow-hidden">
+    <footer class="hidden md:block relative h-50 mt-24 overflow-hidden">
         <div class="absolute left-1/2 -translate-x-1/2">
             <svg width="1200" height="200" viewBox="0 0 1200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <!-- Background Cards -->

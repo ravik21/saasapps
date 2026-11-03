@@ -126,6 +126,14 @@ class UserAndPermissionSeeder extends Seeder
                 'avatar' => '/images/teams/tarun-thakur.jpg',
             ],
             [
+                'name' => 'Sandeep Singh',
+                'email' => 'sandeep@saasappsindia.com',
+                'designation' => 'Developer',
+                'password' => Hash::make('12345678'),
+                'role' => 'Developer',
+                'avatar' => '/images/teams/sandeep.jpg',
+            ],
+            [
                 'name' => 'Sanjeev Kumar',
                 'email' => 'sanjeev.kumar@saasappsindia.com',
                 'designation' => 'Developer',
@@ -148,22 +156,6 @@ class UserAndPermissionSeeder extends Seeder
                 'password' => Hash::make('12345678'),
                 'role' => 'Developer',
                 'avatar' => '/images/teams/aditya.png',
-            ],
-            [
-                'name' => 'Atul Yadav',
-                'email' => 'atul.yadav@saasappsindia.com',
-                'designation' => 'Developer',
-                'password' => Hash::make('12345678'),
-                'role' => 'Developer',
-                'avatar' => '/images/teams/atul-yadav.jpeg',
-            ],
-            [
-                'name' => 'Sandeep',
-                'email' => 'sandeep@saasappsindia.com',
-                'designation' => 'Jr. Developer',
-                'password' => Hash::make('12345678'),
-                'role' => 'Developer',
-                'avatar' => '/images/teams/sandeep.jpg',
             ],
             [
                 'name' => 'Mujammil Malik',
@@ -190,21 +182,13 @@ class UserAndPermissionSeeder extends Seeder
                 'avatar' => '/images/teams/daman.jpg',
             ],
             [
-                'name' => 'Sagar Kashyap',
-                'email' => 'sagar.kashyap@saasappsindia.com',
+                'name' => 'Arun Rana',
+                'email' => 'arun.rana@saasappsindia.com',
                 'designation' => 'Jr. Developer',
                 'password' => Hash::make('12345678'),
                 'role' => 'Developer',
-                'avatar' => '/images/teams/sagar-kashyap.jpeg',
+                'avatar' => '/images/teams/arun.jpeg',
             ],
-            [
-                'name' => 'Chandan',
-                'email' => 'chandan@saasappsindia.com',
-                'designation' => 'Jr. Developer',
-                'password' => Hash::make('12345678'),
-                'role' => 'Developer',
-                'avatar' => '/images/teams/chandan.jpg',
-            ]
         ];
     }
 }

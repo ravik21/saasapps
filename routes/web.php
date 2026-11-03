@@ -14,6 +14,31 @@ Route::get('/portfolio', [App\Http\Controllers\HomeController::class, 'portfolio
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services'])->name('services');
 Route::get('/cases', [App\Http\Controllers\HomeController::class, 'cases'])->name('cases');
 
+// Products
+Route::get('/products/capture', [App\Http\Controllers\HomeController::class, 'productCapture'])->name('products.capture');
+Route::get('/products/optimize', [App\Http\Controllers\HomeController::class, 'productOptimize'])->name('products.optimize');
+
+// Platform
+Route::get('/platform/specialized-intelligence', [App\Http\Controllers\HomeController::class, 'platformIntelligence'])->name('platform.intelligence');
+Route::get('/platform/integrations', [App\Http\Controllers\HomeController::class, 'platformIntegrations'])->name('platform.integrations');
+Route::get('/platform/api', [App\Http\Controllers\HomeController::class, 'platformApi'])->name('platform.api');
+
+// Solutions (By Function & By Use Case)
+Route::get('/solutions/{slug}', [App\Http\Controllers\HomeController::class, 'solution'])->name('solutions.show');
+
+// Core Marketing & Resource Pages
+Route::get('/pricing', [App\Http\Controllers\HomeController::class, 'pricing'])->name('pricing');
+Route::get('/resources', [App\Http\Controllers\HomeController::class, 'resources'])->name('resources.index');
+Route::get('/resources/{slug}', [App\Http\Controllers\HomeController::class, 'resourceDetail'])->name('resources.show');
+Route::get('/case-studies', [App\Http\Controllers\HomeController::class, 'caseStudies'])->name('case-studies.index');
+Route::get('/case-studies/{slug}', [App\Http\Controllers\HomeController::class, 'caseStudyDetail'])->name('case-studies.show');
+Route::get('/templates', [App\Http\Controllers\HomeController::class, 'templates'])->name('templates.index');
+Route::get('/security', [App\Http\Controllers\HomeController::class, 'security'])->name('security');
+Route::get('/whats-new', [App\Http\Controllers\HomeController::class, 'whatsNew'])->name('whats-new');
+Route::get('/demo', [App\Http\Controllers\HomeController::class, 'demo'])->name('demo');
+Route::get('/talk-to-sales', [App\Http\Controllers\HomeController::class, 'talkToSales'])->name('talk-to-sales');
+Route::get('/legal/{page}', [App\Http\Controllers\HomeController::class, 'legal'])->name('legal.show');
+
 Route::group(['prefix' => 'review', 'as' => 'review.'], function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'review'])->name('index');
     Route::post('/store', [App\Http\Controllers\ClientReviewController::class, 'store'])->name('store');

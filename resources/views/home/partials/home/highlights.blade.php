@@ -1,80 +1,236 @@
-<section id="highlights" class="relative py-20 md:py-28 border-t border-gray-300">
-    <header class="mb-8 lg:mb-16">
-        <h2 class="relative mb-6 md:mb-8 text-ui-32-normal md:text-heading-lg font-sans-heading">
-            Projects <span class="relative">highlights<svg
-                    class="absolute text-gray-900 w-[80px] md:w-[117px] right-0 -bottom-[8px] md:-bottom-[12px]"
-                    aria-hidden="true" role="presentation" viewBox="0 0 117 72" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M6.52643 7.99766C4.94183 5.69998 2.85228 3.68244 1 1.59863M109.77 14.3969C110.378 13.7416 110.937 13.0433 111.515 12.3608M68 9.00049C68.2139 6.63002 68.6547 4.31683 69 2.00049M17.8709 63.5527C15.6537 64.3763 13.7205 66.0614 11.7627 67.334M70 65.0005C70.3433 66.9512 70.6707 68.9328 71 71.0005M111.806 56.8633C113.335 57.5003 114.724 58.3876 116.169 59.1902"
-                        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                </svg></span>
-        </h2>
-        <a class="block text-button-lg hover:underline" href="javaScript:void(0);">
-            See all projects →
-        </a>
-    </header>
+@php
+    $features = config('landing.features', []);
+    $block1 = $features['block1'] ?? [];
+    $block2 = $features['block2'] ?? [];
+@endphp
 
-    <ul class="grid grid-cols-1 -mx-4 md:mx-0 md:grid-cols-[42.5%_15%_42.5%] rounded-24 gap-4 md:gap-6 lg:gap-8">
-        <li class="relative col-span-1 md:col-span-2 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450">
-            <img src="/images/landing/projects/thrivecoach.png"
-                alt="Thrive Coach"
-                class="absolute inset-0 w-full h-full object-contain z-0"
-            />
-            <div class="absolute inset-0 bg-black/20 z-10"></div>
-            <div class="relative z-20 bg-white p-6 md:p-8 project-highlight">
-                <h3 class="mb-3 text-heading-2xs md:text-heading-xs lg:text-heading-ssm font-sans-heading w-62">
-                    Thrive Coach
-                </h3>
-                <p class="text-caption-lg w-62">
-                    Build an automated digital program so you can serve more clients – without the burnout
-                </p>
+<!-- FEATURE BLOCK 1: Build / Capture Style (Paper Background) -->
+<section id="feature-build" class="relative w-full bg-paper py-16 sm:py-20 md:py-28 overflow-hidden">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <!-- Text Column (Left) -->
+            <div class="reveal-on-scroll">
+                @if(!empty($block1['badge']))
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200/90 shadow-subtle text-xs font-semibold text-slate-700 mb-4">
+                        <span class="size-1.5 rounded-full bg-brand-500"></span>
+                        <span>{{ $block1['badge'] }}</span>
+                    </div>
+                @endif
+
+                <h2 class="font-serif-display text-3xl sm:text-4xl md:text-5xl font-semibold text-ink leading-tight tracking-tight">
+                    {{ $block1['heading_lead'] ?? 'Engineered for reliability.' }}
+                    <span class="text-slate-400 font-normal block sm:inline">
+                        {{ $block1['heading_muted'] ?? 'From first commit to global scale.' }}
+                    </span>
+                </h2>
+
+                @if(!empty($block1['items']))
+                    <ul class="divide-y divide-slate-200/80 mt-8">
+                        @foreach($block1['items'] as $item)
+                            <li class="py-4 first:pt-0 last:pb-0 flex items-start gap-3">
+                                <span class="size-2 rounded-full bg-brand-500 mt-2.5 flex-shrink-0" aria-hidden="true"></span>
+                                <div>
+                                    <h3 class="text-base sm:text-lg font-semibold text-ink">
+                                        {{ $item['title'] }}
+                                    </h3>
+                                    <p class="text-sm sm:text-base text-slate-600 mt-1 leading-relaxed">
+                                        {{ $item['description'] }}
+                                    </p>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+
+                <div class="mt-8">
+                    <a href="{{ $block1['cta']['url'] ?? '/contact-us' }}"
+                       class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white bg-charcoal hover:bg-slate-900 shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+                        <span>{{ $block1['cta']['label'] ?? 'Get started' }}</span>
+                        <svg class="size-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-        </li>
-        <li class="relative col-span-1 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450 md:-ml-hairline -mt-hairline md:mt-0 bg-gray-100">
-            <img src="/images/landing/projects/qurater.png"
-                alt="Qurater"
-                class="absolute inset-0 w-full h-full object-contain z-0"
-            />
-            <div class="absolute inset-0 bg-black/20 z-10"></div>
-            <div class="relative z-20 bg-white p-6 md:p-8 project-highlight">
-                <h3 class="mb-3 text-heading-2xs md:text-heading-xs lg:text-heading-ssm font-sans-heading w-62">
-                    Qurater
-                </h3>
-                <p class="text-caption-lg w-62">
-                    Restaurant analytics & automation SaaS for food delivery brands
-                </p>
+
+            <!-- Visual Column (Right): Pale Blue Framed UI Mockup Card -->
+            <div class="reveal-on-scroll">
+                <div class="relative rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 bg-gradient-to-br from-sky-100/90 via-blue-50/70 to-teal-100/50 border border-sky-200/70 shadow-lg">
+                    <div class="bg-white rounded-xl shadow-md border border-slate-200/90 p-5 sm:p-6">
+                        <!-- Browser Window Bar -->
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-1.5">
+                                <span class="size-2.5 rounded-full bg-rose-400"></span>
+                                <span class="size-2.5 rounded-full bg-amber-400"></span>
+                                <span class="size-2.5 rounded-full bg-emerald-400"></span>
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-400 bg-slate-50 px-2.5 py-0.5 rounded-md border border-slate-200/60">
+                                saasapps.internal/architecture
+                            </span>
+                            <span class="size-2 rounded-full bg-emerald-500 animate-pulse" title="System Operational"></span>
+                        </div>
+
+                        <!-- Architecture Modules Card Content -->
+                        <div class="mt-5 space-y-3">
+                            <div class="p-3.5 rounded-lg bg-slate-50/90 border border-slate-100 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="size-8 rounded-md bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-xs">
+                                        API
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-semibold text-slate-800">Multi-Tenant Gateway</div>
+                                        <div class="text-[11px] text-slate-500 font-mono">Laravel REST & GraphQL</div>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                                    200 OK · 24ms
+                                </span>
+                            </div>
+
+                            <div class="p-3.5 rounded-lg bg-slate-50/90 border border-slate-100 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="size-8 rounded-md bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-xs">
+                                        Q
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-semibold text-slate-800">Event Bus & Async Queue</div>
+                                        <div class="text-[11px] text-slate-500 font-mono">Redis Workers Active</div>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-medium text-sky-700 bg-sky-50 border border-sky-200 px-2 py-0.5 rounded-full">
+                                    0 failed jobs
+                                </span>
+                            </div>
+
+                            <div class="p-3.5 rounded-lg bg-slate-50/90 border border-slate-100 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="size-8 rounded-md bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs">
+                                        UI
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-semibold text-slate-800">Client Web & Mobile SPA</div>
+                                        <div class="text-[11px] text-slate-500 font-mono">Vue 3 / React + Vite</div>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-medium text-purple-700 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded-full">
+                                    100 Lighthouse
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </li>
-        <li class="relative col-span-1 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450 md:-ml-hairline -mt-hairline md:mt-0 bg-gray-100">
-            <img src="/images/landing/projects/trustpatrick.png"
-                alt="Trust Patrick"
-                class="absolute inset-0 w-full h-full object-contain z-0"
-            />
-            <div class="absolute inset-0 bg-black/20 z-10"></div>
-            <div class="relative z-20 bg-white p-6 md:p-8 project-highlight">
-                <h3 class="mb-3 text-heading-2xs md:text-heading-xs lg:text-heading-ssm font-sans-heading w-62">
-                    Trust Patrick
-                </h3>
-                <p class="text-caption-lg w-62">
-                    Connecting Homeowners With Distinguished Home Improvement Contractors Nationwide
-                </p>
+        </div>
+    </div>
+</section>
+
+<!-- STATS STRIP 1 (Directly under block 1, paper background) -->
+@include('home.partials.home.targeting', ['strip' => 1])
+
+<!-- FEATURE BLOCK 2: Scale / Improve Style (Dark Charcoal Background) -->
+<section id="feature-scale" class="relative w-full bg-charcoal text-white py-16 sm:py-20 md:py-28 overflow-hidden">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <!-- Visual Column (Left on Desktop, Mirrored) -->
+            <div class="reveal-on-scroll order-2 lg:order-1">
+                <div class="relative rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 bg-gradient-to-br from-sky-950/60 via-slate-800/80 to-teal-950/50 border border-sky-500/20 shadow-2xl">
+                    <div class="bg-slate-900/95 rounded-xl shadow-lg border border-slate-700/80 p-5 sm:p-6 text-white">
+                        <!-- Dark Browser Window Bar -->
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <div class="flex items-center gap-1.5">
+                                <span class="size-2.5 rounded-full bg-rose-500"></span>
+                                <span class="size-2.5 rounded-full bg-amber-500"></span>
+                                <span class="size-2.5 rounded-full bg-emerald-500"></span>
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-400 bg-slate-800/70 px-2.5 py-0.5 rounded-md border border-slate-700">
+                                telemetry.saasapps.cloud
+                            </span>
+                            <span class="size-2 rounded-full bg-brand-400 animate-ping" title="Live Streaming"></span>
+                        </div>
+
+                        <!-- Telemetry Card Content -->
+                        <div class="mt-5 space-y-3">
+                            <div class="p-3.5 rounded-lg bg-slate-800/60 border border-slate-700 flex items-center justify-between">
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-200">Cloud Auto-Scaling Cluster</div>
+                                    <div class="text-[11px] text-slate-400 font-mono">AWS ECS / Docker / Redis</div>
+                                </div>
+                                <span class="text-[11px] font-medium text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-2.5 py-0.5 rounded-full">
+                                    99.99% Uptime
+                                </span>
+                            </div>
+
+                            <div class="p-3.5 rounded-lg bg-slate-800/60 border border-slate-700 flex items-center justify-between">
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-200">AI Worker & LLM Pipelines</div>
+                                    <div class="text-[11px] text-slate-400 font-mono">Asynchronous Queue Handlers</div>
+                                </div>
+                                <span class="text-[11px] font-medium text-sky-400 bg-sky-950/60 border border-sky-800 px-2.5 py-0.5 rounded-full">
+                                    1,420 jobs / hr
+                                </span>
+                            </div>
+
+                            <div class="p-3.5 rounded-lg bg-slate-800/60 border border-slate-700 flex items-center justify-between">
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-200">Zero-Downtime Deployment</div>
+                                    <div class="text-[11px] text-slate-400 font-mono">Automated CI/CD Test Matrix</div>
+                                </div>
+                                <span class="text-[11px] font-medium text-brand-400 bg-brand-950/60 border border-brand-800 px-2.5 py-0.5 rounded-full">
+                                    Passing (all checks)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </li>
-        <li class="relative col-span-1 md:col-span-2 h-110 flex flex-col justify-end rounded-24 overflow-hidden border-hairline border-gray-450">
-            <img src="/images/landing/projects/prescribery.png"
-                alt="Prescribery"
-                class="absolute inset-0 w-full h-full object-contain z-0"
-            />
-            <div class="absolute inset-0 bg-black/20 z-10"></div>
-            <div class="relative z-20 bg-white p-6 md:p-8 project-highlight">
-                <h3 class="mb-3 text-heading-2xs md:text-heading-xs lg:text-heading-ssm font-sans-heading w-62">
-                    Prescribery
-                </h3>
-                <p class="text-caption-lg w-62">
-                    Prescribery is a comprehensive telemedicine platform with an integrated network of national medical providers.
-                </p>
+
+            <!-- Text Column (Right on Desktop) -->
+            <div class="reveal-on-scroll order-1 lg:order-2">
+                @if(!empty($block2['badge']))
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-300 mb-4">
+                        <span class="size-1.5 rounded-full bg-brand-400"></span>
+                        <span>{{ $block2['badge'] }}</span>
+                    </div>
+                @endif
+
+                <h2 class="font-serif-display text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-tight tracking-tight">
+                    {{ $block2['heading_lead'] ?? 'Scale performance and automate workflows.' }}
+                    <span class="text-slate-400 font-normal block sm:inline">
+                        {{ $block2['heading_muted'] ?? 'Without disrupting users.' }}
+                    </span>
+                </h2>
+
+                @if(!empty($block2['items']))
+                    <ul class="divide-y divide-slate-700/80 mt-8">
+                        @foreach($block2['items'] as $item)
+                            <li class="py-4 first:pt-0 last:pb-0 flex items-start gap-3">
+                                <span class="size-2 rounded-full bg-brand-400 mt-2.5 flex-shrink-0" aria-hidden="true"></span>
+                                <div>
+                                    <h3 class="text-base sm:text-lg font-semibold text-white">
+                                        {{ $item['title'] }}
+                                    </h3>
+                                    <p class="text-sm sm:text-base text-slate-300 mt-1 leading-relaxed">
+                                        {{ $item['description'] }}
+                                    </p>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+
+                <div class="mt-8">
+                    <a href="{{ $block2['cta']['url'] ?? '/contact-us' }}"
+                       class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white border border-slate-600 hover:border-white hover:bg-white/10 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+                        <span>{{ $block2['cta']['label'] ?? 'Get started' }}</span>
+                        <svg class="size-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
+
+    <!-- STATS STRIP 2 (Directly under block 2, dark charcoal background) -->
+    @include('home.partials.home.targeting', ['strip' => 2])
 </section>

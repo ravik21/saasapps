@@ -69,7 +69,7 @@
         </section>
 
         <!-- Contact Form Section -->
-        <section class="relative pt-4 pb-12 md:py-20 md:bg-gray-300 md:before:absolute md:before:inset-0 md:before:bg-gray-300 md:before:w-screen md:before:left-1/2 md:before:right-1/2 md:before:-mr-[50vw] md:before:-ml-[50vw] md:before:-z-10">
+        <section class="relative bg-[#f3f4f6] py-12 md:py-16">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto bg-white rounded-24 shadow-2xl border border-gray-100 overflow-hidden">
                     <!-- Form Header -->
@@ -255,7 +255,7 @@
 
     /* Hero Section */
     .review-hero-section {
-        padding: 60px 20px;
+        padding: 112px 24px 64px;
     }
 
     .review-hero-container {
@@ -428,7 +428,7 @@
 
     @media (max-width: 767px) {
         .review-hero-section {
-            padding: 40px 16px;
+            padding: 104px 20px 40px;
         }
 
         .review-hero-badge {

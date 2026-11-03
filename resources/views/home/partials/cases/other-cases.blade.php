@@ -1,155 +1,83 @@
-<section class="relative pt-12 md:py-24">
-    <h2 class="mb-8 md:mb-20 text-heading-mobile-md md:text-heading-md font-sans-heading">
-        What other customers <span class="relative">say<svg
-                class="absolute text-gray-900 w-[16px] md:w-[22px] -right-[18px] md:-right-[24px] bottom-0"
-                aria-hidden="true" role="presentation" viewBox="0 0 22 42" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M6.62298 33.6675C0.727884 36.0138 -0.328162 29.713 11.984 23.231C21.9713 17.973 24.2453 6.36258 15.8446 1.8968C11.7393 -0.285607 6.46508 1.87661 3.8033 4.52035M3.96189 38.1519C3.42289 37.7956 2.1271 37.4004 1.25598 38.6704C0.167077 40.258 2.77973 42.274 4.81218 39.9357C6.12334 38.4272 4.55257 36.5517 2.95051 36.8046"
-                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-            </svg>
-        </span>
-    </h2>
-    <ul class="md:columns-2 gap-x-0">
-        @foreach ($otherCases[0] as $k1 => $case)
-        <li class="@if ($k1 == 0) break-inside-avoid pb-12 border-gray-400 md:pr-16 @else break-inside-avoid pb-12 border-gray-400 pt-12 md:pt-30 md:pr-16 border-t-hairline @endif">
-            <h3 class="h-10 mb-8 flex items-center text-heading-mobile-xs md:text-heading-xs font-sans-heading">
-                {{ $case->job_title }}
-            </h3>
-            <dl class="relative grid grid-cols-3 md:grid-cols-4 gap-x-4 grid-rows-[1fr_auto] mb-8">
-                <dt class="col-start-1 row-start-1 mb-2.5 text-ui-13-normal text-gray-600">
-                    Country
-                </dt>
-                <dd class="col-start-1 row-start-2 text-ui-15-normal leading-[18px]">
-                    Denmark
-                </dd>
-                <dt class="col-start-2 row-start-1 mb-2.5 text-ui-13-normal text-gray-600">
-                    Industry
-                </dt>
-                <dd class="col-start-2 row-start-2 text-ui-15-normal leading-[18px]">
-                    Retail
-                </dd>
-                <dt class="col-start-3 row-start-1 mb-2.5 text-ui-13-normal text-gray-600">
-                    Employees
-                </dt>
-                <dd class="col-start-3 row-start-2 text-ui-15-normal leading-[18px]">
-                    185
-                </dd>
-            </dl>
-            <blockquote class="relative pl-14">
-                <svg class="absolute left-0 top-0 size-7 text-gray-900" viewBox="0 0 32 32" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M32.0001 13.3845C32.0001 13.4072 32 13.4298 31.9998 13.4524V27.5382H31.975C31.6622 23.7478 29.4868 20.7691 24.6157 20.7691C20.5374 20.7691 17.2311 17.4629 17.2311 13.3845C17.2311 9.30617 20.5372 6 24.6156 6C28.6939 6 32.0001 9.30617 32.0001 13.3845Z"
-                        fill="black" />
-                    <path
-                        d="M7.38449 20.7691C12.245 20.781 14.4316 23.7554 14.7437 27.5382H14.7692V13.3845C14.7692 9.30616 11.4628 6.00001 7.38449 6.00001C3.30615 6.00001 0 9.30618 0 13.3845C0 17.4629 3.30615 20.7691 7.38449 20.7691Z"
-                        fill="black" />
-                </svg>
-                <p class="text-body-sm md:text-body-md text-gray-800">
-                    {{ $case->review }}
-                </p>
-                <footer class="mt-3 md:mt-5">
-                    <div class="flex items-center justify-center mb-3">
-                        <div class="flex space-x-1">
-                            @for($i = 1; $i <= 5; $i++)
-                                <svg class="size-5 {{ $i <= $case->rating ? 'text-yellow-400' : 'text-gray-300' }}" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                </svg>
-                            @endfor
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        @if($case->client_avatar)
-                        <img src="{{ $case->client_avatar }}" 
-                             alt="{{ $case->client_name }}" 
-                             class="size-10 md:size-12 rounded-full object-cover flex-shrink-0">
-                        @endif
-                        <div>
-                            <p class="mb-1 text-ui-13 md:text-ui-14 text-gray-800">
-                                {{ $case->client_name }}
-                            </p>
-                            @if($case->company_name)
-                            <p class="text-ui-12-normal md:text-ui-13-normal text-gray-600">
-                                {{ $case->company_name }}
-                            </p>
-                            @endif
-                        </div>
-                    </div>
-                </footer>
-            </blockquote>
-        </li>
-        @endforeach
+@php
+    // Use the passed collection of remaining reviews, with fallback if needed
+    $reviewsList = isset($otherCases) && $otherCases->count() > 0 ? $otherCases : (isset($allReviews) ? $allReviews->take(2) : collect());
+@endphp
 
-        @foreach ($otherCases[1] as $k2 => $case)
-        <li
-            class="@if ($k2 == 0) break-inside-avoid pb-12 border-gray-400 break-before-column pt-12 md:pt-30 md:pl-16 md:border-l-hairline @else break-inside-avoid pb-12 border-gray-400 pt-12 md:pt-30 md:pl-16 md:border-l-hairline border-t-hairline @endif">
-            <h3 class="h-10 mb-8 flex items-center text-heading-mobile-xs md:text-heading-xs font-sans-heading">
-                {{ $case->job_title }}
-            </h3>
-            <dl class="relative grid grid-cols-3 md:grid-cols-4 gap-x-4 grid-rows-[1fr_auto] mb-8">
-                <dt class="col-start-1 row-start-1 mb-2.5 text-ui-13-normal text-gray-600">
-                    Country
-                </dt>
-                <dd class="col-start-1 row-start-2 text-ui-15-normal leading-[18px]">
-                    Denmark
-                </dd>
-                <dt class="col-start-2 row-start-1 mb-2.5 text-ui-13-normal text-gray-600">
-                    Industry
-                </dt>
-                <dd class="col-start-2 row-start-2 text-ui-15-normal leading-[18px]">
-                    Food
-                </dd>
-                <dt class="col-start-3 row-start-1 mb-2.5 text-ui-13-normal text-gray-600">
-                    Employees
-                </dt>
-                <dd class="col-start-3 row-start-2 text-ui-15-normal leading-[18px]">
-                    180
-                </dd>
-            </dl>
-            <blockquote class="relative pl-14">
-                <svg class="absolute left-0 top-0 size-7 text-gray-900" viewBox="0 0 32 32" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M32.0001 13.3845C32.0001 13.4072 32 13.4298 31.9998 13.4524V27.5382H31.975C31.6622 23.7478 29.4868 20.7691 24.6157 20.7691C20.5374 20.7691 17.2311 17.4629 17.2311 13.3845C17.2311 9.30617 20.5372 6 24.6156 6C28.6939 6 32.0001 9.30617 32.0001 13.3845Z"
-                        fill="black" />
-                    <path
-                        d="M7.38449 20.7691C12.245 20.781 14.4316 23.7554 14.7437 27.5382H14.7692V13.3845C14.7692 9.30616 11.4628 6.00001 7.38449 6.00001C3.30615 6.00001 0 9.30618 0 13.3845C0 17.4629 3.30615 20.7691 7.38449 20.7691Z"
-                        fill="black" />
-                </svg>
-                <p class="text-body-sm md:text-body-md text-gray-800">
-                    {{ $case->review }}
-                </p>
-                <footer class="mt-3 md:mt-5">
-                    <div class="flex items-center justify-center mb-3">
-                        <div class="flex space-x-1">
-                            @for($i = 1; $i <= 5; $i++)
-                                <svg class="size-5 {{ $i <= $case->rating ? 'text-yellow-400' : 'text-gray-300' }}" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                </svg>
-                            @endfor
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        @if($case->client_avatar)
-                        <img src="{{ $case->client_avatar }}" 
-                             alt="{{ $case->client_name }}" 
-                             class="size-10 md:size-12 rounded-full object-cover flex-shrink-0">
-                        @endif
-                        <div>
-                            <p class="mb-1 text-ui-13 md:text-ui-14 text-gray-800">
-                                {{ $case->client_name }}
-                            </p>
-                            @if($case->company_name)
-                            <p class="text-ui-12-normal md:text-ui-13-normal text-gray-600">
-                                {{ $case->company_name }}
-                            </p>
+<!-- SECTION: OTHER CUSTOMER STORIES (SCRIBE EDITORIAL CARDS) -->
+<section class="relative w-full bg-white py-20 sm:py-24 lg:py-28 border-b border-[#E5E7EB]">
+    <div class="max-w-[1306px] mx-auto px-6 sm:px-10 lg:px-[78px]">
+
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-14 sm:mb-16">
+            <div class="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.14em] text-slate-500 mb-3 font-sans">
+                Verified Reviews
+            </div>
+            <h2 class="font-serif-display text-3xl sm:text-4xl lg:text-[44px] font-normal text-slate-900 leading-[1.12] tracking-[-0.025em]">
+                What other customers say
+            </h2>
+            <p class="mt-4 text-base sm:text-lg text-slate-600 font-sans leading-relaxed">
+                Direct feedback from founders and engineering executives who rely on our team for mission-critical software.
+            </p>
+        </div>
+
+        <!-- Responsive 2-Column Desktop Grid / 1-Column Mobile -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            @foreach($reviewsList as $review)
+                <div class="group rounded-2xl bg-white p-7 sm:p-8 border border-[#E5E7EB] shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-card hover:border-slate-300 transition-all duration-200 flex flex-col justify-between">
+                    <div>
+                        <!-- Header: Job Scope / Project Tag + Stars -->
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                            @if(!empty($review->job_title))
+                                <span class="inline-flex items-center px-3 py-1 rounded-md bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-800 font-sans">
+                                    {{ $review->job_title }}
+                                </span>
                             @endif
+
+                            <!-- 5 Stars -->
+                            <div class="flex items-center gap-1 text-amber-400" aria-label="{{ $review->rating ?? 5 }} stars">
+                                @for($i = 0; $i < ($review->rating ?? 5); $i++)
+                                    <svg class="size-4 fill-current" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                @endfor
+                            </div>
+                        </div>
+
+                        <!-- Quotation Text -->
+                        <blockquote class="text-[15.5px] sm:text-[16px] text-slate-800 font-sans leading-relaxed italic">
+                            &ldquo;{{ trim($review->review) }}&rdquo;
+                        </blockquote>
+                    </div>
+
+                    <!-- Client Profile Signature Footer -->
+                    <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between font-sans">
+                        <div class="flex items-center gap-3">
+                            <img src="{{ asset(ltrim($review->client_avatar ?? 'images/avatar.png', '/')) }}"
+                                 alt="{{ $review->client_name }}"
+                                 class="size-11 rounded-full object-cover border border-slate-200"
+                                 loading="lazy" />
+                            <div>
+                                <div class="text-[14.5px] font-semibold text-slate-900">
+                                    {{ $review->client_name }}
+                                </div>
+                                @if(!empty($review->company_name))
+                                    <div class="text-xs text-slate-500">
+                                        {{ $review->company_name }}
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/60">
+                            <svg class="size-3.5 fill-current" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Verified Client</span>
                         </div>
                     </div>
-                </footer>
-            </blockquote>
-        </li>
-        @endforeach
-    </ul>
+                </div>
+            @endforeach
+        </div>
+
+    </div>
 </section>

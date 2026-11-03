@@ -1,9 +1,9 @@
-<section class="mt-12 md:mt-20 pb-12 mb-12 md:pb-20 md:mb-20 border-b-hairline border-gray-400">
+<section class="mx-auto mt-12 w-full max-w-[1306px] px-6 pb-12 sm:px-10 md:mt-16 md:pb-16 lg:px-[78px] border-b-hairline border-gray-300">
     <h2 class="text-heading-mobile-sm md:text-heading-sm font-sans-heading">
         Our values
     </h2>
     <div class="flex flex-col" x-data="slider(3)">
-        <ul class="flex -mx-8 md:mx-0 px-8 pt-8 md:pt-12 pb-8 md:py-0 md:px-0 overflow-x-scroll md:overflow-x-visible snap-x snap-mandatory md:grid md:grid-cols-3 gap-14 scrollbar-none">
+        <ul class="flex gap-6 overflow-x-auto px-1 pt-8 pb-8 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pt-12 md:pb-0 scrollbar-none">
             <li x-ref="item0" data-index="0" class="snap-center w-full flex-shrink-0 col-span-1 md:-rotate-1">
                 <div class="relative rounded-24 bg-gray-100 shadow-card-bumped before:absolute before:inset-0 before:border-hairline before:border-gray-400 before:bg-gray-200 before:-rotate-4 before:rounded-24 before:-z-10">
                     <svg class="w-full p-1 bg-brand-100 rounded-t-24" viewBox="0 0 348 199" fill="none" xmlns="http://www.w3.org/2000/svg">

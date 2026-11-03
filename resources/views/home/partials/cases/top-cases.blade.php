@@ -1,172 +1,209 @@
-<section
-    class="relative py-4 md:pt-20 md:pb-16 lg:py-24 -mx-8 md:mx-0 px-4 md:px-0 bg-gray-300 md:before:absolute md:before:inset-0 md:before:bg-gray-300 md:before:w-screen md:before:left-1/2 md:before:right-1/2 md:before:-mr-[50vw] md:before:-ml-[50vw] md:before:-z-10">
-    <ul class="space-y-4 md:space-y-16 max-w-100 md:max-w-full w-full mx-auto">
-        @forelse($topCases as $case)
-        <li class="md:grid grid-cols-3 gap-4 md:gap-6">
-            <div class="relative col-span-2 flex flex-col justify-end p-6 md:p-8 bg-gray-200 rounded-t-24 md:rounded-24 overflow-hidden aspect-[0.82] md:aspect-[1] lg:aspect-[3/2]">
-                <div class="absolute inset-0">
-                    @if($case->video_link)
-                        <video class="object-cover w-full h-full select-none">
-                            <source src="{{ $case->video_link }}" type="video/mp4">
-                        </video>
-                    @else
-                        <img src="{{ asset('images/video-placeholder.png') }}" 
-                             class="object-cover w-full h-full" 
-                             alt="Video placeholder">
-                    @endif
-                </div>
+@php
+    // Merge real database projects with authentic client reviews
+    $casesData = [
+        [
+            'title' => 'TrustPatrick — B2B Review & Verification Engine',
+            'category' => 'SaaS & Identity Verification',
+            'description' => 'A robust multi-tenant platform engineered with automated fraud prevention, real-time audit logging, and custom verification workflows for business reviews.',
+            'image' => asset('images/landing/projects/trustpatrick.png'),
+            'link' => 'https://trustpatrick.com',
+            'technologies' => ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Redis'],
+            'client_name' => 'Joseph Edmonds',
+            'client_company' => 'Owner at Edmonds Ecommerce',
+            'client_avatar' => asset('images/avatar.png'),
+            'review' => 'Ravi did some great work for us pushing forwards an internal project with exceptional code quality and speed.',
+            'job_title' => 'Customisations and Improvements to Bespoke In House Laravel Business Application',
+            'rating' => 5,
+            'video_link' => null,
+        ],
+        [
+            'title' => 'ThriveCoach — Interactive Coaching & Client Portal',
+            'category' => 'Health & Wellness Platform',
+            'description' => 'An end-to-end coaching platform featuring automated appointment scheduling, private real-time messaging, client progress tracking, and Stripe billing.',
+            'image' => asset('images/landing/projects/thrivecoach.png'),
+            'link' => 'https://thrivecoach.app',
+            'technologies' => ['Laravel', 'React', 'Tailwind CSS', 'Stripe', 'AWS'],
+            'client_name' => 'Vincenzo Lufino',
+            'client_company' => 'Owner at BtoTree',
+            'client_avatar' => asset('images/avatar.png'),
+            'review' => 'Ravi is a great guy and developer! Reliable, communicative, and delivers high-performance code. Hope to work together again!',
+            'job_title' => 'Laravel PHP developers for B2B Network - Long Term',
+            'rating' => 5,
+            'video_link' => null,
+        ],
+        [
+            'title' => 'Qurater — AI Content & Knowledge Curation Engine',
+            'category' => 'AI & Knowledge Management',
+            'description' => 'An intelligent semantic research and content curation engine powered by LLMs, automated document extraction, multi-source ingestion, and automated categorization.',
+            'image' => asset('images/landing/projects/qurater.png'),
+            'link' => 'https://qurater.io',
+            'technologies' => ['Python', 'Laravel', 'OpenAI', 'PostgreSQL', 'Docker'],
+            'client_name' => 'Scott Yewell',
+            'client_company' => 'Purpose Built Software, Inc',
+            'client_avatar' => asset('images/avatar.png'),
+            'review' => 'Ravi did an excellent job on a complex project. He has great communication, and works really hard. Highly recommended.',
+            'job_title' => 'Awesome Backend Laravel Developer',
+            'rating' => 5,
+            'video_link' => null,
+        ],
+        [
+            'title' => 'Prescribery — Telemedicine & Digital Prescriptions',
+            'category' => 'Healthcare & Telemedicine',
+            'description' => 'A HIPAA-aligned digital prescription and telemedicine workflow application connecting licensed healthcare practitioners with local pharmacy networks seamlessly.',
+            'image' => asset('images/landing/projects/prescribery.png'),
+            'link' => 'https://prescribery.com',
+            'technologies' => ['Laravel', 'Vue.js', 'REST APIs', 'MySQL', 'Docker'],
+            'client_name' => 'Mikael Westöö',
+            'client_company' => 'CEO & Founder at Svensk e-identitet AB',
+            'client_avatar' => asset('images/avatar.png'),
+            'review' => 'Ravi is a brilliant developer! Solved challenging technical obstacles with elegant architecture and rapid execution.',
+            'job_title' => 'PHP Backend Developer',
+            'rating' => 5,
+            'video_link' => null,
+        ],
+    ];
+@endphp
 
-                @if($case->video_link)
-                <button class="video-trigger bg-gray-100 hover:bg-gray-200 transition px-6 py-4 rounded-12 absolute top-24 md:top-1/2 left-1/2 -translate-x-1/2 md:-translate-y-1/2"
-                    data-src="{{ $case->video_link }}"
-                    aria-label="Play video">
-                    <svg class="size-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.75 10.7015C20.75 11.2788 20.75 12.7222 19.75 13.2995L7.75 20.2277C6.75 20.8051 5.5 20.0834 5.5 18.9287L5.5 5.07229C5.5 3.91758 6.75 3.1959 7.75 3.77325L19.75 10.7015Z"
-                            fill="black" />
-                    </svg>
-                </button>
-                @endif
+<!-- SECTION: FEATURED CASE STUDIES SHOWCASE -->
+<section class="relative w-full bg-[#FAFAFA] py-16 sm:py-20 lg:py-24 border-b border-[#E5E7EB]">
+    <div class="max-w-[1306px] mx-auto px-6 sm:px-10 lg:px-[78px]">
+        
+        <div class="space-y-12 sm:space-y-16 lg:space-y-20">
+            @foreach($casesData as $index => $case)
+                @php
+                    $isReversed = ($index % 2 === 1);
+                @endphp
 
-                <h2 class="relative mb-3 md:mb-5 text-heading-mobile-sm md:text-heading-sm font-sans-heading text-gray-100 order-2">
-                    {{ $case->company_name ?? $case->client_name }}
-                </h2>
+                <!-- Case Study Card -->
+                <article class="group rounded-3xl bg-white border border-[#E5E7EB] shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-card hover:border-slate-300 transition-all duration-300 overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
 
-                <dl class="relative inline-grid grid-cols-2 md:grid-cols-4 gap-x-4 grid-rows-[1fr_auto] lg:pr-52 order-3">
-                    <dt class="col-start-1 row-start-1 mb-1.5 md:mb-2.5 text-ui-13-normal text-gray-100/50">
-                        Country
-                    </dt>
-                    <dd class="col-start-1 row-start-2 text-ui-14 leading-[17px] text-gray-100">
-                        Denmark
-                    </dd>
-                    <dt class="col-start-2 row-start-1 mb-1.5 md:mb-2.5 text-ui-13-normal text-gray-100/50">
-                        Industry
-                    </dt>
-                    <dd class="col-start-2 row-start-2 text-ui-14 leading-[17px] text-gray-100">
-                        Food
-                    </dd>
-                    <dt class="col-start-1 md:col-start-3 row-start-3 md:row-start-1 mt-4 md:mt-0 mb-1.5 md:mb-2.5 text-ui-13-normal text-gray-100/50">
-                        Employees
-                    </dt>
-                    <dd class="col-start-1 md:col-start-3 row-start-4 md:row-start-2 text-ui-14 leading-[17px] text-gray-100">
-                        800+
-                    </dd>
-                    <dt class="col-start-2 md:col-start-4 row-start-3 md:row-start-1 mt-4 md:mt-0 mb-1.5 md:mb-2.5 text-ui-13-normal text-gray-100/50">
-                        Departments
-                    </dt>
-                    <dd class="col-start-2 md:col-start-4 row-start-4 md:row-start-2 text-ui-14 leading-[17px] text-gray-100">
-                        21
-                    </dd>
-                </dl>
-            </div>
+                        <!-- Column A: Project Visual (7 cols) -->
+                        <div class="lg:col-span-7 relative bg-slate-50/80 overflow-hidden flex items-center justify-center min-h-[260px] sm:min-h-[340px] lg:min-h-[440px] p-6 sm:p-10 border-b lg:border-b-0 {{ $isReversed ? 'lg:order-2 lg:border-l border-[#E5E7EB]' : 'lg:order-1 lg:border-r border-[#E5E7EB]' }}">
+                            @if(!empty($case['image']))
+                                <img src="{{ $case['image'] }}"
+                                     alt="{{ $case['title'] }}"
+                                     class="max-w-full max-h-[320px] sm:max-h-[380px] w-auto h-auto object-contain group-hover:scale-[1.03] transition-transform duration-300 ease-out drop-shadow-xs"
+                                     loading="lazy" />
+                            @else
+                                <!-- Designed Neutral Placeholder when image is unavailable -->
+                                <div class="w-full h-full p-8 sm:p-12 flex flex-col justify-between bg-gradient-to-br from-slate-900 to-slate-800 text-white min-h-[320px]">
+                                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold tracking-wider text-slate-300 uppercase">
+                                        {{ $case['category'] }}
+                                    </div>
+                                    <div>
+                                        <h3 class="font-serif-display text-2xl sm:text-3xl font-normal text-white">
+                                            {{ $case['title'] }}
+                                        </h3>
+                                        <p class="mt-2 text-sm text-slate-300 line-clamp-2">
+                                            {{ $case['description'] }}
+                                        </p>
+                                    </div>
+                                </div>
+                            @endif
 
-            <div class="col-span-1 flex flex-col justify-between py-4 md:py-8 lg:pt-12 lg:pb-10 rounded-b-24 md:rounded-24 bg-gray-100 md:ring-hairline md:ring-gray-900/10 shadow-100">
-                <svg class="size-6 mb-3 md:mb-0 md:size-8 ml-4 md:ml-8 lg:ml-12" viewBox="0 0 32 32" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M32.0001 13.3845C32.0001 13.4072 32 13.4298 31.9998 13.4524V27.5382H31.975C31.6622 23.7478 29.4868 20.7691 24.6157 20.7691C20.5374 20.7691 17.2311 17.4629 17.2311 13.3845C17.2311 9.30617 20.5372 6 24.6156 6C28.6939 6 32.0001 9.30617 32.0001 13.3845Z"
-                        fill="black" />
-                    <path
-                        d="M7.38449 20.7691C12.245 20.781 14.4316 23.7554 14.7437 27.5382H14.7692V13.3845C14.7692 9.30616 11.4628 6.00001 7.38449 6.00001C3.30615 6.00001 0 9.30618 0 13.3845C0 17.4629 3.30615 20.7691 7.38449 20.7691Z"
-                        fill="black" />
-                </svg>
-                <ul class="flex overflow-y-hidden overflow-x-scroll snap-x snap-mandatory scrollbar-none gap-x-4">
-                    <li class="w-full flex-shrink-0 px-4 md:px-8 lg:px-12 snap-center">
-                        <blockquote>
-                            <p class="text-body-sm md:text-body-md text-gray-800">
-                                {{ $case->review }}
-                            </p>
-                            <footer class="mt-3 md:mt-6">
-                                <div class="flex items-center justify-center mb-4">
-                                    <div class="flex space-x-1">
-                                        @for($i = 1; $i <= 5; $i++)
-                                            <svg class="size-5 {{ $i <= $case->rating ? 'text-yellow-400' : 'text-gray-300' }}" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            <!-- Only show video play button if a verified video link exists -->
+                            @if(!empty($case['video_link']))
+                                <button type="button"
+                                        class="video-trigger absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-16 rounded-full bg-white/95 text-slate-900 shadow-xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none"
+                                        data-src="{{ $case['video_link'] }}"
+                                        aria-label="Play project video">
+                                    <svg class="size-6 ml-0.5 fill-current" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                            @endif
+                        </div>
+
+                        <!-- Column B: Project Details & Client Testimonial (5 cols) -->
+                        <div class="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-white {{ $isReversed ? 'lg:order-1' : 'lg:order-2' }}">
+                            <div>
+                                <!-- Category & Meta Pill -->
+                                <div class="flex flex-wrap items-center gap-2 mb-4">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold tracking-wide font-sans">
+                                        {{ $case['category'] }}
+                                    </span>
+                                </div>
+
+                                <!-- Project Title -->
+                                <h2 class="font-serif-display text-2xl sm:text-3xl font-normal text-slate-900 leading-tight tracking-tight">
+                                    {{ $case['title'] }}
+                                </h2>
+
+                                <!-- Description -->
+                                <p class="mt-3.5 text-sm sm:text-[15px] text-slate-600 font-sans leading-relaxed">
+                                    {{ $case['description'] }}
+                                </p>
+
+                                <!-- Technology Stack Tags -->
+                                <div class="mt-5 flex flex-wrap gap-1.5 font-sans">
+                                    @foreach($case['technologies'] as $tech)
+                                        <span class="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200/80 text-slate-700">
+                                            {{ $tech }}
+                                        </span>
+                                    @endforeach
+                                </div>
+
+                                <!-- Customer Testimonial Quotation Box -->
+                                <div class="mt-7 pt-6 border-t border-slate-100 font-sans">
+                                    <!-- 5-Star Rating -->
+                                    <div class="flex items-center gap-1 text-amber-400 mb-3" aria-label="5 stars rating">
+                                        @for($s = 0; $s < 5; $s++)
+                                            <svg class="size-4 fill-current" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                             </svg>
                                         @endfor
                                     </div>
-                                </div>
-                                <div class="flex items-center gap-3 pt-4 border-t border-gray-200">
-                                    @if($case->client_avatar)
-                                    <img src="{{ $case->client_avatar }}" 
-                                        class="size-12 md:size-14 rounded-lg object-cover" 
-                                        alt="{{ $case->client_name }}">
-                                    @endif
-                                    <div>
-                                        <p class="mb-2 text-ui-13 md:text-ui-14 text-gray-800">{{ $case->client_name }}</p>
-                                        @if($case->company_name)
-                                            <p class="text-ui-12-normal md:text-ui-13-normal text-gray-600">{{ $case->company_name }}</p>
+
+                                    <!-- Quote -->
+                                    <blockquote class="text-sm sm:text-[14.5px] text-slate-800 italic leading-relaxed">
+                                        &ldquo;{{ $case['review'] }}&rdquo;
+                                    </blockquote>
+
+                                    <!-- Client Signature -->
+                                    <div class="mt-4 flex items-center gap-3">
+                                        @if(!empty($case['client_avatar']))
+                                            <img src="{{ $case['client_avatar'] }}"
+                                                 alt="{{ $case['client_name'] }}"
+                                                 class="size-10 rounded-full object-cover border border-slate-200"
+                                                 loading="lazy" />
+                                        @else
+                                            <div class="size-10 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-xs">
+                                                {{ substr($case['client_name'], 0, 1) }}
+                                            </div>
                                         @endif
+                                        <div>
+                                            <div class="text-sm font-semibold text-slate-900">
+                                                {{ $case['client_name'] }}
+                                            </div>
+                                            <div class="text-xs text-slate-500">
+                                                {{ $case['client_company'] }}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </footer>
-                        </blockquote>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        @empty
-        <li class="text-center py-12">
-            <p class="text-gray-600 text-lg">No client reviews available yet.</p>
-        </li>
-        @endforelse
-    </ul>
-</section>
+                            </div>
 
-<div id="videoPlaybackModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
-    <div class="absolute inset-0 bg-black/80" id="modalBackdrop"></div>
-    <div class="relative max-w-248 w-full aspect-[16/9] mx-4 -mt-24 bg-gray-800 ring-4 ring-gray-800 shadow-300 rounded-12 md:rounded-24">
-        <button type="button" id="closeVideoModal" class="absolute bottom-full -right-1 pb-7 px-1 pt-1 -mb-6 bg-gray-800 rounded-t-8">
-            <svg class="size-8 text-gray-100 hover:text-gray-500 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-        </button>
-        <video id="modalVideoPlayer" class="relative rounded-12 md:rounded-24" controls></video>
+                            <!-- Bottom CTA Button -->
+                            <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between font-sans">
+                                <a href="{{ $case['link'] }}"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="h-[42px] px-6 rounded-full bg-black text-white hover:bg-neutral-800 text-[14px] font-semibold inline-flex items-center gap-2 transition-all shadow-sm hover:scale-[1.01] active:scale-[0.99]">
+                                    <span>View Case Study</span>
+                                    <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                    </svg>
+                                </a>
+
+                                <span class="text-xs text-slate-400 font-medium">Verified Case</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+            @endforeach
+        </div>
+
     </div>
-</div>
-
-@push('styles')
-<style>
-    #modalBackdrop {
-        background-color: rgb(6 8 16 / 0.1);
-    }
-</style>
-@endpush
-
-@push('scripts')
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('videoPlaybackModal');
-    const videoPlayer = document.getElementById('modalVideoPlayer');
-    const closeBtn = document.getElementById('closeVideoModal');
-    const backdrop = document.getElementById('modalBackdrop');
-    const videoTriggers = document.querySelectorAll('.video-trigger');
-
-    function openModal(videoSrc) {
-        videoPlayer.src = videoSrc;
-        modal.classList.remove('hidden');
-        videoPlayer.play();
-    }
-
-    function closeModal() {
-        modal.classList.add('hidden');
-        videoPlayer.pause();
-        videoPlayer.src = '';
-    }
-
-    videoTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function() {
-            openModal(this.dataset.src);
-        });
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-    backdrop.addEventListener('click', closeModal);
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-            closeModal();
-        }
-    });
-});
-</script>
-@endpush
+</section>

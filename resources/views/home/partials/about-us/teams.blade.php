@@ -86,11 +86,11 @@
     ];
 @endphp
 
-<section class="mt-20 md:mt-40 pb-12 mb-12 md:pb-20 md:mb-20 border-b-hairline border-gray-400">
+<section class="mx-auto mt-20 w-full max-w-[1306px] px-6 pb-12 sm:px-10 md:mt-28 md:mb-12 md:pb-16 lg:px-[78px] border-b-hairline border-gray-300">
   <h2 class="mb-8 md:mb-12 text-heading-mobile-sm md:text-heading-sm font-sans-heading">
     Meet our team
   </h2>
-  <ul class="flex -mx-8 md:mx-0 px-8 md:px-0 overflow-x-scroll md:overflow-x-visible snap-x snap-mandatory md:grid md:grid-cols-5 md:gap-x-3 lg:gap-x-6 md:gap-y-6 lg:gap-y-8 scrollbar-none">
+  <ul class="flex gap-5 overflow-x-auto px-1 pb-3 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-8 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-5 lg:gap-x-6 scrollbar-none">
     @foreach($teams as $index => $team)
     @php
         $mask = $svgMasks[$index % count($svgMasks)];
@@ -98,7 +98,7 @@
         $uniquePatternId = $mask['patternId'] . '_' . $team->id;
         $uniqueImageId = $mask['imageId'] . '_' . $team->id;
     @endphp
-    <li class="snap-start w-3/5 md:w-auto pl-8 md:pl-0 -mr-4 md:mr-0 flex-shrink-0 col-span-1">
+    <li class="snap-start w-[78%] flex-shrink-0 col-span-1 sm:w-[48%] md:w-auto">
       <figure class="">
         <svg viewBox="0 0 180 240" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <mask id="{{ $uniqueMaskId }}" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0.5" y="0" width="180" height="240">

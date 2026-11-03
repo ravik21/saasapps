@@ -1,35 +1,38 @@
 @foreach (config('landing.services') as $key => $service)
     <section id="service-{{ $key }}"
-        class="relative grid grid-cols-12 grid-rows-auto gap-x-6 gap-y-8 md:gap-y-18 py-16 md:py-28 border-t border-gray-300 feature-nav"
+        class="relative py-14 md:py-20 border-t border-gray-300 feature-nav"
         data-total-items="{{ count($service['deliverables']) }}">
-        <h2 class="col-span-12 flex items-center text-heading-mobile-sm md:text-heading-md font-sans-heading">
-            {!! str_replace(['class="size-6 flex-shrink-0 text-gray-900"', '#000000'], ['class="mr-4 size-12 flex-shrink-0 rounded-12 p-2 bg-gray-900 text-gray-100"', 'currentColor'], $service['icon']) !!}
-            {{ $service['name'] }}
-        </h2>
-        <nav class="hidden lg:block lg:col-span-3">
-            <ul class="sticky top-24 pb-24">
+        <span id="{{ $service['slug'] }}" class="absolute -top-24 pointer-events-none"></span>
+        <div class="mx-auto grid w-full max-w-[1306px] grid-cols-12 grid-rows-auto gap-x-6 gap-y-8 px-6 sm:px-10 lg:px-[78px] md:gap-y-18">
+            <h2 class="col-span-12 flex items-center text-heading-mobile-sm md:text-heading-md font-sans-heading">
+                {!! str_replace(['class="size-6 flex-shrink-0 text-gray-900"', '#000000'], ['class="mr-4 size-12 flex-shrink-0 rounded-12 p-2 bg-gray-900 text-gray-100"', 'currentColor'], $service['icon']) !!}
+                {{ $service['name'] }}
+            </h2>
+            <nav class="hidden lg:block lg:col-span-3">
+                <ul class="sticky top-24 pb-24">
+                    @foreach ($service['deliverables'] as $deliverableKey => $deliverable)
+                    <li>
+                        <a href="{{ route('services') }}#{{ $deliverable['slug'] }}"
+                            class="nav-link block transition ease-out duration-150 relative w-full text-left py-3 text-heading-2xs font-sans-heading border-b text-gray-700 border-gray-100 hover:text-gray-800"
+                            data-target="{{ $deliverable['slug'] }}">
+                            {{ $deliverable['name'] }}
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
+            </nav>
+            <div class="col-span-12 space-y-12 lg:col-span-8 lg:col-start-5 md:space-y-16">
                 @foreach ($service['deliverables'] as $deliverableKey => $deliverable)
-                <li>
-                    <a href="{{ route('services') }}#{{ $deliverable['slug'] }}"
-                        class="nav-link block transition ease-out duration-150 relative w-full text-left py-3 text-heading-2xs font-sans-heading border-b text-gray-700 border-gray-100 hover:text-gray-800"
-                        data-target="{{ $deliverable['slug'] }}">
-                        {{ $deliverable['name'] }}
-                    </a>
-                </li>
-                @endforeach
-            </ul>
-        </nav>
-        <div class="col-span-12 lg:col-span-8 lg:col-start-5 space-y-16">
-            @foreach ($service['deliverables'] as $deliverableKey => $deliverable)
-                <div id="{{ $deliverable['slug'] }}" class="content-section mb-16" data-index="{{ $deliverableKey }}">
-                    <h3 class="mb-4 text-heading-xs md:text-heading-sm font-sans-heading">
-                        {{ $deliverable['name'] }}
-                    </h3>
-                    <div class="text-body-md md:text-body-lg mb-6">
-                        {!! $deliverable['description'] !!}
+                    <div id="{{ $deliverable['slug'] }}" class="content-section mb-16 scroll-mt-28" data-index="{{ $deliverableKey }}">
+                        <h3 class="mb-4 text-heading-xs md:text-heading-sm font-sans-heading">
+                            {{ $deliverable['name'] }}
+                        </h3>
+                        <div class="text-body-md md:text-body-lg mb-6">
+                            {!! $deliverable['description'] !!}
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </section>
 @endforeach

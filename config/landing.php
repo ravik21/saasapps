@@ -253,6 +253,238 @@ return [
         ],
     ],
 
+    'hero' => [
+        'badge' => 'The Workflow Intelligence Platform',
+        'headline' => 'The best teams & AI agents run on SaaSApps',
+        'subtext' => 'Turn how your team works into step-by-step guides, verified SOPs, and AI-ready workflow context in seconds.',
+        'prompt' => 'How can we help your team today?',
+        'cta' => [
+            'primary' => [
+                'label' => 'Start capturing free',
+                'url' => '/contact-us',
+            ],
+            'secondary' => [
+                'label' => 'Request a demo',
+                'url' => '/demo',
+            ],
+        ],
+        'chips' => [
+            [
+                'id' => 'sops',
+                'label' => 'Create SOPs',
+                'url' => '/solutions/train-teams',
+                'icon' => 'document-text',
+                'description' => 'Automatically turn manual clicks into verified operating procedures.',
+            ],
+            [
+                'id' => 'train',
+                'label' => 'Train Teams',
+                'url' => '/solutions/train-teams',
+                'icon' => 'academic-cap',
+                'description' => 'Give teammates interactive visual guides they can follow without error.',
+            ],
+            [
+                'id' => 'questions',
+                'label' => 'Answer Questions',
+                'url' => '/resources',
+                'icon' => 'chat-bubble-bottom-center-text',
+                'description' => 'Eliminate repetitive questions on Slack and Teams with instant links.',
+            ],
+            [
+                'id' => 'onboard',
+                'label' => 'Onboard New Hires',
+                'url' => '/solutions/onboard-new-hires',
+                'icon' => 'user-plus',
+                'description' => 'Cut employee ramp time by 60% with day-one visual playbooks.',
+            ],
+            [
+                'id' => 'automate',
+                'label' => 'Automate Work',
+                'url' => '/solutions/ai-automation',
+                'icon' => 'sparkles',
+                'description' => 'Detect bottlenecks and pass verified workflow steps to automation tools.',
+            ],
+            [
+                'id' => 'ai_trans',
+                'label' => 'AI Transformation',
+                'url' => '/solutions/ai-transformation',
+                'icon' => 'bolt',
+                'description' => 'Feed ground-truth institutional knowledge directly into enterprise LLMs.',
+            ],
+        ],
+        'stats' => [],
+    ],
+
+    'statement' => [
+        'label' => 'Trusted by teams and technologies we work with',
+        'lead' => 'Your product is only as strong as the engineering behind it.',
+        'body' => 'We design architecture, craft clean user interfaces, and build high-performance software so your team can move faster, launch with confidence, and scale without friction.',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Phase 4: Feature Blocks (Block 1: Build / Block 2: Scale)
+    |--------------------------------------------------------------------------
+    */
+    'features' => [
+        'block1' => [
+            'badge' => 'Disciplined Architecture', // TODO: review
+            'heading_lead' => 'Engineered for reliability.', // TODO: review
+            'heading_muted' => 'From first commit to global scale.', // TODO: review
+            'cta' => [
+                'label' => 'Get started', // TODO: review
+                'url' => '/contact-us',
+            ],
+            'items' => [
+                [
+                    'title' => 'Modular Architecture & Clean Code', // TODO: review
+                    'description' => 'We design clean, maintainable systems using Laravel, Vue, React, and Node.js that eliminate technical debt from day one.', // TODO: review
+                ],
+                [
+                    'title' => 'Rapid MVP to Full Production', // TODO: review
+                    'description' => 'Go from approved technical specifications to production-ready software in weeks with secure multi-tenant foundations.', // TODO: review
+                ],
+                [
+                    'title' => 'Automated Testing & Security Hardened', // TODO: review
+                    'description' => 'Every release is verified with automated test suites, OWASP-aligned standards, and zero-downtime deployment pipelines.', // TODO: review
+                ],
+            ],
+        ],
+        'block2' => [
+            'badge' => 'Continuous Evolution', // TODO: review
+            'heading_lead' => 'Scale performance and automate workflows.', // TODO: review
+            'heading_muted' => 'Without disrupting users.', // TODO: review
+            'cta' => [
+                'label' => 'Get started', // TODO: review
+                'url' => '/contact-us',
+            ],
+            'items' => [
+                [
+                    'title' => 'Cloud Infrastructure & Auto-Scaling', // TODO: review
+                    'description' => 'Containerized Docker deployments, AWS/GCP cloud environments, and Redis caching that effortlessly absorb traffic surges.', // TODO: review
+                ],
+                [
+                    'title' => 'Intelligent AI & Pipeline Automation', // TODO: review
+                    'description' => 'Integrate custom LLM workflows, async worker queues, and third-party API syncs to automate complex business operations.', // TODO: review
+                ],
+                [
+                    'title' => 'Real-Time Observability & Monitoring', // TODO: review
+                    'description' => 'Comprehensive logging, APM telemetry, and proactive error tracing to resolve bottlenecks before customers notice.', // TODO: review
+                ],
+            ],
+        ],
+
+        /*
+        | Legacy core platform features (used by /services via great-feature.blade.php)
+        */
+        'title' => 'Core Platform Features',
+        'subtitle' => 'Everything you need to build, deploy, and scale your applications',
+        'items' => [
+            [
+                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 9C10.2091 9 12 7.20914 12 5C12 2.79086 10.2091 1 8 1C5.79086 1 4 2.79086 4 5C4 7.20914 5.79086 9 8 9Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M14 8C15.6569 8 17 6.65685 17 5C17 3.34315 15.6569 2 14 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M0.2 16C0.2 16.4418 0.558172 16.8 1 16.8C1.44183 16.8 1.8 16.4418 1.8 16H0.2ZM5 12.8H10V11.2H5V12.8ZM5 11.2C2.34903 11.2 0.2 13.349 0.2 16H1.8C1.8 14.2327 3.23269 12.8 5 12.8V11.2Z" fill="currentColor" /><path d="M18 23C18 23 23 20.6 23 17V13.5028C23 13.0811 22.7355 12.7048 22.3387 12.5619L18 11L13.6613 12.5619C13.2645 12.7048 13 13.0811 13 13.5028V17C13 20.6 18 23 18 23Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M20 15L17.3333 18L16 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+                'description' => 'Advanced role-based access control with granular permissions management.',
+            ],
+            [
+                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 5H18C20.2091 5 22 6.79086 22 9V16C22 18.2091 20.2091 20 18 20H15.9684C15.6716 20 15.3901 20.1318 15.2002 20.3598L13.7682 22.0781C13.3684 22.5579 12.6316 22.5579 12.2318 22.0781L10.7998 20.3598C10.6099 20.1318 10.3284 20 10.0316 20H8C5.79086 20 4 18.2091 4 16V14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M5.63015 2.38415C6.68342 0.538616 9.31658 0.538619 10.3698 2.38415L14.6293 9.84756C15.6826 11.6931 14.366 14 12.2594 14H3.74055C1.63401 14 0.317434 11.6931 1.3707 9.84755L5.63015 2.38415Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M8 4.79735L8 7.79735" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M8 10.8267V10.8352" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+                'description' => 'Real-time notifications and alerts across web and mobile platforms.',
+            ],
+            [
+                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 15.9412C23 14.8366 22.1046 13.9412 21 13.9412H17.4418C17.0637 13.9412 16.7179 13.7279 16.5482 13.39L16.1268 12.5512C15.9571 12.2133 15.6113 12 15.2332 12H12C10.8954 12 10 12.8954 10 14V21C10 22.1046 10.8954 23 12 23H21C22.1046 23 23 22.1046 23 21V15.9412Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M5.2 11.5C5.2 11.0582 5.55817 10.7 6 10.7C6.44183 10.7 6.8 11.0582 6.8 11.5H5.2ZM6.8 12.5C6.8 12.9418 6.44183 13.3 6 13.3C5.55817 13.3 5.2 12.9418 5.2 12.5H6.8ZM5.2 7C5.2 6.55817 5.55817 6.2 6 6.2C6.44183 6.2 6.8 6.55817 6.8 7H5.2ZM6.8 8C6.8 8.44183 6.44183 8.8 6 8.8C5.55817 8.8 5.2 8.44183 5.2 8H6.8ZM9.2 7C9.2 6.55817 9.55817 6.2 10 6.2C10.4418 6.2 10.8 6.55817 10.8 7H9.2ZM10.8 8C10.8 8.44183 10.4418 8.8 10 8.8C9.55817 8.8 9.2 8.44183 9.2 8H10.8ZM13.2 7C13.2 6.55817 13.5582 6.2 14 6.2C14.4418 6.2 14.8 6.55817 14.8 7H13.2ZM14.8 8C14.8 8.44183 14.4418 8.8 14 8.8C13.5582 8.8 13.2 8.44183 13.2 8H14.8ZM5.2 16C5.2 15.5582 5.55817 15.2 6 15.2C6.44183 15.2 6.8 15.5582 6.8 16H5.2ZM6.8 17C6.8 17.4418 6.44183 17.8 6 17.8C5.55817 17.8 5.2 17.4418 5.2 17H6.8ZM3.63142 3.69411L3.48399 2.90781L3.63142 3.69411ZM15.6314 1.44411L15.484 0.65781L15.6314 1.44411ZM4 20.2H7V21.8H4V20.2ZM15.7789 2.23041L3.77885 4.48041L3.48399 2.90781L15.484 0.65781L15.7789 2.23041ZM2.8 5.65985V19H1.2V5.65985H2.8ZM6.8 11.5V12.5H5.2V11.5H6.8ZM6.8 7V8H5.2V7H6.8ZM10.8 7V8H9.2V7H10.8ZM14.8 7V8H13.2V7H14.8ZM6.8 16V17H5.2V16H6.8ZM17.2 10V5H18.8V10H17.2ZM17.2 5V3.40985H18.8V5H17.2ZM18.3578 4.28446L21.805 6.00807L21.0894 7.43915L17.6422 5.71554L18.3578 4.28446ZM22.8 7.61803V11H21.2V7.61803H22.8ZM3.77885 4.48041C3.21129 4.58682 2.8 5.08239 2.8 5.65985H1.2C1.2 4.31245 2.15967 3.15612 3.48399 2.90781L3.77885 4.48041ZM21.805 6.00807C22.4148 6.31297 22.8 6.93624 22.8 7.61803H21.2C21.2 7.54228 21.1572 7.47303 21.0894 7.43915L21.805 6.00807ZM15.484 0.65781C17.2072 0.334719 18.8 1.65667 18.8 3.40985H17.2C17.2 2.65849 16.5174 2.09194 15.7789 2.23041L15.484 0.65781ZM4 21.8C2.4536 21.8 1.2 20.5464 1.2 19H2.8C2.8 19.6627 3.33726 20.2 4 20.2V21.8Z" fill="currentColor" /></svg>',
+                'description' => 'Comprehensive audit logs and activity tracking for compliance.',
+            ],
+            [
+                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 19.5H18C20.2091 19.5 22 17.7091 22 15.5V8.5C22 6.29086 20.2091 4.5 18 4.5H6C3.79086 4.5 2 6.29086 2 8.5V15.5C2 17.7091 3.79086 19.5 6 19.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M14.7988 16.5L14.7988 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path fill-rule="evenodd" clip-rule="evenodd" d="M14.1965 15.2985L14.1965 13.6985H16.9942C17.436 13.6985 17.7942 14.0567 17.7942 14.4985C17.7942 14.9404 17.436 15.2985 16.9942 15.2985H14.1965ZM12.5965 15.2985H6.99419C6.55236 15.2985 6.19419 14.9404 6.19419 14.4985C6.19419 14.0567 6.55236 13.6985 6.99419 13.6985H12.5965L12.5965 15.2985Z" fill="currentColor" /><path d="M9.20312 11.5L9.20312 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path fill-rule="evenodd" clip-rule="evenodd" d="M9.80347 10.2983L9.80347 8.69834H7.00581C6.56398 8.69834 6.20581 9.05651 6.20581 9.49834C6.20581 9.94017 6.56398 10.2983 7.00581 10.2983H9.80347ZM11.4035 10.2983H17.0058C17.4476 10.2983 17.8058 9.94017 17.8058 9.49834C17.8058 9.05651 17.4476 8.69834 17.0058 8.69834H11.4035L11.4035 10.2983Z" fill="currentColor" /><path d="M7 1H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M7 23H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+                'description' => 'RESTful APIs with comprehensive documentation and SDKs.',
+            ],
+            [
+                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 17C20.3333 17 18.6667 16 17 14C16.5574 14.5311 16.1148 14.9917 15.6722 15.3818M2 17C3.66667 17 5.33333 16 7 14C7.58545 14.7025 8.17089 15.2817 8.75634 15.7374" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M2 20.9998C9.84859 19.6166 14.1438 19.6106 22 20.9998" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M12.9253 10.8172L11.705 19.5002M13.9765 3.33721L14.1517 2.09055" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M13.9773 3.33739C9.55757 2.71624 5.40531 5.06435 3.53697 8.86217C7.45737 7.73886 9.53011 8.21387 13.0136 10.194C16.908 9.25077 19.0314 9.36548 22.4903 11.5259C21.7411 7.3602 18.397 3.95854 13.9773 3.33739Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+                'description' => 'Multi-language support with automatic content translation.',
+            ],
+            [
+                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 18H4C2.34315 18 1 16.6569 1 15V5C1 3.34315 2.34315 2 4 2H9.35165C10.8646 2 12.1408 3.12661 12.3285 4.6279L14 18ZM14 18L9.5 21.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M12.5 6H20C21.6569 6 23 7.34315 23 9V19C23 20.6569 21.6569 22 20 22H10C9.44772 22 9 21.5523 9 21V18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M4.5 13L5 11.8M9.5 13L9 11.8M5 11.8L7 7L9 11.8M5 11.8H9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M17 11V13.75M17 16.5V13.75M17 13.75L19.75 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+                'description' => 'Seamless third-party integrations with popular tools and services.',
+            ],
+            [
+                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.08502 11.7127L9.76396 11.5363L9.7479 11.3835C9.66464 10.5061 9.93174 10.0644 10.5868 9.56387C11.3628 8.97789 11.8338 8.26036 11.7227 7.20409C11.5574 5.63093 10.2118 4.8453 8.4531 5.03015C6.84503 5.19916 5.62353 6.19098 5.77262 7.99307L7.58004 7.80311C7.52961 7.06767 8.02454 6.62029 8.60486 6.55929C9.2029 6.49643 9.72828 6.85021 9.79395 7.47498C9.85584 8.06379 9.47609 8.49907 8.96806 8.90693C8.2739 9.46159 7.90804 9.9863 8.06895 11.5599L8.08502 11.7127ZM9.26006 14.4977C9.82709 14.4381 10.2683 13.9054 10.2099 13.3072C10.1435 12.7188 9.60128 12.2896 9.03425 12.3492C8.44949 12.4106 8.01718 12.9423 8.08349 13.5307C8.1419 14.1289 8.67531 14.5591 9.26006 14.4977Z" fill="currentColor" /><path d="M5.85817 18.3745L13.8143 17.5383C15.4621 17.3651 16.6575 15.8889 16.4843 14.2411L15.439 4.29589C15.2659 2.64812 13.7897 1.45272 12.1419 1.62591L4.18571 2.46214C2.53794 2.63533 1.34255 4.11151 1.51573 5.75929L2.56102 15.7045C2.73421 17.3523 4.21039 18.5477 5.85817 18.3745Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M8.8 18.5C8.8 18.0582 8.44183 17.7 8 17.7C7.55817 17.7 7.2 18.0582 7.2 18.5H8.8ZM19 21.2H11V22.8H19V21.2ZM21.2 9V19H22.8V9H21.2ZM18.5 6.8H19V5.2H18.5V6.8ZM8.8 19V18.5H7.2V19H8.8ZM22.8 9C22.8 6.90132 21.0987 5.2 19 5.2V6.8C20.215 6.8 21.2 7.78497 21.2 9H22.8ZM11 21.2C9.78497 21.2 8.8 20.215 8.8 19H7.2C7.2 21.0987 8.90132 22.8 11 22.8V21.2ZM19 22.8C21.0987 22.8 22.8 21.0987 22.8 19H21.2C21.2 20.215 20.215 21.2 19 21.2V22.8Z" fill="currentColor" /></svg>',
+                'description' => 'Built-in analytics and reporting for data-driven insights.',
+            ],
+            [
+                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_21695_1563)"><path d="M11 4H6C3.79086 4 2 5.79086 2 8V18C2 20.2091 3.79086 22 6 22H18C20.2091 22 22 20.2091 22 18V18" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M7 2V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M8 17C8 17.5523 7.55228 18 7 18C6.44772 18 6 17.5523 6 17C6 16.4477 6.44772 16 7 16C7.55228 16 8 16.4477 8 17Z" fill="currentColor" /><path d="M8 13C8 13.5523 7.55228 14 7 14C6.44772 14 6 13.5523 6 13C6 12.4477 6.44772 12 7 12C7.55228 12 8 12.4477 8 13Z" fill="currentColor" /><path d="M12 17C12 17.5523 11.5523 18 11 18C10.4477 18 10 17.5523 10 17C10 16.4477 10.4477 16 11 16C11.5523 16 12 16.4477 12 17Z" fill="currentColor" /><path d="M8 9C8 9.55228 7.55228 10 7 10C6.44772 10 6 9.55228 6 9C6 8.44772 6.44772 8 7 8C7.55228 8 8 8.44772 8 9Z" fill="currentColor" /><path d="M17.0008 15.723L18.9326 16.2407M19.5327 1.88826V1.88826C17.3988 1.3165 15.2054 2.58283 14.6337 4.71669L14.0789 6.78724C13.8242 7.73753 13.1298 8.50837 12.2112 8.8605L12.0253 8.93176C11.6111 9.09052 11.298 9.43805 11.1832 9.86649L10.9458 10.7525C10.8321 11.1771 11.0841 11.6136 11.5087 11.7274L21.562 14.4212C21.9867 14.535 22.4232 14.283 22.5369 13.8583L22.7744 12.9723C22.8892 12.5439 22.7918 12.0864 22.5125 11.7418L22.3871 11.5871C21.7676 10.8228 21.5517 9.80808 21.8063 8.85779L22.3611 6.78724C22.9329 4.65338 21.6665 2.46003 19.5327 1.88826V1.88826ZM19.5327 1.88826L19.7667 1.05565" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></g><defs><clipPath id="clip0_21695_1563"><rect width="24" height="24" fill="white" /></clipPath></defs></svg>',
+                'description' => 'Automated scheduling and event management system.',
+            ],
+            [
+                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 16.5C14 15.9696 13.7893 15.4609 13.4142 15.0858C13.0391 14.7107 12.5304 14.5 12 14.5H8C7.46957 14.5 6.96086 14.7107 6.58579 15.0858C6.21071 15.4609 6 15.9696 6 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M10 12C11.3807 12 12.5 10.8807 12.5 9.5C12.5 8.11929 11.3807 7 10 7C8.61929 7 7.5 8.11929 7.5 9.5C7.5 10.8807 8.61929 12 10 12Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M22 7V6C22 3.79086 20.2091 2 18 2H6C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.2091 22 22 20.2091 22 18V17" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M23 10.5H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M21 13.5H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+                'description' => 'User profiles with customizable fields and preferences.',
+            ],
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Phase 4: Real Stats Strips (Hidden until populated with real data)
+    |--------------------------------------------------------------------------
+    */
+    'stats' => [
+        'strip1' => [
+            'footnote' => 'Across verified customer implementations in 2026',
+            'items' => [
+                ['value' => '12x', 'label' => 'faster than manual documentation'],
+                ['value' => '98%', 'label' => 'adoption rate across teams'],
+                ['value' => '3.5 hours', 'label' => 'saved per person per week'],
+            ],
+        ],
+        'strip2' => [
+            'footnote' => 'Telemetry metrics across enterprise workflow deployments',
+            'items' => [
+                ['value' => '95%', 'label' => 'reduction in onboarding time'],
+                ['value' => '5 days', 'label' => 'cut from month-end close'],
+                ['value' => '71%', 'label' => 'fewer repeat questions'],
+            ],
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Phase 4: "Any team. Every workflow." Use-Case Rows
+    |--------------------------------------------------------------------------
+    */
+    'usecases' => [
+        'heading_lead' => 'Any team.',
+        'heading_muted' => 'Every workflow.',
+        'items' => [
+            [
+                'id' => 'operations',
+                'label' => 'Operations',
+                'url' => '/solutions/operations',
+                'icon' => 'layers',
+            ],
+            [
+                'id' => 'it',
+                'label' => 'IT & Systems',
+                'url' => '/solutions/it',
+                'icon' => 'cloud',
+            ],
+            [
+                'id' => 'support',
+                'label' => 'Customer Support',
+                'url' => '/solutions/train-teams',
+                'icon' => 'sparkles',
+            ],
+            [
+                'id' => 'sales',
+                'label' => 'Sales & Account Management',
+                'url' => '/solutions/implement-software',
+                'icon' => 'rocket',
+            ],
+            [
+                'id' => 'hr',
+                'label' => 'HR & People Operations',
+                'url' => '/solutions/hr-learning',
+                'icon' => 'mobile',
+            ],
+        ],
+    ],
+
     'technologies' => [
         [
             'name' => 'PHP',
@@ -607,49 +839,6 @@ return [
         ]
     ],
 
-    'features' => [
-        'title' => 'Core Platform Features',
-        'subtitle' => 'Everything you need to build, deploy, and scale your applications',
-        'items' => [
-            [
-                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 9C10.2091 9 12 7.20914 12 5C12 2.79086 10.2091 1 8 1C5.79086 1 4 2.79086 4 5C4 7.20914 5.79086 9 8 9Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M14 8C15.6569 8 17 6.65685 17 5C17 3.34315 15.6569 2 14 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M0.2 16C0.2 16.4418 0.558172 16.8 1 16.8C1.44183 16.8 1.8 16.4418 1.8 16H0.2ZM5 12.8H10V11.2H5V12.8ZM5 11.2C2.34903 11.2 0.2 13.349 0.2 16H1.8C1.8 14.2327 3.23269 12.8 5 12.8V11.2Z" fill="currentColor" /><path d="M18 23C18 23 23 20.6 23 17V13.5028C23 13.0811 22.7355 12.7048 22.3387 12.5619L18 11L13.6613 12.5619C13.2645 12.7048 13 13.0811 13 13.5028V17C13 20.6 18 23 18 23Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M20 15L17.3333 18L16 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-                'description' => 'Advanced role-based access control with granular permissions management.',
-            ],
-            [
-                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 5H18C20.2091 5 22 6.79086 22 9V16C22 18.2091 20.2091 20 18 20H15.9684C15.6716 20 15.3901 20.1318 15.2002 20.3598L13.7682 22.0781C13.3684 22.5579 12.6316 22.5579 12.2318 22.0781L10.7998 20.3598C10.6099 20.1318 10.3284 20 10.0316 20H8C5.79086 20 4 18.2091 4 16V14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M5.63015 2.38415C6.68342 0.538616 9.31658 0.538619 10.3698 2.38415L14.6293 9.84756C15.6826 11.6931 14.366 14 12.2594 14H3.74055C1.63401 14 0.317434 11.6931 1.3707 9.84755L5.63015 2.38415Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M8 4.79735L8 7.79735" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M8 10.8267V10.8352" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-                'description' => 'Real-time notifications and alerts across web and mobile platforms.',
-            ],
-            [
-                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 15.9412C23 14.8366 22.1046 13.9412 21 13.9412H17.4418C17.0637 13.9412 16.7179 13.7279 16.5482 13.39L16.1268 12.5512C15.9571 12.2133 15.6113 12 15.2332 12H12C10.8954 12 10 12.8954 10 14V21C10 22.1046 10.8954 23 12 23H21C22.1046 23 23 22.1046 23 21V15.9412Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M5.2 11.5C5.2 11.0582 5.55817 10.7 6 10.7C6.44183 10.7 6.8 11.0582 6.8 11.5H5.2ZM6.8 12.5C6.8 12.9418 6.44183 13.3 6 13.3C5.55817 13.3 5.2 12.9418 5.2 12.5H6.8ZM5.2 7C5.2 6.55817 5.55817 6.2 6 6.2C6.44183 6.2 6.8 6.55817 6.8 7H5.2ZM6.8 8C6.8 8.44183 6.44183 8.8 6 8.8C5.55817 8.8 5.2 8.44183 5.2 8H6.8ZM9.2 7C9.2 6.55817 9.55817 6.2 10 6.2C10.4418 6.2 10.8 6.55817 10.8 7H9.2ZM10.8 8C10.8 8.44183 10.4418 8.8 10 8.8C9.55817 8.8 9.2 8.44183 9.2 8H10.8ZM13.2 7C13.2 6.55817 13.5582 6.2 14 6.2C14.4418 6.2 14.8 6.55817 14.8 7H13.2ZM14.8 8C14.8 8.44183 14.4418 8.8 14 8.8C13.5582 8.8 13.2 8.44183 13.2 8H14.8ZM5.2 16C5.2 15.5582 5.55817 15.2 6 15.2C6.44183 15.2 6.8 15.5582 6.8 16H5.2ZM6.8 17C6.8 17.4418 6.44183 17.8 6 17.8C5.55817 17.8 5.2 17.4418 5.2 17H6.8ZM3.63142 3.69411L3.48399 2.90781L3.63142 3.69411ZM15.6314 1.44411L15.484 0.65781L15.6314 1.44411ZM4 20.2H7V21.8H4V20.2ZM15.7789 2.23041L3.77885 4.48041L3.48399 2.90781L15.484 0.65781L15.7789 2.23041ZM2.8 5.65985V19H1.2V5.65985H2.8ZM6.8 11.5V12.5H5.2V11.5H6.8ZM6.8 7V8H5.2V7H6.8ZM10.8 7V8H9.2V7H10.8ZM14.8 7V8H13.2V7H14.8ZM6.8 16V17H5.2V16H6.8ZM17.2 10V5H18.8V10H17.2ZM17.2 5V3.40985H18.8V5H17.2ZM18.3578 4.28446L21.805 6.00807L21.0894 7.43915L17.6422 5.71554L18.3578 4.28446ZM22.8 7.61803V11H21.2V7.61803H22.8ZM3.77885 4.48041C3.21129 4.58682 2.8 5.08239 2.8 5.65985H1.2C1.2 4.31245 2.15967 3.15612 3.48399 2.90781L3.77885 4.48041ZM21.805 6.00807C22.4148 6.31297 22.8 6.93624 22.8 7.61803H21.2C21.2 7.54228 21.1572 7.47303 21.0894 7.43915L21.805 6.00807ZM15.484 0.65781C17.2072 0.334719 18.8 1.65667 18.8 3.40985H17.2C17.2 2.65849 16.5174 2.09194 15.7789 2.23041L15.484 0.65781ZM4 21.8C2.4536 21.8 1.2 20.5464 1.2 19H2.8C2.8 19.6627 3.33726 20.2 4 20.2V21.8Z" fill="currentColor" /></svg>',
-                'description' => 'Comprehensive audit logs and activity tracking for compliance.',
-            ],
-            [
-                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 19.5H18C20.2091 19.5 22 17.7091 22 15.5V8.5C22 6.29086 20.2091 4.5 18 4.5H6C3.79086 4.5 2 6.29086 2 8.5V15.5C2 17.7091 3.79086 19.5 6 19.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M14.7988 16.5L14.7988 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path fill-rule="evenodd" clip-rule="evenodd" d="M14.1965 15.2985L14.1965 13.6985H16.9942C17.436 13.6985 17.7942 14.0567 17.7942 14.4985C17.7942 14.9404 17.436 15.2985 16.9942 15.2985H14.1965ZM12.5965 15.2985H6.99419C6.55236 15.2985 6.19419 14.9404 6.19419 14.4985C6.19419 14.0567 6.55236 13.6985 6.99419 13.6985H12.5965L12.5965 15.2985Z" fill="currentColor" /><path d="M9.20312 11.5L9.20312 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path fill-rule="evenodd" clip-rule="evenodd" d="M9.80347 10.2983L9.80347 8.69834H7.00581C6.56398 8.69834 6.20581 9.05651 6.20581 9.49834C6.20581 9.94017 6.56398 10.2983 7.00581 10.2983H9.80347ZM11.4035 10.2983H17.0058C17.4476 10.2983 17.8058 9.94017 17.8058 9.49834C17.8058 9.05651 17.4476 8.69834 17.0058 8.69834H11.4035L11.4035 10.2983Z" fill="currentColor" /><path d="M7 1H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M7 23H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-                'description' => 'RESTful APIs with comprehensive documentation and SDKs.',
-            ],
-            [
-                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 17C20.3333 17 18.6667 16 17 14C16.5574 14.5311 16.1148 14.9917 15.6722 15.3818M2 17C3.66667 17 5.33333 16 7 14C7.58545 14.7025 8.17089 15.2817 8.75634 15.7374" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M2 20.9998C9.84859 19.6166 14.1438 19.6106 22 20.9998" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M12.9253 10.8172L11.705 19.5002M13.9765 3.33721L14.1517 2.09055" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M13.9773 3.33739C9.55757 2.71624 5.40531 5.06435 3.53697 8.86217C7.45737 7.73886 9.53011 8.21387 13.0136 10.194C16.908 9.25077 19.0314 9.36548 22.4903 11.5259C21.7411 7.3602 18.397 3.95854 13.9773 3.33739Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-                'description' => 'Multi-language support with automatic content translation.',
-            ],
-            [
-                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 18H4C2.34315 18 1 16.6569 1 15V5C1 3.34315 2.34315 2 4 2H9.35165C10.8646 2 12.1408 3.12661 12.3285 4.6279L14 18ZM14 18L9.5 21.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M12.5 6H20C21.6569 6 23 7.34315 23 9V19C23 20.6569 21.6569 22 20 22H10C9.44772 22 9 21.5523 9 21V18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M4.5 13L5 11.8M9.5 13L9 11.8M5 11.8L7 7L9 11.8M5 11.8H9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M17 11V13.75M17 16.5V13.75M17 13.75L19.75 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-                'description' => 'Seamless third-party integrations with popular tools and services.',
-            ],
-            [
-                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.08502 11.7127L9.76396 11.5363L9.7479 11.3835C9.66464 10.5061 9.93174 10.0644 10.5868 9.56387C11.3628 8.97789 11.8338 8.26036 11.7227 7.20409C11.5574 5.63093 10.2118 4.8453 8.4531 5.03015C6.84503 5.19916 5.62353 6.19098 5.77262 7.99307L7.58004 7.80311C7.52961 7.06767 8.02454 6.62029 8.60486 6.55929C9.2029 6.49643 9.72828 6.85021 9.79395 7.47498C9.85584 8.06379 9.47609 8.49907 8.96806 8.90693C8.2739 9.46159 7.90804 9.9863 8.06895 11.5599L8.08502 11.7127ZM9.26006 14.4977C9.82709 14.4381 10.2683 13.9054 10.2099 13.3072C10.1435 12.7188 9.60128 12.2896 9.03425 12.3492C8.44949 12.4106 8.01718 12.9423 8.08349 13.5307C8.1419 14.1289 8.67531 14.5591 9.26006 14.4977Z" fill="currentColor" /><path d="M5.85817 18.3745L13.8143 17.5383C15.4621 17.3651 16.6575 15.8889 16.4843 14.2411L15.439 4.29589C15.2659 2.64812 13.7897 1.45272 12.1419 1.62591L4.18571 2.46214C2.53794 2.63533 1.34255 4.11151 1.51573 5.75929L2.56102 15.7045C2.73421 17.3523 4.21039 18.5477 5.85817 18.3745Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M8.8 18.5C8.8 18.0582 8.44183 17.7 8 17.7C7.55817 17.7 7.2 18.0582 7.2 18.5H8.8ZM19 21.2H11V22.8H19V21.2ZM21.2 9V19H22.8V9H21.2ZM18.5 6.8H19V5.2H18.5V6.8ZM8.8 19V18.5H7.2V19H8.8ZM22.8 9C22.8 6.90132 21.0987 5.2 19 5.2V6.8C20.215 6.8 21.2 7.78497 21.2 9H22.8ZM11 21.2C9.78497 21.2 8.8 20.215 8.8 19H7.2C7.2 21.0987 8.90132 22.8 11 22.8V21.2ZM19 22.8C21.0987 22.8 22.8 21.0987 22.8 19H21.2C21.2 20.215 20.215 21.2 19 21.2V22.8Z" fill="currentColor" /></svg>',
-                'description' => 'Built-in analytics and reporting for data-driven insights.',
-            ],
-            [
-                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_21695_1563)"><path d="M11 4H6C3.79086 4 2 5.79086 2 8V18C2 20.2091 3.79086 22 6 22H18C20.2091 22 22 20.2091 22 18V18" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M7 2V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M8 17C8 17.5523 7.55228 18 7 18C6.44772 18 6 17.5523 6 17C6 16.4477 6.44772 16 7 16C7.55228 16 8 16.4477 8 17Z" fill="currentColor" /><path d="M8 13C8 13.5523 7.55228 14 7 14C6.44772 14 6 13.5523 6 13C6 12.4477 6.44772 12 7 12C7.55228 12 8 12.4477 8 13Z" fill="currentColor" /><path d="M12 17C12 17.5523 11.5523 18 11 18C10.4477 18 10 17.5523 10 17C10 16.4477 10.4477 16 11 16C11.5523 16 12 16.4477 12 17Z" fill="currentColor" /><path d="M8 9C8 9.55228 7.55228 10 7 10C6.44772 10 6 9.55228 6 9C6 8.44772 6.44772 8 7 8C7.55228 8 8 8.44772 8 9Z" fill="currentColor" /><path d="M17.0008 15.723L18.9326 16.2407M19.5327 1.88826V1.88826C17.3988 1.3165 15.2054 2.58283 14.6337 4.71669L14.0789 6.78724C13.8242 7.73753 13.1298 8.50837 12.2112 8.8605L12.0253 8.93176C11.6111 9.09052 11.298 9.43805 11.1832 9.86649L10.9458 10.7525C10.8321 11.1771 11.0841 11.6136 11.5087 11.7274L21.562 14.4212C21.9867 14.535 22.4232 14.283 22.5369 13.8583L22.7744 12.9723C22.8892 12.5439 22.7918 12.0864 22.5125 11.7418L22.3871 11.5871C21.7676 10.8228 21.5517 9.80808 21.8063 8.85779L22.3611 6.78724C22.9329 4.65338 21.6665 2.46003 19.5327 1.88826V1.88826ZM19.5327 1.88826L19.7667 1.05565" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></g><defs><clipPath id="clip0_21695_1563"><rect width="24" height="24" fill="white" /></clipPath></defs></svg>',
-                'description' => 'Automated scheduling and event management system.',
-            ],
-            [
-                'icon' => '<svg class="size-6 text-gray-800 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 16.5C14 15.9696 13.7893 15.4609 13.4142 15.0858C13.0391 14.7107 12.5304 14.5 12 14.5H8C7.46957 14.5 6.96086 14.7107 6.58579 15.0858C6.21071 15.4609 6 15.9696 6 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M10 12C11.3807 12 12.5 10.8807 12.5 9.5C12.5 8.11929 11.3807 7 10 7C8.61929 7 7.5 8.11929 7.5 9.5C7.5 10.8807 8.61929 12 10 12Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M22 7V6C22 3.79086 20.2091 2 18 2H6C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22H18C20.2091 22 22 20.2091 22 18V17" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M23 10.5H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M21 13.5H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-                'description' => 'User profiles with customizable fields and preferences.',
-            ],
-        ],
-    ],
-
     'testimonials' => [
         [
             'name' => 'John Doe',
@@ -660,6 +849,546 @@ return [
             'name' => 'Jane Smith',
             'position' => 'CTO, TechSolutions',
             'quote' => 'The best SaaS platform we have ever used.',
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Global Navigation Configuration (Header & Footer)
+    |--------------------------------------------------------------------------
+    | Scribe-inspired clean navbar with original brand items,
+    | plus comprehensive footer ecosystem.
+    */
+    'navigation' => [
+        'header' => [
+            [
+                'label' => 'Services',
+                'url' => '/services',
+                'route' => 'services',
+            ],
+            [
+                'label' => 'Why us?',
+                'url' => '/why-us',
+                'route' => 'why-us',
+            ],
+            [
+                'label' => 'Cases',
+                'url' => '/cases',
+                'route' => 'cases',
+            ],
+            [
+                'label' => 'About us',
+                'url' => '/about-us',
+                'route' => 'about-us',
+            ],
+        ],
+
+        'actions' => [
+            'login' => [
+                'label' => 'Sign in',
+                'url' => '/login',
+            ],
+            'cta' => [
+                'label' => 'Get Started',
+                'url' => '/contact-us',
+            ],
+        ],
+
+        'footer' => [
+            'brand_name' => 'SaaSApps',
+            'tagline' => 'Comprehensive software development and digital product engineering. We turn ambitious ideas into production-ready software.',
+            'contact' => [
+                'email' => 'contact@saasapps.com',
+                'phone' => '+1 (800) 555-0199',
+                'status' => 'Enterprise System Status: 99.99% Operational',
+            ],
+            'columns' => [
+                'company' => [
+                    'title' => 'COMPANY',
+                    'links' => [
+                        ['label' => 'About Us', 'url' => '/about-us'],
+                        ['label' => 'Why Us?', 'url' => '/why-us'],
+                        ['label' => 'Contact Us', 'url' => '/contact-us'],
+                    ],
+                ],
+                'services' => [
+                    'title' => 'SERVICES',
+                    'links' => [
+                        ['label' => 'Custom Software Development', 'url' => '/services'],
+                        ['label' => 'Mobile App Development', 'url' => '/services'],
+                        ['label' => 'AI Solutions & Automation', 'url' => '/services'],
+                        ['label' => 'Web & E-Commerce', 'url' => '/services'],
+                        ['label' => 'Cloud & DevOps Services', 'url' => '/services'],
+                    ],
+                ],
+                'our_work' => [
+                    'title' => 'OUR WORK',
+                    'links' => [
+                        ['label' => 'Cases', 'url' => '/cases'],
+                        ['label' => 'Portfolio', 'url' => '/portfolio'],
+                        ['label' => 'Client Reviews', 'url' => '/review'],
+                    ],
+                ],
+                'contact' => [
+                    'title' => 'CONTACT',
+                    'links' => [
+                        ['label' => 'contact@saasapps.com', 'url' => 'mailto:contact@saasapps.com'],
+                        ['label' => '+1 (800) 555-0199', 'url' => 'tel:+18005550199'],
+                        ['label' => 'LinkedIn', 'url' => 'https://linkedin.com'],
+                        ['label' => 'Twitter / X', 'url' => 'https://x.com'],
+                        ['label' => 'GitHub', 'url' => 'https://github.com'],
+                    ],
+                ],
+                'legal' => [
+                    'title' => 'LEGAL',
+                    'links' => [
+                        ['label' => 'Privacy Policy', 'url' => '/legal/privacy'],
+                        ['label' => 'Terms and Conditions', 'url' => '/legal/terms'],
+                    ],
+                ],
+            ],
+            'social' => [
+                ['platform' => 'LinkedIn', 'url' => 'https://linkedin.com'],
+                ['platform' => 'Twitter / X', 'url' => 'https://x.com'],
+                ['platform' => 'GitHub', 'url' => 'https://github.com'],
+            ],
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Department & Use Case Solutions Data Engine
+    |--------------------------------------------------------------------------
+    */
+    'solutions' => [
+        'ai-automation' => [
+            'slug' => 'ai-automation',
+            'category' => 'Department Solution',
+            'hero_badge' => 'AI & Automation Engineering',
+            'title' => 'Ground AI Agents & Automation in Verified Human Workflows',
+            'description' => 'Empower autonomous copilots, robotic process automation (RPA), and LangChain/LlamaIndex pipelines with exact procedural context extracted directly from real human interactions.',
+            'stats' => [
+                ['value' => '99.4%', 'label' => 'Deterministic step accuracy'],
+                ['value' => '0', 'label' => 'Agent hallucinations on tool calling'],
+                ['value' => '12x', 'label' => 'Faster agent context assembly'],
+            ],
+            'problem_statement' => 'Autonomous agents frequently fail or hallucinate when attempting complex enterprise tasks because traditional documentation is fragmented, ambiguous, and missing precise UI selectors and edge-case exceptions.',
+            'solution_statement' => 'SaaSApps converts real employee actions into structured JSON, DOM trajectories, and MCP server endpoints, giving AI agents verifiable procedural ground truth.',
+            'persona_quote' => [
+                'quote' => 'By feeding SaaSApps procedural graphs into our MCP server, our autonomous triage agents reached 96% first-attempt task completion with zero human intervention.',
+                'author' => 'Elena Rostova',
+                'role' => 'Head of AI Engineering',
+            ],
+            'benefits' => [
+                ['title' => 'Native MCP Protocol Support', 'desc' => 'Plug our MCP server directly into Claude Desktop, Cursor, or your internal LLM agent runtime.'],
+                ['title' => 'Precise UI & DOM Selectors', 'desc' => 'Every button, dropdown, and form input is cataloged with exact element coordinates and IDs.'],
+                ['title' => 'Automated Drift Detection', 'desc' => 'When a SaaS UI changes, our platform flags the discrepancy and prompts an instant update before agents break.'],
+                ['title' => 'Client-Side Data Redaction', 'desc' => 'Credentials, secrets, and private consumer data are sanitized before passing to AI models.'],
+            ],
+            'workflow_mockup' => [
+                'title' => 'Autonomous Agent Workflow: Salesforce Lead Triage & Enrichment',
+                'steps' => [
+                    ['step' => 1, 'action' => 'Retrieve Inbound Lead Webhook Payload', 'detail' => 'Agent parses customer metadata and queries Clearbit API for revenue data.'],
+                    ['step' => 2, 'action' => 'Evaluate ICP Qualification Criteria', 'detail' => 'Agent cross-references ICP rules documented in SaaSApps Salesforce Guide.'],
+                    ['step' => 3, 'action' => 'Assign SDR Owner & Trigger Slack Alert', 'detail' => 'Lead routed to regional AE with full procedural audit trail appended.'],
+                ],
+            ],
+            'faqs' => [
+                ['q' => 'How do agents access SaaSApps workflows?', 'a' => 'Agents connect via our official Model Context Protocol (MCP) server or standard REST API endpoints, receiving structured step graphs and execution schemas.'],
+                ['q' => 'Does this work with private, air-gapped LLMs?', 'a' => 'Yes. SaaSApps exports standard OpenAPI schemas and JSON-LD procedural graphs that can be hosted on your private VPC.'],
+            ],
+            'related' => [
+                ['title' => 'Power AI Agents', 'url' => '/solutions/power-ai-agents'],
+                ['title' => 'AI Transformation', 'url' => '/solutions/ai-transformation'],
+                ['title' => 'Platform API & MCP', 'url' => '/platform/api'],
+            ],
+        ],
+
+        'it' => [
+            'slug' => 'it',
+            'category' => 'Department Solution',
+            'hero_badge' => 'IT Systems & Infrastructure',
+            'title' => 'Streamline IT Operations, Software Rollouts & Ticket Deflection',
+            'description' => 'Eliminate repetitive helpdesk tickets, standardize identity provisioning, and guide employees through complex software migrations with zero manual screenshotting.',
+            'stats' => [
+                ['value' => '45%', 'label' => 'Reduction in L1/L2 IT tickets'],
+                ['value' => '4 mins', 'label' => 'Average hardware setup resolution'],
+                ['value' => '100%', 'label' => 'SAML & SCIM configuration adherence'],
+            ],
+            'problem_statement' => 'IT teams waste hundreds of hours answering the same repetitive questions: VPN setups, MFA resets, permission requests, and ERP access, while manual wikis sit untouched and outdated.',
+            'solution_statement' => 'SaaSApps creates interactive, annotated visual guides in seconds. Embed verified setup steps directly into Jira Service Management, Zendesk, and Slack so employees solve issues themselves.',
+            'persona_quote' => [
+                'quote' => 'Our IT helpdesk ticket volume plummeted by 42% in the first quarter after embedding SaaSApps guides into our Slack help channel.',
+                'author' => 'Marcus Vance',
+                'role' => 'VP of Global IT Infrastructure',
+            ],
+            'benefits' => [
+                ['title' => 'Instant Ticket Deflection', 'desc' => 'Deliver step-by-step interactive troubleshooting guides directly inside ticketing queues and Slack.'],
+                ['title' => 'Frictionless Software Rollouts', 'desc' => 'Ensure smooth migrations to Okta, Microsoft 365, or Salesforce with self-serve visual runbooks.'],
+                ['title' => 'Automated Credential Masking', 'desc' => 'Protect passwords, Wi-Fi tokens, and API credentials with automated client-side redaction.'],
+                ['title' => 'Multi-OS Desktop Recording', 'desc' => 'Capture complex system setting changes across Windows, macOS, Linux, and cloud virtual desktops.'],
+            ],
+            'workflow_mockup' => [
+                'title' => 'IT Self-Serve Runbook: YubiKey Hardware MFA Enrollment',
+                'steps' => [
+                    ['step' => 1, 'action' => 'Insert YubiKey 5C into USB-C Port', 'detail' => 'Ensure device LED blinks steadily before navigating to corporate portal.'],
+                    ['step' => 2, 'action' => 'Authenticate via Okta Security Settings', 'detail' => 'Click "Extra Verification" and select Security Key or Biometric Authenticator.'],
+                    ['step' => 3, 'action' => 'Tap Gold Sensor to Register Hardware Token', 'detail' => 'System completes cryptographic pairing and issues emergency backup codes.'],
+                ],
+            ],
+            'faqs' => [
+                ['q' => 'Can we deploy the desktop recorder silently via MDM?', 'a' => 'Yes. SaaSApps provides MSI and PKG packages for automated enterprise deployment via Jamf, Microsoft Intune, and Kandji.'],
+                ['q' => 'Does SaaSApps integrate with ServiceNow?', 'a' => 'Yes. SaaSApps guides can be linked directly into ServiceNow knowledge articles and catalog item forms.'],
+            ],
+            'related' => [
+                ['title' => 'Implement Software', 'url' => '/solutions/implement-software'],
+                ['title' => 'Operations', 'url' => '/solutions/operations'],
+                ['title' => 'Enterprise Security', 'url' => '/security'],
+            ],
+        ],
+
+        'operations' => [
+            'slug' => 'operations',
+            'category' => 'Department Solution',
+            'hero_badge' => 'Operations & Business Process',
+            'title' => 'Scale Operational Excellence & Eliminate Shadow Workflows',
+            'description' => 'Unify procedures across distributed teams, ensure continuous compliance, and eliminate inconsistent shadow SOPs stored in personal desktop folders.',
+            'stats' => [
+                ['value' => '98%', 'label' => 'Standard operating procedure adoption'],
+                ['value' => '3.5 hrs', 'label' => 'Saved per operator each week'],
+                ['value' => '90%', 'label' => 'Reduction in process variance'],
+            ],
+            'problem_statement' => 'When company processes are undocumented or scattered across personal notes, operational errors explode, quality varies wildly, and scaling to new regions becomes a nightmare.',
+            'solution_statement' => 'SaaSApps provides a centralized, version-controlled process hub where every core business workflow is continuously captured, verified, and distributed.',
+            'persona_quote' => [
+                'quote' => 'SaaSApps eliminated our operational silos. Every branch manager now follows the exact same verified inventory reconciliation process.',
+                'author' => 'Rachel Chen',
+                'role' => 'Chief Operating Officer',
+            ],
+            'benefits' => [
+                ['title' => 'Single Source of Truth', 'desc' => 'Centralize all standard operating procedures in a searchable, verified organizational library.'],
+                ['title' => 'Version Control & Governance', 'desc' => 'Require managerial approval before procedure changes take effect, with immutable change histories.'],
+                ['title' => 'Process Telemetry', 'desc' => 'Monitor which SOPs are viewed, followed, and completed, pinpointing operational bottlenecks instantly.'],
+                ['title' => 'Zero Maintenance Overhead', 'desc' => 'Update a workflow in seconds by re-recording the changed steps instead of rewriting whole manuals.'],
+            ],
+            'workflow_mockup' => [
+                'title' => 'Operations SOP: Multi-Location Inventory Discrepancy Reconciliation',
+                'steps' => [
+                    ['step' => 1, 'action' => 'Export Daily Cycle Count Variance Report', 'detail' => 'Filter ERP records for SKU variance exceeding 2.5% of ledger balance.'],
+                    ['step' => 2, 'action' => 'Perform Secondary Physical Audit & Barcode Scan', 'detail' => 'Warehouse lead scans physical bin location using handheld mobile device.'],
+                    ['step' => 3, 'action' => 'Post Adjusting Ledger Entry & Notify Regional Controller', 'detail' => 'Submit adjustment voucher with attached photographic verification.'],
+                ],
+            ],
+            'faqs' => [
+                ['q' => 'Can we export guides for offline operational environments?', 'a' => 'Yes. Export one-click PDF binders with high-resolution vector diagrams and clear typography for offline shop floors.'],
+                ['q' => 'How do we know if team members actually read new procedures?', 'a' => 'SaaSApps provides read receipts, quiz verification, and detailed analytics on user completion rates.'],
+            ],
+            'related' => [
+                ['title' => 'Train Teams', 'url' => '/solutions/train-teams'],
+                ['title' => 'Implement Software', 'url' => '/solutions/implement-software'],
+                ['title' => 'Product: Optimize', 'url' => '/products/optimize'],
+            ],
+        ],
+
+        'finance-accounting' => [
+            'slug' => 'finance-accounting',
+            'category' => 'Department Solution',
+            'hero_badge' => 'Finance & Corporate Accounting',
+            'title' => 'Accelerate Month-End Close, ERP Audits & Financial Controls',
+            'description' => 'Document complex financial reconciliations, maintain rigorous SOX 404 audit trails, and ensure new accounting hires ramp in days rather than months.',
+            'stats' => [
+                ['value' => '5 days', 'label' => 'Cut from month-end close cycle'],
+                ['value' => '100%', 'label' => 'Audit readiness with immutable logs'],
+                ['value' => 'Zero', 'label' => 'Audit deficiencies on procedural tests'],
+            ],
+            'problem_statement' => 'Finance teams face grueling month-end close deadlines, complex multi-entity ERPs, and grueling audit scrutiny, yet procedures are often trapped in the head of a single controller.',
+            'solution_statement' => 'SaaSApps automatically generates airtight, screenshot-backed financial runbooks for NetSuite, SAP, and QuickBooks with automatic masking of sensitive bank numbers and PII.',
+            'persona_quote' => [
+                'quote' => 'Our external auditors completed their annual SOX walkthroughs in half the time because every financial control was mapped with SaaSApps guides.',
+                'author' => 'David Sterling',
+                'role' => 'Corporate Controller & CPA',
+            ],
+            'benefits' => [
+                ['title' => 'Airtight Audit Trails', 'desc' => 'Provide external auditors with precise, timestamped visual walkthroughs for every critical accounting control.'],
+                ['title' => 'Automated Financial Masking', 'desc' => 'Automatically redact bank routing numbers, employee salaries, and tax IDs before guides are saved.'],
+                ['title' => 'Accelerated Month-End Close', 'desc' => 'Eliminate confusion around intercompany journal entries, FX adjustments, and accrual postings.'],
+                ['title' => 'Zero Key-Person Dependency', 'desc' => 'Safeguard your finance department against turnover by preserving tacit accounting know-how.'],
+            ],
+            'workflow_mockup' => [
+                'title' => 'Finance SOP: Intercompany FX Translation & Elimination Entry',
+                'steps' => [
+                    ['step' => 1, 'action' => 'Extract Subsidiary Balance Sheets in NetSuite', 'detail' => 'Run foreign currency revaluation engine using month-ending spot rates.'],
+                    ['step' => 2, 'action' => 'Calculate Intercompany Loan Elimination in Excel', 'detail' => 'Reconcile intercompany receivables against payables across EUR and USD entities.'],
+                    ['step' => 3, 'action' => 'Post Elimination Journal & Attach Bank Reconciliation', 'detail' => 'Route journal voucher for dual controller sign-off in ERP system.'],
+                ],
+            ],
+            'faqs' => [
+                ['q' => 'Can auditors review SaaSApps documentation without seat licenses?', 'a' => 'Yes. You can generate secure, password-protected read-only sharing links or export complete PDF audit binders.'],
+                ['q' => 'Is SaaSApps compliant with SOC 1 and SOC 2 requirements?', 'a' => 'Yes. We are SOC 2 Type II certified and maintain enterprise-grade access logging and encryption.'],
+            ],
+            'related' => [
+                ['title' => 'Enterprise Security', 'url' => '/security'],
+                ['title' => 'Operations', 'url' => '/solutions/operations'],
+                ['title' => 'Onboard New Hires', 'url' => '/solutions/onboard-new-hires'],
+            ],
+        ],
+
+        'hr-learning' => [
+            'slug' => 'hr-learning',
+            'category' => 'Department Solution',
+            'hero_badge' => 'HR, People & Learning Development',
+            'title' => 'Accelerate Employee Ramp & Build Self-Serve Training Academies',
+            'description' => 'Transform new hire onboarding into a seamless self-serve experience. Cut ramp time by 60% and free managers from answering the same first-week questions.',
+            'stats' => [
+                ['value' => '60%', 'label' => 'Faster time to new hire productivity'],
+                ['value' => '15 hrs', 'label' => 'Saved per hiring manager per new hire'],
+                ['value' => '94%', 'label' => 'New hire day-one satisfaction score'],
+            ],
+            'problem_statement' => 'New hires spend their first month waiting for senior teammates to walk them through software tools, leading to sluggish ramp times, frustrated hires, and overwhelmed managers.',
+            'solution_statement' => 'SaaSApps lets your top performers capture their actual workflows in seconds, creating a rich library of visual, interactive onboarding playbooks.',
+            'persona_quote' => [
+                'quote' => 'Our new sales engineers now close their first deal within 30 days instead of 90. SaaSApps made our onboarding genuinely self-serve.',
+                'author' => 'Samantha Miller',
+                'role' => 'VP of People & Talent',
+            ],
+            'benefits' => [
+                ['title' => 'Self-Serve Day-One Guides', 'desc' => 'Equip new hires with clear visual guides for email setup, benefits enrollment, and tool navigation.'],
+                ['title' => 'Interactive Learning Tracks', 'desc' => 'Group guides into structured role-based onboarding academies that track progress and completion.'],
+                ['title' => '50+ Language Translations', 'desc' => 'Support global remote workforces with automated translation of training guides into 50+ languages.'],
+                ['title' => 'LMS & HRIS Integration', 'desc' => 'Embed guides directly into Workday, BambooHR, Lattice, and popular learning management systems.'],
+            ],
+            'workflow_mockup' => [
+                'title' => 'HR Playbook: New Hire Day-1 Systems & Benefits Onboarding',
+                'steps' => [
+                    ['step' => 1, 'action' => 'Log in to Corporate Single Sign-On Portal', 'detail' => 'Enter temporary credentials and configure 2-factor authentication via Duo.'],
+                    ['step' => 2, 'action' => 'Complete Healthcare & 401(k) Election Forms', 'detail' => 'Review medical plan comparison matrix and submit dependent documentation.'],
+                    ['step' => 3, 'action' => 'Join Departmental Slack Channels & Book Mentorship 1:1', 'detail' => 'Follow automated checklist to introduce yourself to your squad team.'],
+                ],
+            ],
+            'faqs' => [
+                ['q' => 'Can guides be organized into progressive learning tracks?', 'a' => 'Yes. SaaSApps Pages feature allows you to bundle multiple guides into sequenced courses with progress tracking.'],
+                ['q' => 'Can we measure which guides new hires reference most?', 'a' => 'Yes. Analytics dashboards show search queries, guide view counts, and time spent per step.'],
+            ],
+            'related' => [
+                ['title' => 'Onboard New Hires', 'url' => '/solutions/onboard-new-hires'],
+                ['title' => 'Train Teams', 'url' => '/solutions/train-teams'],
+                ['title' => 'Resource Center', 'url' => '/resources'],
+            ],
+        ],
+
+        'ai-transformation' => [
+            'slug' => 'ai-transformation',
+            'category' => 'Use Case',
+            'hero_badge' => 'Enterprise AI Transformation',
+            'title' => 'From Manual Operations to Autonomous Agentic Workflows',
+            'description' => 'Modernize legacy organizational processes into machine-readable procedural context, enabling high-ROI AI agent deployments across your enterprise.',
+            'stats' => [
+                ['value' => '85%', 'label' => 'Reduction in agent deployment cycle time'],
+                ['value' => '100%', 'label' => 'Documented procedural coverage'],
+                ['value' => '4x', 'label' => 'ROI on generative AI investments'],
+            ],
+            'problem_statement' => 'Enterprise AI initiatives stall because LLMs lack context on how your proprietary internal tools and legacy workflows actually function, resulting in risky hallucinations.',
+            'solution_statement' => 'SaaSApps provides the critical translation layer: turning chaotic human mouse-clicks into structured, deterministic procedural context for LLMs and agent swarms.',
+            'persona_quote' => [
+                'quote' => 'SaaSApps is the missing bridge for enterprise AI. We went from conceptual LLM prototypes to real workflow automation in 4 weeks.',
+                'author' => 'Carlos Mendoza',
+                'role' => 'Chief Technology Officer',
+            ],
+            'benefits' => [
+                ['title' => 'Procedural Knowledge Graphs', 'desc' => 'Map complex multi-application workflows into interconnected semantic graphs ready for RAG.'],
+                ['title' => 'Standardized Tool Schemas', 'desc' => 'Export workflow steps as structured JSON function-calling definitions for OpenAI, Anthropic, and Gemini.'],
+                ['title' => 'Continuous Telemetry', 'desc' => 'Track human performance side-by-side with agent performance to identify high-confidence handoffs.'],
+                ['title' => 'Enterprise Security Fences', 'desc' => 'Keep sensitive customer records and proprietary business logic isolated with strict access controls.'],
+            ],
+            'workflow_mockup' => [
+                'title' => 'AI Transformation Pipeline: Customer Returns & Refund Automation',
+                'steps' => [
+                    ['step' => 1, 'action' => 'Human Operator Captures Golden Return Process', 'detail' => 'Operator performs RMA generation, barcode check, and Stripe refund.'],
+                    ['step' => 2, 'action' => 'SaaSApps Engine Synthesizes Action Trajectory', 'detail' => 'System extracts DOM selectors, API payloads, and exception handling logic.'],
+                    ['step' => 3, 'action' => 'AI Agent Deployed via MCP to Execute 80% of Cases', 'detail' => 'Autonomous copilot takes over routine returns, escalating exceptions to human leads.'],
+                ],
+            ],
+            'faqs' => [
+                ['q' => 'What AI frameworks are supported out of the box?', 'a' => 'SaaSApps natively integrates with Model Context Protocol (MCP), LangChain, LlamaIndex, CrewAI, AutoGen, and standard REST APIs.'],
+                ['q' => 'Can we keep our workflow context on-premises?', 'a' => 'Yes. Enterprise plans support private cloud and on-premises deployment options with air-gapped security.'],
+            ],
+            'related' => [
+                ['title' => 'Specialized Intelligence', 'url' => '/platform/specialized-intelligence'],
+                ['title' => 'Power AI Agents', 'url' => '/solutions/power-ai-agents'],
+                ['title' => 'Platform API', 'url' => '/platform/api'],
+            ],
+        ],
+
+        'train-teams' => [
+            'slug' => 'train-teams',
+            'category' => 'Use Case',
+            'hero_badge' => 'Team Training & Enablement',
+            'title' => '10x Faster Employee Training with Visual Step-by-Step Guides',
+            'description' => 'Replace tedious live screen-sharing and dry 40-page manuals with interactive visual SOPs that teammates actually read and follow.',
+            'stats' => [
+                ['value' => '98%', 'label' => 'Employee training engagement rate'],
+                ['value' => '80%', 'label' => 'Drop in training repetition for leads'],
+                ['value' => '24/7', 'label' => 'On-demand self-serve assistance'],
+            ],
+            'problem_statement' => 'Senior employees spend 30% of their work week in repetitive 1-on-1 screenshares re-explaining the same software workflows to junior colleagues.',
+            'solution_statement' => 'With SaaSApps, record any workflow once while doing your regular work, and create an engaging, visual guide that teaches teammates forever.',
+            'persona_quote' => [
+                'quote' => 'I haven\'t had to host a live software training walkthrough in six months. I just send new team members our SaaSApps collection.',
+                'author' => 'Liam Gallagher',
+                'role' => 'Director of Enablement',
+            ],
+            'benefits' => [
+                ['title' => 'Visual Proof on Every Step', 'desc' => 'Crystal-clear annotated screenshots eliminate confusion over where to click and what to type.'],
+                ['title' => 'Searchable Knowledge Hub', 'desc' => 'Employees find exact answers in seconds through instant full-text and semantic search.'],
+                ['title' => 'Automated Updates', 'desc' => 'Update individual steps in seconds whenever your software UI changes without starting from scratch.'],
+                ['title' => 'Interactive Quizzes & Checklists', 'desc' => 'Verify procedural comprehension with built-in checkpoint questions and completion verification.'],
+            ],
+            'workflow_mockup' => [
+                'title' => 'Enablement Guide: Enterprise CRM Opportunity Stage Advancement',
+                'steps' => [
+                    ['step' => 1, 'action' => 'Verify BANT Criteria Checklist in Lead Record', 'detail' => 'Confirm Budget, Authority, Need, and Timeline fields are fully documented.'],
+                    ['step' => 2, 'action' => 'Attach Mutual Evaluation Plan (MEP) Document', 'detail' => 'Upload signed mutual execution agreement to customer files tab.'],
+                    ['step' => 3, 'action' => 'Transition Stage to "Negotiation & Contracting"', 'detail' => 'System automatically routes contract terms to legal operations queue.'],
+                ],
+            ],
+            'faqs' => [
+                ['q' => 'Can employees search guides directly from their browser?', 'a' => 'Yes. The SaaSApps browser extension includes a global search bar that surfaces guides without switching tabs.'],
+                ['q' => 'Can we track who has reviewed required compliance training?', 'a' => 'Yes. Team dashboards show completion percentages and timestamps for every team member.'],
+            ],
+            'related' => [
+                ['title' => 'Onboard New Hires', 'url' => '/solutions/onboard-new-hires'],
+                ['title' => 'HR & Learning', 'url' => '/solutions/hr-learning'],
+                ['title' => 'Templates', 'url' => '/templates'],
+            ],
+        ],
+
+        'power-ai-agents' => [
+            'slug' => 'power-ai-agents',
+            'category' => 'Use Case',
+            'hero_badge' => 'AI Agent Grounding & MCP',
+            'title' => 'Feed Real Human Workflows into MCP Servers & Agent Context',
+            'description' => 'Give autonomous agents, coding assistants, and RPA systems the precise operational context required to navigate complex enterprise applications without failure.',
+            'stats' => [
+                ['value' => '99.8%', 'label' => 'Step execution reliability'],
+                ['value' => '100 ms', 'label' => 'Sub-second context retrieval'],
+                ['value' => 'Zero', 'label' => 'Manual prompt engineering needed'],
+            ],
+            'problem_statement' => 'AI agents fail at browser and desktop tasks because prompt engineering cannot capture the complex nuances, validation checks, and specific selectors of real software.',
+            'solution_statement' => 'SaaSApps records exact DOM hierarchies, coordinates, and human reasoning, compiling them into clean Model Context Protocol (MCP) tool endpoints.',
+            'persona_quote' => [
+                'quote' => 'SaaSApps provides our autonomous agents with the high-resolution operational context they need to execute complex business workflows with zero human intervention.',
+                'author' => 'Alexei Petrov',
+                'role' => 'Lead AI Systems Architect',
+            ],
+            'benefits' => [
+                ['title' => 'Native Model Context Protocol', 'desc' => 'Serve guides directly to Claude Desktop, Cursor, and any MCP-compliant agent framework.'],
+                ['title' => 'DOM & Coordinate Grounding', 'desc' => 'Every action is paired with resilient CSS selectors, XPath fallback queries, and pixel coordinates.'],
+                ['title' => 'Pre & Post-Condition Validation', 'desc' => 'Agents verify screen states before executing each action, avoiding catastrophic cascade failures.'],
+                ['title' => 'Human-in-the-Loop Fallback', 'desc' => 'If an unexpected screen state appears, the agent automatically flags a human operator for guidance.'],
+            ],
+            'workflow_mockup' => [
+                'title' => 'MCP Context Endpoint: Customer Account De-Provisioning',
+                'steps' => [
+                    ['step' => 1, 'action' => 'Agent Queries SaaSApps MCP: `saasapps_get_workflow`', 'detail' => 'Returns structured JSON action schema with exact input parameters and security scopes.'],
+                    ['step' => 2, 'action' => 'Agent Executes Targeted API & UI Actions', 'detail' => 'Revokes SAML tokens, archives database records, and triggers data retention policies.'],
+                    ['step' => 3, 'action' => 'Agent Emits Verification Telemetry to SaaSApps', 'detail' => 'Logs immutable execution proof with attached session hashes.'],
+                ],
+            ],
+            'faqs' => [
+                ['q' => 'How does the MCP server handle authentication?', 'a' => 'Our MCP server authenticates via scoped API keys and OAuth2 tokens, ensuring agents only access authorized departmental SOPs.'],
+                ['q' => 'Can we restrict agents from executing destructive actions?', 'a' => 'Yes. Granular policy gates can require human approval before an agent executes irreversible steps.'],
+            ],
+            'related' => [
+                ['title' => 'Specialized Intelligence', 'url' => '/platform/specialized-intelligence'],
+                ['title' => 'AI & Automation', 'url' => '/solutions/ai-automation'],
+                ['title' => 'Platform API', 'url' => '/platform/api'],
+            ],
+        ],
+
+        'implement-software' => [
+            'slug' => 'implement-software',
+            'category' => 'Use Case',
+            'hero_badge' => 'Software Implementation & Adoption',
+            'title' => 'Achieve 100% Adoption on New ERP, CRM & SaaS Implementations',
+            'description' => 'Ensure seamless rollouts for Salesforce, Workday, SAP, NetSuite, and HubSpot. Eliminate change resistance with in-app, step-by-step guidance.',
+            'stats' => [
+                ['value' => '3x', 'label' => 'Faster software user adoption'],
+                ['value' => '70%', 'label' => 'Reduction in post-rollout support tickets'],
+                ['value' => '100%', 'label' => 'Process compliance across all users'],
+            ],
+            'problem_statement' => '70% of enterprise digital transformations fail because employees reject complex new software and revert to manual workarounds, spreadsheets, and shadow processes.',
+            'solution_statement' => 'SaaSApps creates frictionless in-app visual guides that appear right when employees need them, guiding users through every new screen and workflow.',
+            'persona_quote' => [
+                'quote' => 'We migrated 4,000 users from legacy ERP to NetSuite in record time. SaaSApps was the single most impactful adoption tool we had.',
+                'author' => 'Brian O\'Connor',
+                'role' => 'VP of Enterprise Transformation',
+            ],
+            'benefits' => [
+                ['title' => 'In-Context Micro-Guidance', 'desc' => 'Deliver step-by-step guidance directly inside the target web application with zero context switching.'],
+                ['title' => 'Pre-Built Implementation Packs', 'desc' => 'Kickstart documentation using verified templates for Salesforce, SAP, NetSuite, and Jira.'],
+                ['title' => 'Adoption & Adherence Analytics', 'desc' => 'Track exactly which employees are adopting new software and identify friction points early.'],
+                ['title' => 'Zero Technical Debt', 'desc' => 'Keep documentation in lockstep with new software updates without rewriting thousands of pages.'],
+            ],
+            'workflow_mockup' => [
+                'title' => 'ERP Migration SOP: Creating a Purchase Requisition in NetSuite',
+                'steps' => [
+                    ['step' => 1, 'action' => 'Navigate to Transactions > Purchases > Enter Requisitions', 'detail' => 'Select appropriate subsidiary and cost center from accounting hierarchy.'],
+                    ['step' => 2, 'action' => 'Populate Line-Item Vendor & GL Account Code', 'detail' => 'Ensure itemized quotes and vendor tax IDs are attached in PDF format.'],
+                    ['step' => 3, 'action' => 'Submit for Departmental Budget Approval', 'detail' => 'Automated workflow routes requisition to VP based on spending threshold.'],
+                ],
+            ],
+            'faqs' => [
+                ['q' => 'Can we customize branding for client-facing software rollouts?', 'a' => 'Yes. Enterprise plans include custom logos, colors, domains, and custom CSS styling.'],
+                ['q' => 'Does this work during sandbox and user acceptance testing (UAT)?', 'a' => 'Yes. Teams capture UAT test scripts and distribute verified golden workflows to testers before go-live.'],
+            ],
+            'related' => [
+                ['title' => 'IT Systems', 'url' => '/solutions/it'],
+                ['title' => 'Operations', 'url' => '/solutions/operations'],
+                ['title' => 'Templates', 'url' => '/templates'],
+            ],
+        ],
+
+        'onboard-new-hires' => [
+            'slug' => 'onboard-new-hires',
+            'category' => 'Use Case',
+            'hero_badge' => 'Employee Onboarding & Ramp',
+            'title' => 'Cut Onboarding Time by 60% with Instant Visual Answers',
+            'description' => 'Empower new hires to be productive on day one. Replace endless shoulder-tapping with a self-serve library of verified standard operating procedures.',
+            'stats' => [
+                ['value' => '60%', 'label' => 'Reduction in time-to-first-contribution'],
+                ['value' => '12 hrs', 'label' => 'Saved per hiring manager every week'],
+                ['value' => '99%', 'label' => 'New hire day-one confidence rating'],
+            ],
+            'problem_statement' => 'New team members spend weeks blocked on simple tool permissions, obscure internal portals, and unwritten tribal knowledge while senior mentors lose hours in repetitive 1-on-1 walkthroughs.',
+            'solution_statement' => 'SaaSApps creates a comprehensive, beautiful visual onboarding manual that answers every "How do I do this?" question before it is even asked.',
+            'persona_quote' => [
+                'quote' => 'New hires love our SaaSApps onboarding hub. They get immediate answers without feeling like a burden to their team.',
+                'author' => 'Jessica Taylor',
+                'role' => 'Head of People Operations',
+            ],
+            'benefits' => [
+                ['title' => 'Day-One Self-Sufficiency', 'desc' => 'Provide clear, step-by-step interactive visual guides for every core internal application.'],
+                ['title' => 'Zero Shoulder-Tapping', 'desc' => 'Protect senior engineers and managers from repetitive questions so they can focus on shipping.'],
+                ['title' => 'Role-Based Onboarding Packs', 'desc' => 'Bundle guides into custom paths for Engineering, Sales, Product, Marketing, and Operations.'],
+                ['title' => 'Continuously Updated', 'desc' => 'When a new hire notices a change, they can flag or re-record the step in under 10 seconds.'],
+            ],
+            'workflow_mockup' => [
+                'title' => 'Engineering Day-1 Setup: Git & Local Docker Environment',
+                'steps' => [
+                    ['step' => 1, 'action' => 'Clone Repository & Configure SSH Keys', 'detail' => 'Follow step-by-step terminal instructions to pair YubiKey hardware token.'],
+                    ['step' => 2, 'action' => 'Initialize Local Docker Containers & Seed DB', 'detail' => 'Run `make bootstrap` and verify local services healthy on port 8000.'],
+                    ['step' => 3, 'action' => 'Submit First Test Pull Request to Staging', 'detail' => 'Verify automated GitHub Actions CI/CD test suite passes with green check.'],
+                ],
+            ],
+            'faqs' => [
+                ['q' => 'Can we organize onboarding guides into day-by-day checklists?', 'a' => 'Yes. SaaSApps Pages let you build Day 1, Week 1, and Month 1 learning roadmaps with interactive checkboxes.'],
+                ['q' => 'Can we embed videos alongside step-by-step guides?', 'a' => 'Yes. You can embed Loom, YouTube, Vimeo, or MP4 video recordings alongside screenshots.']
+            ],
+            'related' => [
+                ['title' => 'Train Teams', 'url' => '/solutions/train-teams'],
+                ['title' => 'HR & Learning', 'url' => '/solutions/hr-learning'],
+                ['title' => 'Templates', 'url' => '/templates'],
+            ],
         ],
     ],
 ];

@@ -1,6 +1,6 @@
-<section id="integrations"
-    class="relative pt-20 pb-16 md:py-28 -mx-8 md:mx-0 px-8 md:px-0 bg-gray-900 md:before:absolute md:before:inset-0 md:before:bg-gray-900 md:before:w-screen md:before:left-1/2 md:before:right-1/2 md:before:-mr-[50vw] md:before:-ml-[50vw] md:before:-z-10">
-    <header class="text-center md:px-40">
+<section id="integrations" class="relative w-full py-16 md:py-28 bg-gray-900 text-white overflow-hidden">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="text-center md:px-40">
         <h2 class="mb-6 text-ui-32-normal md:text-heading-lg font-sans-heading text-gray-100">
             Fully automatic integrations
         </h2>
@@ -97,17 +97,18 @@
             </li>
         </ul>
     </aside>
-    <footer class="mt-8 md:mt-20 -mx-8 md:mx-0">
-        <ul data-marquee
-            class="marquee active relative flex items-center gap-0 overflow-hidden before:absolute before:inset-y-0 before:right-[90%] before:left-0 before:bg-gradient-to-l before:from-transparent before:to-gray-900 before:z-10 before:pointer-events-none after:absolute after:inset-y-0 after:left-[90%] after:right-0 after:bg-gradient-to-r after:from-transparent after:to-gray-900 after:z-10 after:pointer-events-none integrations"
-            style="--speed: 4.25; --count: {{ count(config('landing.integrations')) }};">
-            @foreach (config('landing.integrations') as $integration)
-                <li style="--index: {{ $loop->index }};" class="marquee-item">
-                    <a href="{{ $integration['url'] }}" aria-label="{{ $integration['name'] }}" target="_blank">
-                        {!! $integration['svg'] !!}
-                    </a>
-                </li>
-            @endforeach
-        </ul>
-    </footer>
+        <footer class="mt-8 md:mt-20">
+            <ul data-marquee
+                class="marquee active relative flex items-center gap-0 overflow-hidden before:absolute before:inset-y-0 before:right-[90%] before:left-0 before:bg-gradient-to-l before:from-transparent before:to-gray-900 before:z-10 before:pointer-events-none after:absolute after:inset-y-0 after:left-[90%] after:right-0 after:bg-gradient-to-r after:from-transparent after:to-gray-900 after:z-10 after:pointer-events-none integrations"
+                style="--speed: 4.25; --count: {{ count(config('landing.integrations')) }};">
+                @foreach (config('landing.integrations') as $integration)
+                    <li style="--index: {{ $loop->index }};" class="marquee-item">
+                        <a href="{{ $integration['url'] }}" aria-label="{{ $integration['name'] }}" target="_blank">
+                            {!! $integration['svg'] !!}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </footer>
+    </div>
 </section>

@@ -10,9 +10,9 @@
         ->implode(', ');
 @endphp
 
-<section
-    class="relative grid grid-cols-1 md:grid-cols-2 items-center pt-20 pb-16 md:py-28 -mx-8 md:mx-0 px-8 md:px-0 bg-gray-900 md:before:absolute md:before:inset-0 md:before:bg-gray-900 md:before:w-screen md:before:left-1/2 md:before:right-1/2 md:before:-mr-[50vw] md:before:-ml-[50vw] md:before:-z-10">
-    <header class="col-span-1 md:pr-12 lg:pr-24">
+<section class="relative bg-gray-900 py-16 md:py-24">
+  <div class="mx-auto grid w-full max-w-[1306px] grid-cols-1 items-center gap-10 px-6 sm:px-10 md:grid-cols-2 md:gap-12 lg:px-[78px]">
+    <header class="col-span-1 md:pr-8 lg:pr-12">
         <h2 class="relative text-gray-100 text-heading-mobile-md lg:text-heading-md font-sans-heading">
             We're building the <span class="relative">next<svg class="absolute text-gray-900 w-[54px] lg:w-[80px] left-0 -bottom-[6px]"
                     aria-hidden="true" role="presentation" width="80" height="10" viewBox="0 0 80 10" fill="none"
@@ -22,17 +22,17 @@
                         stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg></span> generation of business solutions
         </h2>
-        <p class="text-body-md lg:text-body-lg mt-4 lg:mt-10 text-gray-600">
+        <p class="text-body-md lg:text-body-lg mt-4 lg:mt-8 text-gray-300">
             Founded in 2014 and based in India, we are a founder-led software company focused on long-term partnerships,
             thoughtful execution, and dependable delivery. Our team specializes in {{ $servicesList }}, helping companies
             modernize operations and launch products that are practical, scalable, and built to last.
         </p>
-        <p class="text-body-md lg:text-body-lg mt-3 text-gray-600">
+        <p class="text-body-md lg:text-body-lg mt-3 text-gray-300">
             We lead with engineering discipline, clear communication, and real ownership of outcomes. That means cleaner
             architecture, stronger product thinking, and software that stays maintainable as your business evolves.
         </p>
     </header>
-    <ul class="col-span-1 flex justify-center mt-12 md:mt-0">
+    <ul class="col-span-1 flex justify-center mt-4 md:mt-0">
         @foreach ($admins as $index => $admin)
             <li class="relative">
                 @if ($index === 0)
@@ -72,4 +72,5 @@
             </li>
         @endforeach
     </ul>
+  </div>
 </section>
