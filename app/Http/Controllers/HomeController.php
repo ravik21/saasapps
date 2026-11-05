@@ -177,7 +177,7 @@ class HomeController extends Controller
 
     public function cases()
     {
-        $projects = Project::latest()->get();
+        $projects = Project::where('is_published', true)->orderBy('sort_order')->orderByDesc('created_at')->get();
         $allReviews = ClientReview::orderBy('rating', 'desc')
                                 ->orderBy('created_at', 'desc')
                                 ->get();

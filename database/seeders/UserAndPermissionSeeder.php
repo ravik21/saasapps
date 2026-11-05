@@ -179,7 +179,7 @@ class UserAndPermissionSeeder extends Seeder
                 'designation' => 'Jr. Developer',
                 'password' => Hash::make('12345678'),
                 'role' => 'Developer',
-                'avatar' => '/images/teams/daman.jpg',
+                'avatar' => '/images/teams/daman.jpeg',
             ],
             [
                 'name' => 'Arun Rana',

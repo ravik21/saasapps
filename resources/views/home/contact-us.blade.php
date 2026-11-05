@@ -1,455 +1,294 @@
-<x-landing-layout>
-    <main class="flex-1">
-        <!-- Hero Banner Section -->
-        <section class="review-hero-section">
-            <div class="review-hero-container">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                    <div class="review-hero-content">
-                        <!-- Badge -->
-                        <div class="review-hero-badge-wrapper">
-                            <span class="review-hero-badge">
-                                <i class="fas fa-envelope review-hero-star-icon"></i>
-                                Get In Touch
-                            </span>
+<x-landing-layout title="Contact Us — SaaSApps" description="Let's start a conversation together. Discuss your software development, architecture, and technology roadmap with the SaaSApps engineering team.">
+    <main class="flex-1 w-full bg-white pt-[76px]">
+
+        <!-- =========================================================================
+             1. CONTACT HERO SECTION (PREMIUM 2-COLUMN MONOCHROME LAYOUT)
+             ========================================================================= -->
+        <section class="relative w-full bg-white py-14 sm:py-18 lg:py-22 border-b border-[#E5E5E5] overflow-hidden">
+            <div class="max-w-[1306px] mx-auto px-6 sm:px-10 lg:px-[78px]">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+
+                    <!-- Left Column: Editorial Copy & Trust Cards -->
+                    <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+                        
+                        <!-- Monochrome Eyebrow Badge -->
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F7F7F5] border border-[#E5E5E5] text-xs font-semibold text-[#222526] tracking-wide mb-6">
+                            <svg class="size-3.5 text-[#222526]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>Get In Touch</span>
                         </div>
 
-                        <!-- Main Heading -->
-                        <h1 class="relative mt-10 md:mt-0 text-heading-mobile-hero md:text-heading-lg lg:text-heading-hero font-sans-heading text-center md:text-left mb-6 md:mb-8">
+                        <!-- Editorial Serif Heading -->
+                        <h1 class="font-serif-display text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#111111] leading-[1.12] tracking-[-0.025em] mb-6">
                             Let's Start a
-                            <span class="review-hero-heading-highlight">
+                            <span class="relative inline-block">
                                 Conversation
-                                <svg class="review-hero-underline" aria-hidden="true" viewBox="0 0 188 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M187 2.43158C175.315 1.87289 163.847 1.48993 152.597 1.26169M187 7.00005C169.462 5.47673 141.769 3.9541 117.308 7.00005C130.359 4.14738 137.762 2.62071 152.597 1.26169M152.597 1.26169C140.718 1.02069 128.656 0.981649 116.5 1.11023M94.5 1.51622C63.2898 2.32629 31.806 4.09227 1.5 6.24457" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <svg class="absolute left-0 -bottom-2 w-full text-[#222526]" aria-hidden="true" viewBox="0 0 188 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M187 2.43158C175.315 1.87289 163.847 1.48993 152.597 1.26169M187 7.00005C169.462 5.47673 141.769 3.9541 117.308 7.00005C130.359 4.14738 137.762 2.62071 152.597 1.26169M152.597 1.26169C140.718 1.02069 128.656 0.981649 116.5 1.11023M94.5 1.51622C63.2898 2.32629 31.806 4.09227 1.5 6.24457" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
                             </span>
                             Together
                         </h1>
 
-                        <!-- Subtitle -->
-                        <p class="review-hero-subtitle">
+                        <!-- Supporting Description -->
+                        <p class="text-base sm:text-lg text-[#777777] font-sans leading-relaxed max-w-xl mb-10">
                             Tell us what you want to build, improve, or scale and we will help shape the right product, technology, and delivery plan.
                         </p>
 
-                        <!-- Trust indicators -->
-                        <div class="review-hero-trust-wrapper">
-                            <div class="review-hero-trust-card">
-                                <div class="review-hero-trust-icon">
-                                    <i class="fa-solid fa-clock"></i>
+                        <!-- Three Monochrome Trust/Benefit Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-xl font-sans">
+                            <!-- Card 1: 24/7 Support -->
+                            <div class="flex items-center gap-3 bg-white p-4 rounded-xl border border-[#E5E5E5] shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#222526] transition-all">
+                                <div class="size-10 rounded-lg bg-[#F7F7F5] border border-[#E5E5E5] flex items-center justify-center text-[#222526] flex-shrink-0">
+                                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
                                 </div>
-                                <div class="review-hero-trust-text">
-                                    <span class="review-hero-trust-title">24/7 Support</span>
-                                    <span class="review-hero-trust-desc">Always available</span>
-                                </div>
-                            </div>
-                            <div class="review-hero-trust-card">
-                                <div class="review-hero-trust-icon">
-                                    <i class="fas fa-reply"></i>
-                                </div>
-                                <div class="review-hero-trust-text">
-                                    <span class="review-hero-trust-title">Quick Response</span>
-                                    <span class="review-hero-trust-desc">Within 24 hours</span>
+                                <div class="text-left">
+                                    <div class="text-sm font-semibold text-[#111111]">24/7 Support</div>
+                                    <div class="text-xs text-[#777777]">Always available</div>
                                 </div>
                             </div>
-                            <div class="review-hero-trust-card">
-                                <div class="review-hero-trust-icon">
-                                    <i class="fas fa-shield"></i>
+
+                            <!-- Card 2: Quick Response -->
+                            <div class="flex items-center gap-3 bg-white p-4 rounded-xl border border-[#E5E5E5] shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#222526] transition-all">
+                                <div class="size-10 rounded-lg bg-[#F7F7F5] border border-[#E5E5E5] flex items-center justify-center text-[#222526] flex-shrink-0">
+                                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                                    </svg>
                                 </div>
-                                <div class="review-hero-trust-text">
-                                    <span class="review-hero-trust-title">100% Secure</span>
-                                    <span class="review-hero-trust-desc">Your data is safe</span>
+                                <div class="text-left">
+                                    <div class="text-sm font-semibold text-[#111111]">Quick Response</div>
+                                    <div class="text-xs text-[#777777]">Within 24 hours</div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3: 100% Secure -->
+                            <div class="flex items-center gap-3 bg-white p-4 rounded-xl border border-[#E5E5E5] shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-[#222526] transition-all">
+                                <div class="size-10 rounded-lg bg-[#F7F7F5] border border-[#E5E5E5] flex items-center justify-center text-[#222526] flex-shrink-0">
+                                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <div class="text-left">
+                                    <div class="text-sm font-semibold text-[#111111]">100% Secure</div>
+                                    <div class="text-xs text-[#777777]">Your data is safe</div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                    <aside class="hidden md:block">
-                        <img src="{{ asset('images/landing/contact-consultation.svg') }}" alt="Consultation and project planning dashboard visual for software discovery and support" class="w-full max-w-[460px] mx-auto" loading="lazy" decoding="async">
-                    </aside>
+
+                    <!-- Right Column: Original Black & White Architecture Illustration -->
+                    <div class="lg:col-span-5 relative flex items-center justify-center">
+                        <div class="w-full max-w-[520px] rounded-2xl bg-[#F7F7F5] p-2 sm:p-4 border border-[#E5E5E5] shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+                            <img src="{{ asset('images/landing/contact-backend-architecture.svg') }}"
+                                 alt="Software architecture diagram, backend workflow, API connections and database infrastructure"
+                                 class="w-full h-auto object-contain rounded-xl"
+                                 loading="lazy"
+                                 decoding="async" />
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Contact Form Section -->
-        <section class="relative bg-[#f3f4f6] py-12 md:py-16">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto bg-white rounded-24 shadow-2xl border border-gray-100 overflow-hidden">
+
+        <!-- =========================================================================
+             2. CONTACT FORM SECTION (PREMIUM MONOCHROME CONTAINER)
+             ========================================================================= -->
+        <section class="relative w-full bg-[#F7F7F5] py-16 sm:py-20 lg:py-24 border-b border-[#E5E5E5]">
+            <div class="max-w-[1306px] mx-auto px-6 sm:px-10 lg:px-[78px]">
+                
+                <div class="max-w-[880px] mx-auto bg-white rounded-3xl border border-[#E5E5E5] shadow-[0_4px_24px_rgba(0,0,0,0.04)] overflow-hidden">
+
                     <!-- Form Header -->
-                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 md:p-8 border-b border-gray-100">
-                        <div class="flex items-center justify-center gap-3">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
-                                <i class="fas fa-envelope text-white text-xl"></i>
-                            </div>
-                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Contact Us</h2>
+                    <div class="bg-[#F7F7F5] p-8 sm:p-10 border-b border-[#E5E5E5] text-center">
+                        <div class="size-12 rounded-2xl bg-white border border-[#E5E5E5] flex items-center justify-center shadow-xs mx-auto mb-4 text-[#222526]">
+                            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
                         </div>
-                        <p class="text-center text-gray-600 mt-3">Fill out the form below and we'll get back to you soon</p>
+                        <h2 class="font-serif-display text-2xl sm:text-3xl font-normal text-[#111111]">
+                            Contact Us
+                        </h2>
+                        <p class="text-sm sm:text-base text-[#777777] font-sans mt-2">
+                            Fill out the form below and we'll get back to you soon.
+                        </p>
                     </div>
-                    <form id="template-contactform" name="template-contactform" action="{{ route('contact-us.store') }}" method="post" class="p-6 md:p-12 space-y-8">
+
+                    <!-- Functional Form -->
+                    <form id="template-contactform"
+                          name="template-contactform"
+                          action="{{ route('contact-us.store') }}"
+                          method="post"
+                          class="p-6 sm:p-10 lg:p-12 space-y-6 font-sans">
                         @csrf
-                        <div class="form-widget">
-                            @if (session('success'))
-                                <div class="mb-6 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-700 fade-in">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
 
-                            @if ($errors->any())
-                                <div class="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-700 fade-in">
-                                    <ul class="mb-0 list-disc pl-5">
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+                        <!-- Honeypot Botcheck (Hidden) -->
+                        <div class="hidden" aria-hidden="true">
+                            <input type="text" name="botcheck" id="template-contactform-botcheck" value="" tabindex="-1" autocomplete="off" />
+                        </div>
 
-                            <!-- Personal Info -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <div class="form-group">
-                                    <label for="template-contactform-name" class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                        <i class="fas fa-user text-blue-600"></i>
-                                        Name <span class="text-red-500">*</span>
-                                    </label>
-                                    <input 
-                                        type="text" 
-                                        id="template-contactform-name" 
-                                        name="name" 
-                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none required"
-                                        placeholder="John Doe"
-                                        value="{{ old('name') }}"
-                                    >
-                                </div>
-                                <div class="form-group">
-                                    <label for="template-contactform-email" class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                        <i class="fas fa-envelope text-blue-600"></i>
-                                        Email <span class="text-red-500">*</span>
-                                    </label>
-                                    <input 
-                                        type="email" 
-                                        id="template-contactform-email" 
-                                        name="email" 
-                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none required email"
-                                        placeholder="john@example.com"
-                                        value="{{ old('email') }}"
-                                    >
-                                </div>
+                        <!-- Flash Success Alert -->
+                        @if (session('success'))
+                            <div class="p-4 rounded-xl bg-[#F7F7F5] border border-[#222526] text-[#111111] text-sm flex items-center gap-3">
+                                <svg class="size-5 text-[#222526] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="font-medium">{{ session('success') }}</span>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <div class="form-group">
-                                    <label for="template-contactform-phone" class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                        <i class="fas fa-phone text-blue-600"></i>
-                                        Phone
-                                    </label>
-                                    <input 
-                                        type="text" 
-                                        id="template-contactform-phone" 
-                                        name="phone" 
-                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none"
-                                        placeholder="+1 (555) 000-0000"
-                                        value="{{ old('phone') }}"
-                                    >
-                                </div>
-                                <div class="form-group">
-                                    <label for="template-contactform-service" class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                        <i class="fas fa-briefcase text-blue-600"></i>
-                                        Services
-                                    </label>
-                                    <select 
-                                        id="template-contactform-service" 
-                                        name="service" 
-                                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none bg-white"
-                                    >
+                        @endif
+
+                        <!-- Validation Errors Alert -->
+                        @if (isset($errors) && $errors->any())
+                            <div class="p-4 rounded-xl bg-[#FEF2F2] border border-[#FCA5A5] text-[#991B1B] text-sm">
+                                <div class="font-semibold mb-1">Please correct the following errors:</div>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        <!-- Row 1: Name & Email -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div>
+                                <label for="template-contactform-name" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#222526] mb-2">
+                                    <svg class="size-3.5 text-[#222526]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    <span>Name <span class="text-[#777777]">*</span></span>
+                                </label>
+                                <input type="text"
+                                       id="template-contactform-name"
+                                       name="name"
+                                       required
+                                       value="{{ old('name') }}"
+                                       placeholder="John Doe"
+                                       class="w-full px-4 py-3 bg-white border border-[#E5E5E5] rounded-xl text-sm text-[#111111] placeholder-[#777777] focus:border-[#111111] focus:ring-2 focus:ring-black/5 outline-none transition-all" />
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="template-contactform-email" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#222526] mb-2">
+                                    <svg class="size-3.5 text-[#222526]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                    <span>Email <span class="text-[#777777]">*</span></span>
+                                </label>
+                                <input type="email"
+                                       id="template-contactform-email"
+                                       name="email"
+                                       required
+                                       value="{{ old('email') }}"
+                                       placeholder="john@example.com"
+                                       class="w-full px-4 py-3 bg-white border border-[#E5E5E5] rounded-xl text-sm text-[#111111] placeholder-[#777777] focus:border-[#111111] focus:ring-2 focus:ring-black/5 outline-none transition-all" />
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Phone & Services -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Phone -->
+                            <div>
+                                <label for="template-contactform-phone" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#222526] mb-2">
+                                    <svg class="size-3.5 text-[#222526]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                    <span>Phone</span>
+                                </label>
+                                <input type="tel"
+                                       id="template-contactform-phone"
+                                       name="phone"
+                                       value="{{ old('phone') }}"
+                                       placeholder="+1 (555) 000-0000"
+                                       class="w-full px-4 py-3 bg-white border border-[#E5E5E5] rounded-xl text-sm text-[#111111] placeholder-[#777777] focus:border-[#111111] focus:ring-2 focus:ring-black/5 outline-none transition-all" />
+                            </div>
+
+                            <!-- Services -->
+                            <div>
+                                <label for="template-contactform-service" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#222526] mb-2">
+                                    <svg class="size-3.5 text-[#222526]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                    <span>Services</span>
+                                </label>
+                                <div class="relative">
+                                    <select id="template-contactform-service"
+                                            name="service"
+                                            class="w-full px-4 py-3 pr-10 bg-white border border-[#E5E5E5] rounded-xl text-sm text-[#111111] focus:border-[#111111] focus:ring-2 focus:ring-black/5 outline-none transition-all appearance-none">
                                         <option value="">-- Select One --</option>
-                                        @foreach (config('landing.services') as $service)
-                                            <option value="{{ $service['name'] }}" @selected(old('service') === $service['name'])>{{ $service['name'] }}</option>
+                                        @foreach (config('landing.services', []) as $service)
+                                            <option value="{{ $service['name'] }}" @selected(old('service') === $service['name'])>
+                                                {{ $service['name'] }}
+                                            </option>
                                         @endforeach
                                     </select>
+                                    <div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-[#777777]">
+                                        <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group mb-6">
-                                <label for="template-contactform-subject" class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                    <i class="fas fa-tag text-blue-600"></i>
-                                    Subject <span class="text-red-500">*</span>
-                                </label>
-                                <input 
-                                    type="text" 
-                                    id="template-contactform-subject" 
-                                    name="subject" 
-                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none required"
-                                    placeholder="How can we help you?"
-                                    value="{{ old('subject') }}"
-                                >
-                            </div>
-                            <div class="form-group mb-6">
-                                <label for="template-contactform-message" class="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
-                                    <i class="fas fa-comment-dots text-blue-600"></i>
-                                    Message <span class="text-red-500">*</span>
-                                </label>
-                                <textarea 
-                                    id="template-contactform-message" 
-                                    name="message" 
-                                    rows="6" 
-                                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none required resize-none"
-                                    placeholder="Tell us about your project..."
-                                >{{ old('message') }}</textarea>
-                            </div>
-                            <div class="hidden form-group">
-                                <input 
-                                    type="text" 
-                                    id="template-contactform-botcheck" 
-                                    name="botcheck" 
-                                    class="w-full"
-                                >
-                            </div>
-                            <div class="form-group flex justify-center">
-                                <button 
-                                    type="submit" 
-                                    id="template-contactform-submit" 
-                                    name="template-contactform-submit" 
+                        </div>
+
+                        <!-- Row 3: Subject -->
+                        <div>
+                            <label for="template-contactform-subject" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#222526] mb-2">
+                                <svg class="size-3.5 text-[#222526]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                </svg>
+                                <span>Subject <span class="text-[#777777]">*</span></span>
+                            </label>
+                            <input type="text"
+                                   id="template-contactform-subject"
+                                   name="subject"
+                                   required
+                                   value="{{ old('subject') }}"
+                                   placeholder="How can we help you?"
+                                   class="w-full px-4 py-3 bg-white border border-[#E5E5E5] rounded-xl text-sm text-[#111111] placeholder-[#777777] focus:border-[#111111] focus:ring-2 focus:ring-black/5 outline-none transition-all" />
+                        </div>
+
+                        <!-- Row 4: Message -->
+                        <div>
+                            <label for="template-contactform-message" class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#222526] mb-2">
+                                <svg class="size-3.5 text-[#222526]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                </svg>
+                                <span>Message <span class="text-[#777777]">*</span></span>
+                            </label>
+                            <textarea id="template-contactform-message"
+                                      name="message"
+                                      rows="5"
+                                      required
+                                      placeholder="Tell us about your project..."
+                                      class="w-full p-4 bg-white border border-[#E5E5E5] rounded-xl text-sm text-[#111111] placeholder-[#777777] focus:border-[#111111] focus:ring-2 focus:ring-black/5 outline-none transition-all resize-y">{{ old('message') }}</textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4 flex justify-center">
+                            <button type="submit"
+                                    id="template-contactform-submit"
+                                    name="template-contactform-submit"
                                     value="submit"
-                                    class="flex items-center text-center h-11 lg:h-12 px-8 lg:px-10 rounded-8 text-sm lg:text-base bg-brand-500 text-brand-over-500 ring-gray-900/20 shadow-cta ring-hairline z-10 hover:bg-brand-600 transition-all duration-200"
-                                >
-                                    <i class="fas fa-paper-plane mr-2"></i>
-                                    Send Message
-                                </button>
-                            </div>
+                                    class="inline-flex items-center justify-center gap-2.5 h-12 px-10 rounded-full bg-[#111111] text-white text-sm font-semibold tracking-wide hover:bg-[#222526] active:scale-[0.99] shadow-md transition-all cursor-pointer">
+                                <span>Send Message</span>
+                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </button>
                         </div>
                     </form>
+
                 </div>
+
             </div>
         </section>
+
     </main>
-
-@push('styles')
-<style>
-    .fade-in {
-        animation: fadeIn 0.5s ease-in-out;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .bg-white {
-        background-color: #ffffff;
-    }
-
-    /* Custom Text Sizes */
-    .text-2xl {
-        font-size: 1.5rem;
-        line-height: 2rem;
-    }
-
-    @media (min-width: 768px) {
-        .md\:text-3xl {
-            font-size: 1.875rem;
-            line-height: 2.25rem;
-        }
-    }
-
-    .absolute.inset-0.bg-black\/60.backdrop-blur-sm {
-        background-color: rgb(6 8 16 / 0.1);
-    }
-
-    .text-center {
-        text-align: center;
-    }
-
-    /* Hero Section */
-    .review-hero-section {
-        padding: 112px 24px 64px;
-    }
-
-    .review-hero-container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .review-hero-content {
-        text-align: center;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    /* Badge */
-    .review-hero-badge-wrapper {
-        margin-bottom: 32px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .review-hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background-color: #87ed82;
-        padding: 10px 24px;
-        border-radius: 30px;
-        font-size: 14px;
-        font-weight: 600;
-        box-shadow: 0 4px 12px rgba(135, 237, 130, 0.3);
-        transition: all 0.3s ease;
-    }
-
-    .review-hero-badge:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(135, 237, 130, 0.4);
-    }
-
-    .review-hero-star-icon {
-        font-size: 14px;
-    }
-
-    /* Main Heading */
-    .review-hero-heading {
-        font-size: 48px;
-        font-weight: 800;
-        line-height: 1.2;
-        margin-bottom: 24px;
-        letter-spacing: -0.02em;
-    }
-
-    @media (min-width: 768px) {
-        .review-hero-heading {
-            font-size: 68px;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .review-hero-heading {
-            font-size: 88px;
-        }
-    }
-
-    .review-hero-heading-highlight {
-        position: relative;
-        display: inline-block;
-    }
-
-    .review-hero-underline {
-        position: absolute;
-        left: 0;
-        bottom: -8px;
-        width: 100%;
-        height: auto;
-        pointer-events: none;
-    }
-
-    /* Subtitle */
-    .review-hero-subtitle {
-        font-size: 18px;
-        line-height: 1.6;
-        color: #4a5568;
-        margin-bottom: 48px;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    @media (min-width: 768px) {
-        .review-hero-subtitle {
-            font-size: 20px;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .review-hero-subtitle {
-            font-size: 22px;
-        }
-    }
-
-    .review-hero-highlight-text {
-        font-weight: 700;
-        position: relative;
-    }
-
-    /* Trust Indicators */
-    .review-hero-trust-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 24px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    @media (max-width: 767px) {
-        .review-hero-trust-wrapper {
-            flex-direction: column;
-            gap: 16px;
-        }
-    }
-
-    .review-hero-trust-card {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background-color: #ffffff;
-        padding: 16px 24px;
-        border-radius: 16px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        border: 1px solid #e2e8f0;
-    }
-
-    .review-hero-trust-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-        border-color: #87ed82;
-    }
-
-    .review-hero-trust-icon {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f0fdf4;
-        border-radius: 12px;
-        font-size: 18px;
-        color: #87ed82;
-        flex-shrink: 0;
-    }
-
-    .review-hero-trust-text {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-    }
-
-    .review-hero-trust-title {
-        font-size: 15px;
-        font-weight: 700;
-        line-height: 1.3;
-    }
-
-    .review-hero-trust-desc {
-        font-size: 13px;
-        color: #6b7280;
-        line-height: 1.3;
-    }
-
-    @media (max-width: 767px) {
-        .review-hero-section {
-            padding: 104px 20px 40px;
-        }
-
-        .review-hero-badge {
-            padding: 8px 20px;
-            font-size: 13px;
-        }
-
-        .review-hero-heading {
-            font-size: 36px;
-        }
-
-        .review-hero-subtitle {
-            font-size: 16px;
-            margin-bottom: 32px;
-        }
-
-        .review-hero-trust-card {
-            width: 100%;
-            max-width: 320px;
-        }
-    }
-</style>
-@endpush
 </x-landing-layout>

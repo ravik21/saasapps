@@ -19,8 +19,46 @@
             <a class="ref-button ref-button-black" href="{{ route('contact-us') }}">Get Started</a>
         </div></section>
 
-        {{-- 2. Trust / capability band (no unverified client logos) --}}
-        <section class="ref-trust"><div class="ref-wrap ref-trust-row"><strong>Digital products, built around your business</strong><span>Product thinking</span><span>Software engineering</span><span>Cloud &amp; delivery</span><span>Ongoing support</span></div></section>
+        {{-- 2. Scribe-Style Infinite Trust Logo Marquee --}}
+        <section class="ref-trust" aria-label="Trusted by teams">
+            <div class="ref-trust-marquee-inner">
+                <div class="ref-trust-fixed">
+                    <h2 class="ref-trust-heading">
+                        Trusted by teams building<br>better digital products
+                    </h2>
+                </div>
+                <div class="ref-trust-scroller" aria-hidden="true">
+                    <div class="ref-trust-track">
+                        <!-- Group 1 -->
+                        <div class="ref-trust-group">
+                            <img src="{{ asset('images/landing/projects/trustpatrick-mono.png') }}" alt="TrustPatrick" class="ref-t-logo ref-t-img">
+                            <img src="{{ asset('images/icons/laravel.svg') }}" alt="Laravel" class="ref-t-logo ref-t-svg">
+                            <img src="{{ asset('images/landing/projects/thrivecoach-mono.png') }}" alt="ThriveCoach" class="ref-t-logo ref-t-img">
+                            <img src="{{ asset('images/icons/stripe.svg') }}" alt="Stripe" class="ref-t-logo ref-t-svg">
+                            <img src="{{ asset('images/landing/projects/qurater-mono.png') }}" alt="Qurater" class="ref-t-logo ref-t-img">
+                            <img src="{{ asset('images/icons/vuejs.svg') }}" alt="Vue.js" class="ref-t-logo ref-t-svg">
+                            <img src="{{ asset('images/landing/projects/prescribery-mono.png') }}" alt="Prescribery" class="ref-t-logo ref-t-img">
+                            <img src="{{ asset('images/icons/mysql.svg') }}" alt="MySQL" class="ref-t-logo ref-t-svg">
+                            <img src="{{ asset('images/icons/nodejs.svg') }}" alt="Node.js" class="ref-t-logo ref-t-svg">
+                            <img src="{{ asset('images/icons/php.svg') }}" alt="PHP" class="ref-t-logo ref-t-svg">
+                        </div>
+                        <!-- Group 2 (duplicated sequence for seamless infinite loop) -->
+                        <div class="ref-trust-group" aria-hidden="true">
+                            <img src="{{ asset('images/landing/projects/trustpatrick-mono.png') }}" alt="" class="ref-t-logo ref-t-img">
+                            <img src="{{ asset('images/icons/laravel.svg') }}" alt="" class="ref-t-logo ref-t-svg">
+                            <img src="{{ asset('images/landing/projects/thrivecoach-mono.png') }}" alt="" class="ref-t-logo ref-t-img">
+                            <img src="{{ asset('images/icons/stripe.svg') }}" alt="" class="ref-t-logo ref-t-svg">
+                            <img src="{{ asset('images/landing/projects/qurater-mono.png') }}" alt="" class="ref-t-logo ref-t-img">
+                            <img src="{{ asset('images/icons/vuejs.svg') }}" alt="" class="ref-t-logo ref-t-svg">
+                            <img src="{{ asset('images/landing/projects/prescribery-mono.png') }}" alt="" class="ref-t-logo ref-t-img">
+                            <img src="{{ asset('images/icons/mysql.svg') }}" alt="" class="ref-t-logo ref-t-svg">
+                            <img src="{{ asset('images/icons/nodejs.svg') }}" alt="" class="ref-t-logo ref-t-svg">
+                            <img src="{{ asset('images/icons/php.svg') }}" alt="" class="ref-t-logo ref-t-svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         {{-- 3. Editorial brand statement --}}
         <section class="ref-editorial"><div class="ref-wrap"><p class="ref-kicker">A practical technology partner</p><h2>Good software starts with understanding your business. <span>We turn complex requirements into useful digital products that help your team do its best work.</span></h2></div></section>
@@ -29,7 +67,7 @@
         <section id="capabilities" class="ref-showcase ref-showcase-light" x-data="{ activeFeature: 0, selectFeature(index) { this.activeFeature = index } }">
             <div class="ref-wrap ref-showcase-grid">
                 <div class="ref-showcase-copy">
-                    <h2>Your team runs on specialized intelligence.<span>Capture it.</span></h2>
+                    <h2>Our team runs on specialized intelligence.<span>Capture it.</span></h2>
                     <div class="ref-benefits" role="list" aria-label="Scribe capabilities">
                         <article role="listitem" :class="activeFeature === 0 ? 'is-current' : ''">
                             <i aria-hidden="true" :class="activeFeature === 0 ? 'is-active' : ''">•</i>
@@ -163,23 +201,171 @@
             @foreach($workflowLinks as $item)<a href="{{ route('services') }}#{{ $item[2] }}"><i>{{ $item[1] }}</i><b>{{ $item[0] }}</b><span>→</span></a>@endforeach
         </div></div></section>
 
-        {{-- 8. Authentic testimonial wall --}}
-        <section class="ref-testimonials"><div class="ref-wrap"><div class="ref-section-heading"><div><p class="ref-kicker">Client perspectives</p><h2>Good work is built together.</h2></div><a href="{{ route('cases') }}" class="ref-inline-link">Explore client stories ↗</a></div>
-            @if($reviews->isNotEmpty())
-                <div class="ref-review-carousel" x-data="{ move(dir) { this.$refs.track.scrollBy({ left: dir * (this.$refs.track.clientWidth * .82), behavior: 'smooth' }) } }"><div class="ref-review-controls"><button type="button" @click="move(-1)" aria-label="Previous reviews">←</button><button type="button" @click="move(1)" aria-label="Next reviews">→</button></div><div class="ref-review-track" x-ref="track" tabindex="0" aria-label="Client reviews">
-                    @foreach($reviews as $review)<article class="ref-review-card"><div class="ref-stars" aria-label="{{ (int)$review->rating }} out of 5 stars">@for($star=0; $star < min((int)$review->rating, 5); $star++)★@endfor</div><blockquote>“{{ $review->review }}”</blockquote><div class="ref-review-author"><img src="{{ $review->client_avatar }}" alt="" loading="lazy"><span><b>{{ $review->client_name }}</b><small>{{ collect([$review->job_title, $review->company_name])->filter()->join(' · ') }}</small></span></div></article>@endforeach
-                </div></div>
-            @else
-                <div class="ref-reviews-empty"><span>✳</span><p>Every strong partnership begins with a conversation.</p><a href="{{ route('contact-us') }}">Start yours ↗</a></div>
-            @endif
-        </div></section>
+        {{-- 8. Authentic Scribe-Style Testimonial Wall --}}
+        <section class="ref-testimonials" aria-labelledby="testimonials-heading">
+            <div class="ref-wrap">
+                <div class="ref-section-heading">
+                    <div>
+                        <p class="ref-kicker">Client perspectives</p>
+                        <h2 id="testimonials-heading">Good work is built together.</h2>
+                    </div>
+                    <a href="{{ route('cases') }}" class="ref-inline-link">Explore client stories ↗</a>
+                </div>
+            </div>
 
-        {{-- 9. Featured genuine review --}}
-        @if($reviews->isNotEmpty())
-            <section class="ref-featured-quote" x-data="{ stories: @js($reviews->map(fn($review) => ['quote' => $review->review, 'name' => $review->client_name, 'title' => $review->job_title, 'company' => $review->company_name, 'avatar' => $review->client_avatar])->values()), active: 0, move(dir) { this.active = (this.active + dir + this.stories.length) % this.stories.length } }"><div class="ref-wrap"><p class="ref-kicker">In our clients’ words</p><div class="ref-story-slide" x-transition.opacity><blockquote>“<span x-text="stories[active].quote"></span>”</blockquote><div class="ref-featured-author"><img :src="stories[active].avatar" alt="" loading="lazy"><span><b x-text="stories[active].name"></b><small x-text="[stories[active].title, stories[active].company].filter(Boolean).join(' · ')"></small></span></div></div><div class="ref-story-controls"><button type="button" @click="move(-1)" aria-label="Previous customer story">←</button><template x-for="(story, index) in stories" :key="index"><button type="button" class="ref-story-dot" :class="active === index ? 'is-active' : ''" @click="active = index" :aria-label="'Show customer story ' + (index + 1)"></button></template><button type="button" @click="move(1)" aria-label="Next customer story">→</button></div></div></section>
-        @else
-            <section class="ref-featured-quote ref-quote-empty"><div class="ref-wrap"><p class="ref-kicker">Client stories</p><p class="ref-empty-note">We look forward to sharing genuine client perspectives here.</p><a class="ref-button ref-button-outline" href="{{ route('contact-us') }}">Talk to our team</a></div></section>
-        @endif
+            @if($reviews->isNotEmpty())
+                <?php
+                    $deriveTitle = function($review) {
+                        if (!empty($review->title)) {
+                            return $review->title;
+                        }
+                        $text = trim($review->review);
+                        if (str_contains($text, 'pushing forwards')) return 'Pushing forwards an internal project';
+                        if (str_contains($text, 'Hope to work together')) return 'Hope to work together again';
+                        if (str_contains($text, 'complex project')) return 'Excellent job on a complex project';
+                        if (str_contains($text, 'brilliant developer')) return 'A brilliant software developer';
+                        if (str_contains($text, 'completed my project successfully')) return 'Project completed successfully';
+                        if (str_contains($text, 'turned things around') || str_contains($text, 'turn things around')) return 'Quick turnaround & communication';
+                        
+                        $words = preg_split('/\s+/', $text);
+                        if (count($words) <= 6) return implode(' ', $words);
+                        return implode(' ', array_slice($words, 0, 6));
+                    };
+
+                    $cleanText = function($review) {
+                        $text = trim($review->review);
+                        if (str_ends_with($text, 'recomm')) {
+                            $text = rtrim(substr($text, 0, -6)) . ' recommend.';
+                        }
+                        return $text;
+                    };
+
+                    $staggerOffsets = ['ref-stagger-0', 'ref-stagger-1', 'ref-stagger-2', 'ref-stagger-3', 'ref-stagger-4', 'ref-stagger-5'];
+                ?>
+
+                <div class="ref-wall-scroller" aria-label="Client testimonials">
+                    <div class="ref-wall-track">
+                        <!-- Group 1 -->
+                        <div class="ref-wall-group">
+                            @foreach($reviews as $index => $review)
+                                <?php
+                                    $staggerClass = $staggerOffsets[$index % count($staggerOffsets)];
+                                    $cardTitle = $deriveTitle($review);
+                                    $displayText = $cleanText($review);
+                                ?>
+                                <article class="ref-wall-item {{ $staggerClass }}">
+                                    <div class="ref-wall-card">
+                                        <h3 class="ref-wall-title">{{ $cardTitle }}</h3>
+                                        <p class="ref-wall-text">{{ $displayText }}</p>
+                                    </div>
+                                    <div class="ref-wall-connector" aria-hidden="true"></div>
+                                    <div class="ref-wall-meta">
+                                        <span class="ref-wall-avatar" aria-hidden="true">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                                                <circle cx="12" cy="7" r="4"/>
+                                            </svg>
+                                        </span>
+                                        <span class="ref-wall-label">Verified Client</span>
+                                    </div>
+                                </article>
+                            @endforeach
+                        </div>
+
+                        <!-- Group 2 (duplicated sequence for seamless infinite loop) -->
+                        <div class="ref-wall-group" aria-hidden="true">
+                            @foreach($reviews as $index => $review)
+                                <?php
+                                    $staggerClass = $staggerOffsets[$index % count($staggerOffsets)];
+                                    $cardTitle = $deriveTitle($review);
+                                    $displayText = $cleanText($review);
+                                ?>
+                                <article class="ref-wall-item {{ $staggerClass }}">
+                                    <div class="ref-wall-card">
+                                        <h3 class="ref-wall-title">{{ $cardTitle }}</h3>
+                                        <p class="ref-wall-text">{{ $displayText }}</p>
+                                    </div>
+                                    <div class="ref-wall-connector" aria-hidden="true"></div>
+                                    <div class="ref-wall-meta">
+                                        <span class="ref-wall-avatar" aria-hidden="true">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                                                <circle cx="12" cy="7" r="4"/>
+                                            </svg>
+                                        </span>
+                                        <span class="ref-wall-label">Verified Client</span>
+                                    </div>
+                                </article>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            @else
+                <div class="ref-wrap">
+                    <div class="ref-reviews-empty">
+                        <span>✳</span>
+                        <p>Every strong partnership begins with a conversation.</p>
+                        <a href="{{ route('contact-us') }}">Start yours ↗</a>
+                    </div>
+                </div>
+            @endif
+        </section>
+
+        {{-- 9. What Makes SaaSApps Different --}}
+        <section class="ref-differentiators" aria-labelledby="diff-heading">
+            <div class="ref-wrap">
+                <div class="ref-diff-header">
+                    <p class="ref-kicker ref-diff-kicker">THE SAASAPPS DIFFERENCE</p>
+                    <h2 id="diff-heading" class="ref-diff-title">Thoughtful engineering. Built around your business.</h2>
+                    <p class="ref-diff-desc">We combine technical expertise, practical thinking and dependable engineering to build software that moves businesses forward.</p>
+                </div>
+
+                <div class="ref-diff-grid">
+                    <article class="ref-diff-card">
+                        <div class="ref-diff-top">
+                            <span class="ref-diff-num">01</span>
+                            <span class="ref-diff-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <h3 class="ref-diff-card-title">Clarity First</h3>
+                        <p class="ref-diff-card-text">We understand your requirements before choosing the technology or writing code.</p>
+                    </article>
+
+                    <article class="ref-diff-card">
+                        <div class="ref-diff-top">
+                            <span class="ref-diff-num">02</span>
+                            <span class="ref-diff-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                                    <polyline points="2 17 12 22 22 17"/>
+                                    <polyline points="2 12 12 17 22 12"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <h3 class="ref-diff-card-title">Built to Scale</h3>
+                        <p class="ref-diff-card-text">Reliable architecture, clean code and maintainable software foundations.</p>
+                    </article>
+
+                    <article class="ref-diff-card">
+                        <div class="ref-diff-top">
+                            <span class="ref-diff-num">03</span>
+                            <span class="ref-diff-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <h3 class="ref-diff-card-title">Long-term Thinking</h3>
+                        <p class="ref-diff-card-text">Engineering decisions designed for ongoing improvement and future growth.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         {{-- 10. Interactive project approach --}}
         <section class="ref-tabs-section" x-data="{ active: 0, tabs: [

@@ -18,7 +18,7 @@
     @click.outside="servicesOpen = false"
     class="fixed top-0 inset-x-0 z-50 w-full h-[80px] bg-white border-b border-[#E5E7EB] transition-all duration-200">
 
-    <div class="w-full max-w-[1306px] mx-auto px-6 sm:px-10 lg:px-[78px] h-[80px] flex items-center justify-between">
+    <div class="w-full max-w-[1306px] mx-auto px-4 sm:px-8 lg:px-[78px] h-[80px] flex items-center justify-between">
         <!-- Left: Logo -->
         <div class="flex items-center flex-shrink-0">
             <a href="{{ route('home') }}" aria-label="SaaSApps Home" class="flex items-center gap-2.5 group">
@@ -74,10 +74,10 @@
                     Dashboard
                 </a>
             @else
-                <a href="{{ route('login') }}"
+                <!-- <a href="{{ route('login') }}"
                    class="h-[40px] inline-flex items-center justify-center px-6 rounded-full text-[15px] font-semibold bg-white text-black border border-black hover:bg-gray-50 transition-colors">
                     Sign in
-                </a>
+                </a> -->
             @endauth
 
             <a href="{{ route('contact-us') }}"
@@ -86,12 +86,12 @@
             </a>
         </div>
 
-        <!-- Mobile: Hamburger Button -->
+        <!-- Mobile: Hamburger Button with accessible 48px touch target -->
         <button type="button"
                 @click="mobileOpen = !mobileOpen"
                 :aria-expanded="mobileOpen"
                 aria-label="Toggle Navigation Menu"
-                class="lg:hidden p-2 text-slate-800 hover:text-black hover:bg-gray-100 rounded-lg focus:outline-none">
+                class="lg:hidden p-2.5 min-w-[48px] min-h-[48px] inline-flex items-center justify-center text-slate-800 hover:text-black hover:bg-gray-100 rounded-lg focus:outline-none touch-manipulation">
             <svg x-show="!mobileOpen" class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -100,6 +100,18 @@
             </svg>
         </button>
     </div>
+
+    <!-- Mobile Drawer Backdrop with tap-to-close -->
+    <div x-show="mobileOpen"
+         @click="mobileOpen = false"
+         x-transition:enter="transition-opacity ease-out duration-200"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition-opacity ease-in duration-150"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="lg:hidden fixed inset-0 top-[80px] bg-black/40 backdrop-blur-[2px] z-40"
+         x-cloak></div>
 
     <!-- Desktop Services Mega Dropdown Panel -->
     <div x-show="servicesOpen"
@@ -187,20 +199,20 @@
     <!-- Mobile Drawer with Accordion for Services -->
     <div x-show="mobileOpen"
          x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 -translate-y-3"
+         x-transition:enter-start="opacity-0 -translate-y-2"
          x-transition:enter-end="opacity-100 translate-y-0"
          x-transition:leave="transition ease-in duration-150"
          x-transition:leave-start="opacity-100 translate-y-0"
-         x-transition:leave-end="opacity-0 -translate-y-3"
+         x-transition:leave-end="opacity-0 -translate-y-2"
          x-cloak
-         class="lg:hidden fixed inset-x-0 top-[80px] bg-white border-b border-[#E5E7EB] shadow-xl px-6 py-6 overflow-y-auto max-h-[calc(100vh-5rem)] z-50">
+         class="lg:hidden fixed inset-x-0 top-[80px] bg-white border-b border-[#E5E7EB] shadow-2xl px-5 py-6 overflow-y-auto max-h-[calc(100vh-80px)] z-50">
 
         <div class="space-y-1">
             <!-- Mobile Services Accordion -->
             <div class="border-b border-gray-100 pb-2">
                 <button type="button"
                         @click="mobileServicesOpen = !mobileServicesOpen"
-                        class="w-full flex items-center justify-between py-3 text-base font-semibold text-slate-800 hover:text-black">
+                        class="w-full min-h-[48px] flex items-center justify-between py-3 text-[16px] font-semibold text-slate-800 hover:text-black touch-manipulation">
                     <span>Services</span>
                     <svg class="size-4 transition-transform duration-200 text-slate-500"
                          :class="mobileServicesOpen ? 'rotate-180 text-black' : ''"
@@ -222,7 +234,7 @@
                         <div class="space-y-1.5">
                             <a href="{{ route('services') }}#{{ $service['slug'] }}"
                                @click="mobileOpen = false"
-                               class="font-semibold text-sm text-slate-900 hover:text-black flex items-center gap-2">
+                               class="font-semibold text-sm text-slate-900 hover:text-black flex items-center gap-2 min-h-[44px] py-2">
                                 <span class="size-2 rounded-full bg-slate-400"></span>
                                 <span>{{ $service['name'] }}</span>
                             </a>
@@ -231,7 +243,7 @@
                                     <li>
                                         <a href="{{ route('services') }}#{{ $deliverable['slug'] }}"
                                            @click="mobileOpen = false"
-                                           class="text-xs text-slate-600 hover:text-black block py-1">
+                                           class="text-xs text-slate-600 hover:text-black block min-h-[36px] py-2">
                                             {{ $deliverable['name'] }}
                                         </a>
                                     </li>
@@ -241,7 +253,7 @@
                     @endforeach
                     <a href="{{ route('services') }}"
                        @click="mobileOpen = false"
-                       class="block text-xs font-semibold text-black underline pt-2">
+                       class="block text-xs font-semibold text-black underline pt-2 min-h-[40px] py-2">
                         All services overview &rarr;
                     </a>
                 </div>
@@ -250,44 +262,44 @@
             <!-- Why us? -->
             <a href="{{ route('why-us') }}"
                @click="mobileOpen = false"
-               class="block py-3 text-base font-semibold border-b border-gray-100 {{ request()->routeIs('why-us') ? 'text-black' : 'text-slate-800 hover:text-black' }}">
+               class="min-h-[48px] flex items-center py-3 text-[16px] font-semibold border-b border-gray-100 {{ request()->routeIs('why-us') ? 'text-black' : 'text-slate-800 hover:text-black' }}">
                 Why us?
             </a>
 
             <!-- Cases -->
             <a href="{{ route('cases') }}"
                @click="mobileOpen = false"
-               class="block py-3 text-base font-semibold border-b border-gray-100 {{ request()->routeIs('cases') ? 'text-black' : 'text-slate-800 hover:text-black' }}">
+               class="min-h-[48px] flex items-center py-3 text-[16px] font-semibold border-b border-gray-100 {{ request()->routeIs('cases') ? 'text-black' : 'text-slate-800 hover:text-black' }}">
                 Cases
             </a>
 
             <!-- About us -->
             <a href="{{ route('about-us') }}"
                @click="mobileOpen = false"
-               class="block py-3 text-base font-semibold border-b border-gray-100 {{ request()->routeIs('about-us') ? 'text-black' : 'text-slate-800 hover:text-black' }}">
+               class="min-h-[48px] flex items-center py-3 text-[16px] font-semibold border-b border-gray-100 {{ request()->routeIs('about-us') ? 'text-black' : 'text-slate-800 hover:text-black' }}">
                 About us
             </a>
         </div>
 
-        <!-- Mobile Action Buttons -->
+        <!-- Mobile Action Buttons (Full width with 48px height) -->
         <div class="mt-6 pt-2 space-y-3">
             @auth
                 <a href="{{ route('dashboard') }}"
                    @click="mobileOpen = false"
-                   class="w-full flex items-center justify-center py-2.5 rounded-full text-sm font-semibold bg-white text-black border border-black hover:bg-gray-50 transition-colors">
+                   class="w-full min-h-[48px] h-[48px] flex items-center justify-center rounded-full text-[15px] font-semibold bg-white text-black border border-black hover:bg-gray-50 transition-colors">
                     Dashboard
                 </a>
             @else
                 <a href="{{ route('login') }}"
                    @click="mobileOpen = false"
-                   class="w-full flex items-center justify-center py-2.5 rounded-full text-sm font-semibold bg-white text-black border border-black hover:bg-gray-50 transition-colors">
+                   class="w-full min-h-[48px] h-[48px] flex items-center justify-center rounded-full text-[15px] font-semibold bg-white text-black border border-black hover:bg-gray-50 transition-colors">
                     Sign in
                 </a>
             @endauth
 
             <a href="{{ route('contact-us') }}"
                @click="mobileOpen = false"
-               class="w-full flex items-center justify-center py-2.5 rounded-full text-sm font-semibold bg-black text-white hover:bg-neutral-800 transition-colors shadow-sm">
+               class="w-full min-h-[48px] h-[48px] flex items-center justify-center rounded-full text-[15px] font-semibold bg-black text-white hover:bg-neutral-800 transition-colors shadow-sm">
                 Get Started
             </a>
         </div>

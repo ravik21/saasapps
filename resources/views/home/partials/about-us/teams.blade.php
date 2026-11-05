@@ -86,11 +86,20 @@
     ];
 @endphp
 
-<section class="mx-auto mt-20 w-full max-w-[1306px] px-6 pb-12 sm:px-10 md:mt-28 md:mb-12 md:pb-16 lg:px-[78px] border-b-hairline border-gray-300">
-  <h2 class="mb-8 md:mb-12 text-heading-mobile-sm md:text-heading-sm font-sans-heading">
-    Meet our team
-  </h2>
-  <ul class="flex gap-5 overflow-x-auto px-1 pb-3 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-x-5 md:gap-y-8 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-5 lg:gap-x-6 scrollbar-none">
+<section class="mx-auto mt-14 sm:mt-18 md:mt-24 w-full max-w-[1306px] px-6 pb-12 sm:px-10 md:pb-16 lg:px-[78px] border-b border-gray-200">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-12">
+    <div>
+      <span class="inline-block text-[11px] sm:text-xs font-semibold tracking-widest text-slate-500 uppercase mb-2">ENGINEERING TEAM</span>
+      <h2 class="font-serif-display text-2xl sm:text-3xl md:text-4xl font-normal text-slate-900 tracking-tight">
+        Meet our team
+      </h2>
+    </div>
+    <p class="text-xs sm:text-sm text-slate-500 mt-2 md:mt-0 max-w-md">
+      Engineers, architects, and product specialists dedicated to building resilient software.
+    </p>
+  </div>
+
+  <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-7">
     @foreach($teams as $index => $team)
     @php
         $mask = $svgMasks[$index % count($svgMasks)];
@@ -98,28 +107,30 @@
         $uniquePatternId = $mask['patternId'] . '_' . $team->id;
         $uniqueImageId = $mask['imageId'] . '_' . $team->id;
     @endphp
-    <li class="snap-start w-[78%] flex-shrink-0 col-span-1 sm:w-[48%] md:w-auto">
-      <figure class="">
-        <svg viewBox="0 0 180 240" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <mask id="{{ $uniqueMaskId }}" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0.5" y="0" width="180" height="240">
-                <path d="{{ $mask['maskPath'] }}" fill="black"></path>
-            </mask>
-            <g mask="url(#{{ $uniqueMaskId }})">
-                <path d="M0 240V0H180V240H0Z" fill="url(#{{ $uniquePatternId }})"></path>
-                <path d="M0 240V0H180V240H0Z" fill="white" style="mix-blend-mode:color"></path>
-            </g>
-            <defs>
-                <pattern id="{{ $uniquePatternId }}" patternContentUnits="objectBoundingBox" width="1" height="1">
-                  <use xlink:href="#{{ $uniqueImageId }}" transform="{{ $mask['transform'] }}"></use>
-                </pattern>
-                <image id="{{ $uniqueImageId }}" width="{{ $mask['imageSize']['width'] }}" height="{{ $mask['imageSize']['height'] }}" xlink:href="{{ $team->avatar ? $team->avatar : asset('images/default-avatar.png') }}"></image>
-            </defs>
-        </svg>
-        <figcaption class="mt-3 lg:mt-5">
-          <p class="text-caption-md lg:text-caption-lg">
+    <li class="col-span-1">
+      <figure class="group flex flex-col">
+        <div class="relative w-full aspect-[3/4] overflow-hidden rounded-xl">
+          <svg viewBox="0 0 180 240" fill="none" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <mask id="{{ $uniqueMaskId }}" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0.5" y="0" width="180" height="240">
+                  <path d="{{ $mask['maskPath'] }}" fill="black"></path>
+              </mask>
+              <g mask="url(#{{ $uniqueMaskId }})">
+                  <path d="M0 240V0H180V240H0Z" fill="url(#{{ $uniquePatternId }})"></path>
+                  <path d="M0 240V0H180V240H0Z" fill="white" style="mix-blend-mode:color"></path>
+              </g>
+              <defs>
+                  <pattern id="{{ $uniquePatternId }}" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#{{ $uniqueImageId }}" transform="{{ $mask['transform'] }}"></use>
+                  </pattern>
+                  <image id="{{ $uniqueImageId }}" width="{{ $mask['imageSize']['width'] }}" height="{{ $mask['imageSize']['height'] }}" xlink:href="{{ $team->avatar ? $team->avatar : asset('images/default-avatar.png') }}"></image>
+              </defs>
+          </svg>
+        </div>
+        <figcaption class="mt-2.5 sm:mt-3">
+          <p class="text-xs sm:text-sm md:text-base font-medium text-slate-900 leading-snug truncate">
             {{ $team->name }}
           </p>
-          <p class="text-caption-sm lg:text-caption-md text-gray-700">
+          <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5 truncate">
             {{ $team->designation ?? 'Team Member' }}
           </p>
         </figcaption>

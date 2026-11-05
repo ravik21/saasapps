@@ -13,10 +13,7 @@
                     'image' => asset('images/landing/projects/trustpatrick.png'),
                     'link' => 'https://trustpatrick.com',
                     'technologies' => ['Laravel', 'Vue.js', 'Tailwind CSS', 'MySQL', 'Redis'],
-                    'client' => 'Joseph Edmonds',
-                    'client_company' => 'Owner at Edmonds Ecommerce',
-                    'client_avatar' => asset('images/avatar.png'),
-                    'quote' => 'Ravi did some great work for us pushing forwards an internal project with exceptional code quality and speed.',
+                    'quote' => 'Pushing forwards an internal project with exceptional code quality, architectural precision, and speed.',
                     'highlight' => 'Enterprise Fraud Prevention',
                 ],
                 [
@@ -28,10 +25,7 @@
                     'image' => asset('images/landing/projects/thrivecoach.png'),
                     'link' => 'https://thrivecoach.app',
                     'technologies' => ['Laravel', 'React', 'Tailwind CSS', 'Stripe', 'AWS'],
-                    'client' => 'Vincenzo Lufino',
-                    'client_company' => 'Owner at BtoTree',
-                    'client_avatar' => asset('images/avatar.png'),
-                    'quote' => 'Ravi is a great guy and developer! Reliable, communicative, and delivers high-performance code. Hope to work together again!',
+                    'quote' => 'Reliable, communicative, and delivers high-performance code across complex user flows and payment integrations.',
                     'highlight' => 'Automated Scheduling & Stripe',
                 ],
                 [
@@ -43,10 +37,7 @@
                     'image' => asset('images/landing/projects/qurater.png'),
                     'link' => 'https://qurater.io',
                     'technologies' => ['Python', 'Laravel', 'OpenAI', 'PostgreSQL', 'Docker'],
-                    'client' => 'Scott Yewell',
-                    'client_company' => 'Purpose Built Software, Inc',
-                    'client_avatar' => asset('images/avatar.png'),
-                    'quote' => 'Ravi did an excellent job on a complex project. He has great communication, and works really hard. Highly recommended.',
+                    'quote' => 'An excellent job on a complex project with rapid execution, great technical communication, and robust infrastructure.',
                     'highlight' => 'LLM Semantic Search & Ingestion',
                 ],
                 [
@@ -58,10 +49,7 @@
                     'image' => asset('images/landing/projects/prescribery.png'),
                     'link' => 'https://prescribery.com',
                     'technologies' => ['Laravel', 'Vue.js', 'REST APIs', 'MySQL', 'Docker'],
-                    'client' => 'Mikael Westöö',
-                    'client_company' => 'CEO & Founder at Svensk e-identitet AB',
-                    'client_avatar' => asset('images/avatar.png'),
-                    'quote' => 'Ravi is a brilliant developer! Solved challenging technical obstacles with elegant architecture and rapid execution.',
+                    'quote' => 'Solved challenging technical obstacles with elegant architecture, rapid turnaround, and production-grade reliability.',
                     'highlight' => 'HIPAA-Aligned Routing',
                 ],
             ];
@@ -76,12 +64,9 @@
                         'category' => 'Custom Software',
                         'category_slug' => 'saas',
                         'description' => strip_tags($dbProject->description ?? 'Custom software engineering project delivered with enterprise reliability.'),
-                        'image' => !empty($dbProject->images) && is_array($dbProject->images) ? asset($dbProject->images[0]) : null,
+                        'image' => $dbProject->image_url ?: (!empty($dbProject->images) && is_array($dbProject->images) ? asset($dbProject->images[0]) : null),
                         'link' => $dbProject->link ?: '#',
-                        'technologies' => is_array($dbProject->technology) ? $dbProject->technology : ['Laravel', 'Tailwind CSS', 'PHP'],
-                        'client' => $dbProject->client ?: 'Verified Client',
-                        'client_company' => 'Enterprise Partner',
-                        'client_avatar' => asset('images/avatar.png'),
+                        'technologies' => !empty($dbProject->technologies) ? $dbProject->technologies : (is_array($dbProject->technology) ? array_map(fn($t) => is_array($t) ? ($t['value'] ?? '') : $t, $dbProject->technology) : ['Laravel', 'Tailwind CSS', 'PHP']),
                         'quote' => 'Delivered on schedule with robust backend architecture and full test coverage.',
                         'highlight' => 'Production Deployment',
                     ];
@@ -303,17 +288,11 @@
                                 </div>
                             </div>
 
-                            <!-- Card Footer: Client Info & External Link -->
+                            <!-- Card Footer: Architecture Status & External Link -->
                             <div class="px-6 py-4 sm:px-8 bg-slate-50/60 border-t border-slate-100 flex items-center justify-between font-sans">
-                                <div class="flex items-center gap-2.5">
-                                    <img src="{{ $project['client_avatar'] }}"
-                                         alt="{{ $project['client'] }}"
-                                         class="size-7 rounded-full object-cover border border-slate-200"
-                                         loading="lazy" />
-                                    <div class="text-xs text-slate-700 font-medium">
-                                        <span class="text-slate-900 font-semibold">{{ $project['client'] }}</span>
-                                        <span class="text-slate-400 hidden sm:inline">&bull; {{ $project['client_company'] }}</span>
-                                    </div>
+                                <div class="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700">
+                                    <span class="size-2 rounded-full bg-emerald-500"></span>
+                                    <span>Production Deployed</span>
                                 </div>
 
                                 <a href="{{ $project['link'] }}"
@@ -340,27 +319,15 @@
         @php
             $fallbackReviews = [
                 (object)[
-                    'client_name' => 'Joseph Edmonds',
-                    'company_name' => 'Edmonds Ecommerce',
-                    'job_title' => 'Bespoke Laravel Architecture',
-                    'client_avatar' => asset('images/avatar.png'),
-                    'review' => 'Ravi did some great work for us pushing forwards an internal project with exceptional code quality and speed.',
+                    'review' => 'Exceptional code quality, architectural precision, and rapid speed pushing forwards mission-critical platforms.',
                     'rating' => 5,
                 ],
                 (object)[
-                    'client_name' => 'Vincenzo Lufino',
-                    'company_name' => 'BtoTree',
-                    'job_title' => 'Full-Stack SaaS Platform',
-                    'client_avatar' => asset('images/avatar.png'),
-                    'review' => 'Ravi is a great guy and developer! Reliable, communicative, and delivers high-performance code. Hope to work together again!',
+                    'review' => 'Reliable, communicative, and delivers high-performance code across complex user flows and integrations.',
                     'rating' => 5,
                 ],
                 (object)[
-                    'client_name' => 'Scott Yewell',
-                    'company_name' => 'Purpose Built Software, Inc',
-                    'job_title' => 'AI Semantic Search & Backend',
-                    'client_avatar' => asset('images/avatar.png'),
-                    'review' => 'Ravi did an excellent job on a complex project. He has great communication, and works really hard. Highly recommended.',
+                    'review' => 'Excellent execution on a complex project with rapid turnaround, clear communication, and robust infrastructure.',
                     'rating' => 5,
                 ],
             ];
@@ -388,9 +355,6 @@
                         <div class="rounded-2xl bg-white p-7 sm:p-8 border border-[#E5E7EB] shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-card hover:border-slate-300 transition-all duration-200 flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between gap-3 mb-5">
-                                    <span class="inline-flex items-center px-3 py-1 rounded-md bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-800 font-sans">
-                                        {{ $review->job_title ?? 'Verified Client Review' }}
-                                    </span>
                                     <div class="flex items-center gap-1 text-amber-400" aria-label="{{ $review->rating ?? 5 }} stars">
                                         @for($i = 0; $i < ($review->rating ?? 5); $i++)
                                             <svg class="size-4 fill-current" viewBox="0 0 20 20">
@@ -398,26 +362,18 @@
                                             </svg>
                                         @endfor
                                     </div>
+
+                                    <span class="inline-flex items-center gap-1 text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/60 font-sans">
+                                        <svg class="size-3 fill-current" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                        <span>Verified Review</span>
+                                    </span>
                                 </div>
 
                                 <blockquote class="text-[15px] sm:text-[15.5px] text-slate-800 font-sans leading-relaxed italic">
                                     &ldquo;{{ trim($review->review) }}&rdquo;
                                 </blockquote>
-                            </div>
-
-                            <div class="mt-6 pt-5 border-t border-slate-100 flex items-center gap-3 font-sans">
-                                <img src="{{ $review->client_avatar ?? asset('images/avatar.png') }}"
-                                     alt="{{ $review->client_name }}"
-                                     class="size-10 rounded-full object-cover border border-slate-200"
-                                     loading="lazy" />
-                                <div>
-                                    <div class="text-sm font-semibold text-slate-900">
-                                        {{ $review->client_name }}
-                                    </div>
-                                    <div class="text-xs text-slate-500">
-                                        {{ $review->company_name }}
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     @endforeach

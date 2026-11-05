@@ -25,14 +25,8 @@
             @foreach($reviewsList as $review)
                 <div class="group rounded-2xl bg-white p-7 sm:p-8 border border-[#E5E7EB] shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-card hover:border-slate-300 transition-all duration-200 flex flex-col justify-between">
                     <div>
-                        <!-- Header: Job Scope / Project Tag + Stars -->
-                        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
-                            @if(!empty($review->job_title))
-                                <span class="inline-flex items-center px-3 py-1 rounded-md bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-800 font-sans">
-                                    {{ $review->job_title }}
-                                </span>
-                            @endif
-
+                        <!-- Header: Stars + Verified Review Badge -->
+                        <div class="flex items-center justify-between gap-3 mb-5">
                             <!-- 5 Stars -->
                             <div class="flex items-center gap-1 text-amber-400" aria-label="{{ $review->rating ?? 5 }} stars">
                                 @for($i = 0; $i < ($review->rating ?? 5); $i++)
@@ -41,39 +35,19 @@
                                     </svg>
                                 @endfor
                             </div>
+
+                            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/60 font-sans">
+                                <svg class="size-3.5 fill-current" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Verified Review</span>
+                            </span>
                         </div>
 
                         <!-- Quotation Text -->
                         <blockquote class="text-[15.5px] sm:text-[16px] text-slate-800 font-sans leading-relaxed italic">
                             &ldquo;{{ trim($review->review) }}&rdquo;
                         </blockquote>
-                    </div>
-
-                    <!-- Client Profile Signature Footer -->
-                    <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between font-sans">
-                        <div class="flex items-center gap-3">
-                            <img src="{{ asset(ltrim($review->client_avatar ?? 'images/avatar.png', '/')) }}"
-                                 alt="{{ $review->client_name }}"
-                                 class="size-11 rounded-full object-cover border border-slate-200"
-                                 loading="lazy" />
-                            <div>
-                                <div class="text-[14.5px] font-semibold text-slate-900">
-                                    {{ $review->client_name }}
-                                </div>
-                                @if(!empty($review->company_name))
-                                    <div class="text-xs text-slate-500">
-                                        {{ $review->company_name }}
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/60">
-                            <svg class="size-3.5 fill-current" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Verified Client</span>
-                        </div>
                     </div>
                 </div>
             @endforeach

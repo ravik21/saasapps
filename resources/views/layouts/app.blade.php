@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('app.name', 'SaaSApps') }}</title>
+        <!-- Local Preloaded Typefaces (Zero FOUT / Instant Rendering) -->
+        <link rel="preload" href="/css/fonts/ABCMarist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/css/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/css/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/css/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -19,22 +25,43 @@
         <!-- Tagify CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.35.4/tagify.min.css" integrity="sha512-BIjLsaXLHhpnoOzfTzEfOEVUDEqi/5RP9RbUYGfPkZUo+raxRUOiJb7AybUxV075aWNNGglvr5Lbjeo6Ww0HCw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <link rel="stylesheet" href="/css/custom.css">
+        <!-- Modern Vite Pipeline (Tailwind v3 + Design Tokens) -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <!-- Scripts -->
-        @vite(['resources/js/app.js'])
+        <link rel="stylesheet" href="/css/custom.css">
 
         @stack('styles')
     </head>
-    <body data-theme="theme-Greylight" class="svgstroke-a">
-        <main class="container-fluid px-0">
+    <body data-theme="theme-Greylight" class="svgstroke-a admin-layout-body">
+        <main class="container-fluid px-0 position-relative admin-layout-shell"
+              x-data="{ sidebarOpen: false }"
+              @keydown.escape.window="sidebarOpen = false"
+              x-effect="document.body.classList.toggle('sidebar-drawer-open', sidebarOpen)">
+            <!-- Mobile Drawer Backdrop Overlay -->
+            <div x-show="sidebarOpen"
+                 @click="sidebarOpen = false"
+                 x-transition:enter="transition-opacity ease-out duration-250"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-100"
+                 x-transition:leave="transition-opacity ease-in duration-200"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 x-cloak
+                 class="d-lg-none position-fixed top-0 start-0 w-100 h-100"
+                 style="background-color: rgba(15, 23, 42, 0.45); z-index: 1045; backdrop-filter: blur(2px);"
+                 aria-hidden="true">
+            </div>
+
             @include('layouts.sidebar')
-            <div class="content">
+            <div class="content admin-main-wrapper">
                 @include('layouts.navigation')
-                <div class="px-xl-5 px-lg-4 px-3 py-2 page-header flex-wrap">
+                <div class="admin-main-container w-100">
                     {{ $slot }}
                 </div>
             </div>
+
+            <!-- Reusable Admin Delete Confirmation Modal -->
+            <x-delete-confirmation-modal />
         </main>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

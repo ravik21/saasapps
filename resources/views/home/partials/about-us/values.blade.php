@@ -1,20 +1,29 @@
-<section class="mx-auto mt-12 w-full max-w-[1306px] px-6 pb-12 sm:px-10 md:mt-16 md:pb-16 lg:px-[78px] border-b-hairline border-gray-300">
-    <h2 class="text-heading-mobile-sm md:text-heading-sm font-sans-heading">
-        Our values
-    </h2>
-    <div class="flex flex-col" x-data="slider(3)">
-        <ul class="flex gap-6 overflow-x-auto px-1 pt-8 pb-8 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pt-12 md:pb-0 scrollbar-none">
-            <li x-ref="item0" data-index="0" class="snap-center w-full flex-shrink-0 col-span-1 md:-rotate-1">
-                <div class="relative rounded-24 bg-gray-100 shadow-card-bumped before:absolute before:inset-0 before:border-hairline before:border-gray-400 before:bg-gray-200 before:-rotate-4 before:rounded-24 before:-z-10">
-                    <svg class="w-full p-1 bg-brand-100 rounded-t-24" viewBox="0 0 348 199" fill="none" xmlns="http://www.w3.org/2000/svg">
+<section class="mx-auto mt-14 sm:mt-18 md:mt-24 w-full max-w-[1306px] px-6 pb-12 sm:px-10 md:pb-16 lg:px-[78px] border-b border-gray-200">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-8">
+        <div>
+            <span class="inline-block text-[11px] sm:text-xs font-semibold tracking-widest text-slate-500 uppercase mb-2">CORE PRINCIPLES</span>
+            <h2 class="font-serif-display text-2xl sm:text-3xl md:text-4xl font-normal text-slate-900 tracking-tight">
+                Our values
+            </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 mt-2 md:mt-0 max-w-md">
+            The fundamental standards that guide every architecture decision, sprint delivery, and line of code.
+        </p>
+    </div>
+
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-4 sm:pt-6">
+        <li class="w-full col-span-1 md:-rotate-1 transition-transform">
+            <div class="relative rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm overflow-hidden md:overflow-visible md:before:absolute md:before:inset-0 md:before:border md:before:border-slate-300 md:before:bg-slate-100 md:before:-rotate-3 md:before:rounded-2xl md:before:-z-10">
+                <div class="w-full p-2 bg-slate-100 rounded-t-2xl border-b border-slate-200">
+                    <svg class="w-full" viewBox="0 0 348 199" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_23278_8611)">
                             <path d="M282.843 84.8962L282.433 61.399M281.679 18.2302L282.056 39.8146M282.433 61.399L282.056 39.8146M282.433 61.399L291.575 66.5566M282.056 39.8146L274.136 35.9741M330.17 200.412L329.696 173.222C329.646 170.366 328.076 167.752 325.577 166.366L306.22 155.63C303.707 154.235 302.127 151.605 302.077 148.73L301.506 115.998" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
-                            <path d="M151.649 64.9469C151.55 59.3019 155.393 52.3684 160.233 49.4606L201.2 24.8453C206.039 21.9374 210.042 24.1563 210.141 29.8014L211.448 104.702C211.547 110.347 207.703 117.281 202.864 120.189L161.897 144.804C157.058 147.712 153.055 145.493 152.956 139.848L151.649 64.9469Z" fill="#E2FEE6"></path>
+                            <path d="M151.649 64.9469C151.55 59.3019 155.393 52.3684 160.233 49.4606L201.2 24.8453C206.039 21.9374 210.042 24.1563 210.141 29.8014L211.448 104.702C211.547 110.347 207.703 117.281 202.864 120.189L161.897 144.804C157.058 147.712 153.055 145.493 152.956 139.848L151.649 64.9469Z" fill="#F1F5F9"></path>
                             <path d="M160.104 49.2463C157.638 50.7281 155.439 53.2254 153.87 56.0561C152.301 58.8868 151.348 62.0746 151.399 64.9513L152.706 139.852C152.756 142.727 153.804 144.797 155.528 145.752C157.251 146.707 159.561 146.499 162.026 145.018L202.993 120.403C205.459 118.921 207.657 116.424 209.226 113.593C210.795 110.763 211.748 107.575 211.698 104.698L210.391 29.797C210.34 26.9219 209.293 24.8528 207.569 23.8973C205.845 22.9419 203.536 23.15 201.071 24.631L160.104 49.2463Z" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
                             <path d="M156.821 68.4127C156.723 62.7677 160.566 55.8342 165.406 52.9264L206.372 28.3111C211.212 25.4032 215.215 27.6222 215.313 33.2672L216.603 107.168C216.702 112.813 212.859 119.747 208.019 122.655L167.052 147.27C162.213 150.178 158.21 147.959 158.111 142.314L156.821 68.4127Z" fill="white"></path>
                             <path d="M165.277 52.7121C162.811 54.1939 160.612 56.6912 159.043 59.5219C157.474 62.3526 156.521 65.5404 156.572 68.4171L157.861 142.318C157.912 145.193 158.959 147.263 160.683 148.218C162.407 149.173 164.716 148.965 167.181 147.484L208.148 122.869C210.614 121.387 212.813 118.89 214.382 116.059C215.951 113.229 216.904 110.041 216.853 107.164L215.563 33.2628C215.513 30.3877 214.466 28.3186 212.742 27.3632C211.018 26.4077 208.708 26.6158 206.244 28.0968L165.277 52.7121Z" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
                             <mask id="mask0_23278_8611" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="156" y="27" width="61" height="122">
-                                <path d="M156.821 68.4127C156.723 62.7677 160.566 55.8342 165.406 52.9264L206.372 28.3111C211.212 25.4032 215.215 27.6222 215.313 33.2672L216.603 107.168C216.702 112.813 212.859 119.747 208.019 122.655L167.052 147.27C162.213 150.178 158.21 147.959 158.111 142.314L156.821 68.4127Z" fill="#E2FEE6"></path>
+                                <path d="M156.821 68.4127C156.723 62.7677 160.566 55.8342 165.406 52.9264L206.372 28.3111C211.212 25.4032 215.215 27.6222 215.313 33.2672L216.603 107.168C216.702 112.813 212.859 119.747 208.019 122.655L167.052 147.27C162.213 150.178 158.21 147.959 158.111 142.314L156.821 68.4127Z" fill="#F1F5F9"></path>
                             </mask>
                             <g mask="url(#mask0_23278_8611)">
                                 <path d="M128.338 137.847C128.284 134.713 129.871 130.911 132.345 128.247L173.698 83.7433C177.98 79.1353 182.74 80.0222 182.835 85.4456L183.992 151.742C184.066 155.976 181.184 161.176 177.554 163.357L135.862 188.408C132.232 190.589 129.23 188.925 129.156 184.691L128.338 137.847Z" fill="#C8CBCA"></path>
@@ -43,17 +52,19 @@
                             </clipPath>
                         </defs>
                     </svg>
-                    <h3 class="px-6 pt-4 pb-3 text-heading-mobile-2xs md:text-heading-2xs font-sans-heading">
-                        Custom solutions engineered for your business
-                    </h3>
-                    <p class="text-caption-lg text-gray-800 px-6 pb-5">
-                        We build scalable, secure software tailored to your unique needs. From backend systems to cloud infrastructure, every solution is crafted to streamline operations and drive growth.
-                    </p>
                 </div>
-            </li>
-            <li x-ref="item1" data-index="1" class="snap-center w-full flex-shrink-0 col-span-1 md:rotate-2">
-                <div class="relative rounded-24 bg-gray-100 shadow-card-bumped before:absolute before:inset-0 before:border-hairline before:border-gray-400 before:bg-gray-200 before:-rotate-4 before:rounded-24 before:-z-10">
-                    <svg class="w-full p-1 bg-brand-100 rounded-t-24" viewBox="0 0 352 205" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="px-6 pt-5 pb-2 font-serif-display text-lg sm:text-xl font-normal text-slate-900 leading-snug">
+                    Custom solutions engineered for your business
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 px-6 pb-6 leading-relaxed">
+                    We build scalable, secure software tailored to your unique needs. From backend systems to cloud infrastructure, every solution is crafted to streamline operations and drive growth.
+                </p>
+            </div>
+        </li>
+        <li class="w-full col-span-1 md:rotate-2 transition-transform">
+            <div class="relative rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm overflow-hidden md:overflow-visible md:before:absolute md:before:inset-0 md:before:border md:before:border-slate-300 md:before:bg-slate-100 md:before:-rotate-3 md:before:rounded-2xl md:before:-z-10">
+                <div class="w-full p-2 bg-slate-100 rounded-t-2xl border-b border-slate-200">
+                    <svg class="w-full" viewBox="0 0 352 205" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M159.327 32.9274L159.327 32.9273L159.32 32.9311L101.549 65.9742C99.6942 66.9616 97.9994 68.6966 96.751 70.6945C95.5018 72.6937 94.6851 74.9791 94.6117 77.0804L93.2609 115.761C93.1876 117.861 93.8728 119.429 95.1136 120.204C96.3545 120.98 98.0639 120.908 99.919 119.922L99.9191 119.922L99.9258 119.918L157.696 86.8751C159.552 85.8876 161.246 84.1526 162.495 82.1547C163.744 80.1556 164.561 77.8702 164.634 75.7688L165.985 37.0878C166.058 34.9881 165.373 33.4203 164.132 32.6449C162.891 31.8696 161.182 31.941 159.327 32.9274Z" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
                         <mask id="mask0_23278_7455" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="93" y="32" width="73" height="89">
                             <path d="M94.8616 77.0892C95.0045 72.9948 98.0529 68.1164 101.67 66.1931L159.444 33.1481C163.061 31.2248 165.878 32.9847 165.735 37.0791L164.384 75.7601C164.241 79.8544 161.193 84.7328 157.576 86.6562L99.8016 119.701C96.1843 121.624 93.3678 119.865 93.5108 115.77L94.8616 77.0892Z" fill="white"></path>
@@ -68,22 +79,24 @@
                         <path d="M212.047 38.1787L157.835 67.0552L157.835 67.0553C152.258 70.0259 149.469 71.5112 147.404 73.6518C145.577 75.5457 144.168 77.8023 143.269 80.2754C142.252 83.0705 142.142 86.228 141.921 92.5431L139.547 160.55C139.265 168.622 143.297 176.235 150.134 180.537C152.81 182.221 155.819 182.468 158.465 181.644C159.087 181.451 159.69 181.198 160.263 180.891L185.002 167.772C186.203 168.473 186.961 168.886 187.726 169.192C190.89 170.459 194.407 170.536 197.624 169.41C198.636 169.055 199.643 168.52 201.656 167.449L267.185 132.599L267.185 132.599C269.908 131.151 271.27 130.427 271.906 129.555C273.054 127.981 273.112 125.862 272.051 124.228C271.781 123.812 271.357 123.419 270.72 122.961C269.972 122.422 268.93 121.793 267.502 120.931L262.253 117.761C260.191 116.516 257.846 116.578 255.967 117.542L231.986 129.827C228.203 125.298 226.138 119.471 226.35 113.401L228.616 48.5237C228.839 42.1141 228.951 38.9093 227.67 37.0106C226.552 35.3545 224.784 34.2506 222.806 33.9736C220.537 33.656 217.707 35.1636 212.047 38.1787Z" stroke="black"></path>
                         <path d="M167.526 84.8485C162.369 87.5882 158.023 94.5374 157.82 100.37C157.783 101.407 157.942 102.37 158.144 103.379C158.462 104.965 158.796 106.632 157.894 108.644C157.287 109.997 156.551 111.177 156.034 111.727C158.25 110.55 159.467 109.749 160.815 108.243C161.347 107.648 161.856 107.135 162.33 107.055C163.636 107.179 165.155 106.838 166.788 105.97L207.564 84.7096C212.721 81.9698 217.066 75.0207 217.27 69.1882C217.474 63.3556 213.458 60.8484 208.301 63.5882L167.526 84.8485Z" fill="black"></path>
                         <path d="M166.484 114.687C161.327 117.427 156.982 124.376 156.778 130.209C156.742 131.246 156.9 132.209 157.103 133.218C157.42 134.804 157.754 136.471 156.852 138.483C156.245 139.836 155.509 141.015 154.992 141.566C157.208 140.388 158.426 139.588 159.773 138.082C160.306 137.487 160.814 136.974 161.288 136.894C162.595 137.018 164.113 136.676 165.747 135.809L189.174 122.478C194.331 119.739 198.676 112.789 198.88 106.957C199.083 101.124 195.068 98.6173 189.911 101.357L166.484 114.687Z" fill="#C8CBCA"></path>
-                        <path d="M171.215 117.419L171.215 117.419L171.221 117.416L194.645 104.087C197.176 102.744 199.367 102.717 200.887 103.666C202.407 104.615 203.343 106.596 203.243 109.459C203.143 112.322 202.025 115.475 200.285 118.256C198.546 121.038 196.2 123.424 193.67 124.769L193.67 124.769L193.663 124.772L170.239 138.101C168.638 138.951 167.17 139.274 165.925 139.156L165.892 139.153L165.86 139.159C165.557 139.21 165.269 139.393 165.005 139.614C164.737 139.839 164.467 140.128 164.2 140.427C163.099 141.657 162.09 142.407 160.504 143.302C160.9 142.695 161.322 141.924 161.693 141.096C162.628 139.011 162.281 137.277 161.964 135.694L161.961 135.68C161.76 134.675 161.606 133.735 161.641 132.729C161.741 129.867 162.859 126.714 164.599 123.932C166.338 121.151 168.684 118.764 171.215 117.419Z" fill="#E2FEE6" stroke="black" stroke-width="0.5"></path>
+                        <path d="M171.215 117.419L171.215 117.419L171.221 117.416L194.645 104.087C197.176 102.744 199.367 102.717 200.887 103.666C202.407 104.615 203.343 106.596 203.243 109.459C203.143 112.322 202.025 115.475 200.285 118.256C198.546 121.038 196.2 123.424 193.67 124.769L193.67 124.769L193.663 124.772L170.239 138.101C168.638 138.951 167.17 139.274 165.925 139.156L165.892 139.153L165.86 139.159C165.557 139.21 165.269 139.393 165.005 139.614C164.737 139.839 164.467 140.128 164.2 140.427C163.099 141.657 162.09 142.407 160.504 143.302C160.9 142.695 161.322 141.924 161.693 141.096C162.628 139.011 162.281 137.277 161.964 135.694L161.961 135.68C161.76 134.675 161.606 133.735 161.641 132.729C161.741 129.867 162.859 126.714 164.599 123.932C166.338 121.151 168.684 118.764 171.215 117.419Z" fill="#F1F5F9" stroke="black" stroke-width="0.5"></path>
                         <path d="M323.773 62.2331L325.026 26.3709M323.773 62.2331L332.102 57.6046M323.773 62.2331L323.304 75.682C323.207 78.4514 321.626 80.954 319.167 82.2312L306.905 88.5994C304.948 89.6158 302.622 88.1462 302.699 85.9423L303.723 56.6048C303.871 52.3647 300.955 50.5422 297.209 52.534L271.281 65.873" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
                         <path d="M311.259 183.737L312.424 150.374" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
                         <path d="M33.7633 201.214L35.5111 151.162C35.6897 146.049 30.2664 142.661 25.7493 145.062L10.7955 152.756M78.8347 166.472L39.167 141.685C37.1535 140.427 35.9641 138.19 36.047 135.817L37.0717 106.473M37.0717 106.473L38.3863 68.8281M37.0717 106.473L24.6536 112.966" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
                     </svg>
-                    <h3 class="px-6 pt-4 pb-3 text-heading-mobile-2xs md:text-heading-2xs font-sans-heading">
-                        Built for performance, security, and reliability
-                    </h3>
-                    <p class="text-caption-lg text-gray-800 px-6 pb-5">
-                        Every line of code is optimized for speed and stability. We implement robust security measures and thorough testing to ensure your applications perform flawlessly under real-world conditions.
-                    </p>
                 </div>
-            </li>
-            <li x-ref="item2" data-index="2" class="snap-center w-full flex-shrink-0 col-span-1 md:-rotate-1">
-                <div class="relative rounded-24 bg-gray-100 shadow-card-bumped before:absolute before:inset-0 before:border-hairline before:border-gray-400 before:bg-gray-200 before:-rotate-4 before:rounded-24 before:-z-10">
-                    <svg class="w-full p-1 bg-brand-100 rounded-t-24" viewBox="0 0 351 205" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <h3 class="px-6 pt-5 pb-2 font-serif-display text-lg sm:text-xl font-normal text-slate-900 leading-snug">
+                    Built for performance, security, and reliability
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 px-6 pb-6 leading-relaxed">
+                    Every line of code is optimized for speed and stability. We implement robust security measures and thorough testing to ensure your applications perform flawlessly under real-world conditions.
+                </p>
+            </div>
+        </li>
+        <li class="w-full col-span-1 md:-rotate-1 transition-transform">
+            <div class="relative rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm overflow-hidden md:overflow-visible md:before:absolute md:before:inset-0 md:before:border md:before:border-slate-300 md:before:bg-slate-100 md:before:-rotate-3 md:before:rounded-2xl md:before:-z-10">
+                <div class="w-full p-2 bg-slate-100 rounded-t-2xl border-b border-slate-200">
+                    <svg class="w-full" viewBox="0 0 351 205" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_23278_7927)">
                             <path d="M187.632 168.112L233.765 139.286C238.542 136.3 238.383 131.737 233.409 129.092L231.051 127.838L236.568 124.39C241.627 121.23 241.458 116.397 236.192 113.597L230.832 110.747L239.233 105.497C244.572 102.161 244.394 97.0601 238.835 94.1043L226.941 87.78L241.618 78.6088C247.238 75.0968 247.051 69.7275 241.199 66.6161L183.419 35.8936C177.567 32.7822 168.267 33.107 162.647 36.619L108.373 70.5329C102.753 74.0449 102.94 79.4142 108.792 82.5256L124.105 90.6676L112.65 97.8252C107.311 101.162 107.489 106.262 113.048 109.218L121.827 113.886L116.648 117.122C111.59 120.283 111.758 125.115 117.025 127.915L122.802 130.987L120.506 132.421C115.729 135.406 115.889 139.97 120.862 142.615L169.976 168.729C174.95 171.374 182.855 171.098 187.632 168.112Z" stroke="black" stroke-width="2"></path>
                             <rect width="74.7985" height="76.0245" rx="10.2" transform="matrix(0.848048 -0.529919 0.882948 0.469472 111.857 137.827)" fill="white"></rect>
@@ -110,19 +123,14 @@
                             </clipPath>
                         </defs>
                     </svg>
-                    <h3 class="px-6 pt-4 pb-3 text-heading-mobile-2xs md:text-heading-2xs font-sans-heading">
-                        Development based on approved requirements
-                    </h3>
-                    <p class="text-caption-lg text-gray-800 px-6 pb-5">
-                        We work strictly from detailed specifications and technical documentation. This structured approach ensures complete alignment, predictable timelines, and eliminates scope creep.
-                    </p>
                 </div>
-            </li>
-        </ul>
-        <aside class="md:hidden inline-flex space-x-2 mx-auto ring-hairline ring-gray-900/10 shadow-100 px-2.5 py-2 rounded-full">
-            <span class="block size-2 bg-gray-500 rounded-full transition" :class="{ 'bg-gray-900' : activeIndex == 0 }"></span>
-            <span class="block size-2 bg-gray-500 rounded-full transition" :class="{ 'bg-gray-900' : activeIndex == 1 }"></span>
-            <span class="block size-2 bg-gray-500 rounded-full transition bg-gray-900" :class="{ 'bg-gray-900' : activeIndex == 2 }"></span>
-        </aside>
-    </div>
+                <h3 class="px-6 pt-5 pb-2 font-serif-display text-lg sm:text-xl font-normal text-slate-900 leading-snug">
+                    Development based on approved requirements
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 px-6 pb-6 leading-relaxed">
+                    We work strictly from detailed specifications and technical documentation. This structured approach ensures complete alignment, predictable timelines, and eliminates scope creep.
+                </p>
+            </div>
+        </li>
+    </ul>
 </section>

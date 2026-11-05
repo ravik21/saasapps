@@ -233,13 +233,13 @@
                 <!-- Section Header -->
                 <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
                     <div class="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.14em] text-slate-500 mb-3 font-sans">
-                        Engineering Methodology
+                        Backend Engineering
                     </div>
                     <h2 class="font-serif-display text-3xl sm:text-4xl lg:text-[46px] font-normal text-black leading-[1.1] tracking-[-0.025em]">
-                        Our 5-step approach to software excellence
+                        Our 5-step backend development process
                     </h2>
                     <p class="mt-4 text-base sm:text-lg text-slate-600 font-sans leading-relaxed">
-                        A disciplined, transparent delivery cycle designed to eliminate scope ambiguity, minimize technical debt, and ensure on-time release.
+                        A structured engineering approach to building secure, scalable and high-performance backend systems, APIs and database architectures.
                     </p>
                 </div>
 
@@ -256,15 +256,15 @@
                             <div class="size-14 rounded-full bg-white border-2 border-slate-900 text-slate-900 font-sans font-bold text-base flex items-center justify-center shadow-xs mb-5">
                                 01
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-sans mb-1">Phase 1</span>
-                            <h3 class="text-base sm:text-lg font-semibold text-slate-900 font-sans mb-2">
-                                Discovery & Planning
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-sans mb-1">PHASE 1</span>
+                            <h3 class="text-base sm:text-lg font-semibold text-slate-900 font-sans mb-2 leading-snug">
+                                Requirements & API Discovery
                             </h3>
                             <p class="text-sm text-slate-600 font-sans leading-relaxed">
-                                We dissect requirements, audit existing architecture, model data entities, and construct an ironclad technical roadmap.
+                                Analyze business requirements, application workflows, API requirements, integrations and backend functionality.
                             </p>
                             <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md">
-                                <span>Requirements Spec</span>
+                                <span>API Requirements</span>
                             </div>
                         </div>
 
@@ -273,12 +273,12 @@
                             <div class="size-14 rounded-full bg-white border-2 border-slate-900 text-slate-900 font-sans font-bold text-base flex items-center justify-center shadow-xs mb-5">
                                 02
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-sans mb-1">Phase 2</span>
-                            <h3 class="text-base sm:text-lg font-semibold text-slate-900 font-sans mb-2">
-                                Strategy & Design
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-sans mb-1">PHASE 2</span>
+                            <h3 class="text-base sm:text-lg font-semibold text-slate-900 font-sans mb-2 leading-snug">
+                                Backend Architecture & Database Design
                             </h3>
                             <p class="text-sm text-slate-600 font-sans leading-relaxed">
-                                Systems architecture, API contract definitions, database schemas, and interactive UX prototypes aligned with user workflows.
+                                Design scalable backend architecture, database schemas, relationships, API structures, authentication and authorization.
                             </p>
                             <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md">
                                 <span>System Architecture</span>
@@ -290,15 +290,15 @@
                             <div class="size-14 rounded-full bg-white border-2 border-slate-900 text-slate-900 font-sans font-bold text-base flex items-center justify-center shadow-xs mb-5">
                                 03
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-sans mb-1">Phase 3</span>
-                            <h3 class="text-base sm:text-lg font-semibold text-slate-900 font-sans mb-2">
-                                Agile Development
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-sans mb-1">PHASE 3</span>
+                            <h3 class="text-base sm:text-lg font-semibold text-slate-900 font-sans mb-2 leading-snug">
+                                Backend Development & Integration
                             </h3>
                             <p class="text-sm text-slate-600 font-sans leading-relaxed">
-                                Clean, modular code written in two-week iterative sprints with continuous integration, automated builds, and weekly demos.
+                                Develop business logic, REST APIs, database operations, authentication, third-party integrations, queues and background jobs.
                             </p>
                             <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md">
-                                <span>Bi-Weekly Sprints</span>
+                                <span>API Development</span>
                             </div>
                         </div>
 
@@ -307,15 +307,15 @@
                             <div class="size-14 rounded-full bg-white border-2 border-slate-900 text-slate-900 font-sans font-bold text-base flex items-center justify-center shadow-xs mb-5">
                                 04
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-sans mb-1">Phase 4</span>
-                            <h3 class="text-base sm:text-lg font-semibold text-slate-900 font-sans mb-2">
-                                Testing & QA
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-sans mb-1">PHASE 4</span>
+                            <h3 class="text-base sm:text-lg font-semibold text-slate-900 font-sans mb-2 leading-snug">
+                                Testing, Security & Optimization
                             </h3>
                             <p class="text-sm text-slate-600 font-sans leading-relaxed">
-                                Comprehensive unit, integration, and load testing. Security audits, cross-device verification, and regression benchmarks.
+                                Perform unit and integration testing, API validation, security checks, database optimization and performance testing.
                             </p>
                             <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md">
-                                <span>Automated Testing</span>
+                                <span>Quality Assurance</span>
                             </div>
                         </div>
 
@@ -324,15 +324,15 @@
                             <div class="size-14 rounded-full bg-white border-2 border-slate-900 text-slate-900 font-sans font-bold text-base flex items-center justify-center shadow-xs mb-5">
                                 05
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-sans mb-1">Phase 5</span>
-                            <h3 class="text-base sm:text-lg font-semibold text-slate-900 font-sans mb-2">
-                                Launch & Support
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-sans mb-1">PHASE 5</span>
+                            <h3 class="text-base sm:text-lg font-semibold text-slate-900 font-sans mb-2 leading-snug">
+                                Deployment & Maintenance
                             </h3>
                             <p class="text-sm text-slate-600 font-sans leading-relaxed">
-                                Zero-downtime production deployment, cloud auto-scaling, comprehensive documentation handover, and ongoing SLA maintenance.
+                                Deploy backend applications, configure production environments, implement monitoring, backups, documentation and ongoing maintenance.
                             </p>
                             <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md">
-                                <span>Post-Launch SLA</span>
+                                <span>Production Deployment</span>
                             </div>
                         </div>
 

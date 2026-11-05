@@ -1,12 +1,21 @@
-<section class="mx-auto mt-12 w-full max-w-[1306px] px-6 pb-12 sm:px-10 md:mt-16 md:pb-16 lg:px-[78px]">
-  <h2 class="text-heading-mobile-sm md:text-heading-sm font-sans-heading">
-    Our approach
-  </h2>
-  <div class="flex flex-col" x-data="slider(3)">
-    <ul class="flex gap-6 overflow-x-auto px-1 pt-8 pb-8 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pt-12 md:pb-0 scrollbar-none">
-      <li x-ref="item0" data-index="0" class="snap-center w-full flex-shrink-0 col-span-1 md:rotate-1">
-        <div class="relative rounded-24 bg-gray-100 shadow-card-bumped before:absolute before:inset-0 before:border-hairline before:border-gray-400 before:bg-gray-200 before:-rotate-4 before:rounded-24 before:-z-10">
-            <svg class="w-full p-1" viewBox="0 0 348 203" fill="none" xmlns="http://www.w3.org/2000/svg">
+<section class="mx-auto mt-14 sm:mt-18 md:mt-24 w-full max-w-[1306px] px-6 pb-12 sm:px-10 md:pb-16 lg:px-[78px]">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-8">
+    <div>
+      <span class="inline-block text-[11px] sm:text-xs font-semibold tracking-widest text-slate-500 uppercase mb-2">HOW WE DELIVER</span>
+      <h2 class="font-serif-display text-2xl sm:text-3xl md:text-4xl font-normal text-slate-900 tracking-tight">
+        Our approach
+      </h2>
+    </div>
+    <p class="text-xs sm:text-sm text-slate-500 mt-2 md:mt-0 max-w-md">
+      A battle-tested engineering methodology engineered to eliminate technical debt and risk.
+    </p>
+  </div>
+
+  <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-4 sm:pt-6">
+    <li class="w-full col-span-1 md:rotate-1 transition-transform">
+      <div class="relative rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm overflow-hidden md:overflow-visible md:before:absolute md:before:inset-0 md:before:border md:before:border-slate-300 md:before:bg-slate-100 md:before:-rotate-3 md:before:rounded-2xl md:before:-z-10">
+          <div class="w-full p-2 bg-slate-100 rounded-t-2xl border-b border-slate-200">
+            <svg class="w-full" viewBox="0 0 348 203" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_req_dev)">
                     <!-- Background curve lines -->
                     <path d="M33.5962 200.693L34.1261 170.334C34.177 167.419 32.6772 164.697 30.1916 163.196L11.9735 152.189C8.13109 149.867 5.08002 144.331 5.1587 139.824L5.74493 106.239C5.82361 101.731 9.00224 99.9594 12.8446 102.281L33.1432 114.545C36.9856 116.866 40.0367 122.402 39.958 126.91L39.4054 158.565C39.3545 161.481 40.8544 164.202 43.3399 165.704L66.4725 179.68" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
@@ -31,17 +40,19 @@
                     </clipPath>
                 </defs>
             </svg>
-            <h3 class="px-6 pt-4 pb-3 text-heading-mobile-2xs md:text-heading-2xs font-sans-heading">
-                Requirement-driven development
-            </h3>
-            <p class="text-caption-lg text-gray-800 px-6 pb-5">
-                We start every project with thorough requirement analysis and technical specifications. Clear documentation ensures alignment, reduces miscommunication, and provides a solid foundation for development.
-            </p>
-        </div>
-      </li>
-      <li x-ref="item1" data-index="1" class="snap-center w-full flex-shrink-0 col-span-1 md:-rotate-1">
-        <div class="relative rounded-24 bg-gray-100 shadow-card-bumped before:absolute before:inset-0 before:border-hairline before:border-gray-400 before:bg-gray-200 before:-rotate-4 before:rounded-24 before:-z-10">
-            <svg class="w-full p-1" viewBox="0 0 351 209" fill="none" xmlns="http://www.w3.org/2000/svg">
+          </div>
+          <h3 class="px-6 pt-5 pb-2 font-serif-display text-lg sm:text-xl font-normal text-slate-900 leading-snug">
+              Requirement-driven development
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 px-6 pb-6 leading-relaxed">
+              We start every project with thorough requirement analysis and technical specifications. Clear documentation ensures alignment, reduces miscommunication, and provides a solid foundation for development.
+          </p>
+      </div>
+    </li>
+    <li class="w-full col-span-1 md:-rotate-1 transition-transform">
+      <div class="relative rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm overflow-hidden md:overflow-visible md:before:absolute md:before:inset-0 md:before:border md:before:border-slate-300 md:before:bg-slate-100 md:before:-rotate-3 md:before:rounded-2xl md:before:-z-10">
+          <div class="w-full p-2 bg-slate-100 rounded-t-2xl border-b border-slate-200">
+            <svg class="w-full" viewBox="0 0 351 209" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <!-- Background curve lines -->
                 <path d="M283.74 201.325L282.575 167.962" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
                 <path d="M301.624 93.2515L300.714 67.1854C300.535 62.0725 294.889 59.0702 290.55 61.7813L276.17 70.499M345 79.4355L303.7 57.4758C301.603 56.3611 300.261 54.2127 300.178 51.8398L299.153 22.496M299.153 22.496L298.397 0.841309M299.153 22.496L287.218 29.8398" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
@@ -56,17 +67,19 @@
                 <circle cx="175" cy="95" r="45" fill="white" stroke="black" stroke-width="2"></circle>
                 <path d="M158 95 L170 107 L195 80" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
             </svg>
-            <h3 class="px-6 pt-4 pb-3 text-heading-mobile-2xs md:text-heading-2xs font-sans-heading">
-                Quality assurance & testing
-            </h3>
-            <p class="text-caption-lg text-gray-800 px-6 pb-5">
-                Rigorous testing at every stage ensures your software works flawlessly. From unit tests to integration testing, we verify functionality, performance, and security before deployment.
-            </p>
-        </div>
-      </li>
-      <li x-ref="item2" data-index="2" class="snap-center w-full flex-shrink-0 col-span-1 md:rotate-1">
-        <div class="relative rounded-24 bg-gray-100 shadow-card-bumped before:absolute before:inset-0 before:border-hairline before:border-gray-400 before:bg-gray-200 before:-rotate-4 before:rounded-24 before:-z-10">
-            <svg class="w-full p-1" viewBox="0 0 351 209" fill="none" xmlns="http://www.w3.org/2000/svg">
+          </div>
+          <h3 class="px-6 pt-5 pb-2 font-serif-display text-lg sm:text-xl font-normal text-slate-900 leading-snug">
+              Quality assurance & testing
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 px-6 pb-6 leading-relaxed">
+              Rigorous testing at every stage ensures your software works flawlessly. From unit tests to integration testing, we verify functionality, performance, and security before deployment.
+          </p>
+      </div>
+    </li>
+    <li class="w-full col-span-1 md:rotate-1 transition-transform">
+      <div class="relative rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm overflow-hidden md:overflow-visible md:before:absolute md:before:inset-0 md:before:border md:before:border-slate-300 md:before:bg-slate-100 md:before:-rotate-3 md:before:rounded-2xl md:before:-z-10">
+          <div class="w-full p-2 bg-slate-100 rounded-t-2xl border-b border-slate-200">
+            <svg class="w-full" viewBox="0 0 351 209" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_lifecycle)">
                     <!-- Background curve lines -->
                     <path d="M304.97 86.3604L306.737 35.759M304.97 86.3604L304.518 99.2919C304.34 104.395 306.9 109.2 311.221 111.868L326.254 121.153M304.97 86.3604L284.952 74.2337M302.84 147.336L302.245 164.395M302.245 164.395L300.628 210.684M302.245 164.395L293.085 169.324" stroke="black" stroke-opacity="0.2" stroke-width="0.5"></path>
@@ -101,22 +114,14 @@
                     </clipPath>
                 </defs>
             </svg>
-            <h3 class="px-6 pt-4 pb-3 text-heading-mobile-2xs md:text-heading-2xs font-sans-heading">
-                Full project lifecycle support
-            </h3>
-            <p class="text-caption-lg text-gray-800 px-6 pb-5">
-                From initial planning to deployment and maintenance, we support every phase of your project. Our comprehensive approach includes ongoing updates, monitoring, and optimization.
-            </p>
-        </div>
-      </li>
-    </ul>
-    <aside class="md:hidden inline-flex space-x-2 mx-auto ring-hairline ring-gray-900/10 shadow-100 px-2.5 py-2 rounded-full">
-      <span class="block size-2 bg-gray-500 rounded-full transition" :class="{ 'bg-gray-900' : activeIndex == 0 }">
-      </span>
-      <span class="block size-2 bg-gray-500 rounded-full transition" :class="{ 'bg-gray-900' : activeIndex == 1 }">
-      </span>
-      <span class="block size-2 bg-gray-500 rounded-full transition bg-gray-900" :class="{ 'bg-gray-900' : activeIndex == 2 }">
-      </span>
-    </aside>
-  </div>
+          </div>
+          <h3 class="px-6 pt-5 pb-2 font-serif-display text-lg sm:text-xl font-normal text-slate-900 leading-snug">
+              Full project lifecycle support
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 px-6 pb-6 leading-relaxed">
+              From initial planning to deployment and maintenance, we support every phase of your project. Our comprehensive approach includes ongoing updates, monitoring, and optimization.
+          </p>
+      </div>
+    </li>
+  </ul>
 </section>

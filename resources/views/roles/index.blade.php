@@ -1,56 +1,136 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="fw-semibold fs-4 text-dark">
+        <h1 class="editorial-title mb-0" style="font-family: var(--font-serif-display); font-size: 1.85rem; font-weight: 400; color: #111827; letter-spacing: -0.025em; line-height: 1.2;">
             {{ __('Roles') }}
-        </h2>
+        </h1>
     </x-slot>
-    <div class="py-12 w-100">
-        <div class="py-2 page-header mb-4">
-            <ol class="breadcrumb mb-0 bg-transparent">
-                <li class="breadcrumb-item"><a class="text-muted" href="{{ route('dashboard') }}" title="home">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page" title="User">Roles</li>
-            </ol>
-            <ul class="list-unstyled action d-flex align-items-center mb-0">
-                <li>
-                    <a href="{{ route('roles.create') }}" class="btn btn-dark">Add Role</a>
-                </li>
-            </ul>
+
+    <div class="py-3 w-100">
+        <!-- Success Alert -->
+        @if (session('success'))
+            <div class="mb-4 d-flex align-items-center justify-content-between p-3 rounded-3" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; color: #0F172A; font-size: 13.5px;">
+                <div class="d-flex align-items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #0F172A; flex-shrink: 0;">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>{{ session('success') }}</span>
+                </div>
+                <button type="button" class="btn-close btn-close-sm" onclick="this.parentElement.remove()" aria-label="Close" style="font-size: 10px;"></button>
+            </div>
+        @endif
+
+        <!-- Page Header: Breadcrumb and Right-Aligned Black Pill Button -->
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 py-2 mb-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb admin-breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('dashboard') }}" title="Home">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Roles</li>
+                </ol>
+            </nav>
+            <div class="d-flex align-items-center">
+                <a href="{{ route('roles.create') }}" class="btn-primary-pill">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>Add Role</span>
+                </a>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="border p-4 rounded-2 rounded-4">
-                    <table class="table">
-                        <thead>
+
+        <!-- Premium Minimal Table Container -->
+        <div class="admin-card">
+            <div class="admin-card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <div>
+                    <h2 class="editorial-title mb-1" style="font-size: 1.35rem; letter-spacing: -0.02em;">
+                        System Roles
+                    </h2>
+                    <p class="mb-0 text-muted" style="font-size: 13px; color: #64748B !important;">
+                        Manage access groups and role assignments across the platform.
+                    </p>
+                </div>
+                <div>
+                    <span class="badge-count-pill">
+                        {{ $roles->total() }} {{ Str::plural('role', $roles->total()) }}
+                    </span>
+                </div>
+            </div>
+
+            <!-- Responsive Minimal Table -->
+            <div class="table-responsive">
+                <table class="table admin-table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="min-width: 220px;">Name</th>
+                            <th scope="col" style="min-width: 140px;">Guard</th>
+                            <th scope="col" style="min-width: 160px;">Created At</th>
+                            <th scope="col" class="text-end text-sm-start" style="width: 160px;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($roles as $role)
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Guard</th>
-                                <th scope="col">Created At</th>
-                                <th scope="col">Action</th>
+                                <td>
+                                    <span class="fw-semibold text-dark" style="font-size: 13.5px; color: #0F172A !important;">
+                                        {{ $role->name }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge-designation-pill">
+                                        {{ $role->guard_name }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="text-muted" style="font-size: 12.5px; color: #64748B !important;">
+                                        {{ $role->created_at ? $role->created_at->format('Y-m-d') : '—' }}
+                                    </span>
+                                </td>
+                                <td class="text-end text-sm-start">
+                                    <div class="d-inline-flex align-items-center gap-2">
+                                        <a href="{{ route('roles.edit', $role->id) }}" class="btn-action-edit">
+                                            Edit
+                                        </a>
+                                        <button type="button" 
+                                                class="btn-action-delete"
+                                                @click="$dispatch('open-delete-modal', {
+                                                    action: '{{ route('roles.destroy', $role->id) }}',
+                                                    title: 'Delete Role?',
+                                                    name: '{{ addslashes($role->name) }}',
+                                                    message: 'Are you sure you want to delete?'
+                                                })">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($roles as $role)
-                                <tr>
-                                    <td>{{ $role->name }}</td>
-                                    <td>{{ $role->guard_name }}</td>
-                                    <td>{{ $role->created_at->format('Y-m-d') }}</td>
-                                    <td>
-                                        <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-sm btn-secondary">Edit</a>
-                                        <form action="{{ route('roles.destroy', $role->id) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    <div class="mt-4">
+                        @empty
+                            <tr>
+                                <td colspan="4" class="text-center text-muted py-5">
+                                    <div class="py-4">
+                                        <svg class="mx-auto mb-2 text-muted" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #94A3B8;">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        </svg>
+                                        <p class="mb-0" style="color: #64748B; font-size: 13.5px;">No roles configured yet.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            @if ($roles->hasPages())
+                <div class="p-4 border-top" style="border-color: #F1F5F9 !important; background-color: #FFFFFF;">
+                    <div class="monochrome-pagination-wrapper">
                         {{ $roles->links() }}
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 </x-app-layout>

@@ -380,14 +380,13 @@
                 <blockquote class="font-serif-display text-2xl sm:text-3xl text-ink leading-snug">
                     &ldquo;Capturing workflows with SaaSApps cut our support training time from three weeks down to two days. It writes better documentation than our senior engineers could by hand.&rdquo;
                 </blockquote>
-                <div class="mt-8 flex items-center justify-center gap-3">
-                    <div class="size-11 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-700">
-                        SY
-                    </div>
-                    <div class="text-left">
-                        <h4 class="text-sm font-semibold text-ink">Scott Yewell</h4>
-                        <p class="text-xs text-slate-500">VP of Engineering &bull; Purpose Built Software, Inc.</p>
-                    </div>
+                <div class="mt-8 flex items-center justify-center gap-2">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/60">
+                        <svg class="size-3.5 fill-current" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Verified Engineering Story</span>
+                    </span>
                 </div>
             </div>
 

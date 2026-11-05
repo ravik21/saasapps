@@ -264,7 +264,7 @@
 .sh-footer-brand img { width:auto;height:34px; }
 .sh-footer-brand p { max-width:250px;margin:15px 0 17px;color:#686d66;font-size:14px;line-height:1.6; }
 .sh-footer-mail { display:inline-flex;color:#252720!important;font-size:14px;font-weight:600;transition:color .18s ease; }
-.sh-footer-mail:hover { color:#537f63!important; }
+.sh-footer-mail:hover { color:#111111!important; }
 .sh-footer-col { display:flex;min-width:0;flex-direction:column;align-items:flex-start;gap:11px; }
 .sh-footer-col h3 { margin:3px 0 8px;color:#252720;font:600 12px var(--font-sans)!important;letter-spacing:.07em;text-transform:uppercase; }
 .sh-footer-col a { color:#686d66!important;font:400 13px/1.5 var(--font-sans);text-decoration:none;transition:color .18s ease; }
@@ -293,10 +293,111 @@
 .ref-button:hover { transform:translateY(-1px); }
 .ref-button-black { margin-top:22px; color:#fff!important; background:#050505; }
 .ref-button-black:hover { background:#383a37; }
-.ref-trust { min-height:103px; display:flex; align-items:center; color:#f7f7f4; background:var(--ref-charcoal); border-bottom:1px solid #363a3c; }
-.ref-trust-row { display:flex; align-items:center; justify-content:space-between; gap:22px; }
-.ref-trust-row strong { max-width:190px; color:#c6d6d0; font:400 17px/1.18 var(--font-serif-display); }
-.ref-trust-row>span { color:#d9dcda; font-size:13px; }
+/* 2. Scribe-Style Infinite Trust Logo Marquee */
+.ref-trust {
+  position: relative;
+  width: 100%;
+  min-height: 125px;
+  height: 125px;
+  padding: 0 !important;
+  color: #f7f7f4;
+  background-color: #222526 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ref-trust-marquee-inner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 4.5vw, 62px);
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  height: 100%;
+}
+
+.ref-trust-fixed {
+  flex: 0 0 auto;
+  width: 290px;
+  padding-right: 32px;
+  position: relative;
+  z-index: 2;
+  background-color: #222526;
+}
+
+.saas-home .ref-trust-heading,
+.ref-trust-heading {
+  margin: 0;
+  font-family: var(--font-serif-display) !important;
+  font-size: 20px !important;
+  line-height: 1.28 !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.015em !important;
+  color: #c6d6d0 !important;
+  white-space: normal;
+}
+
+.ref-trust-scroller {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 48px, black calc(100% - 48px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 48px, black calc(100% - 48px), transparent 100%);
+}
+
+.ref-trust-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: refTrustMarquee 38s linear infinite;
+}
+
+.ref-trust-track:hover {
+  animation-play-state: paused;
+}
+
+.ref-trust-group {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  padding-right: 72px;
+  flex-shrink: 0;
+}
+
+.ref-t-logo {
+  height: 28px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  opacity: 0.82;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+  display: block;
+}
+
+.ref-t-logo:hover {
+  opacity: 1;
+}
+
+@keyframes refTrustMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ref-trust-track {
+    animation: none !important;
+    overflow-x: auto;
+  }
+}
 .ref-editorial { padding:82px 0 90px; color:#f7f7f3; background:var(--ref-charcoal); }
 .ref-kicker { margin:0 0 16px; color:#858b87; font:500 11px/1.4 var(--font-sans); letter-spacing:.12em; text-transform:uppercase; }
 .ref-editorial .ref-kicker { color:#9da39e; }
@@ -324,10 +425,21 @@
 .ref-showcase-dark { padding:76px 0 0;color:#f5f6f2;background:var(--ref-charcoal); }.ref-dark-grid { grid-template-columns:1fr .95fr;gap:8%; }.ref-showcase-dark .ref-kicker { color:#a2aaa4; }.saas-home .ref-showcase-dark .ref-showcase-copy h2 { color:#f6f6f2; }.ref-showcase-dark .ref-copy { color:#c0c5c0; }.ref-benefits-dark { border-color:#454a48; }.ref-benefits-dark article { border-color:#454a48; }.ref-benefits-dark h3 { color:#f0f1ed; }.ref-benefits-dark p { color:#b4bbb6; }.ref-button-outline { margin-top:22px;color:#f5f6f2!important;border:1px solid #8b928d; }.ref-button-outline:hover { background:#fff;color:#202321!important; }
 .ref-optimization-visual { min-height:420px;position:relative;display:grid;place-items:center;overflow:hidden;border-radius:16px;background:#303b3a; }.ref-orbit { position:absolute;width:330px;height:330px;border:1px solid #70817b;border-radius:50%; }.ref-orbit-b { width:415px;height:415px;border-color:#54645f; }.ref-code-window { position:relative;z-index:1;width:76%;min-height:260px;overflow:hidden;border:1px solid #414b48;border-radius:9px;background:#202624;box-shadow:0 16px 45px #0004;transform:rotate(-2deg); }.ref-code-window>div:first-child { height:36px;display:flex;align-items:center;gap:5px;padding:0 11px;border-bottom:1px solid #39423f;color:#d4dad4;font-size:8px; }.ref-code-window>div:first-child i { width:6px;height:6px;border-radius:50%;background:#73877d; }.ref-code-window>div:first-child span { margin-left:7px; }.ref-code-window section { padding:22px; }.ref-code-window section>strong { display:block;margin:8px 0 15px;font:400 23px var(--font-serif-display); }.ref-sync-row { display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid #3b4440;font-size:9px; }.ref-sync-row i { color:#a9c2ad;font-size:8px;font-style:normal; }.ref-flow { display:flex;justify-content:center;align-items:center;gap:10px;margin-top:20px;padding:10px;border-radius:5px;background:#2d3834;color:#dce3dc;font-size:8px; }.ref-flow b { color:#9fb7a5; }.ref-orbit-label { position:absolute;right:11%;bottom:34px;color:#d6dfd8;font:italic 15px var(--font-serif-display); }.ref-dark-values { display:grid;grid-template-columns:repeat(3,1fr);margin-top:70px;padding:30px 0 36px;border-top:1px solid #414644; }.ref-dark-values article { display:flex;flex-direction:column;padding:4px 28px;border-left:1px solid #414644; }.ref-dark-values article:first-child { border-left:0;padding-left:20px; }.ref-dark-values span { color:#b6bdb7; }
 .ref-workflows { padding:96px 0;background:#f1f2f4; }.ref-workflow-grid { display:grid;grid-template-columns:.85fr 1.15fr;gap:10%;align-items:start; }.saas-home .ref-workflows h2 { font-size:clamp(38px,3.7vw,50px); }.ref-workflows .ref-copy { max-width:370px; }.ref-workflow-list { border-top:1px solid #d9dbdc; }.ref-workflow-list>a { min-height:67px;display:flex;align-items:center;gap:17px;border-bottom:1px solid #d9dbdc;color:#292c28;transition:padding .2s,color .2s; }.ref-workflow-list>a:hover { padding-inline:8px;color:#688477; }.ref-workflow-list>a>i { width:24px;color:#6e8f89;font-size:21px;font-style:normal;text-align:center; }.ref-workflow-list>a>b { flex:1;font-size:13px;font-weight:500; }.ref-workflow-list>a>span { color:#929791;font-size:20px; }
-.ref-testimonials { padding:95px 0 100px;background:#fff; }.ref-section-heading { display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:40px; }.saas-home .ref-section-heading h2 { font-size:clamp(36px,3.4vw,46px); }.ref-inline-link { padding-bottom:4px;color:#333!important;font-size:12px;font-weight:600; }.ref-review-controls { display:flex;justify-content:flex-end;gap:8px;margin-bottom:12px; }.ref-review-controls button { width:34px;height:34px;border:1px solid #dfe1dd;border-radius:50%;background:#fff;color:#333;font-size:17px; }.ref-review-controls button:hover { background:#f0f2ee; }.ref-review-track { display:flex;gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:2px 0 8px; }.ref-review-track::-webkit-scrollbar { display:none; }.ref-review-card { flex:0 0 calc((100% - 26px)/3);min-height:235px;display:flex;flex-direction:column;padding:22px;border:1px solid #e5e6e2;border-radius:10px;background:#f7f8f6;scroll-snap-align:start; }.ref-stars { color:#788a72;font-size:12px;letter-spacing:2px; }.ref-review-card blockquote { flex:1;margin:15px 0 21px;font:400 19px/1.34 var(--font-serif-display); }.ref-review-author,.ref-featured-author { display:flex;align-items:center;gap:10px; }.ref-review-author img,.ref-featured-author img { width:35px;height:35px;border-radius:50%;object-fit:cover;background:#e5e8e2; }.ref-review-author b,.ref-review-author small,.ref-featured-author b,.ref-featured-author small { display:block; }.ref-review-author b,.ref-featured-author b { font-size:11px; }.ref-review-author small,.ref-featured-author small { margin-top:4px;color:#7d827a;font-size:9px; }.ref-reviews-empty { min-height:180px;display:flex;align-items:center;gap:18px;padding:30px;border:1px solid var(--ref-line);border-radius:10px;background:#f7f8f6; }.ref-reviews-empty>span { color:#849380;font-size:28px; }.ref-reviews-empty p { flex:1;color:#555a53;font:400 20px var(--font-serif-display); }.ref-reviews-empty a { color:#333!important;font-size:12px;font-weight:600; }
-.ref-featured-quote { padding:104px 0 100px;color:#fff;background:var(--ref-charcoal);text-align:center; }.ref-featured-quote .ref-kicker { color:#adb4ae; }.ref-featured-quote blockquote { max-width:940px;margin:24px auto 29px;color:#f6f7f3;font:400 clamp(34px,4vw,49px)/1.15 var(--font-serif-display);letter-spacing:-.025em; }.ref-featured-author { justify-content:center;text-align:left; }.ref-featured-author b { color:#fff; }.ref-featured-author small { color:#b5bcb6; }.ref-quote-empty blockquote { max-width:770px;font-size:39px; }.ref-quote-empty .ref-button { margin-top:0; }
-.ref-empty-note { margin:22px auto 28px;color:#e0e3de;font:400 29px/1.2 var(--font-serif-display); }
-.ref-story-controls { display:flex;justify-content:center;align-items:center;gap:10px;margin-top:48px; }.ref-story-controls>button:not(.ref-story-dot) { width:34px;height:34px;border:1px solid #68716c;border-radius:50%;background:transparent;color:#fff;font-size:16px; }.ref-story-controls>button:not(.ref-story-dot):hover { background:#3b423e; }.ref-story-dot { width:36px;height:3px;padding:0;border:0;border-radius:4px;background:#59605b; }.ref-story-dot.is-active { background:#f4f5f1; }
+.ref-testimonials { padding:95px 0 100px;background:#fff; }.ref-section-heading { display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:40px; }.saas-home .ref-section-heading h2 { font-size:clamp(36px,3.4vw,46px); }.ref-inline-link { padding-bottom:4px;color:#333!important;font-size:12px;font-weight:600; }.ref-review-controls { display:flex;justify-content:flex-end;gap:8px;margin-bottom:12px; }.ref-review-controls button { width:34px;height:34px;border:1px solid #dfe1dd;border-radius:50%;background:#fff;color:#333;font-size:17px; }.ref-review-controls button:hover { background:#f0f2ee; }.ref-review-track { display:flex;gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:2px 0 8px; }.ref-review-track::-webkit-scrollbar { display:none; }.ref-review-card { flex:0 0 calc((100% - 26px)/3);min-height:235px;display:flex;flex-direction:column;padding:22px;border:1px solid #e5e6e2;border-radius:10px;background:#f7f8f6;scroll-snap-align:start; }.ref-stars { color:#788a72;font-size:12px;letter-spacing:2px; }.ref-review-card blockquote { flex:1;margin:15px 0 21px;font:400 19px/1.34 var(--font-serif-display); }.ref-review-author,.ref-featured-author { display:flex;align-items:center;gap:10px; }.ref-review-tag { display:flex;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid #e5e6e2;color:#4c5749;font-size:11px;font-weight:600;letter-spacing:0.02em; }.ref-featured-tag { display:inline-flex;align-items:center;justify-content:center;margin-top:18px;color:#a3ada4;font-size:12px;font-weight:600;letter-spacing:0.04em; }.ref-review-author img,.ref-featured-author img { width:35px;height:35px;border-radius:50%;object-fit:cover;background:#e5e8e2; }.ref-review-author b,.ref-review-author small,.ref-featured-author b,.ref-featured-author small { display:block; }.ref-review-author b,.ref-featured-author b { font-size:11px; }.ref-review-author small,.ref-featured-author small { margin-top:4px;color:#7d827a;font-size:9px; }.ref-reviews-empty { min-height:180px;display:flex;align-items:center;gap:18px;padding:30px;border:1px solid var(--ref-line);border-radius:10px;background:#f7f8f6; }.ref-reviews-empty>span { color:#849380;font-size:28px; }.ref-reviews-empty p { flex:1;color:#555a53;font:400 20px var(--font-serif-display); }.ref-reviews-empty a { color:#333!important;font-size:12px;font-weight:600; }
+/* 9. What Makes SaaSApps Different */
+.ref-differentiators { padding:104px 0 108px; color:#fff; background-color:#222526 !important; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08); }
+.ref-diff-header { max-width:820px; margin-bottom:56px; }
+.ref-diff-kicker { margin:0 0 16px; color:#a3aca5; font:600 11px/1.4 var(--font-sans); letter-spacing:.12em; text-transform:uppercase; }
+.saas-home .ref-diff-title, .ref-diff-title { margin:0 0 18px; color:#fff !important; font:400 clamp(34px,3.8vw,48px)/1.15 var(--font-serif-display) !important; letter-spacing:-.025em !important; }
+.ref-diff-desc { margin:0; max-width:680px; color:#9da59f; font:400 16px/1.65 var(--font-sans); }
+.ref-diff-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:36px; }
+.ref-diff-card { display:flex; flex-direction:column; border-top:1px solid rgba(255,255,255,0.14); padding-top:28px; }
+.ref-diff-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:22px; }
+.ref-diff-num { font-family:var(--font-serif-display); font-size:34px; font-weight:400; line-height:1; color:rgba(255,255,255,0.32); letter-spacing:-.02em; }
+.ref-diff-icon { display:inline-flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.45); }
+.ref-diff-card-title { margin:0 0 12px; color:#fff !important; font:400 22px/1.25 var(--font-serif-display) !important; letter-spacing:-.015em !important; }
+.ref-diff-card-text { margin:0; color:#9da59f; font:400 14px/1.65 var(--font-sans); }
+@media (max-width:960px) and (min-width:769px) { .ref-diff-grid { gap:20px; } .ref-diff-header { margin-bottom:44px; } }
 .ref-tabs-section { padding:94px 0;background:#f1f2f4; }.ref-tabs-section .ref-section-heading>p { max-width:390px;margin:0 0 5px;color:#646861;font-size:14px;line-height:1.6; }.ref-tabs { display:flex;gap:7px;border-bottom:1px solid #d9dbdc; }.ref-tabs button { padding:14px 22px;border:0;border-bottom:2px solid transparent;background:transparent;color:#747971;font:500 13px var(--font-sans); }.ref-tabs button.is-active { color:#20221f;border-bottom-color:#252722; }.ref-tab-panel { display:grid;grid-template-columns:.8fr 1.2fr;gap:9%;align-items:center;padding-top:39px; }.ref-tab-copy { max-width:390px; }.ref-tab-copy h3 { margin:0 0 12px;font:400 36px/1.1 var(--font-serif-display)!important;letter-spacing:-.03em!important; }.ref-tab-copy>p:not(.ref-kicker) { color:#666b64;font-size:14px;line-height:1.65; }.ref-tab-copy ul { margin:20px 0 0;padding:17px 0 0;border-top:1px solid #d9dbdc;list-style:none; }.ref-tab-copy li { display:flex;gap:11px;padding:6px 0;color:#4e534d;font-size:12px; }.ref-tab-copy li i { color:#748675;font-style:normal; }.ref-tab-visual { min-height:320px;position:relative;display:grid;place-items:center;overflow:hidden;border-radius:14px;background:#e2e8e3; }.ref-tab-orbit { position:absolute;width:245px;height:245px;border:1px solid #c4cec3;border-radius:50%;box-shadow:0 0 0 28px #edf0eb,0 0 0 29px #d2d9d1; }.ref-tab-art { position:relative;z-index:1;width:250px;min-height:174px;padding:23px;border:1px solid #e5e8e1;border-radius:10px;background:#fff;box-shadow:0 16px 35px #17201922;transform:rotate(-3deg); }.ref-tab-art-label { display:block;color:#838a80;font-size:8px;letter-spacing:.1em; }.ref-tab-art strong { display:block;max-width:190px;margin:14px 0;font:400 20px/1.12 var(--font-serif-display); }.ref-tab-art>i { display:block;width:75%;height:5px;margin:8px 0;border-radius:4px;background:#e9ece7; }.ref-tab-art>i:nth-of-type(2) { width:61%; }.ref-tab-art>i:nth-of-type(3) { width:67%; }.ref-tab-check { position:absolute;right:16px;bottom:15px;width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:#71816d;color:#fff;font-size:12px; }
 .ref-quality { padding:91px 0 96px;color:#f5f6f2;background:var(--ref-charcoal);border-top:1px solid #363b3d; }.ref-quality .ref-section-heading { align-items:end; }.ref-quality .ref-kicker { color:#a6ada7; }.saas-home .ref-quality .ref-section-heading h2 { color:#f6f6f2; }.ref-quality .ref-section-heading>p { max-width:390px;margin:0 0 4px;color:#bbc1bb;font-size:14px;line-height:1.6; }.ref-quality-grid { display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #4a4e4e; }.ref-quality-grid article { min-height:235px;padding:27px 25px 0;border-left:1px solid #4a4e4e; }.ref-quality-grid article:first-child { border-left:0;padding-left:10px; }.ref-quality-icon { width:54px;height:54px;display:grid;place-items:center;border:1px solid #646b67;border-radius:50%;color:#d3ddd5;font-size:23px; }.ref-quality-grid h3 { margin:25px 0 8px;color:#f1f2ee!important;font:400 22px var(--font-serif-display)!important; }.ref-quality-grid p { max-width:300px;margin:0;color:#bdc2bd;font-size:12px;line-height:1.6; }
 .ref-tech-strip { padding:30px 0;background:#f4f5f3;border-bottom:1px solid #e4e5e1; }.ref-tech-strip .ref-wrap { display:flex;align-items:center;justify-content:space-between;gap:25px; }.ref-tech-strip .ref-wrap>span { color:#777c75;font-size:11px; }.ref-tech-strip .ref-wrap>div { display:flex;align-items:center;gap:35px; }.ref-tech-strip b { color:#444943;font-size:13px;font-weight:500; }
@@ -1394,3 +1506,986 @@
   .ref-dark-values-section .ref-dark-values span { margin-top: 4px; }
   .ref-dark-source { margin-top: 20px;font-size: 9px; }
 }
+
+/* ==========================================================================
+   SAASAPPS AUTHORITATIVE RESPONSIVE SYSTEM (MOBILE & TABLET ONLY)
+   Strict isolation: activates at <= 1024px / <= 768px / <= 640px / <= 480px.
+   DESKTOP (>= 1025px / 1101px) REMAINS 100% UNTOUCHED AND APPROVED.
+   ========================================================================== */
+
+/* Universal mobile containment & baseline */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.saas-home {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+  box-sizing: border-box;
+}
+
+/* Base containment for review carousel across all viewport sizes */
+.ref-review-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  contain: paint;
+  box-sizing: border-box;
+}
+
+.ref-review-track {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding: 4px 0 12px;
+  box-sizing: border-box;
+}
+.ref-review-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   TABLET RESPONSIVE TIER (769px to 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .ref-wrap,
+  .ref-showcase-light .ref-wrap,
+  .ref-showcase-dark > .ref-wrap,
+  .ref-final-cta > .ref-wrap,
+  .sh-wrap {
+    width: min(100%, calc(100% - 64px)) !important;
+    max-width: 1140px !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
+  }
+  .ref-categories {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    max-width: 720px !important;
+    gap: 12px !important;
+  }
+  .ref-showcase-light {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 70px 0 0 !important;
+  }
+  .ref-showcase-light .ref-showcase-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 46vw) !important;
+    column-gap: 36px !important;
+  }
+  .ref-product-frame {
+    width: 46vw !important;
+    height: 46vw !important;
+    max-width: 480px !important;
+    max-height: 480px !important;
+    margin-top: 40px !important;
+    padding: 5vw !important;
+  }
+  .ref-review-card {
+    flex: 0 0 calc((100% - 16px) / 2) !important;
+    max-width: calc((100% - 16px) / 2) !important;
+    min-width: 0 !important;
+    scroll-snap-align: start !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE RESPONSIVE TIER (<= 768px: Covers 768px, 430px, 414px, 390px, 375px, 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* 1. Global Container Fluidity */
+  .ref-wrap,
+  .ref-showcase-light .ref-wrap,
+  .ref-showcase-dark > .ref-wrap,
+  .ref-final-cta > .ref-wrap,
+  .sh-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding-inline: 20px !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+
+  /* 2. Hero & Categories Section */
+  .ref-hero {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 112px 0 48px !important;
+  }
+  .ref-hero-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .saas-home .ref-hero h1 {
+    font-size: clamp(32px, 8.5vw, 42px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.03em !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .ref-hero-lede {
+    max-width: 100% !important;
+    margin-top: 16px !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+  .ref-hero-label {
+    margin: 36px 0 14px !important;
+    font-size: 14px !important;
+  }
+  .ref-categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .ref-category {
+    height: 86px !important;
+    min-height: 86px !important;
+    padding: 10px 8px !important;
+    gap: 8px !important;
+    border-radius: 12px !important;
+  }
+  .ref-category > span {
+    font-size: 22px !important;
+  }
+  .ref-category > span svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .ref-category > b {
+    font-size: 12px !important;
+    text-align: center !important;
+  }
+  .ref-button-black {
+    margin-top: 22px !important;
+    min-height: 46px !important;
+    padding: 0 28px !important;
+    font-size: 15px !important;
+  }
+
+  /* 3. Scribe-Style Infinite Trust Logo Marquee */
+  .ref-trust {
+    height: auto !important;
+    min-height: 120px !important;
+    padding: 22px 0 24px !important;
+  }
+  .ref-trust-marquee-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    gap: 16px !important;
+    height: auto !important;
+  }
+  .ref-trust-fixed {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+  .saas-home .ref-trust-heading,
+  .ref-trust-heading {
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+  }
+  .ref-trust-scroller {
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 28px !important;
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    mask-image: linear-gradient(to right, transparent 0%, black 24px, black calc(100% - 24px), transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 24px, black calc(100% - 24px), transparent 100%) !important;
+  }
+  .ref-trust-group {
+    gap: 48px !important;
+    padding-right: 48px !important;
+  }
+  .ref-t-logo {
+    height: 24px !important;
+    max-width: 110px !important;
+  }
+
+  /* 4. Editorial Brand Statement */
+  .ref-editorial {
+    padding: 64px 0 68px !important;
+  }
+  .saas-home .ref-editorial h2 {
+    font-size: clamp(28px, 7.5vw, 36px) !important;
+    line-height: 1.15 !important;
+    max-width: 100% !important;
+  }
+
+  /* 5. Light Capabilities Showcase & Outcome Strip */
+  .ref-showcase-light {
+    position: relative !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 56px 0 36px !important;
+    overflow: hidden !important;
+    background: #f2f3f5 !important;
+  }
+  .ref-showcase-light .ref-showcase-grid {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .ref-showcase-light .ref-showcase-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-top: 0 !important;
+  }
+  .saas-home .ref-showcase-light .ref-showcase-copy h2 {
+    max-width: 100% !important;
+    font-size: clamp(26px, 6.5vw, 32px) !important;
+    line-height: 1.12 !important;
+  }
+  .ref-showcase-light .ref-benefits {
+    margin-top: 26px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .ref-showcase-light .ref-benefits article {
+    min-height: 48px !important;
+    height: auto !important;
+    padding: 12px 0 !important;
+  }
+  .ref-showcase-light .ref-benefits article button {
+    font-size: 14px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+  .ref-showcase-light .ref-benefits p {
+    font-size: 13px !important;
+    max-width: 100% !important;
+    line-height: 1.5 !important;
+  }
+  .ref-product-frame {
+    width: 100% !important;
+    max-width: min(100%, 440px) !important;
+    height: auto !important;
+    aspect-ratio: 1/1 !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+    padding: 7% !important;
+    justify-self: center !important;
+    box-sizing: border-box !important;
+  }
+  .ref-visual-state {
+    inset: 7% !important;
+  }
+  .ref-network-canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+  }
+  .ref-showcase-light + .ref-value-strip,
+  .ref-value-strip {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 24px 0 !important;
+    border-top: 1px solid #d9dbdd !important;
+    background: #f2f3f5 !important;
+  }
+  .ref-showcase-light + .ref-value-strip .ref-value-grid,
+  .ref-value-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+  .ref-showcase-light + .ref-value-strip .ref-value-grid article,
+  .ref-value-grid article {
+    min-height: 64px !important;
+    padding: 12px 4px !important;
+    border-left: 0 !important;
+    border-bottom: 1px solid #d5d7d9 !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+  }
+  .ref-showcase-light + .ref-value-strip .ref-value-grid article:last-child,
+  .ref-value-grid article:last-child {
+    border-bottom: 0 !important;
+  }
+  .ref-showcase-light + .ref-value-strip .ref-value-grid .ref-metric-value,
+  .ref-value-grid strong {
+    font-size: 28px !important;
+    line-height: 1.05 !important;
+  }
+  .ref-showcase-light + .ref-value-strip .ref-value-grid .ref-metric-label,
+  .ref-value-grid span {
+    font-size: 13px !important;
+    color: #4a4f49 !important;
+  }
+  .ref-source {
+    margin-top: 16px !important;
+    font-size: 10px !important;
+  }
+
+  /* 6. Dark Workflow Showcase & Outcomes */
+  .ref-showcase-dark {
+    padding: 56px 0 40px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .ref-showcase-dark .ref-dark-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .ref-showcase-dark .ref-insight-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-top: 0 !important;
+    order: 0 !important;
+  }
+  .saas-home .ref-showcase-dark .ref-insight-copy h2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(26px, 6.5vw, 32px) !important;
+    line-height: 1.12 !important;
+  }
+  .ref-showcase-dark .ref-insights {
+    margin-top: 24px !important;
+    width: 100% !important;
+  }
+  .ref-showcase-dark .ref-insights article {
+    min-height: 48px !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid #485052 !important;
+  }
+  .ref-showcase-dark .ref-insights h3 button {
+    font-size: 14px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+  .ref-showcase-dark .ref-insights p {
+    max-width: 100% !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+  .ref-showcase-dark .ref-insight-cta {
+    margin-top: 24px !important;
+    min-height: 42px !important;
+    padding: 0 22px !important;
+    font-size: 13px !important;
+  }
+  .ref-showcase-dark .ref-opportunity-visual {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: min(100%, 420px) !important;
+    height: auto !important;
+    aspect-ratio: 448/527 !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+  .ref-opportunity-card {
+    width: 86% !important;
+    height: 86% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .ref-dark-values-section {
+    min-height: 0 !important;
+    padding: 20px 0 !important;
+  }
+  .ref-dark-values-section .ref-dark-values {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+  .ref-dark-values-section .ref-dark-values article {
+    min-height: 64px !important;
+    padding: 12px 4px !important;
+    border-left: 0 !important;
+    border-bottom: 1px solid #485052 !important;
+    justify-content: center !important;
+    gap: 3px !important;
+  }
+  .ref-dark-values-section .ref-dark-values article:last-child {
+    border-bottom: 0 !important;
+  }
+  .ref-dark-values-section .ref-dark-values strong {
+    font-size: 28px !important;
+  }
+  .ref-dark-values-section .ref-dark-values span {
+    font-size: 12px !important;
+    color: #aab1ae !important;
+  }
+
+  /* 7. Workflows / Ways We Can Help */
+  .ref-workflows {
+    padding: 56px 0 !important;
+  }
+  .ref-workflow-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    width: 100% !important;
+  }
+  .saas-home .ref-workflows h2 {
+    font-size: clamp(28px, 7vw, 38px) !important;
+    line-height: 1.12 !important;
+  }
+  .ref-workflows .ref-copy {
+    max-width: 100% !important;
+    font-size: 15px !important;
+  }
+  .ref-workflow-list > a {
+    min-height: 52px !important;
+    padding: 12px 0 !important;
+    width: 100% !important;
+  }
+  .ref-workflow-list > a > b {
+    font-size: 14px !important;
+  }
+
+  /* 8. Client Testimonials & Review Carousel (CONTAINED) */
+  .ref-testimonials {
+    padding: 56px 0 !important;
+  }
+  .ref-section-heading {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    margin-bottom: 24px !important;
+  }
+  .saas-home .ref-section-heading h2 {
+    font-size: clamp(28px, 7vw, 36px) !important;
+  }
+  .ref-review-controls {
+    margin-bottom: 8px !important;
+  }
+  .ref-review-controls button {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    font-size: 18px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    touch-action: manipulation !important;
+  }
+  .ref-review-card {
+    flex: 0 0 calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+    min-width: 0 !important;
+    min-height: 210px !important;
+    padding: 20px 18px !important;
+    scroll-snap-align: center !important;
+    box-sizing: border-box !important;
+  }
+  .ref-review-card blockquote {
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+    margin: 12px 0 16px !important;
+  }
+
+  /* 9. What Makes SaaSApps Different */
+  .ref-differentiators {
+    padding: 68px 0 72px !important;
+  }
+  .ref-diff-header {
+    margin-bottom: 38px !important;
+  }
+  .saas-home .ref-diff-title,
+  .ref-diff-title {
+    font-size: clamp(28px, 6.5vw, 36px) !important;
+    line-height: 1.18 !important;
+    margin-bottom: 14px !important;
+  }
+  .ref-diff-desc {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+  .ref-diff-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .ref-diff-card {
+    padding-top: 22px !important;
+  }
+  .ref-diff-top {
+    margin-bottom: 16px !important;
+  }
+  .ref-diff-num {
+    font-size: 28px !important;
+  }
+  .ref-diff-card-title {
+    font-size: 20px !important;
+    margin-bottom: 8px !important;
+  }
+  .ref-diff-card-text {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* 10. Interactive Project Approach Tabs */
+  .ref-tabs-section {
+    padding: 56px 0 !important;
+  }
+  .ref-tabs {
+    display: flex !important;
+    gap: 4px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-bottom: 1px solid #d9dbdc !important;
+    padding-bottom: 0 !important;
+  }
+  .ref-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+  .ref-tabs button {
+    flex: 0 0 auto !important;
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+    min-height: 44px !important;
+    white-space: nowrap !important;
+    scroll-snap-align: start !important;
+  }
+  .ref-tab-panel {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding-top: 24px !important;
+    width: 100% !important;
+  }
+  .ref-tab-copy {
+    max-width: 100% !important;
+  }
+  .ref-tab-copy h3 {
+    font-size: clamp(24px, 6.5vw, 32px) !important;
+    line-height: 1.15 !important;
+  }
+  .ref-tab-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 240px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+  .ref-tab-orbit {
+    width: 200px !important;
+    height: 200px !important;
+    box-shadow: 0 0 0 14px #edf0eb, 0 0 0 15px #d2d9d1 !important;
+  }
+  .ref-tab-art {
+    width: min(240px, 85%) !important;
+    min-height: 150px !important;
+    padding: 16px !important;
+  }
+
+  /* 11. Quality & Commitment */
+  .ref-quality {
+    padding: 56px 0 60px !important;
+  }
+  .ref-quality-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    width: 100% !important;
+  }
+  .ref-quality-grid article {
+    min-height: 0 !important;
+    padding: 22px 0 !important;
+    border-left: 0 !important;
+    border-bottom: 1px solid #4a4e4e !important;
+  }
+  .ref-quality-grid article:first-child {
+    padding-left: 0 !important;
+  }
+  .ref-quality-grid article:last-child {
+    border-bottom: 0 !important;
+  }
+  .ref-quality-icon {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 20px !important;
+  }
+  .ref-quality-grid h3 {
+    margin: 18px 0 8px !important;
+    font-size: 20px !important;
+  }
+  .ref-quality-grid p {
+    max-width: 100% !important;
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* 12. Tech Capability Strip */
+  .ref-tech-strip {
+    padding: 24px 0 !important;
+  }
+  .ref-tech-strip .ref-wrap {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+  .ref-tech-strip .ref-wrap > div {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 12px 18px !important;
+    width: 100% !important;
+  }
+  .ref-tech-strip b {
+    font-size: 13px !important;
+  }
+
+  /* 13. Final CTA */
+  .ref-final-cta {
+    padding: 44px 0 48px !important;
+  }
+  .ref-final-cta .ref-cta-card {
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 36px 22px 28px !important;
+    border-radius: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .ref-final-cta .ref-cta-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .saas-home .ref-final-cta .ref-cta-card h2 {
+    font-size: clamp(28px, 7vw, 36px) !important;
+    line-height: 1.1 !important;
+  }
+  .ref-final-cta .ref-cta-card .ref-button-black {
+    margin-top: 24px !important;
+    min-height: 46px !important;
+    padding: 0 28px !important;
+  }
+  .ref-final-cta .ref-cta-illustration {
+    position: relative !important;
+    inset: auto !important;
+    align-self: center !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    margin-top: 24px !important;
+    transform: none !important;
+  }
+  .ref-final-cta .ref-cta-illustration svg {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 180px !important;
+  }
+
+  /* 14. Shared Footer */
+  .sh-footer {
+    padding: 44px 0 20px !important;
+  }
+  .sh-footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 32px 20px !important;
+    padding-bottom: 32px !important;
+  }
+  .sh-footer-brand {
+    grid-column: span 2 !important;
+  }
+  .sh-footer-col a {
+    padding: 4px 0 !important;
+    min-height: 32px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 13px !important;
+  }
+  .sh-footer-bottom {
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding-top: 18px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   EXTRA SMALL MOBILE (<= 480px / 360px devices)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .sh-footer-top {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .sh-footer-brand {
+    grid-column: span 1 !important;
+  }
+}
+@media (max-width: 380px) {
+  .ref-wrap,
+  .ref-showcase-light .ref-wrap,
+  .ref-showcase-dark > .ref-wrap,
+  .ref-final-cta > .ref-wrap,
+  .sh-wrap {
+    padding-inline: 16px !important;
+  }
+  .ref-category {
+    height: 80px !important;
+    min-height: 80px !important;
+    padding: 8px 4px !important;
+  }
+  .ref-category > b {
+    font-size: 11px !important;
+  }
+  .ref-review-card {
+    flex: 0 0 calc(100% - 20px) !important;
+    max-width: calc(100% - 20px) !important;
+    padding: 18px 14px !important;
+  }
+}
+
+/* ==========================================================================
+   SCRIBE-STYLE INFINITE MOVING TESTIMONIAL WALL (SECTION 8)
+   ========================================================================== */
+
+.ref-testimonials {
+    padding: 75px 0 85px;
+    background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.ref-wall-scroller {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 0 20px;
+    margin-top: 15px;
+    mask-image: linear-gradient(to right, transparent 0%, black 70px, black calc(100% - 70px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 70px, black calc(100% - 70px), transparent 100%);
+}
+
+.ref-wall-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: refWallMarquee 45s linear infinite;
+}
+
+.ref-wall-track:hover {
+    animation-play-state: paused;
+}
+
+.ref-wall-group {
+    display: flex;
+    gap: 24px;
+    padding-right: 24px;
+    height: 420px;
+    align-items: stretch;
+}
+
+.ref-wall-item {
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.ref-wall-card {
+    background: #F3F4F6;
+    border-radius: 16px;
+    padding: 24px;
+    box-sizing: border-box;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ref-wall-card:hover {
+    box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.06);
+}
+
+.ref-wall-title {
+    font-family: var(--font-serif-display), "Source Serif 4", Georgia, serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #111827;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.01em;
+}
+
+.ref-wall-text {
+    font-family: var(--font-sans), Inter, system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #4B5563;
+    margin: 0;
+}
+
+.ref-wall-connector {
+    flex: 1 1 auto;
+    min-height: 20px;
+    width: 0;
+    border-left: 1.5px dotted #94A3B8;
+    margin-left: 28px;
+}
+
+.ref-wall-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0 4px;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.ref-wall-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #E5E7EB;
+    color: #4B5563;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.ref-wall-label {
+    font-family: var(--font-sans), Inter, system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #4B5563;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+/* Vertical Staggers (Desktop) */
+.ref-stagger-0 .ref-wall-card { margin-top: 45px; }
+.ref-stagger-1 .ref-wall-card { margin-top: 15px; }
+.ref-stagger-2 .ref-wall-card { margin-top: 95px; }
+.ref-stagger-3 .ref-wall-card { margin-top: 60px; }
+.ref-stagger-4 .ref-wall-card { margin-top: 25px; }
+.ref-stagger-5 .ref-wall-card { margin-top: 85px; }
+
+@keyframes refWallMarquee {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ref-wall-track {
+        animation: none !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 12px;
+    }
+    .ref-wall-item {
+        scroll-snap-align: start;
+    }
+}
+
+@media (max-width: 860px) {
+    .ref-testimonials {
+        padding: 52px 0 !important;
+    }
+    .ref-wall-scroller {
+        padding: 6px 0 10px !important;
+        margin-top: 0 !important;
+        mask-image: linear-gradient(to right, transparent 0%, black 20px, black calc(100% - 20px), transparent 100%) !important;
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20px, black calc(100% - 20px), transparent 100%) !important;
+    }
+    .ref-wall-group {
+        gap: 16px !important;
+        padding-right: 16px !important;
+        height: 350px !important;
+    }
+    .ref-wall-item {
+        width: 280px !important;
+    }
+    .ref-wall-card {
+        padding: 18px 20px !important;
+        border-radius: 14px !important;
+    }
+    .ref-wall-title {
+        font-size: 18px !important;
+        margin-bottom: 8px !important;
+    }
+    .ref-wall-text {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+    .ref-wall-connector {
+        min-height: 16px !important;
+        border-left: 1.5px dotted #94A3B8 !important;
+        margin-left: 24px !important;
+    }
+    .ref-wall-meta {
+        margin-left: 12px !important;
+        gap: 8px !important;
+    }
+    .ref-wall-avatar {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    .ref-wall-label {
+        font-size: 12px !important;
+    }
+
+    /* Vertical Staggers (Mobile) */
+    .ref-stagger-0 .ref-wall-card { margin-top: 25px !important; }
+    .ref-stagger-1 .ref-wall-card { margin-top: 10px !important; }
+    .ref-stagger-2 .ref-wall-card { margin-top: 65px !important; }
+    .ref-stagger-3 .ref-wall-card { margin-top: 40px !important; }
+    .ref-stagger-4 .ref-wall-card { margin-top: 15px !important; }
+    .ref-stagger-5 .ref-wall-card { margin-top: 55px !important; }
+}
+
+

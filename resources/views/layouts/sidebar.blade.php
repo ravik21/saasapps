@@ -2,7 +2,7 @@
     $roleMenuActive = request()->routeIs('roles.*') || request()->routeIs('permissions.*');
 @endphp
 
-<aside class="ps-3 pe-2 py-2 sidebar">
+<aside id="adminSidebarDrawer" class="ps-3 pe-2 py-2 sidebar" :class="{ 'open': sidebarOpen }">
     <div class=" flex-grow-1">
         <div class="d-flex align-items-center mb-2 logo-info">
             <div class="d-flex align-items-center   ">
@@ -11,7 +11,7 @@
                     <img id="LogoSm" src="/images/logo-sm.png" alt="SaaSApps" class="h-44 d-none">
                 </a>
             </div>
-            <button class="btn btn-sm btn-close sidebar-toggle border ms-auto d-lg-none" type="button"></button>
+            <button class="btn btn-sm btn-close sidebar-toggle border ms-auto d-lg-none" type="button" @click="sidebarOpen = false" aria-label="Close navigation sidebar" style="width: 32px; height: 32px;"></button>
             <a class="ms-auto d-lg-inline-flex d-none menu-toggle shadow-sm align-items-center justify-content-center mini-btn"
                 href="javascript:void(0)" title="Sidebar Toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -27,7 +27,7 @@
         <hr class="dropdown-divider mb-3" />
         <ul class="list-unstyled mb-2 menu-list ps-3">
             <li>
-                <a href="{{ route('dashboard') }}" aria-label="Dashboard" data-bs-placement="right" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}"
+                <a href="{{ route('dashboard') }}" @click="if (window.innerWidth < 992) sidebarOpen = false" aria-label="Dashboard" data-bs-placement="right" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}"
                     data-bs-title="Dashboard" data-bs-toggle="tooltip">
                     <svg class="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="24"
                         viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -42,7 +42,7 @@
             </li>
             @can('manage users')
                 <li>
-                    <a href="{{ route('users.index') }}" aria-label="Teams" data-bs-placement="right" class="{{ request()->routeIs('users.*') ? 'active' : '' }}"
+                    <a href="{{ route('users.index') }}" @click="if (window.innerWidth < 992) sidebarOpen = false" aria-label="Teams" data-bs-placement="right" class="{{ request()->routeIs('users.*') ? 'active' : '' }}"
                         data-bs-title="Teams" data-bs-toggle="tooltip">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="svg-stroke">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -56,14 +56,15 @@
                 </li>
             @endcan
 
-            @role('Admin')
-                <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center {{ $roleMenuActive ? '' : 'collapsed' }}"
-                        data-bs-toggle="collapse"
-                        href="#rolePermissionMenu"
+            @if(auth()->check() && (auth()->user()->hasRole('Admin') || auth()->user()->can('manage roles') || auth()->user()->can('manage permissions')))
+                <li class="nav-item" x-data="{ open: {{ $roleMenuActive ? 'true' : 'false' }} }">
+                    <a class="nav-link d-flex align-items-center {{ $roleMenuActive ? 'parent-active' : '' }}"
+                        href="javascript:void(0)"
                         role="button"
-                        aria-expanded="{{ $roleMenuActive ? 'true' : 'false' }}"
-                        aria-controls="rolePermissionMenu">
+                        @click.prevent="open = !open"
+                        :aria-expanded="open.toString()"
+                        aria-controls="rolePermissionMenu"
+                        style="cursor: pointer;">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -76,35 +77,47 @@
 
                         <span class="mx-3">Access Control</span>
 
-                        <i class="ms-auto bi bi-chevron-down"></i>
+                        <i class="ms-auto bi bi-chevron-down sidebar-chevron" :class="{ 'rotate-180': open }"></i>
                     </a>
 
                     <!-- Submenu -->
-                    <div class="collapse {{ $roleMenuActive ? 'show' : '' }}" id="rolePermissionMenu">
+                    <div id="rolePermissionMenu"
+                        x-show="open"
+                        x-cloak
+                        x-transition:enter="transition-all ease-out duration-200"
+                        x-transition:enter-start="opacity-0 -translate-y-1"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition-all ease-in duration-150"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 -translate-y-1">
                         <ul class="nav flex-column ms-4">
+                            @if(auth()->user()->hasRole('Admin') || auth()->user()->can('manage roles'))
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->routeIs('roles.*') ? 'active' : '' }}"
+                                       @click="if (window.innerWidth < 992) sidebarOpen = false"
+                                       href="{{ route('roles.index') }}">
+                                        Roles
+                                    </a>
+                                </li>
+                            @endif
 
-                            <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('roles.*') ? 'active' : '' }}"
-                                href="{{ route('roles.index') }}">
-                                    Roles
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('permissions.*') ? 'active' : '' }}"
-                                href="{{ route('permissions.index') }}">
-                                    Permissions
-                                </a>
-                            </li>
-
+                            @if(auth()->user()->hasRole('Admin') || auth()->user()->can('manage permissions'))
+                                <li class="nav-item">
+                                    <a class="nav-link {{ request()->routeIs('permissions.*') ? 'active' : '' }}"
+                                       @click="if (window.innerWidth < 992) sidebarOpen = false"
+                                       href="{{ route('permissions.index') }}">
+                                        Permissions
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </li>
-            @endrole
+            @endif
 
             @can('manage projects')
                 <li>
-                    <a href="{{ route('projects.index') }}" aria-label="Projects" data-bs-placement="right" class="{{ request()->routeIs('projects.*') ? 'active' : '' }}"
+                    <a href="{{ route('projects.index') }}" @click="if (window.innerWidth < 992) sidebarOpen = false" aria-label="Projects" data-bs-placement="right" class="{{ request()->routeIs('projects.*') ? 'active' : '' }}"
                         data-bs-title="Projects" data-bs-toggle="tooltip">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" mirror-in-rtl="true" fill="currentColor" width="24" height="24" class="svg-stroke">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -122,7 +135,7 @@
 
             @can('manage client reviews')
                 <li>
-                    <a href="{{ route('client-reviews.index') }}" aria-label="Client Reviews" data-bs-placement="right" class="{{ request()->routeIs('client-reviews.*') ? 'active' : '' }}"
+                    <a href="{{ route('client-reviews.index') }}" @click="if (window.innerWidth < 992) sidebarOpen = false" aria-label="Client Reviews" data-bs-placement="right" class="{{ request()->routeIs('client-reviews.*') ? 'active' : '' }}"
                         data-bs-title="Client Reviews" data-bs-toggle="tooltip">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="svg-stroke">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -135,7 +148,7 @@
 
             @can('manage contact submissions')
                 <li>
-                    <a href="{{ route('contact-submissions.index') }}" aria-label="Contact Submissions" data-bs-placement="right" class="{{ request()->routeIs('contact-submissions.*') ? 'active' : '' }}"
+                    <a href="{{ route('contact-submissions.index') }}" @click="if (window.innerWidth < 992) sidebarOpen = false" aria-label="Contact Submissions" data-bs-placement="right" class="{{ request()->routeIs('contact-submissions.*') ? 'active' : '' }}"
                         data-bs-title="Contact Submissions" data-bs-toggle="tooltip">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="svg-stroke">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -148,26 +161,51 @@
             @endcan
         </ul>
     </div>
-    <div>
-        <div class="row g-0 align-items-center mt-2">
-            <div class="col text-truncate ">
-                <div class="d-flex align-items-center profile">
-                    <img src="{{ Auth::user()->avatar ?? '/images/landing/avatar.svg' }}" alt="Avatar" class="rounded-circle avatar">
-                    <div class="ms-3 profile-text">
-                        <a href="#" title="" class="small">{{ Auth::user()->name }}</a>
-                        <p class="mb-0 small">{{ Auth::user()->email }}</p>
+    <div class="sidebar-footer-container">
+        <div class="sidebar-profile-card d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center min-w-0" style="max-width: calc(100% - 28px);">
+                <img src="{{ Auth::user()->avatar ?: '/images/avatar.png' }}" 
+                     alt="{{ Auth::user()->name }}" 
+                     class="rounded-circle object-fit-cover border flex-shrink-0" 
+                     style="width: 36px; height: 36px; border-color: #E2E8F0 !important;"
+                     onerror="this.src='/images/avatar.png';">
+                <div class="ms-2 min-w-0 text-truncate" style="padding-left: 2px;">
+                    <div class="fw-semibold text-truncate" style="font-size: 13px; color: #0F172A; line-height: 1.25;" title="{{ Auth::user()->name }}">
+                        {{ Auth::user()->name }}
+                    </div>
+                    <div class="text-truncate" style="font-size: 11px; color: #64748B; line-height: 1.25; margin-top: 2px;" title="{{ Auth::user()->email }}">
+                        {{ Auth::user()->email }}
                     </div>
                 </div>
             </div>
-            <!-- Dropdown -->
-            <div class="col-auto">
-                <div class="dropdown dropstart">
-                    <a href="#" class="btn btn-link btn-sm dropdown-toggle" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" data-expanded="false"
-                        aria-expanded="false"></a>
-                    <div class="dropdown-menu">
-                        <a href="{{ route('profile.edit') }}" class="dropdown-item">{{ __('Profile') }}</a>
-                    </div>
+            <div class="dropdown dropstart">
+                <button class="btn btn-sm p-1 border-0 rounded-circle text-muted" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Account settings">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="1.5"></circle>
+                        <circle cx="12" cy="5" r="1.5"></circle>
+                        <circle cx="12" cy="19" r="1.5"></circle>
+                    </svg>
+                </button>
+                <div class="dropdown-menu shadow-sm border py-1" style="font-size: 13px; border-color: #E2E8F0 !important;">
+                    <a class="dropdown-item py-1.5 px-3 d-flex align-items-center" @click="if (window.innerWidth < 992) sidebarOpen = false" href="{{ route('profile.edit') }}" style="color: #334155;">
+                        <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        {{ __('Profile') }}
+                    </a>
+                    <hr class="dropdown-divider my-1" style="border-color: #F1F5F9;">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="dropdown-item py-1.5 px-3 text-danger d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                            <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            {{ __('Log Out') }}
+                        </a>
+                    </form>
                 </div>
             </div>
         </div>

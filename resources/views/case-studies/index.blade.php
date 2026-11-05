@@ -29,17 +29,13 @@
                                 &ldquo;{{ $case->review }}&rdquo;
                             </blockquote>
                         </div>
-                        <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
-                            <div class="flex items-center gap-3">
-                                <img src="{{ $case->client_avatar }}" alt="{{ $case->client_name }}" class="size-10 rounded-full object-cover border border-slate-200" />
-                                <div>
-                                    <h4 class="text-sm font-semibold text-ink">{{ $case->client_name }}</h4>
-                                    <p class="text-xs text-slate-500">{{ $case->job_title ?? 'Verified Client' }} &bull; {{ $case->company_name }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between text-xs">
-                            <span class="text-emerald-600 font-semibold">&check; Verified Enterprise Client</span>
+                        <div class="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between text-xs">
+                            <span class="inline-flex items-center gap-1.5 text-emerald-600 font-semibold">
+                                <svg class="size-4 fill-current" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Verified Enterprise Story</span>
+                            </span>
                             <a href="/case-studies/{{ \Illuminate\Support\Str::slug($case->company_name ?: 'client-story') }}" class="font-semibold text-brand-600 hover:text-brand-700 inline-flex items-center gap-1">
                                 Case study &rarr;
                             </a>
