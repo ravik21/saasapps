@@ -87,11 +87,15 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   body {
     font-family: var(--font-sans);
     color: #111827;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 
   /* Headings Hierarchy across EVERY page (Homepage, Services, Cases, About, Contact, Pricing, etc.) */
@@ -894,15 +898,17 @@
   }
   .ref-showcase-light + .ref-value-strip .ref-value-grid article,
   .ref-showcase-light + .ref-value-strip .ref-value-grid article:first-child {
-    min-height: 42px;
-    display: flex;
-    align-items: center;
-    padding: 0 7px;
+    min-height: 60px;
+    display: block;
+    width: 100%;
+    padding: 16px 7px;
     border: 0;
     border-bottom: 1px solid #d5d7d9;
+    box-sizing: border-box;
   }
   .ref-showcase-light + .ref-value-strip .ref-value-grid article:last-child { border-bottom: 0; }
-  .ref-showcase-light + .ref-value-strip .ref-value-grid span { color:#191a19;font:400 12px/1.35 var(--font-sans); }
+  .ref-showcase-light + .ref-value-strip .ref-value-grid strong { display: block; width: 100%; font-size: 28px; line-height: 1.1; margin-bottom: 4px; }
+  .ref-showcase-light + .ref-value-strip .ref-value-grid span { display: block; width: 100%; color:#191a19;font:400 13px/1.45 var(--font-sans); }
 }
 
 /* Visible reference metrics: values and labels are separate Blade text nodes. */
@@ -1500,10 +1506,10 @@
   .ref-dark-values-section { min-height: 0;padding: 24px 0 22px; }
   .ref-dark-values-section .ref-dark-values { width: calc(100% - 40px);grid-template-columns: 1fr; }
   .ref-dark-values-section .ref-dark-values article,
-  .ref-dark-values-section .ref-dark-values article:first-child { min-height: 72px;padding: 10px 5px;border: 0;border-bottom: 1px solid #485052; }
+  .ref-dark-values-section .ref-dark-values article:first-child { min-height: 72px;display: block;width: 100%;padding: 16px 5px;border: 0;border-bottom: 1px solid #485052;box-sizing: border-box; }
   .ref-dark-values-section .ref-dark-values article:last-child { border-bottom: 0; }
-  .ref-dark-values-section .ref-dark-values strong { font-size: 27px; }
-  .ref-dark-values-section .ref-dark-values span { margin-top: 4px; }
+  .ref-dark-values-section .ref-dark-values strong { display: block; width: 100%; font-size: 27px; line-height: 1.1; margin-bottom: 4px; }
+  .ref-dark-values-section .ref-dark-values span { display: block; width: 100%; margin-top: 4px; }
   .ref-dark-source { margin-top: 20px;font-size: 9px; }
 }
 
@@ -1574,7 +1580,7 @@ html, body {
   .ref-final-cta > .ref-wrap,
   .sh-wrap {
     width: min(100%, calc(100% - 64px)) !important;
-    max-width: 1140px !important;
+    max-width: 1020px !important;
     margin-inline: auto !important;
     box-sizing: border-box !important;
   }
@@ -1600,11 +1606,20 @@ html, body {
     margin-top: 40px !important;
     padding: 5vw !important;
   }
-  .ref-review-card {
-    flex: 0 0 calc((100% - 16px) / 2) !important;
-    max-width: calc((100% - 16px) / 2) !important;
-    min-width: 0 !important;
-    scroll-snap-align: start !important;
+  .ref-diff-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+  }
+  .ref-quality-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .ref-value-grid,
+  .ref-dark-values-section .ref-dark-values {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .sh-footer-top {
+    grid-template-columns: minmax(200px, 1.2fr) repeat(4, minmax(110px, 1fr)) !important;
+    gap: 24px 20px !important;
   }
 }
 
@@ -1621,7 +1636,7 @@ html, body {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
-    padding-inline: 20px !important;
+    padding-inline: 16px !important;
     margin-inline: auto !important;
     box-sizing: border-box !important;
     transform: none !important;
@@ -1631,15 +1646,15 @@ html, body {
   .ref-hero {
     min-height: auto !important;
     height: auto !important;
-    padding: 112px 0 48px !important;
+    padding: 100px 0 44px !important;
   }
   .ref-hero-inner {
     width: 100% !important;
     max-width: 100% !important;
   }
   .saas-home .ref-hero h1 {
-    font-size: clamp(32px, 8.5vw, 42px) !important;
-    line-height: 1.08 !important;
+    font-size: clamp(30px, 8vw, 42px) !important;
+    line-height: 1.1 !important;
     letter-spacing: -0.03em !important;
     max-width: 100% !important;
     margin: 0 auto !important;
@@ -1651,7 +1666,7 @@ html, body {
     line-height: 1.55 !important;
   }
   .ref-hero-label {
-    margin: 36px 0 14px !important;
+    margin: 32px 0 14px !important;
     font-size: 14px !important;
   }
   .ref-categories {
@@ -1677,6 +1692,7 @@ html, body {
   .ref-category > b {
     font-size: 12px !important;
     text-align: center !important;
+    line-height: 1.25 !important;
   }
   .ref-button-black {
     margin-top: 22px !important;
@@ -1688,20 +1704,23 @@ html, body {
   /* 3. Scribe-Style Infinite Trust Logo Marquee */
   .ref-trust {
     height: auto !important;
-    min-height: 120px !important;
+    min-height: 110px !important;
     padding: 22px 0 24px !important;
+    overflow: hidden !important;
   }
   .ref-trust-marquee-inner {
     flex-direction: column !important;
     align-items: flex-start !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding: 0 !important;
+    width: 100% !important;
     gap: 16px !important;
     height: auto !important;
+    overflow: hidden !important;
   }
   .ref-trust-fixed {
     width: 100% !important;
-    padding-right: 0 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
   }
   .saas-home .ref-trust-heading,
   .ref-trust-heading {
@@ -1714,16 +1733,15 @@ html, body {
     width: 100% !important;
     height: auto !important;
     min-height: 28px !important;
-    margin-left: -20px !important;
-    margin-right: -20px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    mask-image: linear-gradient(to right, transparent 0%, black 24px, black calc(100% - 24px), transparent 100%) !important;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 24px, black calc(100% - 24px), transparent 100%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    mask-image: linear-gradient(to right, transparent 0%, black 20px, black calc(100% - 20px), transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20px, black calc(100% - 20px), transparent 100%) !important;
   }
   .ref-trust-group {
-    gap: 48px !important;
-    padding-right: 48px !important;
+    gap: 40px !important;
+    padding-right: 40px !important;
   }
   .ref-t-logo {
     height: 24px !important;
@@ -1732,10 +1750,10 @@ html, body {
 
   /* 4. Editorial Brand Statement */
   .ref-editorial {
-    padding: 64px 0 68px !important;
+    padding: 56px 0 60px !important;
   }
   .saas-home .ref-editorial h2 {
-    font-size: clamp(28px, 7.5vw, 36px) !important;
+    font-size: clamp(26px, 7vw, 36px) !important;
     line-height: 1.15 !important;
     max-width: 100% !important;
   }
@@ -1755,7 +1773,8 @@ html, body {
     max-width: 100% !important;
     min-height: 0 !important;
     height: auto !important;
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 32px !important;
   }
   .ref-showcase-light .ref-showcase-copy {
@@ -1790,24 +1809,84 @@ html, body {
     max-width: 100% !important;
     line-height: 1.5 !important;
   }
+  /* Capabilities Showcase Visual (Section 5) */
   .ref-product-frame {
+    position: relative !important;
     width: 100% !important;
-    max-width: min(100%, 440px) !important;
+    max-width: min(100%, 420px) !important;
+    aspect-ratio: 1 / 1 !important;
     height: auto !important;
-    aspect-ratio: 1/1 !important;
-    min-height: 0 !important;
+    min-height: clamp(330px, 92vw, 420px) !important;
     margin: 0 auto !important;
-    padding: 7% !important;
+    padding: 0 !important;
     justify-self: center !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
   }
   .ref-visual-state {
-    inset: 7% !important;
-  }
-  .ref-network-canvas {
+    position: absolute !important;
+    inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 16px 14px !important;
+    box-sizing: border-box !important;
+  }
+  .ref-visual-state.ref-refund-visual,
+  .ref-visual-state.ref-sso-visual {
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  .ref-visual-state.ref-network-visual {
+    display: grid !important;
+    place-items: center !important;
+    padding: 0 !important;
+  }
+  .ref-network-canvas {
+    position: relative !important;
+    width: 426px !important;
+    height: 429px !important;
+    flex: 0 0 426px !important;
+    max-width: none !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    transform: scale(clamp(0.58, calc((100vw - 64px) / 426), 0.88)) !important;
+    transform-origin: center center !important;
+  }
+  .ref-network-lines {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 426px !important;
+    height: 429px !important;
+  }
+  .ref-network-icon {
+    position: absolute !important;
+    width: 46px !important;
+    height: 46px !important;
+    transform: none !important;
+  }
+  .ref-icon-cloud { top: 50px !important; left: 69px !important; right: auto !important; bottom: auto !important; }
+  .ref-icon-automation { top: 50px !important; left: 190px !important; right: auto !important; bottom: auto !important; }
+  .ref-icon-platform { top: 50px !important; right: 69px !important; left: auto !important; bottom: auto !important; }
+  .ref-icon-spark { top: 241px !important; left: 35px !important; right: auto !important; bottom: auto !important; }
+  .ref-icon-data { top: 241px !important; right: 35px !important; left: auto !important; bottom: auto !important; }
+  .ref-network-center {
+    position: absolute !important;
+    top: 219px !important;
+    left: 170px !important;
+    width: 86px !important;
+    height: 86px !important;
+    transform: none !important;
+  }
+  .ref-icon-bottom {
+    position: absolute !important;
+    top: 408px !important;
+    left: 190px !important;
+    right: auto !important;
+    bottom: auto !important;
   }
   .ref-showcase-light + .ref-value-strip,
   .ref-value-strip {
@@ -1816,47 +1895,106 @@ html, body {
     left: auto !important;
     height: auto !important;
     min-height: 0 !important;
-    padding: 24px 0 !important;
-    border-top: 1px solid #d9dbdd !important;
+    padding: 36px 0 28px !important;
+    border-top: 1px solid #e5e7eb !important;
     background: #f2f3f5 !important;
+    width: 100% !important;
+    overflow: hidden !important;
   }
+  .saas-home .ref-value-strip .ref-value-grid,
   .ref-showcase-light + .ref-value-strip .ref-value-grid,
+  .ref-value-strip .ref-value-grid,
   .ref-value-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    grid-auto-flow: row !important;
     width: 100% !important;
     max-width: 100% !important;
-    grid-template-columns: 1fr !important;
+    min-width: 0 !important;
     gap: 0 !important;
-    padding: 0 !important;
+    padding: 0 16px !important;
     min-height: 0 !important;
+    box-sizing: border-box !important;
   }
+  .saas-home .ref-value-strip .ref-value-grid article,
   .ref-showcase-light + .ref-value-strip .ref-value-grid article,
+  .ref-value-strip .ref-value-grid article,
   .ref-value-grid article {
-    min-height: 64px !important;
-    padding: 12px 4px !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 22px 0 !important;
     border-left: 0 !important;
-    border-bottom: 1px solid #d5d7d9 !important;
-    align-items: flex-start !important;
-    justify-content: center !important;
-    flex-direction: column !important;
-    gap: 3px !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 1px solid #e0e2e5 !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    flex: none !important;
   }
+  .saas-home .ref-value-strip .ref-value-grid article:first-child,
+  .ref-showcase-light + .ref-value-strip .ref-value-grid article:first-child,
+  .ref-value-strip .ref-value-grid article:first-child,
+  .ref-value-grid article:first-child {
+    padding-top: 4px !important;
+    border-top: 0 !important;
+    border-left: 0 !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid article:last-child,
   .ref-showcase-light + .ref-value-strip .ref-value-grid article:last-child,
+  .ref-value-strip .ref-value-grid article:last-child,
   .ref-value-grid article:last-child {
     border-bottom: 0 !important;
+    padding-bottom: 4px !important;
   }
-  .ref-showcase-light + .ref-value-strip .ref-value-grid .ref-metric-value,
-  .ref-value-grid strong {
-    font-size: 28px !important;
-    line-height: 1.05 !important;
+  .saas-home .ref-value-strip .ref-value-grid strong,
+  .ref-showcase-light + .ref-value-strip .ref-value-grid strong,
+  .ref-value-strip .ref-value-grid strong,
+  .ref-value-grid strong,
+  .ref-metric-value {
+    display: block !important;
+    width: 100% !important;
+    color: #111827 !important;
+    font-family: var(--font-serif-display), "Source Serif 4", Georgia, serif !important;
+    font-size: clamp(32px, 8.5vw, 38px) !important;
+    line-height: 1.1 !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 0 6px 0 !important;
+    text-align: left !important;
   }
-  .ref-showcase-light + .ref-value-strip .ref-value-grid .ref-metric-label,
-  .ref-value-grid span {
-    font-size: 13px !important;
-    color: #4a4f49 !important;
+  .saas-home .ref-value-strip .ref-value-grid span,
+  .ref-showcase-light + .ref-value-strip .ref-value-grid span,
+  .ref-value-strip .ref-value-grid span,
+  .ref-value-grid span,
+  .ref-metric-label {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    color: #4b5563 !important;
+    font-family: var(--font-sans), Inter, system-ui, sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+    text-align: left !important;
   }
   .ref-source {
-    margin-top: 16px !important;
-    font-size: 10px !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-inline: 16px !important;
+    margin: 28px auto 0 !important;
+    text-align: center !important;
+    font-family: var(--font-sans), Inter, system-ui, sans-serif !important;
+    font-size: 11px !important;
+    color: #6b7280 !important;
+    line-height: 1.4 !important;
   }
 
   /* 6. Dark Workflow Showcase & Outcomes */
@@ -1907,53 +2045,180 @@ html, body {
   }
   .ref-showcase-dark .ref-insight-cta {
     margin-top: 24px !important;
-    min-height: 42px !important;
+    min-height: 44px !important;
     padding: 0 22px !important;
     font-size: 13px !important;
   }
+  /* Dark Workflow Showcase Visual (Section 6) */
   .ref-showcase-dark .ref-opportunity-visual {
     order: 1 !important;
     width: 100% !important;
     max-width: min(100%, 420px) !important;
+    aspect-ratio: 448 / 527 !important;
     height: auto !important;
-    aspect-ratio: 448/527 !important;
+    min-height: clamp(380px, 102vw, 490px) !important;
+    position: relative !important;
     margin: 0 auto !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+  .ref-opportunity-state {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: grid !important;
+    place-items: center !important;
+    overflow: hidden !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
   }
   .ref-opportunity-card {
-    width: 86% !important;
-    height: 86% !important;
-    max-width: 100% !important;
+    position: relative !important;
+    width: 355px !important;
+    height: 434px !important;
+    max-width: none !important;
+    flex: 0 0 355px !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 11px !important;
+    transform: scale(clamp(0.68, calc((100vw - 64px) / 355), 0.95)) !important;
+    transform-origin: center center !important;
   }
-  .ref-dark-values-section {
+  .ref-opportunity-question {
+    min-height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 0 11px !important;
+    border-radius: 9px !important;
+    background: #171919 !important;
+    color: #f4f5f4 !important;
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+  }
+  .ref-opportunity-dashboard {
+    flex: 1 !important;
     min-height: 0 !important;
-    padding: 20px 0 !important;
+    padding: 13px 13px !important;
+    border-radius: 9px !important;
+    background: #171919 !important;
   }
-  .ref-dark-values-section .ref-dark-values {
+  .ref-opportunity-dashboard h3 {
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    margin: 0 0 13px !important;
+    color: #f0f1f1 !important;
+  }
+  .ref-roadmap-steps > div > i:not(:last-child)::after {
+    width: calc((100% - 36px) / 3) !important;
+  }
+  /* Dark Metrics Strip (Section 6) */
+  .ref-dark-values-section {
+    position: relative !important;
+    min-height: 0 !important;
+    padding: 36px 0 28px !important;
+    border-top: 1px solid #374151 !important;
+    background: #222526 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  .saas-home .ref-dark-values-section .ref-dark-values,
+  .ref-dark-values-section .ref-dark-values,
+  .ref-showcase-dark .ref-dark-values,
+  .ref-dark-values {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    grid-auto-flow: row !important;
     width: 100% !important;
     max-width: 100% !important;
-    grid-template-columns: 1fr !important;
+    min-width: 0 !important;
     gap: 0 !important;
-    padding: 0 !important;
+    padding: 0 16px !important;
+    margin-top: 0 !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
   }
-  .ref-dark-values-section .ref-dark-values article {
-    min-height: 64px !important;
-    padding: 12px 4px !important;
+  .saas-home .ref-dark-values-section .ref-dark-values article,
+  .ref-dark-values-section .ref-dark-values article,
+  .ref-showcase-dark .ref-dark-values article,
+  .ref-dark-values article {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 22px 0 !important;
     border-left: 0 !important;
-    border-bottom: 1px solid #485052 !important;
-    justify-content: center !important;
-    gap: 3px !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 1px solid #374151 !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    flex: none !important;
   }
-  .ref-dark-values-section .ref-dark-values article:last-child {
+  .saas-home .ref-dark-values-section .ref-dark-values article:first-child,
+  .ref-dark-values-section .ref-dark-values article:first-child,
+  .ref-showcase-dark .ref-dark-values article:first-child,
+  .ref-dark-values article:first-child {
+    padding-top: 4px !important;
+    border-top: 0 !important;
+    border-left: 0 !important;
+  }
+  .saas-home .ref-dark-values-section .ref-dark-values article:last-child,
+  .ref-dark-values-section .ref-dark-values article:last-child,
+  .ref-showcase-dark .ref-dark-values article:last-child,
+  .ref-dark-values article:last-child {
     border-bottom: 0 !important;
+    padding-bottom: 4px !important;
   }
-  .ref-dark-values-section .ref-dark-values strong {
-    font-size: 28px !important;
+  .saas-home .ref-dark-values-section .ref-dark-values strong,
+  .ref-dark-values-section .ref-dark-values strong,
+  .ref-showcase-dark .ref-dark-values strong,
+  .ref-dark-values strong {
+    display: block !important;
+    width: 100% !important;
+    color: #ffffff !important;
+    font-family: var(--font-serif-display), "Source Serif 4", Georgia, serif !important;
+    font-size: clamp(32px, 8.5vw, 38px) !important;
+    line-height: 1.1 !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 0 6px 0 !important;
+    text-align: left !important;
   }
-  .ref-dark-values-section .ref-dark-values span {
-    font-size: 12px !important;
-    color: #aab1ae !important;
+  .saas-home .ref-dark-values-section .ref-dark-values span,
+  .ref-dark-values-section .ref-dark-values span,
+  .ref-showcase-dark .ref-dark-values span,
+  .ref-dark-values span {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    color: #9ca3af !important;
+    font-family: var(--font-sans), Inter, system-ui, sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+  .ref-dark-source {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-inline: 16px !important;
+    margin: 28px auto 0 !important;
+    text-align: center !important;
+    font-family: var(--font-sans), Inter, system-ui, sans-serif !important;
+    font-size: 11px !important;
+    color: #9ca3af !important;
+    line-height: 1.4 !important;
   }
 
   /* 7. Workflows / Ways We Can Help */
@@ -2281,6 +2546,116 @@ html, body {
     max-width: calc(100% - 20px) !important;
     padding: 18px 14px !important;
   }
+  .saas-home .ref-value-strip .ref-value-grid strong,
+  .ref-value-grid strong,
+  .ref-metric-value,
+  .saas-home .ref-dark-values-section .ref-dark-values strong,
+  .ref-dark-values strong {
+    font-size: 34px !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid span,
+  .ref-value-grid span,
+  .ref-metric-label,
+  .saas-home .ref-dark-values-section .ref-dark-values span,
+  .ref-dark-values span {
+    font-size: 14px !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid article,
+  .ref-value-grid article,
+  .saas-home .ref-dark-values-section .ref-dark-values article,
+  .ref-dark-values article {
+    padding: 18px 0 !important;
+  }
+}
+@media (max-width: 360px) {
+  .saas-home .ref-hero h1 {
+    font-size: clamp(26px, 7.5vw, 30px) !important;
+  }
+  .ref-categories {
+    gap: 8px !important;
+  }
+
+  .ref-wall-item {
+    width: 250px !important;
+  }
+  .ref-wall-card {
+    padding: 16px 14px !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid strong,
+  .ref-value-grid strong,
+  .ref-metric-value,
+  .saas-home .ref-dark-values-section .ref-dark-values strong,
+  .ref-dark-values strong {
+    font-size: 31px !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid span,
+  .ref-value-grid span,
+  .ref-metric-label,
+  .saas-home .ref-dark-values-section .ref-dark-values span,
+  .ref-dark-values span {
+    font-size: 13.5px !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid article,
+  .ref-value-grid article,
+  .saas-home .ref-dark-values-section .ref-dark-values article,
+  .ref-dark-values article {
+    padding: 16px 0 !important;
+  }
+}
+@media (max-width: 320px) {
+  .ref-wrap,
+  .ref-showcase-light .ref-wrap,
+  .ref-showcase-dark > .ref-wrap,
+  .ref-final-cta > .ref-wrap,
+  .sh-wrap {
+    padding-inline: 16px !important;
+  }
+  .saas-home .ref-hero h1 {
+    font-size: 25px !important;
+  }
+  .ref-hero-lede {
+    font-size: 14px !important;
+  }
+  .ref-category > span {
+    font-size: 20px !important;
+  }
+  .ref-category > span svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .ref-category > b {
+    font-size: 10px !important;
+  }
+
+  .ref-wall-item {
+    width: 240px !important;
+  }
+  .ref-diff-card-title {
+    font-size: 18px !important;
+  }
+  .ref-final-cta .ref-cta-card {
+    padding: 28px 16px 20px !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid strong,
+  .ref-value-grid strong,
+  .ref-metric-value,
+  .saas-home .ref-dark-values-section .ref-dark-values strong,
+  .ref-dark-values strong {
+    font-size: 28px !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid span,
+  .ref-value-grid span,
+  .ref-metric-label,
+  .saas-home .ref-dark-values-section .ref-dark-values span,
+  .ref-dark-values span {
+    font-size: 13px !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid article,
+  .ref-value-grid article,
+  .saas-home .ref-dark-values-section .ref-dark-values article,
+  .ref-dark-values article {
+    padding: 14px 0 !important;
+  }
 }
 
 /* ==========================================================================
@@ -2445,7 +2820,7 @@ html, body {
     .ref-wall-group {
         gap: 16px !important;
         padding-right: 16px !important;
-        height: 350px !important;
+        height: 380px !important;
     }
     .ref-wall-item {
         width: 280px !important;

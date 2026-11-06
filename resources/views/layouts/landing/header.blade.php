@@ -16,6 +16,7 @@
     @scroll.window="scrolled = (window.pageYOffset > 10)"
     @keydown.escape.window="servicesOpen = false; mobileOpen = false"
     @click.outside="servicesOpen = false"
+    x-effect="document.body.classList.toggle('overflow-hidden', mobileOpen)"
     class="fixed top-0 inset-x-0 z-50 w-full h-[80px] bg-white border-b border-[#E5E7EB] transition-all duration-200">
 
     <div class="w-full max-w-[1306px] mx-auto px-4 sm:px-8 lg:px-[78px] h-[80px] flex items-center justify-between">
@@ -205,7 +206,7 @@
          x-transition:leave-start="opacity-100 translate-y-0"
          x-transition:leave-end="opacity-0 -translate-y-2"
          x-cloak
-         class="lg:hidden fixed inset-x-0 top-[80px] bg-white border-b border-[#E5E7EB] shadow-2xl px-5 py-6 overflow-y-auto max-h-[calc(100vh-80px)] z-50">
+         class="lg:hidden fixed inset-x-0 top-[80px] bg-white border-b border-[#E5E7EB] shadow-2xl px-5 py-6 overflow-y-auto max-h-[calc(100dvh-80px)] z-50">
 
         <div class="space-y-1">
             <!-- Mobile Services Accordion -->
@@ -288,12 +289,6 @@
                    @click="mobileOpen = false"
                    class="w-full min-h-[48px] h-[48px] flex items-center justify-center rounded-full text-[15px] font-semibold bg-white text-black border border-black hover:bg-gray-50 transition-colors">
                     Dashboard
-                </a>
-            @else
-                <a href="{{ route('login') }}"
-                   @click="mobileOpen = false"
-                   class="w-full min-h-[48px] h-[48px] flex items-center justify-center rounded-full text-[15px] font-semibold bg-white text-black border border-black hover:bg-gray-50 transition-colors">
-                    Sign in
                 </a>
             @endauth
 

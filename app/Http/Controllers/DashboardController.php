@@ -31,7 +31,8 @@ class DashboardController extends Controller
         $recentProjects = Project::latest()->take(5)->get();
         $recentUsers = $this->developerUsersQuery()->latest()->take(5)->get();
         $latestReview = ClientReview::latest()->first();
+        $recentClientReviews = ClientReview::latest()->take(4)->get();
 
-        return view('dashboard', compact('stats', 'recentContactSubmissions', 'recentProjects', 'recentUsers', 'latestReview'));
+        return view('dashboard', compact('stats', 'recentContactSubmissions', 'recentProjects', 'recentUsers', 'latestReview', 'recentClientReviews'));
     }
 }

@@ -2,7 +2,7 @@
     <main class="saas-home">
         {{-- 1. Hero --}}
         <section class="ref-hero"><div class="ref-wrap ref-hero-inner">
-            <h1>Build software that<br>moves business forward</h1>
+            <h1>Build software that <br class="hidden sm:inline">moves business forward</h1>
             <p class="ref-hero-lede">SaaSApps partners with growing businesses to design, build and support dependable digital products.</p>
             <p class="ref-hero-label">What can we help you create?</p>
             <div class="ref-categories">
@@ -24,7 +24,7 @@
             <div class="ref-trust-marquee-inner">
                 <div class="ref-trust-fixed">
                     <h2 class="ref-trust-heading">
-                        Trusted by teams building<br>better digital products
+                        Trusted by teams building <br class="hidden sm:inline">better digital products
                     </h2>
                 </div>
                 <div class="ref-trust-scroller" aria-hidden="true">
@@ -48,9 +48,9 @@
                             <img src="{{ asset('images/icons/laravel.svg') }}" alt="" class="ref-t-logo ref-t-svg">
                             <img src="{{ asset('images/landing/projects/thrivecoach-mono.png') }}" alt="" class="ref-t-logo ref-t-img">
                             <img src="{{ asset('images/icons/stripe.svg') }}" alt="" class="ref-t-logo ref-t-svg">
-                            <img src="{{ asset('images/landing/projects/qurater-mono.png') }}" alt="" class="ref-t-logo ref-t-img">
+                            <img src="{{ asset('images/landing/projects/qurater-mono.png') }}" alt="" class="ref-t-logo ref-t-svg">
                             <img src="{{ asset('images/icons/vuejs.svg') }}" alt="" class="ref-t-logo ref-t-svg">
-                            <img src="{{ asset('images/landing/projects/prescribery-mono.png') }}" alt="" class="ref-t-logo ref-t-img">
+                            <img src="{{ asset('images/landing/projects/prescribery-mono.png') }}" alt="" class="ref-t-logo ref-t-svg">
                             <img src="{{ asset('images/icons/mysql.svg') }}" alt="" class="ref-t-logo ref-t-svg">
                             <img src="{{ asset('images/icons/nodejs.svg') }}" alt="" class="ref-t-logo ref-t-svg">
                             <img src="{{ asset('images/icons/php.svg') }}" alt="" class="ref-t-logo ref-t-svg">
@@ -175,7 +175,7 @@
                     <h2>Now you can understand how your team works. <span>Improve it.</span></h2>
                     <div class="ref-benefits ref-benefits-dark ref-insights" role="list" aria-label="Team insights">
                         <article role="listitem" :class="activeInsight === 0 ? 'is-current' : ''"><i aria-hidden="true" :class="activeInsight === 0 ? 'is-active' : ''">•</i><div><h3><button type="button" aria-controls="insight-description-0" :aria-expanded="activeInsight === 0" @click="activeInsight = 0" @keydown.arrow-down.prevent="activeInsight = (activeInsight + 1) % 3" @keydown.arrow-up.prevent="activeInsight = (activeInsight + 2) % 3">See every inefficiency across your team</button></h3><p id="insight-description-0" x-cloak x-show="activeInsight === 0" x-transition.opacity.duration.200ms>AI analyzes your workflows and surfaces the bottlenecks, redundancies, and time drains you can’t see otherwise.</p></div></article>
-                        <article role="listitem" :class="activeInsight === 1 ? 'is-current' : ''"><i aria-hidden="true" :class="activeInsight === 1 ? 'is-active' : ''">•</i><div><h3><button type="button" aria-controls="insight-description-1" :aria-expanded="activeInsight === 1" @click="activeInsight = 1" @keydown.arrow-down.prevent="activeInsight = (activeInsight + 1) % 3" @keydown.arrow-up.prevent="activeInsight = (activeInsight + 2) % 3">Know exactly what to improve and automate</button></h3><p id="insight-description-1" x-cloak x-show="activeInsight === 1" x-transition.opacity.duration.200ms>Shine light into the parts of your business that are a black box,<br> and get data-backed recommendations to improve them.</p></div></article>
+                        <article role="listitem" :class="activeInsight === 1 ? 'is-current' : ''"><i aria-hidden="true" :class="activeInsight === 1 ? 'is-active' : ''">•</i><div><h3><button type="button" aria-controls="insight-description-1" :aria-expanded="activeInsight === 1" @click="activeInsight = 1" @keydown.arrow-down.prevent="activeInsight = (activeInsight + 1) % 3" @keydown.arrow-up.prevent="activeInsight = (activeInsight + 2) % 3">Know exactly what to improve and automate</button></h3><p id="insight-description-1" x-cloak x-show="activeInsight === 1" x-transition.opacity.duration.200ms>Shine light into the parts of your business that are a black box, <br class="hidden sm:inline">and get data-backed recommendations to improve them.</p></div></article>
                         <article role="listitem" :class="activeInsight === 2 ? 'is-current' : ''"><i aria-hidden="true" :class="activeInsight === 2 ? 'is-active' : ''">•</i><div><h3><button type="button" aria-controls="insight-description-2" :aria-expanded="activeInsight === 2" @click="activeInsight = 2" @keydown.arrow-down.prevent="activeInsight = (activeInsight + 1) % 3" @keydown.arrow-up.prevent="activeInsight = (activeInsight + 2) % 3">Build your AI roadmap in days</button></h3><p id="insight-description-2" x-cloak x-show="activeInsight === 2" x-transition.opacity.duration.200ms>Move faster on your AI mandates. Measure exactly where AI and automation will have the biggest impact. Prove the ROI.</p></div></article>
                     </div>
                     <a class="ref-button ref-button-outline ref-insight-cta" href="{{ route('contact-us') }}">Get started</a>
@@ -184,7 +184,7 @@
         </section>
         <section class="ref-dark-values-section" aria-label="Scribe outcomes">
             <div class="ref-wrap ref-dark-values">
-                <article><strong>95%</strong><span>leaders say Scribe enables<br>them to do more with less</span></article>
+                <article><strong>95%</strong><span>leaders say Scribe enables <br class="hidden sm:inline">them to do more with less</span></article>
                 <article><strong>5 days</strong><span>to build your AI roadmap</span></article>
                 <article><strong>71%</strong><span>better AI agent performance</span></article>
             </div>
@@ -192,7 +192,7 @@
         </section>
 
         {{-- 7. Any team / every workflow --}}
-        <section class="ref-workflows"><div class="ref-wrap ref-workflow-grid"><div><p class="ref-kicker">Ways we can help</p><h2>Every business.<br>Its own solution.</h2><p class="ref-copy">Bring us a challenge, an idea or a system ready to improve. We’ll help find the right way forward.</p></div><div class="ref-workflow-list">
+        <section class="ref-workflows"><div class="ref-wrap ref-workflow-grid"><div><p class="ref-kicker">Ways we can help</p><h2>Every business. <br class="hidden sm:inline">Its own solution.</h2><p class="ref-copy">Bring us a challenge, an idea or a system ready to improve. We’ll help find the right way forward.</p></div><div class="ref-workflow-list">
             @php($workflowLinks = [
                 ['Web development', '◫', 'website-ecommerce-development'], ['Custom software', '⌘', 'custom-software-development'],
                 ['Mobile applications', '▯', 'mobile-app-development'], ['API integrations', '⌁', 'backend-api-development'],
@@ -382,6 +382,6 @@
         <section class="ref-tech-strip"><div class="ref-wrap"><span>Experience across the stack</span><div><b>Laravel</b><b>PHP</b><b>JavaScript</b><b>iOS &amp; Android</b><b>Cloud platforms</b><b>APIs</b></div></div></section>
 
         {{-- 13. CTA --}}
-        <section class="ref-final-cta"><div class="ref-wrap"><div class="ref-cta-card"><div class="ref-cta-copy"><h2>Ready to own your<br>specialized<br>intelligence?</h2><a class="ref-button ref-button-black" href="{{ route('contact-us') }}">Get started</a></div><div class="ref-cta-illustration" aria-hidden="true"><svg viewBox="0 0 520 330" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><filter id="cta-grain" x="-8%" y="-8%" width="116%" height="116%"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" stitchTiles="stitch" result="noise"/><feColorMatrix in="noise" type="saturate" values="0" result="grain"/><feComponentTransfer in="grain" result="grainAlpha"><feFuncA type="table" tableValues="0 .22"/></feComponentTransfer><feBlend in="SourceGraphic" in2="grainAlpha" mode="soft-light"/></filter><linearGradient id="cta-aqua" x1="0" y1="0" x2="520" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#9BCBD0"/><stop offset="1" stop-color="#77BFC7"/></linearGradient></defs><g filter="url(#cta-grain)"><path d="M302 0C302 91 352 165 438 165" stroke="#F1C94C" stroke-width="56"/><path d="M438 165C352 165 302 239 302 330" stroke="#238CC6" stroke-width="56"/><path d="M0 165H520" stroke="url(#cta-aqua)" stroke-width="56"/></g></svg></div></div></div></section>
+        <section class="ref-final-cta"><div class="ref-wrap"><div class="ref-cta-card"><div class="ref-cta-copy"><h2>Ready to own your <br class="hidden sm:inline">specialized <br class="hidden sm:inline">intelligence?</h2><a class="ref-button ref-button-black" href="{{ route('contact-us') }}">Get started</a></div><div class="ref-cta-illustration" aria-hidden="true"><svg viewBox="0 0 520 330" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><filter id="cta-grain" x="-8%" y="-8%" width="116%" height="116%"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" stitchTiles="stitch" result="noise"/><feColorMatrix in="noise" type="saturate" values="0" result="grain"/><feComponentTransfer in="grain" result="grainAlpha"><feFuncA type="table" tableValues="0 .22"/></feComponentTransfer><feBlend in="SourceGraphic" in2="grainAlpha" mode="soft-light"/></filter><linearGradient id="cta-aqua" x1="0" y1="0" x2="520" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#9BCBD0"/><stop offset="1" stop-color="#77BFC7"/></linearGradient></defs><g filter="url(#cta-grain)"><path d="M302 0C302 91 352 165 438 165" stroke="#F1C94C" stroke-width="56"/><path d="M438 165C352 165 302 239 302 330" stroke="#238CC6" stroke-width="56"/><path d="M0 165H520" stroke="url(#cta-aqua)" stroke-width="56"/></g></svg></div></div></div></section>
     </main>
 </x-landing-layout>

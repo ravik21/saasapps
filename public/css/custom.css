@@ -192,6 +192,8 @@ header.sticky-top,
     box-sizing: border-box !important;
     padding: 24px 36px 48px 36px !important;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin !important;
+    scrollbar-color: #CBD5E1 #F1F5F9 !important;
 }
 
 @media (max-width: 991.98px) {
@@ -204,12 +206,6 @@ header.sticky-top,
     .admin-main-container {
         padding: 14px 16px 32px 16px !important;
     }
-}
-
-/* Visible Slim Gray Scrollbar at the far-right edge */
-.admin-main-container {
-    scrollbar-width: thin !important;
-    scrollbar-color: #CBD5E1 #F1F5F9 !important;
 }
 
 .admin-main-container::-webkit-scrollbar {
@@ -1567,7 +1563,7 @@ button.btn-dark.rounded-pill:hover {
     .ref-wall-group {
         gap: 16px !important;
         padding-right: 16px !important;
-        height: 350px !important;
+        height: 380px !important;
     }
     .ref-wall-item {
         width: 280px !important;
@@ -1608,6 +1604,146 @@ button.btn-dark.rounded-pill:hover {
     .ref-stagger-3 .ref-wall-card { margin-top: 40px !important; }
     .ref-stagger-4 .ref-wall-card { margin-top: 15px !important; }
     .ref-stagger-5 .ref-wall-card { margin-top: 55px !important; }
+}
+
+/* Force Mobile Metrics Vertical Stacking */
+@media (max-width: 768px) {
+  .saas-home .ref-value-strip .ref-value-grid,
+  .ref-showcase-light + .ref-value-strip .ref-value-grid,
+  .ref-value-strip .ref-value-grid,
+  .ref-value-grid,
+  .saas-home .ref-dark-values-section .ref-dark-values,
+  .ref-dark-values-section .ref-dark-values,
+  .ref-showcase-dark .ref-dark-values,
+  .ref-dark-values {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    gap: 0 !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .saas-home .ref-value-strip .ref-value-grid article,
+  .ref-showcase-light + .ref-value-strip .ref-value-grid article,
+  .ref-value-strip .ref-value-grid article,
+  .ref-value-grid article {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    padding: 22px 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 1px solid #e0e2e5 !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid article:first-child,
+  .ref-value-strip .ref-value-grid article:first-child,
+  .ref-value-grid article:first-child {
+    padding-top: 4px !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid article:last-child,
+  .ref-value-strip .ref-value-grid article:last-child,
+  .ref-value-grid article:last-child {
+    border-bottom: 0 !important;
+    padding-bottom: 4px !important;
+  }
+
+  .saas-home .ref-dark-values-section .ref-dark-values article,
+  .ref-dark-values-section .ref-dark-values article,
+  .ref-showcase-dark .ref-dark-values article,
+  .ref-dark-values article {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    padding: 22px 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 1px solid #374151 !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+  .saas-home .ref-dark-values-section .ref-dark-values article:first-child,
+  .ref-dark-values-section .ref-dark-values article:first-child,
+  .ref-dark-values article:first-child {
+    padding-top: 4px !important;
+  }
+  .saas-home .ref-dark-values-section .ref-dark-values article:last-child,
+  .ref-dark-values-section .ref-dark-values article:last-child,
+  .ref-dark-values article:last-child {
+    border-bottom: 0 !important;
+    padding-bottom: 4px !important;
+  }
+
+  .saas-home .ref-value-strip .ref-value-grid strong,
+  .ref-value-grid strong,
+  .ref-metric-value {
+    display: block !important;
+    width: 100% !important;
+    color: #111827 !important;
+    font-family: var(--font-serif-display), "Source Serif 4", Georgia, serif !important;
+    font-size: clamp(32px, 8.5vw, 38px) !important;
+    line-height: 1.1 !important;
+    margin: 0 0 6px 0 !important;
+    text-align: left !important;
+  }
+  .saas-home .ref-value-strip .ref-value-grid span,
+  .ref-value-grid span,
+  .ref-metric-label {
+    display: block !important;
+    width: 100% !important;
+    color: #4b5563 !important;
+    font-family: var(--font-sans), Inter, system-ui, sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  .saas-home .ref-dark-values-section .ref-dark-values strong,
+  .ref-dark-values strong {
+    display: block !important;
+    width: 100% !important;
+    color: #ffffff !important;
+    font-family: var(--font-serif-display), "Source Serif 4", Georgia, serif !important;
+    font-size: clamp(32px, 8.5vw, 38px) !important;
+    line-height: 1.1 !important;
+    margin: 0 0 6px 0 !important;
+    text-align: left !important;
+  }
+  .saas-home .ref-dark-values-section .ref-dark-values span,
+  .ref-dark-values span {
+    display: block !important;
+    width: 100% !important;
+    color: #9ca3af !important;
+    font-family: var(--font-sans), Inter, system-ui, sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  .ref-source,
+  .ref-dark-source {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-inline: 16px !important;
+    margin: 28px auto 0 !important;
+    text-align: center !important;
+    font-family: var(--font-sans), Inter, system-ui, sans-serif !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
 }
 
 
